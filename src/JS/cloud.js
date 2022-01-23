@@ -183,6 +183,21 @@ function getData() {
   }
 }
 
+//Save Note Function:
+function saveNote() {
+  //Checks the Case:
+  if (getCacheData(dataID, false) != null) {
+    //Gets the Data:
+    data = getCacheData(dataID, true);
+    
+    //Sends the Data:
+    data[1][index] = document.getElementById('text-area')
+      .value.replace("\\n", "$n");
+    setCacheData(dataID, data, true);
+    sendData();
+  }
+}
+
 /* DATA FUNCTIONS */
 
 //Display Notes Function:
@@ -290,31 +305,11 @@ function clearCacheData() {
 
 //Firebase Server Formatting Function:
 function formatData(rawData) {
-  //Loop Variables:
-  var main = "";
-  var turns = 0;
-
-  //Loops through String:
-  mainLoop: while (turns < rawData.length) {
-    //Checks the Case:
-    if (rawData[turns] == '\\') {
-      //Checks the Case:
-      if (turns != rawData.length-1) {
-        //Checks the Case:
-        if (rawData[turns+1] == 'n') {
-          //Sets the Main:
-          main += rawData[turns];
-        }
-      }
-    }
-
-    else {
-      //Sets the Main:
-      main += rawData[turns];
-    }
-    
-    turns++;
-  }
+  //Replaces Info:
+  var string = rawData.replace(/\\/g, "");
+  var side = string.replace(/^./, "");
+  var second = side.slice(0, -1);
+  var main = second.replace("$n", "\\n");
 
   //Returns the String:
   return main;

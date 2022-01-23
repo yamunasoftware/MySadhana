@@ -56,19 +56,9 @@ function showNotes(index) {
     document.getElementById('notes').style.display = "block";
 
     //Sets the Value:
-    document.getElementById('notes-header').innerHTML = data[0][index];
+    document.getElementById('notes-header').innerHTML = 
+      data[0][index] + "&emsp; <button onclick='saveNote();'> Save </button>";
     document.getElementById('text-area').value = data[1][index];
-
-    //Sets the Event Listener:
-    window.addEventListener("keydown", function (e) {
-      //Checks the Case:
-      if (e.key == "Alt") {
-        //Sends the Data:
-        data[1][index] = document.getElementById('text-area').value;
-        setCacheData(dataID, data, true);
-        sendData();
-      }
-    });
   }
 }
 
