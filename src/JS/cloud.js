@@ -184,7 +184,7 @@ function getData() {
 }
 
 //Save Note Function:
-function saveNote() {
+function saveNote(index) {
   //Checks the Case:
   if (getCacheData(dataID, false) != null) {
     //Gets the Data:
