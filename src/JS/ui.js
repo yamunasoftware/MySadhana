@@ -61,6 +61,18 @@ function showNotes(index) {
     var dataValue = data[1][index];
     dataValue = dataValue.split("$n").join("\n");
     document.getElementById('text-area').value = dataValue;
+
+    //Sets the Event Listener:
+    window.addEventListener("keydown", function (e) {
+      //Checks the Case:
+      if (e.key == "Control") {
+        //Checks the Case
+        if (e.key == "s") {
+          //Saves the Note:
+          saveNote(index);
+        }
+      }
+    })
   }
 }
 
