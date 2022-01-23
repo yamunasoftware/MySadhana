@@ -65,8 +65,8 @@ function logIn() {
       //Checks the Case:
       if (doc.exists) {
         //Sets the Data:
-        data = JSON.parse(formatData(JSON.stringify(doc.data().data)));
-        dark = JSON.parse(formatData(JSON.stringify(doc.data().dark)));
+        data = JSON.parse(JSON.stringify(doc.data().data));
+        dark = JSON.parse(JSON.stringify(doc.data().dark));
 
         //Sets the Cache Data:
         setCacheData(codeID, code, false);
@@ -157,8 +157,8 @@ function getData() {
       //Checks the Case:
       if (doc.exists) {
         //Sets the Data:
-        data = JSON.parse(formatData(JSON.stringify(doc.data().data)));
-        dark = JSON.parse(formatData(JSON.stringify(doc.data().dark)));
+        data = JSON.parse(JSON.stringify(doc.data().data));
+        dark = JSON.parse(JSON.stringify(doc.data().dark));
 
         //Sets the Cache:
         setCacheData(dataID, data, true);
@@ -286,15 +286,4 @@ function removeCacheData(id) {
 function clearCacheData() {
   //Clears Cache:
   localStorage.clear();
-}
-
-//Firebase Server Formatting Function:
-function formatData(rawData) {
-  //Replaces Info:
-  var string = rawData.replace(/\\/g, "");
-  var side = string.replace(/^./, "");
-  var main = side.slice(0, -1);
-
-  //Returns the String:
-  return main;
 }
