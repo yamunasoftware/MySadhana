@@ -65,12 +65,9 @@ function showNotes(index) {
     //Sets the Event Listener:
     window.addEventListener("keydown", function (e) {
       //Checks the Case:
-      if (e.key == "Control") {
-        //Checks the Case
-        if (e.key == "q") {
-          //Saves the Note:
-          saveNote(index);
-        }
+      if (e.key == "Alt") {
+        //Saves the Note:
+        saveNote(index);
       }
     })
   }
