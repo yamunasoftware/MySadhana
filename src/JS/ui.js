@@ -67,7 +67,7 @@ function showNotes(index) {
       //Checks the Case:
       if (e.key == "Control") {
         //Checks the Case
-        if (e.key == "s") {
+        if (e.key == "e") {
           //Saves the Note:
           saveNote(index);
         }
