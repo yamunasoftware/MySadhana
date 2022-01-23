@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<meta charset="utf-8" />
+<meta name="description" content="Personal Improvement App" />
+<meta name="viewport" content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover" />
+<meta name="theme-color" content="#ff9800" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<!-- Tab -->
+<head>
+  <title> MySadhana </title>
+
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/src/Images/medium_icon.png" />
+  <link rel="apple-touch-startup-image" href="/src/Images/medium_icon.png" />
+  <link rel="shortcut icon" type="image/png" href="/src/Images/small_icon.png" />
+</head>
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="/src/CSS/fonts.css" />
+<link rel="stylesheet" href="/src/CSS/style.css" />
+
+<!-- Cloud Scripts -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+<!-- Scripts -->
+<script src="/src/JS/ui.js"></script>
+<script src="/src/JS/cloud.js"></script>
+
+<!-- Container -->
+<div id="container">
+
+  <body>
+
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="screen gradient deactivate">
+      <!-- Header -->
+      <div class="header padding">
+        <div> MySadhana </div>
+        <div> Productivity. </div>
+        <div> Simplified. </div>
+      </div>
+
+      <div id="sign-in" class="padding">
+        <!-- Sign Up Buttons -->
+        <button onclick="signUp();"> Sign Up </button>
+        &nbsp; <button onclick="showLogIn();"> Log In </button>
+      </div>
+
+      <!-- Log In -->
+      <div id="log-in" class="padding deactivate">
+        <!-- Log In Elements -->
+        <input id="log-in-input" />
+        &nbsp; <button onclick="logIn();"> Submit </button>
+        <div id="error" class="padding" style="display: inline;"></div>
+      </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="screen deactivate">
+      <!-- Header -->
+      <div class="padding header"> MySadhana </div>
+
+      <!-- Add Elements -->
+      <div class="padding">
+        <!-- Add Controls --> 
+        <input id="addInput" />
+        &nbsp; 
+        <button onclick="addNote(document.getElementById('addInput').value);"> New </button> 
+      </div>
+      
+      <!-- UI Controls -->
+      <div id="login-code" class="padding"></div>
+      <div class="padding"> 
+        Dark Mode: 
+        &nbsp; <button id="dark-button" style="display: inline;" onclick="toggleDark();"> 
+          Off </button>
+      </div>
+
+      <!-- Notes List -->
+      <div id="notes-list" class="padding"></div>
+    </div>
+
+    <!-- Notes -->
+    <div id="notes" class="screen deactivate">
+      <!-- Header -->
+      <div id="notes-header" class="padding header"></div>
+
+      <!-- Text Area -->
+      <textarea id="text-area" class="padding"></textarea>
+    </div>
+
+  </body>
+</div>
+
+</html>
