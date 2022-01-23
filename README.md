@@ -1,6 +1,6 @@
 # MySadhana
 
-Personal Improvement App
+Personal Productivity App
 
 # Usage
 

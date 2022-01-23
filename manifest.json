@@ -6,7 +6,7 @@
   "orientation": "portrait-primary",
   "background_color": "#ff9800",
   "theme_color": "#ff9800",
-  "description": "Personal Improvement App",
+  "description": "Personal Productivity App",
   "categories": ["productivity", "lifestyle"],
   "icons": [
     {

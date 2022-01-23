@@ -1,3 +1,10 @@
+/* SERVICE WORKER REGISTRATION */
+
+//Registers the Service Worker:
+navigator.serviceWorker.register('/service-worker.js', {
+  scope: 'https://mysadhana.netlify.app'
+});
+
 /* UI FUNCTIONS */
 
 //Onload Function:
