@@ -65,8 +65,8 @@ function logIn() {
       //Checks the Case:
       if (doc.exists) {
         //Sets the Data:
-        data = JSON.parse(JSON.stringify(doc.data().data));
-        dark = JSON.parse(JSON.stringify(doc.data().dark));
+        data = JSON.parse(formatData(JSON.stringify(doc.data().data)));
+        dark = JSON.parse(formatData(JSON.stringify(doc.data().dark)));
 
         //Sets the Cache Data:
         setCacheData(codeID, code, false);
@@ -157,8 +157,8 @@ function getData() {
       //Checks the Case:
       if (doc.exists) {
         //Sets the Data:
-        data = JSON.parse(JSON.stringify(doc.data().data));
-        dark = JSON.parse(JSON.stringify(doc.data().dark));
+        data = JSON.parse(formatData(JSON.stringify(doc.data().data)));
+        dark = JSON.parse(formatData(JSON.stringify(doc.data().dark)));
 
         //Sets the Cache:
         setCacheData(dataID, data, true);
@@ -286,4 +286,36 @@ function removeCacheData(id) {
 function clearCacheData() {
   //Clears Cache:
   localStorage.clear();
+}
+
+//Firebase Server Formatting Function:
+function formatData(rawData) {
+  //Loop Variables:
+  var main = "";
+  var turns = 0;
+
+  //Loops through String:
+  mainLoop: while (turns < rawData.length) {
+    //Checks the Case:
+    if (rawData[turns] == '\\') {
+      //Checks the Case:
+      if (turns != rawData.length-1) {
+        //Checks the Case:
+        if (rawData[turns+1] == 'n') {
+          //Sets the Main:
+          main += rawData[turns];
+        }
+      }
+    }
+
+    else {
+      //Sets the Main:
+      main += rawData[turns];
+    }
+    
+    turns++;
+  }
+
+  //Returns the String:
+  return main;
 }
