@@ -41,8 +41,11 @@ function signUp() {
       setCacheData(dataID, data, true);
       setCacheData(darkID, dark, true);
 
-      //Sets the Dashboard:
+      //Shows the Dashboard:
       showDashboard();
+      displayNotes();
+      showLoginCode();
+      showDark();
     })
     .catch(() => {
       //Displays Error:
@@ -70,8 +73,11 @@ function logIn() {
         setCacheData(dataID, data, true);
         setCacheData(darkID, dark, true);
 
-        //Sets the Dashboard:
+        //Shows the Dashboard:
         showDashboard();
+        displayNotes();
+        showLoginCode();
+        showDark();
       }
 
       else {
@@ -192,7 +198,7 @@ function displayNotes() {
     mainLoop: while (turns < data[0].length) {
       //Sets the Notes List:
       notesList +=
-        "<div>" + data[0][turns] +
+        "<div class='padding'>" + data[0][turns] +
         "&nbsp; <button onclick='showNotes(" + turns + ");'> Open </button>" +
         "&nbsp; <button onclick='deleteNote(" + turns + ");'> Delete </button> </div>";
 
