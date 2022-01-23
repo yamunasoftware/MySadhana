@@ -192,7 +192,7 @@ function saveNote(index) {
     
     //Sends the Data:
     data[1][index] = document.getElementById('text-area')
-      .value.replace("\\n", "$n");
+      .value.split("\\n").join("$n");
     setCacheData(dataID, data, true);
     sendData();
   }
@@ -309,7 +309,7 @@ function formatData(rawData) {
   var string = rawData.replace(/\\/g, "");
   var side = string.replace(/^./, "");
   var second = side.slice(0, -1);
-  var main = second.replace("$n", "\\n");
+  var main = second.split("$n").join("\\n");;
 
   //Returns the String:
   return main;
