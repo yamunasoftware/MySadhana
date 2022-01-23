@@ -93,6 +93,19 @@ function showDark() {
       //Sets the Button:
       document.getElementById('dark-button').innerHTML = "On";
     }
+
+    else {
+      //Sets the Background:
+      document.getElementById('container').style.backgroundColor = "#ffebcc";
+      document.getElementById('text-area').style.backgroundColor = "#ffebcc";
+
+      //Sets the Color:
+      document.getElementById('container').style.color = "#000000";
+      document.getElementById('text-area').style.color = "#000000";
+
+      //Sets the Button:
+      document.getElementById('dark-button').innerHTML = "Off";
+    }
   }
 }
 
