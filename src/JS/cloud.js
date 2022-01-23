@@ -85,10 +85,7 @@ function logIn() {
         showError("Invalid ID");
       }
     })
-      .catch(() => {
-        //Displays Error:
-        showError("Invalid ID");
-      });
+      
   }
 
   else {
@@ -308,8 +305,7 @@ function formatData(rawData) {
   //Replaces Info:
   var string = rawData.replace(/\\/g, "");
   var side = string.replace(/^./, "");
-  var second = side.slice(0, -1);
-  var main = second.split("$n").join("\n");;
+  var main = side.slice(0, -1);
 
   //Returns the String:
   return main;
