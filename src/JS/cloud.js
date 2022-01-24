@@ -118,10 +118,6 @@ function sendData() {
       data: JSON.stringify(data)
     })
       .then(() => {
-        //Sets the Cache Data:
-        setCacheData(codeID, code, false);
-        setCacheData(dataID, data, true);
-
         //Shows the Dashboard:
         showDashboard();
         displayNotes();
