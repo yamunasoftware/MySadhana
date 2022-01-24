@@ -244,7 +244,7 @@ function title(string) {
   //Checks the Case:
   if (string.length > 0) {
     //Returns the String:
-    return string.substring(0, 0);
+    return string.slice(0, 1);
   }
 
   else {
