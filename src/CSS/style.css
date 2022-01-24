@@ -5,8 +5,8 @@ html, body {
   height: 100%;
   margin: 0px;
   padding: 0px;
-  color: #000000;
-  background-color: #ffebcc;
+  color: #ffffff;
+  background-color: #000000;
   font-family: "rubik-medium", Helvetica, Arial;
   font-weight: bold;
   font-size: 20px;
@@ -17,8 +17,8 @@ html, body {
   height: 100%;
   margin: 0px;
   padding: 0px;
-  color: #000000;
-  background-color: #ffebcc;
+  color: #ffffff;
+  background-color: #000000;
   font-family: "rubik-medium", Helvetica, Arial;
   font-weight: bold;
   font-size: 20px;
@@ -60,6 +60,8 @@ html, body {
 /* UI ELEMENTS */
 
 button {
+  display: inline;
+  margin: 10px;
   padding: 5px;
   font-size: 20px;
   font-weight: bold;
@@ -94,12 +96,12 @@ input:hover, input:focus {
 
 textarea {
   width: calc(100% - 40px);
-  height: 80%;
+  height: 60%;
   margin: 0px;
   border: none;
   border-radius: none;
-  background-color: #ffebcc;
-  color: #000000;
+  background-color: #000000;
+  color: #ffffff;
   font-family: "rubik-medium", Helvetica, Arial;
   font-weight: bold;
   font-size: 20px;
@@ -115,7 +117,7 @@ textarea {
 }
 
 ::-webkit-scrollbar-track {
-  background: #ffebcc; 
+  background: #000000; 
 }
 
 ::-webkit-scrollbar-thumb {

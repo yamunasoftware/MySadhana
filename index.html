@@ -43,17 +43,20 @@
         <div> Simplified. </div>
       </div>
 
+      <!-- Sign Up -->
       <div id="sign-in" class="padding">
         <!-- Sign Up Buttons -->
         <button onclick="signUp();"> Sign Up </button>
-        &nbsp; <button onclick="showLogIn();"> Log In </button>
+        <button onclick="showLogIn();"> Log In </button>
       </div>
 
       <!-- Log In -->
       <div id="log-in" class="padding deactivate">
         <!-- Log In Elements -->
         <input id="log-in-input" />
-        &nbsp; <button onclick="logIn();"> Submit </button>
+        <button onclick="logIn();"> Submit </button>
+
+        <!-- Error Message -->
         <div id="error" class="padding" style="display: inline;"></div>
       </div>
     </div>
@@ -67,16 +70,11 @@
       <div class="padding">
         <!-- Add Controls --> 
         <input id="addInput" />
-        &nbsp; 
-        <button onclick="addNote(document.getElementById('addInput').value);"> New </button> 
-      </div>
-      
-      <!-- UI Controls -->
-      <div id="login-code" class="padding"></div>
-      <div class="padding"> 
-        Dark Mode: 
-        &nbsp; <button id="dark-button" style="display: inline;" onclick="toggleDark();"> 
-          Off </button>
+        <button onclick="addNote(document.getElementById('addInput').value);"> New </button>
+        <button onclick="clearCacheData();"> Sign Out </button>
+        
+        <!-- Login Code -->
+        <div id="login-code" class="padding"></div>
       </div>
 
       <!-- Notes List -->
@@ -90,7 +88,7 @@
     </div>
 
     <!-- Notes -->
-    <div id="notes" class="screen center deactivate">
+    <div id="notes" class="screen deactivate">
       <!-- Header -->
       <div id="notes-header" class="padding header"></div>
 

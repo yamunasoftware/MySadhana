@@ -14,16 +14,6 @@ window.onload = function () {
   getData();
 }
 
-//Copy Code Function:
-function copyCode() {
-  //Checks the Case:
-  if (getCacheData(codeID, false) != null) {
-    //Copies Code:
-    navigator.clipboard.writeText(getCacheData(codeID, false));
-    document.getElementById('copy-message').innerHTML = "Copied";
-  }
-}
-
 //Show Splash Function:
 function showSplash() {
   //Checks the Case:
@@ -73,67 +63,6 @@ function showNotes(index) {
   }
 }
 
-//Show Dark Function:
-function showDark() {
-  //Checks the Case:
-  if (getCacheData(darkID, false) != null) {
-    //Sets the Dark:
-    dark = getCacheData(darkID, true);
-    
-    //Checks the Case:
-    if (dark) {
-      //Sets the Background:
-      document.getElementById('container').style.backgroundColor = "#000000";
-      document.getElementById('text-area').style.backgroundColor = "#000000";
-
-      //Sets the Color:
-      document.getElementById('container').style.color = "#ffffff";
-      document.getElementById('text-area').style.color = "#ffffff";
-
-      //Sets the Button:
-      document.getElementById('dark-button').innerHTML = "On";
-    }
-
-    else {
-      //Sets the Background:
-      document.getElementById('container').style.backgroundColor = "#ffebcc";
-      document.getElementById('text-area').style.backgroundColor = "#ffebcc";
-
-      //Sets the Color:
-      document.getElementById('container').style.color = "#000000";
-      document.getElementById('text-area').style.color = "#000000";
-
-      //Sets the Button:
-      document.getElementById('dark-button').innerHTML = "Off";
-    }
-  }
-}
-
-//Toggle Dark Function:
-function toggleDark() {
-  //Checks the Case:
-  if (getCacheData(darkID, false) != null) {
-    //Sets the Dark:
-    dark = getCacheData(darkID, true);
-
-    //Checks the Case:
-    if (dark) {
-      //Sets the Dark:
-      dark = false;
-    }
-
-    else {
-      //Sets the Dark:
-      dark = true;
-    }
-
-    //Toggles Dark:
-    setCacheData(darkID, dark, true);
-    sendData();
-    showDark();
-  }
-}
-
 //Show Login Function:
 function showLogIn() {
   //Sets the Element:
@@ -146,9 +75,7 @@ function showLoginCode() {
   if (getCacheData(codeID, false) != null) {
     //Sets the Code:
     document.getElementById('login-code').innerHTML = 
-      "Login Code: " + getCacheData(codeID, false) + 
-      "&nbsp; <button onclick='copyCode();'> Copy </button>" + 
-      "&nbsp; <div style='display: inline;' id='copy-message'></div>";
+      "Login Code: " + getCacheData(codeID, false);
   }
 }
 

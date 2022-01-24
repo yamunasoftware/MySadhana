@@ -18,12 +18,10 @@ var collectionName = "users";
 //ID Variables:
 var codeID = "code";
 var dataID = "data";
-var darkID = "dark";
 
 //Data Variables:
 var code = "";
 var data = [[], []];
-var dark = false;
 
 /* CLOUD AUTH FUNCTIONS */
 
@@ -32,20 +30,17 @@ function signUp() {
   //Gets the Code, Sets the Cloud Data:
   var code = generateCode();
   database.collection(collectionName).doc(code).set({
-    data: JSON.stringify(data),
-    dark: JSON.stringify(dark)
+    data: JSON.stringify(data)
   })
     .then(() => {
       //Sets the Cache Data:
       setCacheData(codeID, code, false);
       setCacheData(dataID, data, true);
-      setCacheData(darkID, dark, true);
 
       //Shows the Dashboard:
       showDashboard();
       displayNotes();
       showLoginCode();
-      showDark();
     })
     .catch(() => {
       //Displays Error:
@@ -66,18 +61,15 @@ function logIn() {
       if (doc.exists) {
         //Sets the Data:
         data = JSON.parse(formatData(JSON.stringify(doc.data().data)));
-        dark = JSON.parse(formatData(JSON.stringify(doc.data().dark)));
 
         //Sets the Cache Data:
         setCacheData(codeID, code, false);
         setCacheData(dataID, data, true);
-        setCacheData(darkID, dark, true);
 
         //Shows the Dashboard:
         showDashboard();
         displayNotes();
         showLoginCode();
-        showDark();
       }
 
       else {
@@ -123,17 +115,17 @@ function sendData() {
 
     //Sets the Cloud Data:
     database.collection(collectionName).doc(code).update({
-      data: JSON.stringify(data),
-      dark: JSON.stringify(dark)
+      data: JSON.stringify(data)
     })
       .then(() => {
         //Sets the Cache Data:
         setCacheData(codeID, code, false);
         setCacheData(dataID, data, true);
-        setCacheData(darkID, dark, true);
 
-        //Sets the Dashboard:
+        //Shows the Dashboard:
         showDashboard();
+        displayNotes();
+        showLoginCode();
       })
       .catch(() => {
         //Displays Error:
@@ -155,17 +147,12 @@ function getData() {
       if (doc.exists) {
         //Sets the Data:
         data = JSON.parse(formatData(JSON.stringify(doc.data().data)));
-        dark = JSON.parse(formatData(JSON.stringify(doc.data().dark)));
-
-        //Sets the Cache:
         setCacheData(dataID, data, true);
-        setCacheData(darkID, dark, true);
 
         //Shows the Dashboard:
         showDashboard();
         displayNotes();
         showLoginCode();
-        showDark();
       }
 
       else {
@@ -211,8 +198,8 @@ function displayNotes() {
       //Sets the Notes List:
       notesList +=
         "<div class='padding'>" + data[0][turns] +
-        "&nbsp; <button onclick='showNotes(" + turns + ");'> Open </button>" +
-        "&nbsp; <button onclick='deleteNote(" + turns + ");'> Delete </button> </div>";
+        "<button onclick='showNotes(" + turns + ");'> Open </button>" +
+        "<button onclick='deleteNote(" + turns + ");'> Delete </button> </div>";
 
       turns++;
     }
@@ -286,12 +273,6 @@ function setCacheData(id, value, string) {
     //Sets the Data:
     localStorage.setItem(id, value);
   }
-}
-
-//Remove Cache Data Function:
-function removeCacheData(id) {
-  //Removes Data:
-  localStorage.removeItem(id);
 }
 
 //Clear Cache Data:
