@@ -197,7 +197,7 @@ function displayNotes() {
     mainLoop: while (turns < data.length) {
       //Sets the Notes List:
       notesList +=
-        "<div class='padding'>" + data[turns] +
+        "<div class='padding'>" + title(data[turns]) +
         "<button onclick='showNotes(" + turns + ");'> Open </button>" +
         "<button onclick='deleteNote(" + turns + ");'> Delete </button> </div>";
 
@@ -236,6 +236,20 @@ function deleteNote(index) {
     setCacheData(dataID, data, true);
     sendData();
     displayNotes();
+  }
+}
+
+//Title Function:
+function title(string) {
+  //Checks the Case:
+  if (string.length > 0) {
+    //Returns the String:
+    return string.substring(0, 0);
+  }
+
+  else {
+    //Returns the String:
+    return string;
   }
 }
 
