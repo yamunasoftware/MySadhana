@@ -21,7 +21,7 @@ var dataID = "data";
 
 //Data Variables:
 var code = "";
-var data = [[], []];
+var data = [];
 
 /* CLOUD AUTH FUNCTIONS */
 
@@ -175,7 +175,7 @@ function saveNote(index) {
     data = getCacheData(dataID, true);
     
     //Sends the Data:
-    data[1][index] = document.getElementById('text-area')
+    data[index] = document.getElementById('text-area')
       .value.split("\n").join("$n");
     setCacheData(dataID, data, true);
     sendData();
@@ -194,10 +194,10 @@ function displayNotes() {
     var turns = 0;
 
     //Loops through Array:
-    mainLoop: while (turns < data[0].length) {
+    mainLoop: while (turns < data.length) {
       //Sets the Notes List:
       notesList +=
-        "<div class='padding'>" + data[0][turns] +
+        "<div class='padding'>" + data[turns] +
         "<button onclick='showNotes(" + turns + ");'> Open </button>" +
         "<button onclick='deleteNote(" + turns + ");'> Delete </button> </div>";
 
@@ -215,10 +215,7 @@ function addNote(name) {
   if (getCacheData(dataID, false) != null && name != "") {
     //Gets the Data:
     data = getCacheData(dataID, true);
-
-    //Adds the Note:
-    data[0].push(name);
-    data[1].push("");
+    data.push("");
 
     //Sends the Data
     setCacheData(dataID, data, true);
@@ -233,10 +230,7 @@ function deleteNote(index) {
   if (getCacheData(dataID, false) != null) {
     //Gets the Data:
     data = getCacheData(dataID, true);
-
-    //Deletes the Note:
-    data[0].splice(index, 1);
-    data[1].splice(index, 1);
+    data.splice(index, 1);
 
     //Sends the Data:
     setCacheData(dataID, data, true);
