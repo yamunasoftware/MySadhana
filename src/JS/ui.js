@@ -45,21 +45,14 @@ function showNotes(index) {
     document.getElementById('dashboard').style.display = "none";
     document.getElementById('notes').style.display = "block";
 
-    //Sets the Value:
+    //Sets the UI:
     document.getElementById('notes-header').innerHTML = 
       "<button style='margin-left: 0px;' onclick='saveNote(" + index + ");'> Save </button>";
     var dataValue = data[index];
+
+    //Sets the Values:
     dataValue = dataValue.split("$n").join("\n");
     document.getElementById('text-area').value = dataValue;
-
-    //Sets the Event Listener:
-    window.addEventListener("keydown", function (e) {
-      //Checks the Case:
-      if (e.key == "Alt") {
-        //Saves the Note:
-        saveNote(index);
-      }
-    })
   }
 }
 
