@@ -5,7 +5,7 @@ navigator.serviceWorker.register('/service-worker.js', {
   scope: 'https://mysadhana.netlify.app'
 });
 
-/* UI FUNCTIONS */
+/* WINDOW FUNCTIONS */
 
 //Onload Function:
 window.onload = function () {
@@ -13,6 +13,17 @@ window.onload = function () {
   showSplash();
   getData();
 }
+
+//Key Board Event Listener:
+window.addEventListener("keydown", function (e) {
+  //Checks the Case:
+  if (e.key == "Alt" && saveIndex != null) {
+    //Saves the Note:
+    saveNote(saveIndex);
+  }
+});
+
+/* UI FUNCTIONS */
 
 //Show Splash Function:
 function showSplash() {
@@ -53,6 +64,7 @@ function showNotes(index) {
     //Sets the Values:
     dataValue = dataValue.split("$n").join("\n");
     document.getElementById('text-area').value = dataValue;
+    saveIndex = index;
   }
 }
 

@@ -22,6 +22,7 @@ var dataID = "data";
 //Data Variables:
 var code = "";
 var data = [];
+var saveIndex = null;
 
 /* CLOUD AUTH FUNCTIONS */
 
@@ -169,6 +170,7 @@ function saveNote(index) {
   if (getCacheData(dataID, false) != null) {
     //Gets the Data:
     data = getCacheData(dataID, true);
+    saveIndex = null;
     
     //Sends the Data:
     data[index] = document.getElementById('text-area')
