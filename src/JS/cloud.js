@@ -210,9 +210,9 @@ function displayNotes() {
 }
 
 //Add Note Function:
-function addNote(name) {
+function addNote() {
   //Checks the Case:
-  if (getCacheData(dataID, false) != null && name != "") {
+  if (getCacheData(dataID, false) != null) {
     //Gets the Data:
     data = getCacheData(dataID, true);
     data.push("");
