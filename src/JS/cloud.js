@@ -237,16 +237,28 @@ function deleteNote(index) {
 
 //Title Function:
 function title(string) {
-  //Checks the Case:
-  if (string.length > 0) {
-    //Returns the String:
-    return string.slice(0, 1);
+  //Loops Variables:
+  var noteTitle = "";
+  var turns = 0;
+
+  //Loops through Array:
+  mainLoop: while (turns < string.length) {
+    //Checks the Case:
+    if (string[turns] != "$") {
+      //Adds to the Title:
+      noteTitle += string[turns];
+    }
+
+    else {
+      //Exits the Loop:
+      break mainLoop;
+    }
+    
+    turns++;
   }
 
-  else {
-    //Returns the String:
-    return string;
-  }
+  //Returns the Title:
+  return noteTitle;
 }
 
 /* CACHE DATA FUNCTIONS */
