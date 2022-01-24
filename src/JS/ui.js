@@ -47,7 +47,7 @@ function showNotes(index) {
 
     //Sets the Value:
     document.getElementById('notes-header').innerHTML = 
-      data[index] + "&emsp; <button onclick='saveNote(" + index + ");'> Save </button>";
+      "<button onclick='saveNote(" + index + ");'> Save </button>";
     var dataValue = data[index];
     dataValue = dataValue.split("$n").join("\n");
     document.getElementById('text-area').value = dataValue;
