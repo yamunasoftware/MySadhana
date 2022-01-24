@@ -53,6 +53,10 @@ html, body {
   align-content: center;
 }
 
+.no-decoration {
+  text-decoration: none;
+}
+
 .gradient {
   background-image: linear-gradient(to right, #f7ff00, #db36a4);
 }
