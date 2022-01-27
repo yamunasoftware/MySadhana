@@ -96,7 +96,7 @@ function generateCode() {
   //Loops through Array:
   mainLoop: while (turns < 20) {
     //Gets the Digit:
-    var digit = Math.floor(Math.random() * 10);
+    var digit = Math.floor((Math.random() * 9) + 1);
     code += digit;
 
     turns++;
