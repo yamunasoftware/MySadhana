@@ -21,6 +21,15 @@ window.addEventListener("keydown", function (e) {
     //Saves the Note:
     saveNote(saveIndex);
   }
+
+  //Checks the Case:
+  if (e.key == "Enter") {
+    //Checks the Case:
+    if (this.document.getElementById('log-in-input') == this.document.activeElement) {
+      //Logs In:
+      logIn();
+    }
+  }
 });
 
 /* UI FUNCTIONS */
