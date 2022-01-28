@@ -17,7 +17,7 @@ window.onload = function () {
 //Key Board Event Listener:
 window.addEventListener("keydown", function (e) {
   //Checks the Case:
-  if (e.key == "Alt" && saveIndex != null) {
+  if (e.key == "Escape" && saveIndex != null) {
     //Saves the Note:
     saveNote(saveIndex);
   }
