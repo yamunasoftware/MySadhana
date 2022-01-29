@@ -32,6 +32,11 @@ html, body {
   margin: 0px;
 }
 
+.search {
+  padding-bottom: 40px;
+  padding-top: 0px;
+}
+
 .padding {
   padding: 20px;
 }
@@ -95,7 +100,7 @@ input {
 }
 
 input:hover, input:focus {
-  border: 2px solid #2BC20E;
+  border: 5px solid #2BC20E;
   outline: none;
 }
 

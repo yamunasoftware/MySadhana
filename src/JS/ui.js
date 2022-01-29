@@ -14,15 +14,6 @@ window.onload = function () {
   getData();
 }
 
-//Search Event Listener:
-document.getElementById('search').addEventListener("keydown", function (e) {
-  //Checks the Case:
-  if (e.key != "Enter") {
-    //Runs the Search:
-    search();
-  }
-});
-
 //Key Board Event Listener:
 window.addEventListener("keydown", function (e) {
   //Checks the Case:
@@ -38,6 +29,12 @@ window.addEventListener("keydown", function (e) {
       //Logs In:
       logIn();
     }
+  }
+
+  //Checks the Case:
+  if (this.document.getElementById('search') == this.document.activeElement) {
+    //Runs the Search:
+    search();
   }
 });
 
