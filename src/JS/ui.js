@@ -12,22 +12,6 @@ window.onload = function () {
   //Init Functions:
   showSplash();
   getData();
-
-  //Sets the Interval:
-  setInterval(function () {
-    if (document.getElementById('text-area') == document.activeElement 
-      && saveIndex != null) {
-      //Sets the Test Value:
-      testValue = document.getElementById('text-area').value;
-      console.log("here");
-
-      //Checks the Case:
-      if (document.getElementById('text-area').value != testValue) {
-        //Saves the Note:
-        saveNote();
-      }
-    }
-  }, 10);
 }
 
 //Key Board Event Listener:
@@ -54,6 +38,13 @@ window.addEventListener("input", function (e) {
   if (this.document.getElementById('search') == this.document.activeElement) {
     //Searches:
     search(e);
+  }
+
+  //Checks the Case:
+  if (this.document.getElementById('text-area') == this.document.activeElement &&
+    saveIndex != null) {
+    //Sends the Data:
+    saveNote();
   }
 });
 
