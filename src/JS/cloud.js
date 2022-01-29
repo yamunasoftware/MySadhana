@@ -78,7 +78,7 @@ function logIn() {
         showError("Invalid ID");
       }
     })
-      
+
   }
 
   else {
@@ -171,7 +171,7 @@ function saveNote(index) {
     //Gets the Data:
     data = getCacheData(dataID, true);
     saveIndex = null;
-    
+
     //Sends the Data:
     data[index] = document.getElementById('text-area')
       .value.split("\n").join("$n");
@@ -255,7 +255,7 @@ function title(string) {
       //Exits the Loop:
       break mainLoop;
     }
-    
+
     turns++;
   }
 
@@ -265,27 +265,30 @@ function title(string) {
 
 //Search Function:
 function search(e) {
-  //Loop Variables:
-  data = getCacheData(dataID, true);
-  var turns = 0;
-  var notesList = "";
+  //Checks the Case:
+  if (document.activeElement == document.getElementById('search')) {
+    //Loop Variables:
+    data = getCacheData(dataID, true);
+    var turns = 0;
+    var notesList = "";
 
-  //Loops through Array:
-  mainLoop: while (turns < data.length) {
-    //Checks the Case:
-    if (data[turns].includes(e.target.value)) {
-      //Sets the Results:
-      notesList +=
-        "<div class='padding'>" + title(data[turns]) +
-        "<button onclick='showNotes(" + turns + ");'> Open </button>" +
-        "<button onclick='deleteNote(" + turns + ");'> Delete </button> </div>";
+    //Loops through Array:
+    mainLoop: while (turns < data.length) {
+      //Checks the Case:
+      if (data[turns].includes(e.target.value)) {
+        //Sets the Results:
+        notesList +=
+          "<div class='padding'>" + title(data[turns]) +
+          "<button onclick='showNotes(" + turns + ");'> Open </button>" +
+          "<button onclick='deleteNote(" + turns + ");'> Delete </button> </div>";
+      }
+
+      turns++;
     }
-    
-    turns++;
-  }
 
-  //Sets the HTML:
-  document.getElementById('notes-list').innerHTML = notesList;
+    //Sets the HTML:
+    document.getElementById('notes-list').innerHTML = notesList;
+  }
 }
 
 /* CACHE DATA FUNCTIONS */

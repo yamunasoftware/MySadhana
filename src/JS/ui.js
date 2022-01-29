@@ -25,7 +25,7 @@ window.addEventListener("keydown", function (e) {
   //Checks the Case:
   if (e.key == "Enter") {
     //Checks the Case:
-    if (this.document.getElementById('log-in-input') == this.document.activeElement) {
+    if (this.document.activeElement == this.document.getElementById('log-in-input')) {
       //Logs In:
       logIn();
     }
