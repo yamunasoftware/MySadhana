@@ -39,7 +39,7 @@ window.addEventListener("keydown", function (e) {
 });
 
 //Change Event Listener:
-window.addEventListener("change", function (e) {
+window.addEventListener("input", function (e) {
   //Checks the Case:
   if (this.document.getElementById('search') == this.document.activeElement) {
     //Searches:
