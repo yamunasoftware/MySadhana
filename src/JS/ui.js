@@ -45,12 +45,6 @@ window.addEventListener("input", function (e) {
     //Searches:
     search(e);
   }
-
-  //Checks the Case:
-  if (this.document.getElementById('text-area') == this.document.activeElement && saveIndex != null) {
-    //Saves the Note:
-    saveNote(saveIndex);
-  }
 });
 
 /* UI FUNCTIONS */
