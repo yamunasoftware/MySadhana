@@ -15,7 +15,10 @@ window.onload = function () {
 }
 
 //Before Unload Event Listener:
-window.addEventListener("beforeunload", sendData);
+window.addEventListener("beforeunload", function () {
+  //Sends the Data:
+  sendData();
+});
 
 //Key Board Event Listener:
 window.addEventListener("keydown", function (e) {  
