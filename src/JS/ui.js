@@ -19,7 +19,7 @@ window.addEventListener("keydown", function (e) {
   //Checks the Case:
   if (e.key == "Escape" && saveIndex != null) {
     //Exits the Note:
-    exitNotes();
+    exitNote();
   }
 
   //Checks the Case:
@@ -69,15 +69,6 @@ function showDashboard() {
   document.getElementById('notes').style.display = "none";
 }
 
-//Exit Notes Function:
-function exitNotes() {
-  //Shows the Dashboard:
-  saveIndex = null;
-  showDashboard();
-  displayNotes();
-  showLoginCode();
-}
-
 //Show Notes Function:
 function showNotes(index) {
   //Checks the Case:
@@ -92,7 +83,7 @@ function showNotes(index) {
 
     //Sets the UI:
     document.getElementById('notes-header').innerHTML =
-      "<button style='margin-left: 0px;' onclick='exitNotes();'> Exit </button>";
+      "<button style='margin-left: 0px;' onclick='exitNote();'> Exit </button>";
     var dataValue = data[index];
 
     //Sets the Values:

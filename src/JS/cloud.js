@@ -22,10 +22,7 @@ var dataID = "data";
 //Data Variables:
 var code = "";
 var data = [];
-
-//Test Variables:
 var saveIndex = null;
-var testValue = "";
 
 /* CLOUD AUTH FUNCTIONS */
 
@@ -161,6 +158,8 @@ function getData() {
   }
 }
 
+/* DATA FUNCTIONS */
+
 //Save Note Function:
 function saveNote() {
   //Checks the Case:
@@ -176,7 +175,14 @@ function saveNote() {
   }
 }
 
-/* DATA FUNCTIONS */
+//Exit Notes Function:
+function exitNote() {
+  //Shows the Dashboard:
+  saveIndex = null;
+  showDashboard();
+  displayNotes();
+  showLoginCode();
+}
 
 //Display Notes Function:
 function displayNotes() {
