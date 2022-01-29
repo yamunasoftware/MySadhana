@@ -26,7 +26,6 @@ window.addEventListener("keydown", function (e) {
   if (this.document.getElementById('text-area') == this.document.activeElement && 
     e.key != "Escape" && saveIndex != null) {
     //Saves the Note:
-    console.log("here")
     saveNote(saveIndex);
   }
   

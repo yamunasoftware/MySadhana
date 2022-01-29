@@ -170,7 +170,7 @@ function saveNote(index) {
   if (getCacheData(dataID, false) != null) {
     //Gets the Data:
     data = getCacheData(dataID, true);
-    saveIndex = null;
+    console.log("here")
 
     //Sends the Data:
     data[index] = document.getElementById('text-area')
