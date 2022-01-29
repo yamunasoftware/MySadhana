@@ -19,6 +19,7 @@ window.onload = function () {
       && saveIndex != null) {
       //Sets the Test Value:
       testValue = document.getElementById('text-area').value;
+      console.log("here");
 
       //Checks the Case:
       if (document.getElementById('text-area').value != testValue) {
