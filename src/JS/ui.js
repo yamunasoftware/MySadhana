@@ -39,13 +39,13 @@ window.addEventListener("keydown", function (e) {
 });
 
 //Input Event Listener:
-document.getElementById('search').addEventListener("change", function (e) {
+document.querySelector('#search').addEventListener("change", function (e) {
   //Searches:
   search(e);
 });
 
 //Text Area Event Listener:
-document.getElementById('text-area').addEventListener("change", function () {
+document.querySelector('#text-area').addEventListener("change", function () {
   //Saves the Note:
   saveNote(saveIndex);
 });
