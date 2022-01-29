@@ -36,6 +36,10 @@ html, body {
   padding: 20px;
 }
 
+.margin {
+  margin: 20px;
+}
+
 .header {
   font-size: 50px;
 }
@@ -85,11 +89,10 @@ button:hover {
 }
 
 input {
+  padding: 5px;
   font-size: 20px;
   border-radius: 20px;
   cursor: text;
-  background-color: #C0C0C0;
-  color: #000000;
   font-family: "rubik-medium", Helvetica, Arial;
   font-weight: bold;
 }
