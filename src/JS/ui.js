@@ -14,6 +14,9 @@ window.onload = function () {
   getData();
 }
 
+//Before Unload Event Listener:
+window.addEventListener("beforeunload", sendData);
+
 //Key Board Event Listener:
 window.addEventListener("keydown", function (e) {  
   //Checks the Case:
@@ -33,10 +36,13 @@ window.addEventListener("keydown", function (e) {
 });
 
 //Input Event Listener:
-window.addEventListener('input', function (e) {
+document.getElementById('search').addEventListener("change", function (e) {
   //Searches:
   search(e);
 });
+
+//Text Area Event Listener:
+document.getElementById('text-area').addEventListener("change", saveNote);
 
 /* UI FUNCTIONS */
 
@@ -73,7 +79,7 @@ function showNotes(index) {
 
     //Sets the UI:
     document.getElementById('notes-header').innerHTML = 
-      "<button style='margin-left: 0px;' onclick='saveNote(" + index + ");'> Save </button>";
+      "<button style='margin-left: 0px;' onclick='sendData();'> Exit </button>";
     var dataValue = data[index];
 
     //Sets the Values:

@@ -176,7 +176,6 @@ function saveNote(index) {
     data[index] = document.getElementById('text-area')
       .value.split("\n").join("$n");
     setCacheData(dataID, data, true);
-    sendData();
   }
 }
 
@@ -265,30 +264,27 @@ function title(string) {
 
 //Search Function:
 function search(e) {
-  //Checks the Case:
-  if (document.activeElement == document.getElementById('search')) {
-    //Loop Variables:
-    data = getCacheData(dataID, true);
-    var turns = 0;
-    var notesList = "";
+  //Loop Variables:
+  data = getCacheData(dataID, true);
+  var turns = 0;
+  var notesList = "";
 
-    //Loops through Array:
-    mainLoop: while (turns < data.length) {
-      //Checks the Case:
-      if (data[turns].includes(e.target.value)) {
-        //Sets the Results:
-        notesList +=
-          "<div class='padding'>" + title(data[turns]) +
-          "<button onclick='showNotes(" + turns + ");'> Open </button>" +
-          "<button onclick='deleteNote(" + turns + ");'> Delete </button> </div>";
-      }
-
-      turns++;
+  //Loops through Array:
+  mainLoop: while (turns < data.length) {
+    //Checks the Case:
+    if (data[turns].includes(e.target.value)) {
+      //Sets the Results:
+      notesList +=
+        "<div class='padding'>" + title(data[turns]) +
+        "<button onclick='showNotes(" + turns + ");'> Open </button>" +
+        "<button onclick='deleteNote(" + turns + ");'> Delete </button> </div>";
     }
 
-    //Sets the HTML:
-    document.getElementById('notes-list').innerHTML = notesList;
+    turns++;
   }
+
+  //Sets the HTML:
+  document.getElementById('notes-list').innerHTML = notesList;
 }
 
 /* CACHE DATA FUNCTIONS */
