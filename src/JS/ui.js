@@ -39,13 +39,15 @@ window.addEventListener("keydown", function (e) {
 });
 
 //Input Event Listener:
-document.querySelector('#search').addEventListener("change", function (e) {
+const searchInput = document.querySelector('#search');
+searchInput.addEventListener("change", function (e) {
   //Searches:
   search(e);
 });
 
 //Text Area Event Listener:
-document.querySelector('#text-area').addEventListener("change", function () {
+const textArea = document.querySelector('#text-area');
+textArea.addEventListener("change", function () {
   //Saves the Note:
   saveNote(saveIndex);
 });
