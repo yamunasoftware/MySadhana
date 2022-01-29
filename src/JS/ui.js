@@ -17,6 +17,7 @@ window.onload = function () {
 //Before Unload Event Listener:
 window.addEventListener("beforeunload", function () {
   //Sends the Data:
+  saveNote();
   sendData();
 });
 
@@ -32,6 +33,7 @@ window.addEventListener("keydown", function (e) {
   //Checks the Case:
   if (e.key == "Escape" && saveIndex != null) {
     //Sends the Data:
+    saveNote();
     sendData();
   }
 
@@ -89,7 +91,7 @@ function showNotes(index) {
 
     //Sets the UI:
     document.getElementById('notes-header').innerHTML =
-      "<button style='margin-left: 0px;' onclick='sendData();'> Exit </button>";
+      "<button style='margin-left: 0px;' onclick='saveNote(); sendData();'> Exit </button>";
     var dataValue = data[index];
 
     //Sets the Values:
