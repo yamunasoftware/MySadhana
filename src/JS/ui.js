@@ -33,7 +33,7 @@ window.addEventListener("keydown", function (e) {
 });
 
 //Input Event Listener:
-document.getElementById('search').addEventListener('input', search);
+input.addEventListener('input', search);
 
 /* UI FUNCTIONS */
 
