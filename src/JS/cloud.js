@@ -120,6 +120,7 @@ function sendData() {
     })
       .then(() => {
         //Shows the Dashboard:
+        saveIndex = null;
         showDashboard();
         displayNotes();
         showLoginCode();
@@ -165,15 +166,14 @@ function getData() {
 }
 
 //Save Note Function:
-function saveNote(index) {
+function saveNote() {
   //Checks the Case:
   if (getCacheData(dataID, false) != null) {
     //Gets the Data:
     data = getCacheData(dataID, true);
-    console.log("here")
 
     //Sends the Data:
-    data[index] = document.getElementById('text-area')
+    data[saveIndex] = document.getElementById('text-area')
       .value.split("\n").join("$n");
     setCacheData(dataID, data, true);
   }
