@@ -71,14 +71,14 @@
          <image  src="/src/Images/medium_icon.png"></image>
       </div>
 
+      <!-- Search Elements -->
+      <div class="search">
+        <!-- Search Controls -->
+        <input id="search" value="..." onclick="document.getElementById('search').value = '';" />
+      </div>
+
       <!-- Add Elements -->
       <div class="padding">
-        <!-- Search Element -->
-        <div class="search">
-          <!-- Search Controls -->
-          <input id="search" />
-        </div>
-
         <!-- Add Controls --> 
         <button onclick="addNote();"> New </button>
         <button onclick="clearCacheData(); window.location.reload();"> Sign Out </button>
