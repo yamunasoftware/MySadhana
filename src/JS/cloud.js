@@ -263,6 +263,31 @@ function title(string) {
   return noteTitle;
 }
 
+//Search Function:
+function search() {
+  //Loop Variables:
+  data = getCacheData(dataID, true);
+  var turns = 0;
+  var notesList = "";
+
+  //Loops through Array:
+  mainLoop: while (turns < data.length) {
+    //Checks the Case:
+    if (data[turns].includes(document.getElementById('search').value)) {
+      //Sets the Results:
+      notesList +=
+        "<div class='padding'>" + title(data[turns]) +
+        "<button onclick='showNotes(" + turns + ");'> Open </button>" +
+        "<button onclick='deleteNote(" + turns + ");'> Delete </button> </div>";
+    }
+    
+    turns++;
+  }
+
+  //Sets the HTML:
+  document.getElementById('notes-list').innerHTML = notesList;
+}
+
 /* CACHE DATA FUNCTIONS */
 
 //Cache Data Get Function:

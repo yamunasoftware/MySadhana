@@ -14,6 +14,15 @@ window.onload = function () {
   getData();
 }
 
+//Search Event Listener:
+document.getElementById('search').addEventListener("keydown", function (e) {
+  //Checks the Case:
+  if (e.key != "Enter") {
+    //Runs the Search:
+    search();
+  }
+});
+
 //Key Board Event Listener:
 window.addEventListener("keydown", function (e) {
   //Checks the Case:
