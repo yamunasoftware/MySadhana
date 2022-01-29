@@ -12,17 +12,25 @@ window.onload = function () {
   //Init Functions:
   showSplash();
   getData();
+
+  //Sets the Interval:
+  setInterval(function () {
+    if (document.getElementById('text-area') == document.activeElement 
+      && saveIndex != null) {
+      //Sets the Test Value:
+      testValue = document.getElementById('text-area').value;
+
+      //Checks the Case:
+      if (document.getElementById('text-area').value != testValue) {
+        //Saves the Note:
+        saveNote();
+      }
+    }
+  }, 10);
 }
 
 //Key Board Event Listener:
 window.addEventListener("keydown", function (e) {
-  //Checks the Case:
-  if (this.document.getElementById('text-area') == this.document.activeElement && 
-    e.key != "Escape" && saveIndex != null) {
-    //Saves the Note:
-    saveNote();
-  }
-  
   //Checks the Case:
   if (e.key == "Escape" && saveIndex != null) {
     //Exits the Note:

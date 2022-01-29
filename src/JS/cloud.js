@@ -22,7 +22,10 @@ var dataID = "data";
 //Data Variables:
 var code = "";
 var data = [];
+
+//Test Variables:
 var saveIndex = null;
+var testValue = "";
 
 /* CLOUD AUTH FUNCTIONS */
 
