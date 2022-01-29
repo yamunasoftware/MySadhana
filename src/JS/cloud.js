@@ -172,6 +172,9 @@ function saveNote() {
     //Sets the Data:
     data = getCacheData(dataID, true);
     data[saveIndex] = document.getElementById('text-area').value;
+
+    //Saves the Data:
+    data[saveIndex] = data[saveIndex].split("\n").join("$n");
     setCacheData(dataID, data, true);
   }
 }
