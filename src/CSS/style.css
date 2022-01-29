@@ -36,10 +36,6 @@ html, body {
   padding: 20px;
 }
 
-.margin {
-  margin: 20px;
-}
-
 .header {
   font-size: 50px;
 }
@@ -91,6 +87,7 @@ button:hover {
 input {
   padding: 5px;
   font-size: 20px;
+  border: none;
   border-radius: 20px;
   cursor: text;
   font-family: "rubik-medium", Helvetica, Arial;
