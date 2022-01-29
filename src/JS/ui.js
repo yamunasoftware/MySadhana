@@ -21,8 +21,8 @@ window.addEventListener("beforeunload", sendData);
 window.addEventListener("keydown", function (e) {  
   //Checks the Case:
   if (e.key == "Escape" && saveIndex != null) {
-    //Saves the Note:
-    saveNote(saveIndex);
+    //Sends the Data:
+    sendData();
   }
 
   //Checks the Case:
@@ -42,7 +42,10 @@ document.getElementById('search').addEventListener("change", function (e) {
 });
 
 //Text Area Event Listener:
-document.getElementById('text-area').addEventListener("change", saveNote);
+document.getElementById('text-area').addEventListener("change", function () {
+  //Saves the Note:
+  saveNote(saveIndex);
+});
 
 /* UI FUNCTIONS */
 
