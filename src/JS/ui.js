@@ -12,15 +12,6 @@ window.onload = function () {
   //Init Functions:
   showSplash();
   getData();
-
-  //Sets the Interval:
-  setInterval(function () {
-    //Checks the Case:
-    if (document.getElementById('search') != document.activeElement) {
-      //Sets the Value:
-      document.getElementById('search').value = "Search";
-    }
-  }, 10);
 }
 
 //Key Board Event Listener:
