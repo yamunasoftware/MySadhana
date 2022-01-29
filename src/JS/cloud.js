@@ -171,10 +171,10 @@ function saveNote() {
   if (getCacheData(dataID, false) != null) {
     //Gets the Data:
     data = getCacheData(dataID, true);
+    data[saveIndex] = document.getElementById('text-area').value;
 
     //Sends the Data:
-    data[saveIndex] = document.getElementById('text-area')
-      .value.split("\n").join("$n");
+    data[saveIndex] = data[saveIndex].split("\n").join("$n");
     setCacheData(dataID, data, true);
   }
 }
