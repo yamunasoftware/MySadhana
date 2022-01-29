@@ -33,8 +33,10 @@ html, body {
 }
 
 .search {
-  padding-bottom: 40px;
   padding-top: 0px;
+  padding-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .padding {
@@ -90,7 +92,7 @@ button:hover {
 }
 
 input {
-  padding: 5px;
+  padding: 10px;
   font-size: 20px;
   border: none;
   border-radius: 20px;
