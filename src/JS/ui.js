@@ -21,7 +21,7 @@ window.addEventListener("beforeunload", function () {
 });
 
 //Key Board Event Listener:
-window.addEventListener("keydown", function (e) {  
+window.addEventListener("keydown", function (e) {
   //Checks the Case:
   if (e.key == "Escape" && saveIndex != null) {
     //Sends the Data:
@@ -38,18 +38,19 @@ window.addEventListener("keydown", function (e) {
   }
 });
 
-//Input Event Listener:
-const searchInput = document.querySelector('#search');
-searchInput.addEventListener("change", function (e) {
-  //Searches:
-  search(e);
-});
+//Change Event Listener:
+window.addEventListener("change", function (e) {
+  //Checks the Case:
+  if (this.document.getElementById('search') == this.document.activeElement) {
+    //Searches:
+    search(e);
+  }
 
-//Text Area Event Listener:
-const textArea = document.querySelector('#text-area');
-textArea.addEventListener("change", function () {
-  //Saves the Note:
-  saveNote(saveIndex);
+  //Checks the Case:
+  if (this.document.getElementById('text-area') == this.document.activeElement && saveIndex != null) {
+    //Saves the Note:
+    saveNote(saveIndex);
+  }
 });
 
 /* UI FUNCTIONS */
@@ -86,7 +87,7 @@ function showNotes(index) {
     document.getElementById('notes').style.display = "block";
 
     //Sets the UI:
-    document.getElementById('notes-header').innerHTML = 
+    document.getElementById('notes-header').innerHTML =
       "<button style='margin-left: 0px;' onclick='sendData();'> Exit </button>";
     var dataValue = data[index];
 
@@ -108,7 +109,7 @@ function showLoginCode() {
   //Checks the Case:
   if (getCacheData(codeID, false) != null) {
     //Sets the Code:
-    document.getElementById('login-code').innerHTML = 
+    document.getElementById('login-code').innerHTML =
       "Login Code: " + getCacheData(codeID, false);
   }
 }
