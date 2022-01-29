@@ -118,13 +118,6 @@ function sendData() {
     database.collection(collectionName).doc(code).update({
       data: JSON.stringify(data)
     })
-      .then(() => {
-        //Shows the Dashboard:
-        saveIndex = null;
-        showDashboard();
-        displayNotes();
-        showLoginCode();
-      })
       .catch(() => {
         //Displays Error:
         showError("Error");
