@@ -15,13 +15,7 @@ window.onload = function () {
 }
 
 //Key Board Event Listener:
-window.addEventListener("keydown", function (e) {
-  //Checks the Case:
-  if (this.document.getElementById('search') == this.document.activeElement) {
-    //Runs the Search:
-    search();
-  }
-  
+window.addEventListener("keydown", function (e) {  
   //Checks the Case:
   if (e.key == "Escape" && saveIndex != null) {
     //Saves the Note:
@@ -37,6 +31,9 @@ window.addEventListener("keydown", function (e) {
     }
   }
 });
+
+//Input Event Listener:
+document.getElementById('search').addEventListener('input', search);
 
 /* UI FUNCTIONS */
 

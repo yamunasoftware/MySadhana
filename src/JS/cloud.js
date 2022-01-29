@@ -264,7 +264,7 @@ function title(string) {
 }
 
 //Search Function:
-function search() {
+function search(e) {
   //Loop Variables:
   data = getCacheData(dataID, true);
   var turns = 0;
@@ -273,7 +273,7 @@ function search() {
   //Loops through Array:
   mainLoop: while (turns < data.length) {
     //Checks the Case:
-    if (data[turns].includes(document.getElementById('search').value)) {
+    if (data[turns].includes(e.target.value)) {
       //Sets the Results:
       notesList +=
         "<div class='padding'>" + title(data[turns]) +
