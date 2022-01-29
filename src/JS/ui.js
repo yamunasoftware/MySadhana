@@ -23,9 +23,8 @@ window.addEventListener("beforeunload", function () {
 //Key Board Event Listener:
 window.addEventListener("keydown", function (e) {
   //Checks the Case:
-  if (e.key != "Escape" && e.key != "Enter" && 
-    this.document.getElementById('text-area') == this.document.activeElement && 
-    saveIndex != null) {
+  if (this.document.getElementById('text-area') == this.document.activeElement && 
+    e.key != "Escape" && saveIndex != null) {
     //Saves the Note:
     saveNote(saveIndex);
   }
