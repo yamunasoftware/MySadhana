@@ -23,6 +23,14 @@ window.addEventListener("beforeunload", function () {
 //Key Board Event Listener:
 window.addEventListener("keydown", function (e) {
   //Checks the Case:
+  if (e.key != "Escape" && e.key != "Enter" && 
+    this.document.getElementById('text-area') == this.document.activeElement && 
+    saveIndex != null) {
+    //Saves the Note:
+    saveNote(saveIndex);
+  }
+  
+  //Checks the Case:
   if (e.key == "Escape" && saveIndex != null) {
     //Sends the Data:
     sendData();
@@ -38,7 +46,7 @@ window.addEventListener("keydown", function (e) {
   }
 });
 
-//Change Event Listener:
+//Input Event Listener:
 window.addEventListener("input", function (e) {
   //Checks the Case:
   if (this.document.getElementById('search') == this.document.activeElement) {
