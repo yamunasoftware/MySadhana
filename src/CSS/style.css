@@ -34,7 +34,6 @@ html, body {
 
 .card {
   width: fit-content;
-  display: inline;
   border-radius: 20px;
   background-color: #a4da99;
   color: #000000;
