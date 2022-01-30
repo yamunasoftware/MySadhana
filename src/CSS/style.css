@@ -78,6 +78,10 @@ html, body {
   align-content: center;
 }
 
+.fit-content {
+  width: fit-content;
+}
+
 .no-decoration {
   text-decoration: none;
 }
