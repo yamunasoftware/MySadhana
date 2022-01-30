@@ -198,7 +198,7 @@ function displayNotes() {
       //Sets the Notes List:
       notesList +=
         "<div class='padding'>" + title(data[turns]) +
-        "<button onclick='showNotes(" + turns + ");'> Open </button>" +
+        "</div> <div class='padding'> <button onclick='showNotes(" + turns + ");'> Open </button>" +
         "<button onclick='deleteNote(" + turns + ");'> Delete </button> </div>";
 
       turns++;
