@@ -84,7 +84,7 @@ button {
   cursor: pointer;
   background-color: #2BC20E;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   text-align: center;
   text-decoration: none;
   font-family: "rubik-medium", Helvetica, Arial;
@@ -106,7 +106,7 @@ input {
 }
 
 input:hover, input:focus {
-  border: 5px solid #2BC20E;
+  border: 20px solid #2BC20E;
   outline: none;
 }
 
