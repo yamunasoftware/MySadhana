@@ -37,6 +37,7 @@ html, body {
   display: block;
   border-radius: 20px;
   background-color: #a4da99;
+  color: #000000;
 }
 
 .search {
@@ -52,6 +53,10 @@ html, body {
 
 .padding {
   padding: 20px;
+}
+
+.margin {
+  margin: 20px;
 }
 
 .padding-extra-top {
