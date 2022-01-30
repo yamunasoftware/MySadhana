@@ -278,8 +278,8 @@ function search(e) {
     if (data[turns].toLowerCase().includes(e.target.value.toLowerCase())) {
       //Sets the Results:
       notesList +=
-        "<div class='padding'> <div class='margin-bottom'>" + title(data[turns]) +
-        "</div> <button onclick='showNotes(" + turns + ");'> Open </button>" +
+        "<div class='padding'>" + title(data[turns]) +
+        "</div> <div class='padding'> <button onclick='showNotes(" + turns + ");'> Open </button>" +
         "<button onclick='deleteNote(" + turns + ");'> Delete </button> </div>";
     }
 
