@@ -275,7 +275,7 @@ function search(e) {
   //Loops through Array:
   mainLoop: while (turns < data.length) {
     //Checks the Case:
-    if (data[turns].includes(e.target.value)) {
+    if (data[turns].toLowerCase().includes(e.target.value.toLowerCase())) {
       //Sets the Results:
       notesList +=
         "<div class='padding'>" + title(data[turns]) +
