@@ -33,6 +33,7 @@ html, body {
 }
 
 .card {
+  margin: auto;
   width: fit-content;
   border-radius: 20px;
   background-color: #a4da99;
