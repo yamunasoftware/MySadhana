@@ -197,9 +197,9 @@ function displayNotes() {
     mainLoop: while (turns < data.length) {
       //Sets the Notes List:
       notesList +=
-        "<div class='notes'>" + title(data[turns]) +
+        "<div class='padding card'> <div class='notes'>" + title(data[turns]) +
         "</div> <div class='padding'> <button onclick='showNotes(" + turns + ");'> Open </button>" +
-        "<button onclick='deleteNote(" + turns + ");'> Delete </button> </div>";
+        "<button onclick='deleteNote(" + turns + ");'> Delete </button> </div> </div>";
 
       turns++;
     }
@@ -278,9 +278,9 @@ function search(e) {
     if (data[turns].toLowerCase().includes(e.target.value.toLowerCase())) {
       //Sets the Results:
       notesList +=
-        "<div class='notes'>" + title(data[turns]) +
+        "<div class='padding card'> <div class='notes'>" + title(data[turns]) +
         "</div> <div class='padding'> <button onclick='showNotes(" + turns + ");'> Open </button>" +
-        "<button onclick='deleteNote(" + turns + ");'> Delete </button> </div>";
+        "<button onclick='deleteNote(" + turns + ");'> Delete </button> </div> </div>";
     }
 
     turns++;

@@ -32,6 +32,13 @@ html, body {
   margin: 0px;
 }
 
+.card {
+  width: fit-content;
+  display: block;
+  border-radius: 20px;
+  background-color: #a4da99;
+}
+
 .search {
   padding: 20px;
   padding-top: 0px;

@@ -104,8 +104,7 @@ function showLoginCode() {
   //Checks the Case:
   if (getCacheData(codeID, false) != null) {
     //Sets the Code:
-    document.getElementById('login-code').innerHTML =
-      "Login Code: " + getCacheData(codeID, false);
+    document.getElementById('login-code').innerHTML = getCacheData(codeID, false);
   }
 }
 
