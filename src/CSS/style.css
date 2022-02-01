@@ -32,6 +32,11 @@ html, body {
   margin: 0px;
 }
 
+.back-button {
+  cursor: pointer;
+  display: inline;
+}
+
 .card {
   border-radius: 20px;
   background-color: #a4da99;

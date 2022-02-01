@@ -83,7 +83,7 @@ function showNotes(index) {
 
     //Sets the UI:
     document.getElementById('notes-header').innerHTML =
-    "<div style='margin-left: 0px;' onclick='exitNote();'> < </div>" + title(data[index]);
+    "<div class='padding back-button' onclick='exitNote();'> < </div>" + title(data[index]);
     var dataValue = data[index];
 
     //Sets the Values:
