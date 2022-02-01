@@ -197,8 +197,8 @@ function displayNotes() {
     mainLoop: while (turns < data.length) {
       //Sets the Notes List:
       notesList +=
-        "<div class='margin card' onclick='showNotes(" + turns + ");'> <div class='notes'>" + title(data[turns]) +
-        "</div> <div class='padding'> <button onclick='deleteNote(" + turns + ");'> Delete </button> </div> </div>";
+        "<div class='margin card' style='cursor: pointer;' onclick='showNotes(" + turns + ");'> <div class='notes'>" 
+        + title(data[turns]) +"</div> <div class='padding'> <button onclick='deleteNote(" + turns + ");'> Delete </button> </div> </div>";
 
       turns++;
     }
@@ -275,10 +275,10 @@ function search(e) {
   mainLoop: while (turns < data.length) {
     //Checks the Case:
     if (data[turns].toLowerCase().includes(e.target.value.toLowerCase())) {
-      //Sets the Results:
+      //Sets the Notes List:
       notesList +=
-        "<div class='margin card' onclick='showNotes(" + turns + ");'> <div class='notes'>" + title(data[turns]) +
-        "</div> <div class='padding'> <button onclick='deleteNote(" + turns + ");'> Delete </button> </div> </div>";
+        "<div class='margin card' style='cursor: pointer;' onclick='showNotes(" + turns + ");'> <div class='notes'>" 
+        + title(data[turns]) +"</div> <div class='padding'> <button onclick='deleteNote(" + turns + ");'> Delete </button> </div> </div>";
     }
 
     turns++;
