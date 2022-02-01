@@ -208,6 +208,30 @@ function displayNotes() {
   }
 }
 
+//Search Function:
+function search(e) {
+  //Loop Variables:
+  data = getCacheData(dataID, true);
+  var turns = 0;
+  var notesList = "";
+
+  //Loops through Array:
+  mainLoop: while (turns < data.length) {
+    //Checks the Case:
+    if (data[turns].toLowerCase().includes(e.target.value.toLowerCase())) {
+      //Sets the Notes List:
+      notesList +=
+        "<div class='margin card' style='cursor: pointer;' onclick='showNotes(" + turns + ");'> <div class='notes'>" 
+        + title(data[turns]) +"</div> <div class='padding'> <button onclick='deleteNote(" + turns + ");'> Delete </button> </div> </div>";
+    }
+
+    turns++;
+  }
+
+  //Sets the HTML:
+  document.getElementById('notes-list').innerHTML = notesList;
+}
+
 //Add Note Function:
 function addNote() {
   //Checks the Case:
@@ -264,28 +288,18 @@ function title(string) {
   return noteTitle;
 }
 
-//Search Function:
-function search(e) {
-  //Loop Variables:
+//Find Dates Function:
+function findDates() {
+  //Date Variables:
   data = getCacheData(dataID, true);
   var turns = 0;
-  var notesList = "";
 
-  //Loops through Array:
+  //Loops through the Array:
   mainLoop: while (turns < data.length) {
-    //Checks the Case:
-    if (data[turns].toLowerCase().includes(e.target.value.toLowerCase())) {
-      //Sets the Notes List:
-      notesList +=
-        "<div class='margin card' style='cursor: pointer;' onclick='showNotes(" + turns + ");'> <div class='notes'>" 
-        + title(data[turns]) +"</div> <div class='padding'> <button onclick='deleteNote(" + turns + ");'> Delete </button> </div> </div>";
-    }
-
+    
+    
     turns++;
   }
-
-  //Sets the HTML:
-  document.getElementById('notes-list').innerHTML = notesList;
 }
 
 /* CACHE DATA FUNCTIONS */
