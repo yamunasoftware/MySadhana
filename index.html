@@ -64,35 +64,29 @@
     </div>
 
     <!-- Dashboard -->
-    <div id="dashboard" class="screen deactivate padding fit-content">
-      <!-- Search Elements -->
-      <div class="search">
-        <!-- Search Controls -->
-        <input id="search" />
-      </div>
-
-      <!-- Add Elements -->
-      <div class="padding">
-        <!-- Login Code -->
-        <div id="login-code" class="padding"></div>
-
-        <!-- Add Controls --> 
+    <div id="dashboard" class="screen deactivate">
+      <!-- Navigation -->
+      <div class="navigation">
+        <!-- Add Controls -->
         <button onclick="addNote();"> New </button>
-        <button onclick="window.location.reload();"> Update </button>
+        <button onclick="copyCode();"> Copy </button>
         <button onclick="clearCacheData(); window.location.reload();"> Sign Out </button>
       </div>
 
-      <!-- Notes Padding -->
-      <div class="padding-extra-top">
-        <!-- Notes List -->
-        <div class="subheader"> Notes </div>
-        <div id="notes-list" class="padding"></div>
-      </div>
+      <!-- Main Content -->
+      <div id="main-content" class="padding">
+        <!-- Search Elements -->
+        <div class="search">
+          <!-- Search Controls -->
+          <input id="search" />
+        </div>
 
-      <!-- Footer -->
-      <div class="padding">
-        &copy; 2022 YSS &nbsp; 
-        <a style="color: #ffffff;" class="no-decoration" href="https://github.com/yamunasoftware/MySadhana"> GitHub </a>
+        <!-- Notes Padding -->
+        <div class="padding-extra-top">
+          <!-- Notes List -->
+          <div class="subheader"> Notes </div>
+          <div id="notes-list" class="padding"></div>
+        </div>
       </div>
     </div>
 

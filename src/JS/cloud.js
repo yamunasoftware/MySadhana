@@ -41,7 +41,6 @@ function signUp() {
       //Shows the Dashboard:
       showDashboard();
       displayNotes();
-      showLoginCode();
     })
     .catch(() => {
       //Displays Error:
@@ -70,7 +69,6 @@ function logIn() {
         //Shows the Dashboard:
         showDashboard();
         displayNotes();
-        showLoginCode();
       }
 
       else {
@@ -143,7 +141,6 @@ function getData() {
         //Shows the Dashboard:
         showDashboard();
         displayNotes();
-        showLoginCode();
       }
 
       else {
@@ -159,6 +156,13 @@ function getData() {
 }
 
 /* DATA FUNCTIONS */
+
+//Copy Code Function:
+function copyCode() {
+  //Sends the Code to Clipboard:
+  code = getCacheData(codeID, false);
+  navigator.clipboard.writeText(code);
+}
 
 //Save Note Function:
 function saveNote() {
@@ -181,7 +185,6 @@ function exitNote() {
   saveIndex = null;
   showDashboard();
   displayNotes();
-  showLoginCode();
 }
 
 //Display Notes Function:

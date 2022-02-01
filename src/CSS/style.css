@@ -37,6 +37,12 @@ html, body {
   display: inline;
 }
 
+.navigation {
+  text-align: left;
+  width: 100px;
+  background-color: #353535;
+}
+
 .card {
   border-radius: 20px;
   background-color: #a4da99;

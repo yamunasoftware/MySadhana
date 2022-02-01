@@ -100,15 +100,6 @@ function showLogIn() {
   document.getElementById('log-in').style.display = "block";
 }
 
-//Show Login Code:
-function showLoginCode() {
-  //Checks the Case:
-  if (getCacheData(codeID, false) != null) {
-    //Sets the Code:
-    document.getElementById('login-code').innerHTML = getCacheData(codeID, false);
-  }
-}
-
 //Show Error Function:
 function showError(error) {
   //Sets the Error:
