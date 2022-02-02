@@ -67,6 +67,7 @@ function showDashboard() {
   document.getElementById('splash-screen').style.display = "none";
   document.getElementById('dashboard').style.display = "block";
   document.getElementById('notes').style.display = "none";
+  document.getElementById('search').value = "";
 }
 
 //Show Notes Function:
