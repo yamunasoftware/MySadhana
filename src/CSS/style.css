@@ -190,7 +190,7 @@ textarea {
 /* MEDIA QUERIES */
 
 @media(min-width: 992px) {
-  .back-button {
+  #notes-header {
     display: none;
   }
 }
