@@ -186,3 +186,11 @@ textarea {
 ::-webkit-scrollbar-thumb:hover {
   background: #39FF13; 
 }
+
+/* MEDIA QUERIES */
+
+@media(min-width: 992px) {
+  .back-button {
+    display: none;
+  }
+}
