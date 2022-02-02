@@ -67,7 +67,7 @@ html, body {
 }
 
 .card {
-  width: fit-content;
+  width: 100px;
   border-radius: 20px;
   background-color: #a4da99;
   color: #000000;
