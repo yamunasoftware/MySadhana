@@ -40,6 +40,8 @@ html, body {
 .navigation {
   width: 100px;
   height: 100%;
+  left: 0;
+  top: 0;
   position: relative;
   background-color: #252525;
 }
@@ -58,7 +60,6 @@ html, body {
 }
 
 .main-content {
-  flex: auto;
   position: relative;
 }
 
@@ -77,10 +78,6 @@ html, body {
 .notes {
   padding: 20px;
   padding-bottom: 0px;
-}
-
-.flex {
-  display: flex;
 }
 
 .padding {
