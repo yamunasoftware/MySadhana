@@ -83,8 +83,8 @@ function showNotes(index) {
 
     //Sets the UI:
     document.getElementById('notes-header').innerHTML =
-      "<div class='padding' style='float: left;'>" + title(data[index]) + "</div>" +
-      "<div class='padding back-button' style='padding-left: 0px;' onclick='exitNote();'> > </div>";
+      "<div class='padding' style='float: left; padding-left: 0px;'>" + title(data[index]) + "</div>" +
+      "<div class='padding back-button' onclick='exitNote();'> > </div>";
     document.getElementById('delete-button').innerHTML = 
       "<button style='margin: 0px;' onclick='deleteNote(" + index + ");'> Delete </div>";
     var dataValue = data[index];
