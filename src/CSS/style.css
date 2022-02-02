@@ -193,4 +193,8 @@ textarea {
   #notes-header {
     display: none;
   }
+
+  #text-area {
+    font-size: 40px;
+  }
 }
