@@ -66,11 +66,17 @@
     <!-- Dashboard -->
     <div id="dashboard" class="screen deactivate">
       <!-- Navigation -->
-      <div class="navigation">
+      <div class="navigation center">
+        <!-- Logo -->
+        <div class="padding">
+          <!-- Image -->
+          <image src="src/Images/small_icon.png"></image>
+        </div>
+        
         <!-- Add Controls -->
-        <button onclick="addNote();"> + </button>
-        <button onclick="copyCode();"> C </button>
-        <button onclick="clearCacheData(); window.location.reload();"> -> </button>
+        <div class="nav-button center" onclick="addNote();"> + </div>
+        <div class="nav-button center" onclick="copyCode();"> C </div>
+        <div class="nav-button center" onclick="clearCacheData(); window.location.reload();"> -> </div>
       </div>
 
       <!-- Main Content -->
