@@ -41,7 +41,6 @@ html, body {
   width: 100px;
   height: 100%;
   position: relative;
-  float: left;
   background-color: #252525;
 }
 
@@ -58,7 +57,7 @@ html, body {
 }
 
 .main-content {
-  float: right;
+  flex: auto;
   position: relative;
 }
 
