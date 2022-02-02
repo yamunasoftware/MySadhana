@@ -40,12 +40,13 @@ html, body {
 .navigation {
   width: 100px;
   height: 100%;
-  text-align: left;
+  position: relative;
+  float: left;
   background-color: #252525;
 }
 
 .nav-button {
-  width: 100px;
+  width: 100%;
   background-color: #252525;
   color: #FFFFFF;
   cursor: pointer;
@@ -57,7 +58,8 @@ html, body {
 }
 
 .main-content {
-  display: inline;
+  float: right;
+  position: relative;
 }
 
 .card {
@@ -75,6 +77,10 @@ html, body {
 .notes {
   padding: 20px;
   padding-bottom: 0px;
+}
+
+.flex {
+  display: flex;
 }
 
 .padding {
