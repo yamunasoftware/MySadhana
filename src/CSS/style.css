@@ -77,12 +77,6 @@ html, body {
   background-color: #39FF13;
 }
 
-.search {
-  padding: 20px;
-  padding-top: 0px;
-  padding-bottom: 60px;
-}
-
 .padding {
   padding: 20px;
 }
@@ -120,8 +114,22 @@ html, body {
   background-image: linear-gradient(to right, #67B26F, #4ca2cd);
 }
 
-.transition {
-  transition: 0.5s ease-in;
+/* ANIMATION */
+
+.slide {
+  position: relative;
+}
+
+@keyframes slide {
+  from {
+    left: -300px;
+    opacity: 0px;
+  }
+
+  to {
+    left: 0px;
+    opacity: 1;
+  }
 }
 
 /* UI ELEMENTS */
