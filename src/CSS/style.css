@@ -138,6 +138,7 @@ button:hover {
 }
 
 input {
+  width: 150px;
   padding: 10px;
   font-size: 20px;
   border: none;
