@@ -60,7 +60,10 @@ html, body {
 }
 
 .main-content {
-  padding-left: 120px;
+  padding-left: 110px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
 }
 
 .card {
