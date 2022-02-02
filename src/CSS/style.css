@@ -56,6 +56,10 @@ html, body {
   background-color: #39FF13;
 }
 
+.main-content {
+  display: inline;
+}
+
 .card {
   border-radius: 20px;
   background-color: #a4da99;
