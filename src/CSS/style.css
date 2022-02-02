@@ -73,6 +73,10 @@ html, body {
   color: #000000;
 }
 
+.card:hover {
+  background-color: #39FF13;
+}
+
 .search {
   padding: 20px;
   padding-top: 0px;
@@ -125,7 +129,7 @@ button {
   font-weight: bold;
   color: #000000;
   cursor: pointer;
-  background-color: #39FF13;
+  background-color: #a4da99;
   border: none;
   border-radius: 5px;
   padding: 5px;
@@ -136,7 +140,7 @@ button {
 }
 
 button:hover {
-  background-color: #a4da99;
+  background-color: #39FF13;
 }
 
 input {
@@ -181,7 +185,7 @@ textarea {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2BC20E; 
+  background: #a4da99; 
 }
 
 ::-webkit-scrollbar-thumb:hover {
