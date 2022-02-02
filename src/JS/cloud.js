@@ -291,20 +291,6 @@ function title(string) {
   return noteTitle;
 }
 
-//Find Dates Function:
-function findDates() {
-  //Date Variables:
-  data = getCacheData(dataID, true);
-  var turns = 0;
-
-  //Loops through the Array:
-  mainLoop: while (turns < data.length) {
-    
-    
-    turns++;
-  }
-}
-
 /* CACHE DATA FUNCTIONS */
 
 //Cache Data Get Function:
