@@ -261,6 +261,9 @@ function deleteNote(index) {
     //Sends the Data:
     setCacheData(dataID, data, true);
     sendData();
+    
+    //Shows the Dashboard:
+    showDashboard();
     displayNotes();
   }
 }
