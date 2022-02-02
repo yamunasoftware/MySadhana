@@ -34,7 +34,7 @@ html, body {
 
 .back-button {
   cursor: pointer;
-  display: inline;
+  float: right;
 }
 
 .navigation {
