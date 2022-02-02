@@ -126,7 +126,7 @@ button {
   font-weight: bold;
   color: #000000;
   cursor: pointer;
-  background-color: #2BC20E;
+  background-color: #39FF13;
   border: none;
   border-radius: 20px;
   text-align: center;
@@ -136,7 +136,7 @@ button {
 }
 
 button:hover {
-  background-color: #39FF13;
+  background-color: #a4da99;
 }
 
 input {
@@ -150,7 +150,7 @@ input {
 }
 
 input:hover, input:focus {
-  border: 5px solid #2BC20E;
+  border: 5px solid #39FF13;
   outline: none;
 }
 
