@@ -4,7 +4,7 @@
   "start_url": "https://mysadhana.netlify.app",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "background_color": "#000000",
+  "background_color": "#202020",
   "theme_color": "#000000",
   "description": "Personal Productivity App",
   "categories": ["productivity", "lifestyle"],
