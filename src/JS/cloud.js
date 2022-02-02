@@ -200,7 +200,7 @@ function displayNotes() {
     mainLoop: while (turns < data.length) {
       //Sets the Notes List:
       notesList +=
-        "<div class='margin card center' style='cursor: pointer;' onclick='showNotes(" + turns + ");'> <div class='notes'>" 
+        "<div class='margin padding card center' style='cursor: pointer;' onclick='showNotes(" + turns + ");'> <div class='notes'>" 
         + title(data[turns]) + "</div> </div>";
 
       turns++;
@@ -224,7 +224,7 @@ function search(e) {
     if (data[turns].toLowerCase().includes(e.target.value.toLowerCase())) {
       //Sets the Notes List:
       notesList +=
-        "<div class='margin card center' style='cursor: pointer;' onclick='showNotes(" + turns + ");'> <div class='notes'>" 
+        "<div class='margin padding card center' style='cursor: pointer;' onclick='showNotes(" + turns + ");'> <div class='notes'>" 
         + title(data[turns]) + "</div> </div>";
     }
 
