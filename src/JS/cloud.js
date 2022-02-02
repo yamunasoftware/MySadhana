@@ -201,8 +201,7 @@ function displayNotes() {
       //Sets the Notes List:
       notesList +=
         "<div class='margin card center' style='cursor: pointer;' onclick='showNotes(" + turns + ");'> <div class='notes'>" 
-        + title(data[turns]) + 
-        "</div> <div class='padding'> <button onclick='deleteNote(" + turns + ");'> Delete </button> </div> </div>";
+        + title(data[turns]) + "</div> </div>";
 
       turns++;
     }
@@ -226,8 +225,7 @@ function search(e) {
       //Sets the Notes List:
       notesList +=
         "<div class='margin card center' style='cursor: pointer;' onclick='showNotes(" + turns + ");'> <div class='notes'>" 
-        + title(data[turns]) + 
-        "</div> <div class='padding'> <button onclick='deleteNote(" + turns + ");'> Delete </button> </div> </div>";
+        + title(data[turns]) + "</div> </div>";
     }
 
     turns++;
