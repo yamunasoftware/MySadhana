@@ -61,6 +61,8 @@ html, body {
 
 .main-content {
   position: relative;
+  display: inline;
+  padding-left: 100px;
 }
 
 .card {
