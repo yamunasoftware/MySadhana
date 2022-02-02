@@ -67,6 +67,7 @@ html, body {
 }
 
 .card {
+  width: fit-content;
   border-radius: 20px;
   background-color: #a4da99;
   color: #000000;
@@ -110,11 +111,6 @@ html, body {
 .center {
   text-align: center;
   align-content: center;
-}
-
-.fit-content {
-  width: fit-content;
-  margin: 0 auto;
 }
 
 .no-decoration {
