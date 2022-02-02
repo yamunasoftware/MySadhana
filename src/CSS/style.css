@@ -46,13 +46,10 @@ html, body {
 
 .nav-button {
   width: 100%;
-  background-color: #2BC20E;
+  background-color: #252525;
   color: #000000;
   cursor: pointer;
-}
-
-.main-content {
-  float: right;
+  padding: 5px;
 }
 
 .nav-button:hover {
