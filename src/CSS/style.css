@@ -59,6 +59,11 @@ html, body {
   background-color: #39FF13;
 }
 
+.main-content {
+  position: relative;
+  padding-left: 120px;
+}
+
 .card {
   border-radius: 20px;
   background-color: #a4da99;
