@@ -425,6 +425,7 @@ function extractDate(string) {
   }
 
   //Parses Values:
+  console.log(month + ", " + day);
   var parsedMonth = JSON.parse(month);
   var parsedDay = JSON.parse(day);
 
