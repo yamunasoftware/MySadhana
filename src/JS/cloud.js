@@ -311,6 +311,17 @@ function dates(string) {
       if (!isNaN(string[turns-1]) && !isNaN(string[turns+1])) {
         //Sets the Dates:
         var date = string[turns-1] + "-" + string[turns+1];
+
+        //Checks the Case:
+        if (turns+2 < string.length) {
+          //Checks the Case:
+          if (!isNaN(string[turns+2])) {
+            //Adds to the Date:
+            date += string[turns+2];
+          }
+        }
+
+        //Pushes to Dates Array:
         dates.push(date);
       }
     }
@@ -319,7 +330,6 @@ function dates(string) {
   }
 
   //Returns the Dates:
-  console.log(dates);
   return dates;
 }
 
@@ -328,6 +338,7 @@ function checkDates(dates) {
   //Gets the Current Date:
   var date = new Date();
   var currentDate = (date.getMonth() + 1) + "-" + (date.getDay());
+  console.log(dates + ", " + currentDate);
 
   //Loop Variables:
   var turns = 0;
