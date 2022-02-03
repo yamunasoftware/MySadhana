@@ -201,8 +201,7 @@ function displayNotes() {
       //Sets the Notes List:
       notesList +=
         "<div class='margin padding card center' style='cursor: pointer;' onclick='showNotes(" + turns + ");'>" 
-        + title(data[turns]) + "</div>" + 
-        "<div class='padding dash-alert'>" + checkDates(dates(data[turns])) + "</div>";
+        + title(data[turns]) + "<div class='padding dash-alert'>" + checkDates(dates(data[turns])) + "</div>" + "</div>";
 
       turns++;
     }
@@ -226,8 +225,7 @@ function search(e) {
       //Sets the Notes List:
       notesList +=
         "<div class='margin padding card center' style='cursor: pointer;' onclick='showNotes(" + turns + ");'>" 
-        + title(data[turns]) + "</div>" + 
-        "<div class='padding dash-alert'>" + checkDates(dates(data[turns])) + "</div>";
+        + title(data[turns]) + "<div class='padding dash-alert'>" + checkDates(dates(data[turns])) + "</div>" + "</div>";
     }
 
     turns++;
@@ -352,8 +350,16 @@ function checkDates(dates) {
     turns++;
   }
 
-  //Returns the Alerts:
-  return alerts;
+  //Checks the Case:
+  if (alerts > 0) {
+    //Returns the Alerts:
+    return alerts;
+  }
+
+  else {
+    //Returns a String:
+    return "";
+  }
 }
 
 /* CACHE DATA FUNCTIONS */
