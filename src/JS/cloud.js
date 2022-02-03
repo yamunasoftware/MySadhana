@@ -364,6 +364,7 @@ function checkDates(dates) {
     //Checks the Case:
     if (dates[turns] == currentDate) {
       //Adds to the Alerts:
+      console.log("here")
       alerts++;
     }
 
@@ -425,9 +426,8 @@ function extractDate(string) {
   }
 
   //Parses Values:
-  console.log(month + ", " + day);
-  var parsedMonth = JSON.parse(month);
-  var parsedDay = JSON.parse(day);
+  var parsedMonth = parseInt(month);
+  var parsedDay = parseInt(day);
 
   //Returns the Array:
   return [parsedMonth, parsedDay];
