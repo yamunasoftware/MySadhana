@@ -45,6 +45,7 @@ window.addEventListener("input", function (e) {
     saveIndex != null) {
     //Sends the Data:
     saveNote();
+    showNotes(saveIndex);
   }
 });
 
