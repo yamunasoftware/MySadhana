@@ -170,7 +170,7 @@ function saveNote() {
   if (getCacheData(dataID, false) != null) {
     //Sets the Data:
     data = getCacheData(dataID, true);
-    data[saveIndex] = document.getElementById('text-area').value;
+    data[saveIndex] = document.getElementById('text-area').textContent;
 
     //Saves the Data:
     data[saveIndex] = data[saveIndex].split("\n").join("$n");
@@ -372,6 +372,14 @@ function checkDates(dates) {
     else if (localDates[1] < currentDay && localDates[0] == currentMonth) {
       //Adds to the Alerts:
       alerts++;
+    }
+
+    else if (localDates[0] == currentMonth && localDates[1] > currentDay) {
+      //Checks the Case:
+      if (localDates[1] - currentDay <= 2) {
+        //Adds to the Alerts:
+        alerts++;
+      }
     }
     
     turns++;
