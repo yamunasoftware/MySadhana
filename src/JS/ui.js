@@ -83,12 +83,20 @@ function showNotes(index) {
     document.getElementById('dashboard').style.display = "none";
     document.getElementById('notes').style.display = "block";
 
-    //Sets the UI:
-    document.getElementById('delete-button').innerHTML = 
+    //Sets the Notes Bar:
+    var notesBar = 
       "<button onclick='exitNote();'> Back </button>" +
-      "<button onclick='pinNote();'> Pin </button>" +
       "<button onclick='deleteNote();'> Delete </button>" + 
-      "<div class='margin note-alert'>" + checkDates(dates(data[index])) + "</div>";
+      "<div class='margin note-alert'>" + checkDates(dates(data[index])) + "</div>"; 
+
+    //Checks the Case:
+    if (index != 0) {
+      //Sets Notes Bar:
+      notesBar += "<button onclick='pinNote();'> Pin </button>";
+    }
+
+    //Sets the UI Data:
+    document.getElementById('notes-bar').innerHTML = notesBar;
     var dataValue = data[index];
 
     //Sets the Values:
