@@ -313,6 +313,15 @@ function dates(string) {
         var date = string[turns-1] + "-" + string[turns+1];
 
         //Checks the Case:
+        if (turns-2 >= 0) {
+          //Checks the Case:
+          if (!isNaN(string[turns-2])) {
+            //Sets the Date:
+            date = string[turns-2] + "" + string[turns-1] + "-" + string[turns+1];
+          }
+        }
+
+        //Checks the Case:
         if (turns+2 < string.length) {
           //Checks the Case:
           if (!isNaN(string[turns+2])) {
@@ -337,7 +346,11 @@ function dates(string) {
 function checkDates(dates) {
   //Gets the Current Date:
   var date = new Date();
-  var currentDate = (date.getMonth() + 1) + "-" + (date.getDate());
+  var currentDate = (date.getMonth()+1) + "-" + (date.getDate());
+
+  //Current Dates:
+  var currentMonth = date.getMonth()+1;
+  var currentDay = date.getDate();
 
   //Loop Variables:
   var turns = 0;
@@ -345,9 +358,22 @@ function checkDates(dates) {
 
   //Loops through Array:
   mainLoop: while (turns < dates.length) {
+    //Extracts the Dates:
+    var localDates = extractDate(dates[turns]);
+    
     //Checks the Case:
     if (dates[turns] == currentDate) {
-      //Adds to the Dues:
+      //Adds to the Alerts:
+      alerts++;
+    }
+
+    else if (localDates[0] < currentMonth) {
+      //Adds to the Alerts:
+      alerts++;
+    }
+
+    else if (localDates[1] < currentDay && localDates[0] == currentMonth) {
+      //Adds to the Alerts:
       alerts++;
     }
     
@@ -364,6 +390,46 @@ function checkDates(dates) {
     //Returns a String:
     return "";
   }
+}
+
+//Extract Date Function:
+function extractDate(string) {
+  //Loop Variables:
+  var turns = 0;
+  var passed = false;
+
+  //String Variables:
+  var month = "";
+  var day = "";
+
+  //Loops through Array:
+  mainLoop: while (turns < string.length) {
+    //Checks the Case:
+    if (string[turns] != "-" && !passed) {
+      //Adds to the Month:
+      month += string[turns];
+    }
+
+    else if (string[turns] != "-" && passed) {
+      //Adds to the Day:
+      day += string[turns];
+    }
+
+    //Checks the Case:
+    if (string[turns] == "-") {
+      //Sets the Passed:
+      passed = true;
+    }
+    
+    turns++;
+  }
+
+  //Parses Values:
+  var parsedMonth = JSON.parse(month);
+  var parsedDay = JSON.parse(day);
+
+  //Returns the Array:
+  return [parsedMonth, parsedDay];
 }
 
 /* CACHE DATA FUNCTIONS */
