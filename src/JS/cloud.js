@@ -360,11 +360,11 @@ function checkDates(dates) {
   mainLoop: while (turns < dates.length) {
     //Extracts the Dates:
     var localDates = extractDate(dates[turns]);
+    console.log(data[turns] + ", " + currentDate);
     
     //Checks the Case:
     if (dates[turns] == currentDate) {
       //Adds to the Alerts:
-      console.log("here")
       alerts++;
     }
 
