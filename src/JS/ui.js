@@ -86,7 +86,8 @@ function showNotes(index) {
     //Sets the UI:
     document.getElementById('delete-button').innerHTML = 
       "<button onclick='exitNote();'> Back </button>" +
-      "<button onclick='deleteNote(" + index + ");'> Delete </button>" + 
+      "<button onclick='pinNote();'> Pin </button>" +
+      "<button onclick='deleteNote();'> Delete </button>" + 
       "<div class='margin note-alert'>" + checkDates(dates(data[index])) + "</div>";
     var dataValue = data[index];
 

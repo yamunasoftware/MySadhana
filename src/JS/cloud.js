@@ -179,6 +179,46 @@ function saveNote() {
   }
 }
 
+//Pin Note Function:
+function pinNote() {
+  //Checks the Case:
+  if (getCacheData(dataID, false) != null &&
+    saveIndex != null) {
+    //Gets the Data:
+    data = getCacheData(dataID, true);
+    var localData = data;
+
+    //Gets the Note:
+    var note = localData[saveIndex];
+    var newArray = [];
+
+    //Loop Variable:
+    var turns = 0;
+
+    //Loops through Array:
+    mainLoop: while (turns < localData.length) {
+      //Checks the Case:
+      if (turns == 0) {
+        //Pushes to the Array:
+        newArray.push(note);
+      }
+
+      else if (localData[turns] != note) {
+        //Pushes tot he Array:
+        newArray.push(localData[turns]);
+      }
+    }
+
+    //Sets the Data:
+    data = newArray;
+    setCacheData(dataID, data, true);
+
+    //Sends the Data:
+    sendData();
+    exitNote();
+  }
+}
+
 //Exit Notes Function:
 function exitNote() {
   //Shows the Dashboard:
@@ -200,7 +240,7 @@ function displayNotes() {
     mainLoop: while (turns < data.length) {
       //Sets the Notes List:
       notesList +=
-        "<div class='margin padding card center' style='cursor: pointer;' onclick='showNotes(" + turns + ");'>" 
+        "<div class='margin padding card center' style='cursor: pointer;' onclick='showNotes(" + turns + ");'>"
         + title(data[turns]) + "<div class='margin dash-alert'>" + checkDates(dates(data[turns])) + "</div>" + "</div>";
 
       turns++;
@@ -224,7 +264,7 @@ function search(e) {
     if (data[turns].toLowerCase().includes(e.target.value.toLowerCase())) {
       //Sets the Notes List:
       notesList +=
-        "<div class='margin padding card center' style='cursor: pointer;' onclick='showNotes(" + turns + ");'>" 
+        "<div class='margin padding card center' style='cursor: pointer;' onclick='showNotes(" + turns + ");'>"
         + title(data[turns]) + "<div class='margin dash-alert'>" + checkDates(dates(data[turns])) + "</div>" + "</div>";
     }
 
@@ -251,17 +291,18 @@ function addNote() {
 }
 
 //Delete Note Function:
-function deleteNote(index) {
+function deleteNote() {
   //Checks the Case:
-  if (getCacheData(dataID, false) != null) {
+  if (getCacheData(dataID, false) != null &&
+    saveIndex != null) {
     //Gets the Data:
     data = getCacheData(dataID, true);
-    data.splice(index, 1);
+    data.splice(saveIndex, 1);
 
     //Sends the Data:
     setCacheData(dataID, data, true);
     sendData();
-    
+
     //Shows the Dashboard:
     showDashboard();
     displayNotes();
@@ -305,28 +346,28 @@ function dates(string) {
   //Loops through Array:
   mainLoop: while (turns < string.length) {
     //Checks the Case:
-    if (string[turns] == "/" && turns != 0 
-      && turns < string.length-1) {
+    if (string[turns] == "/" && turns != 0
+      && turns < string.length - 1) {
       //Checks the Case:
-      if (!isNaN(string[turns-1]) && !isNaN(string[turns+1])) {
+      if (!isNaN(string[turns - 1]) && !isNaN(string[turns + 1])) {
         //Sets the Dates:
-        var date = string[turns-1] + "-" + string[turns+1];
+        var date = string[turns - 1] + "-" + string[turns + 1];
 
         //Checks the Case:
-        if (turns-2 >= 0) {
+        if (turns - 2 >= 0) {
           //Checks the Case:
-          if (!isNaN(string[turns-2])) {
+          if (!isNaN(string[turns - 2])) {
             //Sets the Date:
-            date = string[turns-2] + "" + string[turns-1] + "-" + string[turns+1];
+            date = string[turns - 2] + "" + string[turns - 1] + "-" + string[turns + 1];
           }
         }
 
         //Checks the Case:
-        if (turns+2 < string.length) {
+        if (turns + 2 < string.length) {
           //Checks the Case:
-          if (!isNaN(string[turns+2])) {
+          if (!isNaN(string[turns + 2])) {
             //Adds to the Date:
-            date += string[turns+2];
+            date += string[turns + 2];
           }
         }
 
@@ -334,7 +375,7 @@ function dates(string) {
         dates.push(date);
       }
     }
-    
+
     turns++;
   }
 
@@ -346,7 +387,7 @@ function dates(string) {
 function checkDates(dates) {
   //Gets the Current Date Variables:
   var date = new Date();
-  var currentMonth = date.getMonth()+1;
+  var currentMonth = date.getMonth() + 1;
   var currentDay = date.getDate();
 
   //Loop Variables:
@@ -357,7 +398,7 @@ function checkDates(dates) {
   mainLoop: while (turns < dates.length) {
     //Extracts the Dates:
     var localDates = extractDate(dates[turns]);
-    
+
     //Checks the Case:
     if (localDates[0] == currentMonth && localDates[1] == currentDay) {
       //Adds to the Alerts:
@@ -381,7 +422,7 @@ function checkDates(dates) {
         alerts++;
       }
     }
-    
+
     turns++;
   }
 
@@ -425,7 +466,7 @@ function extractDate(string) {
       //Sets the Passed:
       passed = true;
     }
-    
+
     turns++;
   }
 
