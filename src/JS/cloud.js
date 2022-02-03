@@ -367,16 +367,6 @@ function checkDates(dates) {
       //Adds to the Alerts:
       alerts++;
     }
-
-    else if (localDates[0] < currentMonth) {
-      //Adds to the Alerts:
-      alerts++;
-    }
-
-    else if (localDates[1] < currentDay && localDates[0] == currentMonth) {
-      //Adds to the Alerts:
-      alerts++;
-    }
     
     turns++;
   }
