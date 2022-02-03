@@ -201,7 +201,7 @@ function pinNote() {
       if (turns == 0) {
         //Pushes to the Array:
         newArray.push(note);
-        turns--;
+        newArray.push(localData[turns]);
       }
 
       else if (localData[turns] != note) {
