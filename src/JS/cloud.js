@@ -344,11 +344,8 @@ function dates(string) {
 
 //Check Dates Function:
 function checkDates(dates) {
-  //Gets the Current Date:
+  //Gets the Current Date Variables:
   var date = new Date();
-  var currentDate = (date.getMonth()+1) + "-" + (date.getDate());
-
-  //Current Dates:
   var currentMonth = date.getMonth()+1;
   var currentDay = date.getDate();
 
@@ -360,10 +357,19 @@ function checkDates(dates) {
   mainLoop: while (turns < dates.length) {
     //Extracts the Dates:
     var localDates = extractDate(dates[turns]);
-    console.log(dates[turns] + ", " + currentDate);
     
     //Checks the Case:
-    if (dates[turns] == currentDate) {
+    if (localDates[0] == currentMonth && localDates[1] == currentDay) {
+      //Adds to the Alerts:
+      alerts++;
+    }
+
+    else if (localDates[0] < currentMonth) {
+      //Adds to the Alerts:
+      alerts++;
+    }
+
+    else if (localDates[1] < currentDay && localDates[0] == currentMonth) {
       //Adds to the Alerts:
       alerts++;
     }
