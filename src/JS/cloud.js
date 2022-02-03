@@ -337,8 +337,7 @@ function dates(string) {
 function checkDates(dates) {
   //Gets the Current Date:
   var date = new Date();
-  var currentDate = (date.getMonth() + 1) + "-" + (date.getDay());
-  console.log(dates + ", " + currentDate);
+  var currentDate = (date.getMonth() + 1) + "-" + (date.getDate());
 
   //Loop Variables:
   var turns = 0;
@@ -358,7 +357,7 @@ function checkDates(dates) {
   //Checks the Case:
   if (alerts > 0) {
     //Returns the Alerts:
-    return alerts + " deadlines";
+    return alerts;
   }
 
   else {
