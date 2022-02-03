@@ -338,7 +338,6 @@ function checkDates(dates) {
   //Gets the Current Date:
   var date = new Date();
   var currentDate = (date.getMonth() + 1) + "-" + (date.getDate());
-  console.log(dates);
 
   //Loop Variables:
   var turns = 0;
