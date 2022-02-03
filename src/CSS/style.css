@@ -78,6 +78,7 @@ html, body {
 }
 
 .note-alert {
+  width: 50px;
   padding: 10px;
   color: #FFFFFF;
   background-color: #FF0F0F;
@@ -86,6 +87,7 @@ html, body {
 }
 
 .dash-alert {
+  width: 50px;
   padding: 10px;
   color: #FFFFFF;
   background-color: #FF0F0F;
