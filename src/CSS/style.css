@@ -32,6 +32,18 @@ html, body {
   margin: 0px;
 }
 
+.textarea {
+  margin: 0px;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: "rubik-medium", Helvetica, Arial;
+  font-weight: bold;
+  font-size: 20px;
+  outline: none;
+  border: none;
+  white-space: pre-wrap;
+}
+
 .back-button {
   cursor: pointer;
   float: right;
@@ -170,17 +182,6 @@ input {
 input:hover, input:focus {
   border: 5px solid #39FF13;
   outline: none;
-}
-
-#textarea {
-  margin: 0px;
-  background-color: #000000;
-  color: #ffffff;
-  font-family: "rubik-medium", Helvetica, Arial;
-  font-weight: bold;
-  font-size: 20px;
-  outline: none;
-  white-space: pre-wrap;
 }
 
 /* SCROLLING */
