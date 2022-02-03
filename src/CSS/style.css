@@ -32,20 +32,16 @@ html, body {
   margin: 0px;
 }
 
-.textarea {
+.text-area {
   margin: 0px;
   background-color: #000000;
   color: #ffffff;
   font-family: "rubik-medium", Helvetica, Arial;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 35px;
   outline: none;
   border: none;
-}
-
-.back-button {
-  cursor: pointer;
-  float: right;
+  white-space: pre-wrap;
 }
 
 .navigation {
@@ -200,16 +196,4 @@ input:hover, input:focus {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #39FF13; 
-}
-
-/* MEDIA QUERIES */
-
-@media(min-width: 992px) {
-  #notes-header {
-    display: none;
-  }
-
-  #text-area {
-    font-size: 35px;
-  }
 }
