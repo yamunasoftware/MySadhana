@@ -77,6 +77,15 @@ html, body {
   background-color: #39FF13;
 }
 
+.note-alert {
+  color: #FF0F0F;
+  display: inline;
+}
+
+.dash-alert {
+  color: #FF0F0F;
+}
+
 .padding {
   padding: 20px;
 }

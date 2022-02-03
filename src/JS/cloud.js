@@ -201,7 +201,8 @@ function displayNotes() {
       //Sets the Notes List:
       notesList +=
         "<div class='margin padding card center' style='cursor: pointer;' onclick='showNotes(" + turns + ");'>" 
-        + title(data[turns]) + "</div>";
+        + title(data[turns]) + "</div>" + 
+        "<div class='padding dash-alert'>" + checkDates(dates(data[index])) + "</div>";
 
       turns++;
     }
@@ -225,7 +226,8 @@ function search(e) {
       //Sets the Notes List:
       notesList +=
         "<div class='margin padding card center' style='cursor: pointer;' onclick='showNotes(" + turns + ");'>" 
-        + title(data[turns]) + "</div>";
+        + title(data[turns]) + "</div>" + 
+        "<div class='padding dash-alert'>" + checkDates(dates(data[index])) + "</div>";
     }
 
     turns++;
@@ -292,6 +294,65 @@ function title(string) {
 
   //Returns the Title:
   return noteTitle;
+}
+
+/* DATES FUNCTIONS */
+
+//Dates Function:
+function dates(string) {
+  //Loop Variables:
+  var dates = [];
+  var turns = 0;
+
+  //Loops through Array:
+  mainLoop: while (turns < string.length) {
+    //Checks the Case:
+    if (string[turns] == "/" && turns != 0 
+      && turns <= string.length-4) {
+      //Checks the Case:
+      if (!isNaN(string[turns-1]) && !isNaN(string[turns+1])
+        && string[turns+2] == "/" && !isNaN(string[turns+3])) {
+        //Sets the Dates:
+        var date = 
+          JSON.parse(string[turns-1]) + "-" + 
+          JSON.parse(string[turns+1]) + "-" + 
+          JSON.parse(string[turns+2]);
+        dates.push(date);
+      }
+    }
+    
+    turns++;
+  }
+
+  //Returns the Dates:
+  return dates;
+}
+
+//Check Dates Function:
+function checkDates(dates) {
+  //Gets the Current Date:
+  var month = Date.getMonth() + 1;
+  var day = Date.getDay();
+  var year = Date.getFullYear();
+  var currentDate = month + "-" + day + "-" + year;
+
+  //Loop Variables:
+  var turns = 0;
+  var alerts = 0;
+
+  //Loops through Array:
+  mainLoop: while (turns < dates.length) {
+    //Checks the Case:
+    if (dates[turns] == currentDate) {
+      //Adds to the Dues:
+      alerts++;
+    }
+    
+    turns++;
+  }
+
+  //Returns the Alerts:
+  return alerts;
 }
 
 /* CACHE DATA FUNCTIONS */
