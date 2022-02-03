@@ -202,7 +202,7 @@ function displayNotes() {
       notesList +=
         "<div class='margin padding card center' style='cursor: pointer;' onclick='showNotes(" + turns + ");'>" 
         + title(data[turns]) + "</div>" + 
-        "<div class='padding dash-alert'>" + checkDates(dates(data[index])) + "</div>";
+        "<div class='padding dash-alert'>" + checkDates(dates(data[turns])) + "</div>";
 
       turns++;
     }
@@ -227,7 +227,7 @@ function search(e) {
       notesList +=
         "<div class='margin padding card center' style='cursor: pointer;' onclick='showNotes(" + turns + ");'>" 
         + title(data[turns]) + "</div>" + 
-        "<div class='padding dash-alert'>" + checkDates(dates(data[index])) + "</div>";
+        "<div class='padding dash-alert'>" + checkDates(dates(data[turns])) + "</div>";
     }
 
     turns++;
