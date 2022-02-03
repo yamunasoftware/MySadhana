@@ -67,7 +67,7 @@ html, body {
 }
 
 .card {
-  width: 150px;
+  width: 130px;
   border-radius: 20px;
   background-color: #a4da99;
   color: #000000;
@@ -78,6 +78,7 @@ html, body {
 }
 
 .note-alert {
+  padding: 5px;
   color: #FFFFFF;
   background-color: #FF0F0F;
   border-radius: 20px;
@@ -85,6 +86,7 @@ html, body {
 }
 
 .dash-alert {
+  padding: 5px;
   color: #FFFFFF;
   background-color: #FF0F0F;
   border-radius: 20px;
