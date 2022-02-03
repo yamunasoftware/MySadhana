@@ -331,9 +331,10 @@ function dates(string) {
 //Check Dates Function:
 function checkDates(dates) {
   //Gets the Current Date:
-  var month = Date.getUTCMonth() + 1;
-  var day = Date.getUTCDay();
-  var year = Date.getUTCFullYear();
+  var date = new Date();
+  var month = date.getUTCMonth() + 1;
+  var day = date.getUTCDay();
+  var year = date.getUTCFullYear();
   var currentDate = month + "-" + day + "-" + year;
 
   //Loop Variables:
