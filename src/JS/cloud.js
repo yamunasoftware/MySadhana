@@ -319,6 +319,7 @@ function dates(string) {
   }
 
   //Returns the Dates:
+  console.log(dates);
   return dates;
 }
 
@@ -346,7 +347,7 @@ function checkDates(dates) {
   //Checks the Case:
   if (alerts > 0) {
     //Returns the Alerts:
-    return alerts;
+    return alerts + " deadlines";
   }
 
   else {
