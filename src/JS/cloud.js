@@ -207,6 +207,8 @@ function pinNote() {
         //Pushes tot he Array:
         newArray.push(localData[turns]);
       }
+
+      turns++;
     }
 
     //Sets the Data:
