@@ -306,15 +306,11 @@ function dates(string) {
   mainLoop: while (turns < string.length) {
     //Checks the Case:
     if (string[turns] == "/" && turns != 0 
-      && turns <= string.length-4) {
+      && turns < string.length-1) {
       //Checks the Case:
-      if (!isNaN(string[turns-1]) && !isNaN(string[turns+1])
-        && string[turns+2] == "/" && !isNaN(string[turns+3])) {
+      if (!isNaN(string[turns-1]) && !isNaN(string[turns+1])) {
         //Sets the Dates:
-        var date = 
-          JSON.parse(string[turns-1]) + "-" + 
-          JSON.parse(string[turns+1]) + "-" + 
-          JSON.parse(string[turns+2]);
+        var date = string[turns-1] + "-" + string[turns+1];
         dates.push(date);
       }
     }
@@ -330,10 +326,7 @@ function dates(string) {
 function checkDates(dates) {
   //Gets the Current Date:
   var date = new Date();
-  var month = date.getUTCMonth() + 1;
-  var day = date.getUTCDay();
-  var year = date.getUTCFullYear();
-  var currentDate = month + "-" + day + "-" + year;
+  var currentDate = (date.getMonth() + 1) + "-" + (date.getDay());
 
   //Loop Variables:
   var turns = 0;
