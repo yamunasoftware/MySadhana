@@ -74,9 +74,10 @@ function showDashboard() {
 //Show Notes Function:
 function showNotes(index) {
   //Checks the Case:
-  if (getCacheData(dataID, false) != null) {
+  if (getCacheData(dataID, false) != null && saveIndex == null) {
     //Gets the Data:
     data = getCacheData(dataID, true);
+    saveIndex = index;
 
     //Shows the Dashboard:
     document.getElementById('splash-screen').style.display = "none";
@@ -102,7 +103,6 @@ function showNotes(index) {
     //Sets the Values:
     dataValue = dataValue.split("$n").join("\n");
     document.getElementById('text-area').textContent = dataValue;
-    saveIndex = index;
   }
 }
 
