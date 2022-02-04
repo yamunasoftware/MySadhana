@@ -39,14 +39,6 @@ window.addEventListener("input", function (e) {
     //Searches:
     search(e);
   }
-
-  //Checks the Case:
-  if (this.document.getElementById('text-area') == this.document.activeElement &&
-    saveIndex != null) {
-    //Sends the Data:
-    saveNote();
-    showNotes(saveIndex);
-  }
 });
 
 /* UI FUNCTIONS */
