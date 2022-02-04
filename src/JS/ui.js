@@ -33,7 +33,7 @@ window.onload = function () {
   });
 
   //Text Area Input Event Listener:
-  document.getElementById('text-area').addEventListener("change", function () {
+  document.getElementById('text-area').addEventListener("input", function () {
     //Checks the Case:
     if (saveIndex != null) {
       //Saves the Note:
