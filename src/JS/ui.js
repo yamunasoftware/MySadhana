@@ -17,8 +17,8 @@ window.onload = function () {
 
   /* Event Listeners */
 
-  //Log In Input Event Listener:
-  document.getElementById('log-in-input').addEventListener("input", function (e) {
+  //Search Event Listener:
+  document.getElementById('search').addEventListener("input", function (e) {
     //Searches:
     search(e);
   });
