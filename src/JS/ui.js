@@ -100,8 +100,8 @@ function showNotes(index) {
 
     //Adds the Alerts System:
     var alerts = checkDates(dates(data[index]));
-    notesBar 
-      += "<div class='margin note-alert'>" + alerts[1] + "</div>"
+    notesBar += 
+      "<div class='margin note-alert'>" + alerts[1] + "</div>"
       + "<div style='background-color: #147efb;' class='margin note-alert'>" + alerts[0] + "</div>"
       + "<div style='background-color: #53d769;' class='margin note-alert'>" + alerts[2] + "</div>";
 

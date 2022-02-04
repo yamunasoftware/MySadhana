@@ -246,10 +246,11 @@ function displayNotes() {
         + title(data[turns]);
 
       //Sets the Notes List:
-      notesList
-        += "<div class='margin note-alert'>" + alerts[1] + "</div>"
-        + "<div style='background-color: #147efb;' class='margin note-alert'>" + alerts[0] + "</div>"
-        + "<div style='background-color: #53d769;' class='margin note-alert'>" + alerts[2] + "</div> </div>";
+      var alerts = checkDates(dates(data[turns]));
+      notesList += 
+        "<div class='margin dash-alert'>" + alerts[1] + "</div>"
+        + "<div style='background-color: #147efb;' class='margin dash-alert'>" + alerts[0] + "</div>"
+        + "<div style='background-color: #53d769;' class='margin dash-alert'>" + alerts[2] + "</div> </div>";
 
       turns++;
     }
@@ -276,10 +277,11 @@ function search(e) {
         + title(data[turns]);
 
       //Sets the Notes List:
-      notesList
-        += "<div class='margin note-alert'>" + alerts[1] + "</div>"
-        + "<div style='background-color: #147efb;' class='margin note-alert'>" + alerts[0] + "</div>"
-        + "<div style='background-color: #53d769;' class='margin note-alert'>" + alerts[2] + "</div> </div>";
+      var alerts = checkDates(dates(data[turns]));
+      notesList += 
+        "<div class='margin dash-alert'>" + alerts[1] + "</div>"
+        + "<div style='background-color: #147efb;' class='margin dash-alert'>" + alerts[0] + "</div>"
+        + "<div style='background-color: #53d769;' class='margin dash-alert'>" + alerts[2] + "</div> </div>";
     }
 
     turns++;
@@ -437,24 +439,6 @@ function checkDates(dates) {
     }
 
     turns++;
-  }
-
-  //Checks the Case:
-  if (now == 0) {
-    //Sets the Value:
-    now = "";
-  }
-
-  //Checks the Case:
-  if (past == 0) {
-    //Sets the Value:
-    past = "";
-  }
-
-  //Checks the Case:
-  if (upcoming == 0) {
-    //Sets the Value:
-    upcoming = "";
   }
 
   //Returns the Array:
