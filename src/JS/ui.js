@@ -77,7 +77,7 @@ function showDashboard() {
 //Show Notes Function:
 function showNotes(index) {
   //Checks the Case:
-  if (getCacheData(dataID, false) != null && saveIndex == null) {
+  if (getCacheData(dataID, false) != null) {
     //Gets the Data:
     data = getCacheData(dataID, true);
     saveIndex = index;
