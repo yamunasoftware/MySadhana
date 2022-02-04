@@ -201,3 +201,11 @@ input:hover, input:focus {
 ::-webkit-scrollbar-thumb:hover {
   background: #39FF13; 
 }
+
+/* MEDIA QUERIES */
+
+@media (max-width: 500px) {
+  .text-area {
+    font-size: 20px;
+  }
+}
