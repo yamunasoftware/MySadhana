@@ -107,7 +107,7 @@ function showNotes(index) {
 
     //Sets the Values:
     dataValue = dataValue.split("$n").join("\n");
-    document.getElementById('text-area').textContent = dataValue;
+    document.getElementById('text-area').innerHTML = dataValue;
   }
 }
 

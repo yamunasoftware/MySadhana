@@ -170,7 +170,7 @@ function saveNote() {
   if (getCacheData(dataID, false) != null) {
     //Sets the Data:
     data = getCacheData(dataID, true);
-    data[saveIndex] = document.getElementById('text-area').textContent;
+    data[saveIndex] = document.getElementById('text-area').innerHTML;
 
     //Saves the Data:
     data[saveIndex] = data[saveIndex].split("\n").join("$n");
