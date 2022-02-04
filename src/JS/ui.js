@@ -32,15 +32,6 @@ window.onload = function () {
     }
   });
 
-  //Exit Notes Event Listener:
-  window.getElementById('notes').addEventListener("keydown", function (e) {
-    //Checks the Case:
-    if (e.key == "Escape" && saveIndex != null) {
-      //Exits the Note:
-      exitNote();
-    }
-  });
-
   //Text Area Input Event Listener:
   document.getElementById('text-area').addEventListener("change", function () {
     //Checks the Case:
@@ -48,6 +39,15 @@ window.onload = function () {
       //Saves the Note:
       saveNote();
       showNotes(saveIndex);
+    }
+  });
+
+  //Exit Notes Event Listener:
+  window.addEventListener("keydown", function (e) {
+    //Checks the Case:
+    if (e.key == "Escape" && saveIndex != null) {
+      //Exits the Note:
+      exitNote();
     }
   });
 }
