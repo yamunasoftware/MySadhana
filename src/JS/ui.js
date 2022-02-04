@@ -33,7 +33,7 @@ window.onload = function () {
   });
 
   //Exit Notes Event Listener:
-  document.getElementById('notes').addEventListener("keydown", function (e) {
+  window.getElementById('notes').addEventListener("keydown", function (e) {
     //Checks the Case:
     if (e.key == "Escape" && saveIndex != null) {
       //Exits the Note:
@@ -42,7 +42,7 @@ window.onload = function () {
   });
 
   //Text Area Input Event Listener:
-  document.getElementById('text-area').addEventListener("input", function () {
+  document.getElementById('text-area').addEventListener("change", function () {
     //Checks the Case:
     if (saveIndex != null) {
       //Saves the Note:
