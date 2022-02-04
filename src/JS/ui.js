@@ -100,6 +100,7 @@ function showNotes(index) {
 
     //Adds the Alerts System:
     notesBar += "<div class='margin note-alert'>" + checkDates(dates(data[index])) + "</div>";
+    console.log("here")
 
     //Sets the UI Data:
     document.getElementById('notes-bar').innerHTML = notesBar;
