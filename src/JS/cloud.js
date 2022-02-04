@@ -173,7 +173,6 @@ function saveNote() {
     data[saveIndex] = document.getElementById('text-area').innerHTML;
 
     //Saves the Data:
-    data[saveIndex] = data[saveIndex].split("\n").join("$n");
     setCacheData(dataID, data, true);
     sendData();
   }

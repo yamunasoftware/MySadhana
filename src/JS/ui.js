@@ -104,9 +104,6 @@ function showNotes(index) {
     //Sets the UI Data:
     document.getElementById('notes-bar').innerHTML = notesBar;
     var dataValue = data[index];
-
-    //Sets the Values:
-    dataValue = dataValue.split("$n").join("\n");
     document.getElementById('text-area').innerHTML = dataValue;
   }
 }
