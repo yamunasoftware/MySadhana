@@ -39,6 +39,15 @@ window.addEventListener("input", function (e) {
     //Searches:
     search(e);
   }
+
+  //Checks the Case:
+  if (this.document.getElementById('text-area') = this.document.activeElement
+    && saveIndex != null) {
+    //Saves the Note:
+    console.log("here")
+    saveNote(); 
+    showNotes(saveIndex);
+  }
 });
 
 /* UI FUNCTIONS */
@@ -79,14 +88,16 @@ function showNotes(index) {
     //Sets the Notes Bar:
     var notesBar = 
       "<button onclick='exitNote();'> Back </button>" +
-      "<button onclick='deleteNote();'> Delete </button>" + 
-      "<div class='margin note-alert'>" + checkDates(dates(data[index])) + "</div>"; 
+      "<button onclick='deleteNote();'> Delete </button>"; 
 
     //Checks the Case:
     if (index != 0) {
       //Sets Notes Bar:
       notesBar += "<button onclick='pinNote();'> Pin </button>";
     }
+
+    //Adds the Alerts System:
+    notesBar += "<div class='margin note-alert'>" + checkDates(dates(data[index])) + "</div>";
 
     //Sets the UI Data:
     document.getElementById('notes-bar').innerHTML = notesBar;
