@@ -317,7 +317,7 @@ function title(string) {
   //Loops through Array:
   mainLoop: while (turns < string.length) {
     //Checks the Case:
-    if (string[turns] != "$") {
+    if (string[turns] != "<") {
       //Adds to the Title:
       noteTitle += string[turns];
     }
