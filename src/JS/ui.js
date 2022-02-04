@@ -125,13 +125,19 @@ function showNotesBar() {
       "<button onclick='deleteNote();'> Delete </button>";
 
     //Checks the Case:
-    if (saveIndex != 0) {
+    if (index != 0) {
       //Sets Notes Bar:
       notesBar += "<button onclick='pinNote();'> Pin </button>";
     }
 
     //Adds the Alerts System:
-    notesBar += "<div class='margin note-alert'>" + checkDates(dates(data[saveIndex])) + "</div>";
+    var alerts = checkDates(dates(data[saveIndex]));
+    notesBar += 
+      "<div class='margin note-alert'>" + alerts[1] + "</div>"
+      + "<div style='background-color: #147efb;' class='margin note-alert'>" + alerts[0] + "</div>"
+      + "<div style='background-color: #53d769;' class='margin note-alert'>" + alerts[2] + "</div>";
+
+    //Adds the Alerts System:
     document.getElementById('notes-bar').innerHTML = notesBar;
   }
 }
