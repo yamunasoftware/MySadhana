@@ -32,19 +32,17 @@ window.addEventListener("keydown", function (e) {
   }
 });
 
-//Input Event Listener:
-window.addEventListener("input", function (e) {
-  //Checks the Case:
-  if (this.document.getElementById('search') == this.document.activeElement) {
-    //Searches:
-    search(e);
-  }
+//Log In Input Event Listener:
+document.getElementById('log-in-input').addEventListener("input", function (e) {
+  //Searches:
+  search(e);
+});
 
+//Text Area Input Event Listener:
+document.getElementById('text-area').addEventListener("input", function () {
   //Checks the Case:
-  if (this.document.getElementById('text-area') = this.document.activeElement
-    && saveIndex != null) {
+  if (saveIndex != null) {
     //Saves the Note:
-    console.log("here")
     saveNote(); 
     showNotes(saveIndex);
   }
