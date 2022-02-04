@@ -243,7 +243,13 @@ function displayNotes() {
       //Sets the Notes List:
       notesList +=
         "<div class='margin padding card center' style='cursor: pointer;' onclick='showNotes(" + turns + ");'>"
-        + title(data[turns]) + "<div class='margin dash-alert'>" + checkDates(dates(data[turns])) + "</div>" + "</div>";
+        + title(data[turns]);
+
+      //Sets the Notes List:
+      notesList
+        += "<div class='margin note-alert'>" + alerts[1] + "</div>"
+        + "<div style='background-color: #147efb;' class='margin note-alert'>" + alerts[0] + "</div>"
+        + "<div style='background-color: #53d769;' class='margin note-alert'>" + alerts[2] + "</div> </div>";
 
       turns++;
     }
@@ -267,7 +273,13 @@ function search(e) {
       //Sets the Notes List:
       notesList +=
         "<div class='margin padding card center' style='cursor: pointer;' onclick='showNotes(" + turns + ");'>"
-        + title(data[turns]) + "<div class='margin dash-alert'>" + checkDates(dates(data[turns])) + "</div>" + "</div>";
+        + title(data[turns]);
+
+      //Sets the Notes List:
+      notesList
+        += "<div class='margin note-alert'>" + alerts[1] + "</div>"
+        + "<div style='background-color: #147efb;' class='margin note-alert'>" + alerts[0] + "</div>"
+        + "<div style='background-color: #53d769;' class='margin note-alert'>" + alerts[2] + "</div> </div>";
     }
 
     turns++;
@@ -391,7 +403,9 @@ function checkDates(dates) {
 
   //Loop Variables:
   var turns = 0;
-  var alerts = 0;
+  var now = 0;
+  var past = 0;
+  var upcoming = 0;
 
   //Loops through Array:
   mainLoop: while (turns < dates.length) {
@@ -401,24 +415,24 @@ function checkDates(dates) {
     //Checks the Case:
     if (localDates[0] == currentMonth && localDates[1] == currentDay) {
       //Adds to the Alerts:
-      alerts++;
+      now++;
     }
 
     else if (localDates[0] < currentMonth) {
       //Adds to the Alerts:
-      alerts++;
+      past++;
     }
 
     else if (localDates[1] < currentDay && localDates[0] == currentMonth) {
       //Adds to the Alerts:
-      alerts++;
+      past++;
     }
 
     else if (localDates[0] == currentMonth && localDates[1] > currentDay) {
       //Checks the Case:
       if (localDates[1] - currentDay <= 2) {
         //Adds to the Alerts:
-        alerts++;
+        upcoming++;
       }
     }
 
@@ -426,15 +440,25 @@ function checkDates(dates) {
   }
 
   //Checks the Case:
-  if (alerts > 0) {
-    //Returns the Alerts:
-    return alerts;
+  if (now == 0) {
+    //Sets the Value:
+    now = "";
   }
 
-  else {
-    //Returns a String:
-    return "";
+  //Checks the Case:
+  if (past == 0) {
+    //Sets the Value:
+    past = "";
   }
+
+  //Checks the Case:
+  if (upcoming == 0) {
+    //Sets the Value:
+    upcoming = "";
+  }
+
+  //Returns the Array:
+  return [now, past, upcoming];
 }
 
 //Extract Date Function:
