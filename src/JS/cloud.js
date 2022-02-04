@@ -247,7 +247,7 @@ function displayNotes() {
 
       //Sets the Notes List:
       var alerts = checkDates(dates(data[turns]));
-      notesList += 
+      notesList +=
         "<div class='margin dash-alert'>" + alerts[1] + "</div>"
         + "<div style='background-color: #147efb;' class='margin dash-alert'>" + alerts[0] + "</div>"
         + "<div style='background-color: #53d769;' class='margin dash-alert'>" + alerts[2] + "</div> </div>";
@@ -278,7 +278,7 @@ function search(e) {
 
       //Sets the Notes List:
       var alerts = checkDates(dates(data[turns]));
-      notesList += 
+      notesList +=
         "<div class='margin dash-alert'>" + alerts[1] + "</div>"
         + "<div style='background-color: #147efb;' class='margin dash-alert'>" + alerts[0] + "</div>"
         + "<div style='background-color: #53d769;' class='margin dash-alert'>" + alerts[2] + "</div> </div>";
@@ -441,8 +441,46 @@ function checkDates(dates) {
     turns++;
   }
 
-  //Returns the Array:
-  return [now, past, upcoming];
+  //Checks the Case:
+  if (now == 0 && past != 0 && upcoming != 0) {
+    //Returns the Array:
+    return ["", past, upcoming];
+  }
+
+  else if (now != 0 && past == 0 && upcoming != 0) {
+    //Returns the Array:
+    return [now, "", upcoming];
+  }
+
+  else if (now != 0 && past != 0 && upcoming == 0) {
+    //Returns the Array:
+    return [now, past, ""];
+  }
+
+  else if (now == 0 && past == 0 && upcoming != 0) {
+    //Returns the Array:
+    return ["", "", upcoming];
+  }
+
+  else if (now != 0 && past == 0 && upcoming == 0) {
+    //Returns the Array:
+    return [now, "", ""];
+  }
+
+  else if (now == 0 && past != 0 && upcoming == 0) {
+    //Returns the Array:
+    return ["", past, ""];
+  }
+
+  else if (now == 0 && past == 0 && upcoming == 0) {
+    //Returns the Array:
+    return ["", "", ""];
+  }
+
+  else {
+    //Returns the Array:
+    return [now, past, upcoming];
+  }
 }
 
 //Extract Date Function:
