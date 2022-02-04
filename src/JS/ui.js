@@ -38,7 +38,7 @@ window.onload = function () {
     if (saveIndex != null) {
       //Saves the Note:
       saveNote();
-      showNotes(saveIndex);
+      showNotesBar();
     }
   });
 
@@ -77,7 +77,7 @@ function showDashboard() {
 //Show Notes Function:
 function showNotes(index) {
   //Checks the Case:
-  if (getCacheData(dataID, false) != null) {
+  if (getCacheData(dataID, false) != null && saveIndex == null) {
     //Gets the Data:
     data = getCacheData(dataID, true);
     saveIndex = index;
@@ -100,12 +100,35 @@ function showNotes(index) {
 
     //Adds the Alerts System:
     notesBar += "<div class='margin note-alert'>" + checkDates(dates(data[index])) + "</div>";
-    console.log("here")
 
     //Sets the UI Data:
     document.getElementById('notes-bar').innerHTML = notesBar;
     var dataValue = data[index];
     document.getElementById('text-area').innerHTML = dataValue;
+  }
+}
+
+//Show Notes Bar Function:
+function showNotesBar() {
+  //Checks the Case:
+  if (getCacheData(dataID, false) != null && saveIndex != null) {
+    //Gets the Data:
+    data = getCacheData(dataID, true);
+
+    //Sets the Notes Bar:
+    var notesBar =
+      "<button onclick='exitNote();'> Back </button>" +
+      "<button onclick='deleteNote();'> Delete </button>";
+
+    //Checks the Case:
+    if (index != 0) {
+      //Sets Notes Bar:
+      notesBar += "<button onclick='pinNote();'> Pin </button>";
+    }
+
+    //Adds the Alerts System:
+    notesBar += "<div class='margin note-alert'>" + checkDates(dates(data[saveIndex])) + "</div>";
+    document.getElementById('notes-bar').innerHTML = notesBar;
   }
 }
 
