@@ -115,6 +115,10 @@ html, body {
   padding-top: 40px;
 }
 
+.no-padding-bottom {
+  padding-bottom: 0px;
+}
+
 .header {
   font-size: 50px;
 }
