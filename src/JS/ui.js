@@ -9,44 +9,48 @@ navigator.serviceWorker.register('/service-worker.js', {
 
 //Onload Function:
 window.onload = function () {
+  /* Function Calls */
+
   //Init Functions:
   showSplash();
   getData();
-}
 
-//Key Board Event Listener:
-window.addEventListener("keydown", function (e) {
-  //Checks the Case:
-  if (e.key == "Escape" && saveIndex != null) {
-    //Exits the Note:
-    exitNote();
-  }
+  /* Event Listeners */
 
-  //Checks the Case:
-  if (e.key == "Enter") {
+  //Log In Input Event Listener:
+  document.getElementById('log-in-input').addEventListener("input", function (e) {
+    //Searches:
+    search(e);
+  });
+
+  //Log In Enter Event Listener:
+  document.getElementById('log-in-input').addEventListener("keydown", function (e) {
     //Checks the Case:
-    if (this.document.activeElement == this.document.getElementById('log-in-input')) {
+    if (e.key == "Enter") {
       //Logs In:
       logIn();
     }
-  }
-});
+  });
 
-//Log In Input Event Listener:
-document.getElementById('log-in-input').addEventListener("input", function (e) {
-  //Searches:
-  search(e);
-});
+  //Exit Notes Event Listener:
+  document.getElementById('notes').addEventListener("keydown", function (e) {
+    //Checks the Case:
+    if (e.key == "Escape" && saveIndex != null) {
+      //Exits the Note:
+      exitNote();
+    }
+  });
 
-//Text Area Input Event Listener:
-document.getElementById('text-area').addEventListener("input", function () {
-  //Checks the Case:
-  if (saveIndex != null) {
-    //Saves the Note:
-    saveNote(); 
-    showNotes(saveIndex);
-  }
-});
+  //Text Area Input Event Listener:
+  document.getElementById('text-area').addEventListener("input", function () {
+    //Checks the Case:
+    if (saveIndex != null) {
+      //Saves the Note:
+      saveNote();
+      showNotes(saveIndex);
+    }
+  });
+}
 
 /* UI FUNCTIONS */
 
@@ -84,9 +88,9 @@ function showNotes(index) {
     document.getElementById('notes').style.display = "block";
 
     //Sets the Notes Bar:
-    var notesBar = 
+    var notesBar =
       "<button onclick='exitNote();'> Back </button>" +
-      "<button onclick='deleteNote();'> Delete </button>"; 
+      "<button onclick='deleteNote();'> Delete </button>";
 
     //Checks the Case:
     if (index != 0) {
