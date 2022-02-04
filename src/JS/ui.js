@@ -125,7 +125,7 @@ function showNotesBar() {
       "<button onclick='deleteNote();'> Delete </button>";
 
     //Checks the Case:
-    if (index != 0) {
+    if (saveIndex != 0) {
       //Sets Notes Bar:
       notesBar += "<button onclick='pinNote();'> Pin </button>";
     }
