@@ -538,6 +538,7 @@ function highlightDates(string, dates) {
     //Sets the String:
     localString = 
       localString.replace(dates[turns], "<mark>" + dates[turns] + "</mark>");
+    console.log(localString);
     
     turns++;
   }
