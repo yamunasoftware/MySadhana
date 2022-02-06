@@ -107,8 +107,7 @@ function showNotes(index) {
 
     //Sets the Data Value:
     var dataValue = highlightDates(data[index], dates(data[index]));
-    console.log(dates(data[index]))
-
+    
     //Gets the UI Elements:
     document.getElementById('notes-bar').innerHTML = notesBar;
     document.getElementById('text-area').innerHTML = dataValue;
