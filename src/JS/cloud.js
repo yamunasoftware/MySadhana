@@ -536,7 +536,7 @@ function highlightDates(string, dates) {
   //Loops through Array:
   mainLoop: while (turns < dates.length) {
     //Sets the String:
-    var value = data[turns];
+    var value = new RegExp(dates[turns], "g");
     localString = localString.replace(value, "<mark>" + value + "</mark>");
     
     turns++;
