@@ -171,6 +171,10 @@ function saveNote() {
     //Sets the Data:
     data = getCacheData(dataID, true);
     data[saveIndex] = document.getElementById('text-area').innerHTML;
+    
+    //Replaces the Highlight:
+    data[saveIndex].replace("<mark>", "");
+    data[saveIndex].replace("</mark>", "");
 
     //Saves the Data:
     setCacheData(dataID, data, true);
@@ -521,6 +525,31 @@ function extractDate(string) {
 
   //Returns the Array:
   return [parsedMonth, parsedDay];
+}
+
+//Highlight Dates Function:
+function highlightDates(string, dates) {
+  //Loop Variables:
+  var localString = string;
+  var turns = 0;
+
+  //Loops through Array:
+  mainLoop: while (turns < dates.length) {
+    //Sets the String:
+    localString = highlight(dates[turns], localString);
+    
+    turns++;
+  }
+
+  //Returns the String:
+  return localString;
+}
+
+//Highlight Function:
+function highlight(value, text) {
+  //Returns the Highlighted Text:
+	var newText = text.replace(value, "<mark>" + value + "</mark>");
+	return newText;
 }
 
 /* CACHE DATA FUNCTIONS */

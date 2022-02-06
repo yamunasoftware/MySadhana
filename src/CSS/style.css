@@ -183,6 +183,10 @@ input:hover, input:focus {
   outline: none;
 }
 
+mark {
+  background-color: #FF0F0F;
+}
+
 /* SCROLLING */
 
 ::-webkit-scrollbar {

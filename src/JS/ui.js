@@ -105,9 +105,11 @@ function showNotes(index) {
       + "<div style='background-color: #147efb;' class='margin note-alert'>" + alerts[0] + "</div>"
       + "<div style='background-color: #53d769;' class='margin note-alert'>" + alerts[2] + "</div>";
 
-    //Sets the UI Data:
+    //Sets the Data Value:
+    var dataValue = highlightDates(data[index], dates(data[index]));
+
+    //Gets the UI Elements:
     document.getElementById('notes-bar').innerHTML = notesBar;
-    var dataValue = data[index];
     document.getElementById('text-area').innerHTML = dataValue;
   }
 }
