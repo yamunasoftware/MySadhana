@@ -548,7 +548,8 @@ function highlightDates(string, dates) {
 //Highlight Function:
 function highlight(value, text) {
   //Returns the Highlighted Text:
-	var newText = text.replace(value, "<mark>" + value + "</mark>");
+  var newValue = value.replace(" ", "");
+	var newText = text.replace(newValue, "<mark>" + value + "</mark>");
   console.log(value);
 	return newText;
 }
