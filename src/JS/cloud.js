@@ -536,22 +536,14 @@ function highlightDates(string, dates) {
   //Loops through Array:
   mainLoop: while (turns < dates.length) {
     //Sets the String:
-    localString = highlight(dates[turns], localString);
+    localString = 
+      localString.replace(dates[turns], "<mark>" + dates[turns] + "</mark>");
     
     turns++;
   }
 
   //Returns the String:
   return localString;
-}
-
-//Highlight Function:
-function highlight(value, text) {
-  //Returns the Highlighted Text:
-  var newValue = value.replace(" ", "");
-	var newText = text.replace(newValue, "<mark>" + value + "</mark>");
-  console.log(value);
-	return newText;
 }
 
 /* CACHE DATA FUNCTIONS */
