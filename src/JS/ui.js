@@ -80,22 +80,6 @@ function showDashboard() {
   document.getElementById('search').value = "";
 }
 
-//Show Navigation Function:
-function showNavigation() {
-  //Displays the Elements:
-  document.getElementById('navigation').style.display = "block";
-  document.getElementById('overlay').style.display = "block";
-  document.getElementById('main-content').style.overflow = "hidden";
-}
-
-//Close Navigation Function:
-function closeNavigation() {
-  //Displays the Elements:
-  document.getElementById('navigation').style.display = "none";
-  document.getElementById('overlay').style.display = "none";
-  document.getElementById('main-content').style.overflow = "auto";
-}
-
 //Show Notes Function:
 function showNotes(index) {
   //Checks the Case:
@@ -158,4 +142,18 @@ function showLogIn() {
 function showError(error) {
   //Sets the Error:
   document.getElementById('error').innerHTML = error;
+}
+
+//Show Navigation Function:
+function toggleNavigation() {
+  //Checks the Case:
+  if (document.getElementById('navigation').style.display == "none") {
+    //Displays the Element:
+    document.getElementById('navigation').style.display = "block";
+  }
+
+  else if (document.getElementById('navigation').style.display == "block") {
+    //Displays the Element:
+    document.getElementById('navigation').style.display = "none";
+  }
 }
