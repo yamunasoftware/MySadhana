@@ -218,24 +218,6 @@ input:hover, input:focus {
   outline: none;
 }
 
-/* ANIMATIONS */
-
-.slide {
-  position: relative;
-}
-
-@keyframes slide {
-  from {
-    left: -300px;
-    opacity: 0px;
-  }
-
-  to {
-    left: 0px;
-    opacity: 1;
-  }
-}
-
 /* SCROLLING */
 
 ::-webkit-scrollbar {
@@ -253,6 +235,18 @@ input:hover, input:focus {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #39FF13; 
+}
+
+/* ANIMATIONS */
+
+.slide {
+  animation: slide 0.5s forwards;
+}
+
+@keyframes slide {
+  100% { 
+    transform: translateX(0%); 
+  }
 }
 
 /* MEDIA QUERIES */
