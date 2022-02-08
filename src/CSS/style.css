@@ -254,6 +254,10 @@ input:hover, input:focus {
   .overlay {
     display: none;
   }
+
+  .main-content {
+    margin-left: 0px;
+  }
 }
 
 @media (max-width: 500px) {
