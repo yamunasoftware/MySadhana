@@ -136,6 +136,14 @@ html, body {
   align-content: center;
 }
 
+.inline {
+  display: inline;
+}
+
+.fit-content {
+  width: fit-content;
+}
+
 .no-decoration {
   text-decoration: none;
 }
