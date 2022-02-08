@@ -77,9 +77,9 @@ function showDashboard() {
 //Show Navigation Function:
 function showNavigation() {
   //Displays the Elements:
-  document.getElementsByClassName('open-navigation').style.display = "none";
-  document.getElementsByClassName('navigation').style.display = "block";
-  document.getElementsByClassName('overlay').style.display = "block";
+  document.getElementById('open-navigation').style.display = "none";
+  document.getElementById('navigation').style.display = "block";
+  document.getElementById('overlay').style.display = "block";
 }
 
 //Show Notes Function:
@@ -149,7 +149,7 @@ function showError(error) {
 //Close Navigation Function:
 function closeNavigation() {
   //Displays the Elements:
-  document.getElementsByClassName('open-navigation').style.display = "block";
-  document.getElementsByClassName('navigation').style.display = "none";
-  document.getElementsByClassName('overlay').style.display = "none";
+  document.getElementById('open-navigation').style.display = "block";
+  document.getElementById('navigation').style.display = "none";
+  document.getElementById('overlay').style.display = "none";
 }
