@@ -102,7 +102,7 @@ function showNotesBar() {
 
     //Sets the Notes Bar:
     var notesBar =
-      "<button onclick='exitNote();'> Back </button>" +
+      "<button style='margin-left: 0px;' onclick='exitNote();'> Back </button>" +
       "<button onclick='deleteNote();'> Delete </button>";
 
     //Checks the Case:
