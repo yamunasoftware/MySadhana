@@ -82,31 +82,13 @@ function showNotes(index) {
     data = getCacheData(dataID, true);
     saveIndex = index;
 
-    //Shows the Dashboard:
+    //Shows the Note:
     document.getElementById('splash-screen').style.display = "none";
     document.getElementById('dashboard').style.display = "none";
     document.getElementById('notes').style.display = "block";
 
-    //Sets the Notes Bar:
-    var notesBar =
-      "<button onclick='exitNote();' style='margin-left: 0px;'> Back </button>" +
-      "<button onclick='deleteNote();'> Delete </button>";
-
-    //Checks the Case:
-    if (index != 0) {
-      //Sets Notes Bar:
-      notesBar += "<button onclick='pinNote();'> Pin </button>";
-    }
-
-    //Adds the Alerts System:
-    var alerts = checkDates(dates(data[index]));
-    notesBar += 
-      "<div class='margin note-alert'>" + alerts[1] + "</div>"
-      + "<div style='background-color: #147efb;' class='margin note-alert'>" + alerts[0] + "</div>"
-      + "<div style='background-color: #53d769;' class='margin note-alert'>" + alerts[2] + "</div>";
-    
-    //Gets the UI Elements:
-    document.getElementById('notes-bar').innerHTML = notesBar;
+    //Shows the Notes Bar:
+    showNotesBar();
     document.getElementById('text-area').innerHTML = data[index];
   }
 }
@@ -132,12 +114,49 @@ function showNotesBar() {
     //Adds the Alerts System:
     var alerts = checkDates(dates(data[saveIndex]));
     notesBar += 
-      "<div class='margin note-alert'>" + alerts[1] + "</div>"
-      + "<div style='background-color: #147efb;' class='margin note-alert'>" + alerts[0] + "</div>"
-      + "<div style='background-color: #53d769;' class='margin note-alert'>" + alerts[2] + "</div>";
+      "<div class='margin note-alert disappear' onclick='showDates(" + checkPast(dates(data[saveIndex])) + 
+      ", " + 0 + ");'>" + alerts[1] + "</div>"
+      + "<div style='background-color: #147efb;' class='margin note-alert disappear' onclick='showDates(" + checkNow(dates(data[saveIndex])) + 
+      ", " + 1 + ");'>" + alerts[0] + "</div>"
+      + "<div style='background-color: #53d769;' class='margin note-alert disappear' onclick='showDates(" + checkFuture(dates(data[saveIndex])) + 
+      ", " + 2 + ");'>" + alerts[2] + "</div>";
 
     //Adds the Alerts System:
     document.getElementById('notes-bar').innerHTML = notesBar;
+  }
+}
+
+//Show Dates Function:
+function showDates(dates, mode) {
+  //Loop Variables:
+  var string = "";
+  var turns = 0;
+
+  //Loops through Array:
+  mainLoop: while (turns < dates.length) {
+    //Adds to the String:
+    string += dates[turns] + ", ";
+    
+    turns++;
+  }
+
+  //Sets the String:
+  document.getElementById('dates').innerHTML = string;
+
+  //Checks the Case:
+  if (mode == 0) {
+    //Sets Past Colors:
+    document.getElementById('dates').style.color = "#FF0F0F";
+  }
+
+  else if (mode == 1) {
+    //Sets Current Colors:
+    document.getElementById('dates').style.color = "#147efb";
+  }
+
+  else {
+    //Sets Future Colors:
+    document.getElementById('dates').style.color = "#53d769";
   }
 }
 

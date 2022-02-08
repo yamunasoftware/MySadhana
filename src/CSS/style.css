@@ -99,7 +99,7 @@ html, body {
   border-radius: 20px;
 }
 
-.note-alert:empty, .dash-alert:empty {
+.disappear:empty {
   display: none;
 }
 

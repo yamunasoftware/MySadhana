@@ -248,9 +248,9 @@ function displayNotes() {
       //Sets the Notes List:
       var alerts = checkDates(dates(data[turns]));
       notesList +=
-        "<div class='margin dash-alert'>" + alerts[1] + "</div>"
-        + "<div style='background-color: #147efb;' class='margin dash-alert'>" + alerts[0] + "</div>"
-        + "<div style='background-color: #53d769;' class='margin dash-alert'>" + alerts[2] + "</div> </div>";
+        "<div class='margin dash-alert disappear'>" + alerts[1] + "</div>"
+        + "<div style='background-color: #147efb;' class='margin dash-alert disappear'>" + alerts[0] + "</div>"
+        + "<div style='background-color: #53d769;' class='margin dash-alert disappear'>" + alerts[2] + "</div> </div>";
 
       turns++;
     }
@@ -279,9 +279,9 @@ function search(e) {
       //Sets the Notes List:
       var alerts = checkDates(dates(data[turns]));
       notesList +=
-        "<div class='margin dash-alert'>" + alerts[1] + "</div>"
-        + "<div style='background-color: #147efb;' class='margin dash-alert'>" + alerts[0] + "</div>"
-        + "<div style='background-color: #53d769;' class='margin dash-alert'>" + alerts[2] + "</div> </div>";
+        "<div class='margin dash-alert disappear'>" + alerts[1] + "</div>"
+        + "<div style='background-color: #147efb;' class='margin dash-alert disappear'>" + alerts[0] + "</div>"
+        + "<div style='background-color: #53d769;' class='margin dash-alert disappear'>" + alerts[2] + "</div> </div>";
     }
 
     turns++;
@@ -396,50 +396,153 @@ function dates(string) {
   return dates;
 }
 
-//Check Dates Function:
-function checkDates(dates) {
-  //Gets the Current Date Variables:
+//Extract Date Function:
+function extractDate(string) {
+  //Loop Variables:
+  var turns = 0;
+  var passed = false;
+
+  //String Variables:
+  var month = "";
+  var day = "";
+
+  //Loops through Array:
+  mainLoop: while (turns < string.length) {
+    //Checks the Case:
+    if (string[turns] != "-" && !passed) {
+      //Adds to the Month:
+      month += string[turns];
+    }
+
+    else if (string[turns] != "-" && passed) {
+      //Adds to the Day:
+      day += string[turns];
+    }
+
+    //Checks the Case:
+    if (string[turns] == "-") {
+      //Sets the Passed:
+      passed = true;
+    }
+
+    turns++;
+  }
+
+  //Parses Values:
+  var parsedMonth = parseInt(month);
+  var parsedDay = parseInt(day);
+
+  //Returns the Array:
+  return [parsedMonth, parsedDay];
+}
+
+/* CHECK DATES FUNCTIONS */
+
+//Check Past Function:
+function checkPast(dates) {
+  //Loop Variables:
+  var returnDates = [];
+  var turns = 0;
+
+  //Date Variables:
   var date = new Date();
   var currentMonth = date.getMonth() + 1;
   var currentDay = date.getDate();
-
-  //Loop Variables:
-  var turns = 0;
-  var now = 0;
-  var past = 0;
-  var upcoming = 0;
 
   //Loops through Array:
   mainLoop: while (turns < dates.length) {
     //Extracts the Dates:
     var localDates = extractDate(dates[turns]);
-
+    
     //Checks the Case:
-    if (localDates[0] == currentMonth && localDates[1] == currentDay) {
-      //Adds to the Alerts:
-      now++;
-    }
-
-    else if (localDates[0] < currentMonth) {
-      //Adds to the Alerts:
-      past++;
+    if (localDates[0] < currentMonth) {
+      //Pushes to the Dates:
+      returnDates.push(dates[turns].replace("-", "/"));
     }
 
     else if (localDates[1] < currentDay && localDates[0] == currentMonth) {
-      //Adds to the Alerts:
-      past++;
+      //Pushes to the Dates:
+      returnDates.push(dates[turns].replace("-", "/"));
     }
-
-    else if (localDates[0] == currentMonth && localDates[1] > currentDay) {
-      //Checks the Case:
-      if (localDates[1] - currentDay <= 2) {
-        //Adds to the Alerts:
-        upcoming++;
-      }
-    }
-
+    
     turns++;
   }
+
+  //Returns the Dates:
+  return returnDates;
+}
+
+//Check Now Function:
+function checkNow(dates) {
+  //Loop Variables:
+  var returnDates = [];
+  var turns = 0;
+
+  //Date Variables:
+  var date = new Date();
+  var currentMonth = date.getMonth() + 1;
+  var currentDay = date.getDate();
+
+  //Loops through Array:
+  mainLoop: while (turns < dates.length) {
+    //Extracts the Dates:
+    var localDates = extractDate(dates[turns]);
+    
+    //Checks the Case:
+    if (localDates[0] == currentMonth && localDates[1] == currentDay) {
+      //Pushes to the Dates:
+      returnDates.push(dates[turns].replace("-", "/"));
+    }
+    
+    turns++;
+  }
+
+  //Returns the Dates:
+  return returnDates;
+}
+
+//Check Future Function:
+function checkFuture(dates) {
+  //Loop Variables:
+  var returnDates = [];
+  var turns = 0;
+
+  //Date Variables:
+  var date = new Date();
+  var currentMonth = date.getMonth() + 1;
+  var currentDay = date.getDate();
+
+  //Loops through Array:
+  mainLoop: while (turns < dates.length) {
+    //Extracts the Dates:
+    var localDates = extractDate(dates[turns]);
+    
+    if (localDates[0] == currentMonth && localDates[1] > currentDay) {
+      //Checks the Case:
+      if (localDates[1] - currentDay <= 2) {
+        //Pushes to the Dates:
+        returnDates.push(dates[turns].replace("-", "/"));
+      }
+    }
+    
+    turns++;
+  }
+
+  //Returns the Dates:
+  return returnDates;
+}
+
+//Check Dates Function:
+function checkDates(dates) {
+  //Array Variables:
+  var done = checkPast(dates);
+  var current = checkNow(dates);
+  var future = checkFuture(dates);
+  
+  //Alert Variables:
+  var now = current.length;
+  var past = done.length;
+  var upcoming = future.length;
 
   //Checks the Case:
   if (now == 0 && past != 0 && upcoming != 0) {
@@ -481,46 +584,6 @@ function checkDates(dates) {
     //Returns the Array:
     return [now, past, upcoming];
   }
-}
-
-//Extract Date Function:
-function extractDate(string) {
-  //Loop Variables:
-  var turns = 0;
-  var passed = false;
-
-  //String Variables:
-  var month = "";
-  var day = "";
-
-  //Loops through Array:
-  mainLoop: while (turns < string.length) {
-    //Checks the Case:
-    if (string[turns] != "-" && !passed) {
-      //Adds to the Month:
-      month += string[turns];
-    }
-
-    else if (string[turns] != "-" && passed) {
-      //Adds to the Day:
-      day += string[turns];
-    }
-
-    //Checks the Case:
-    if (string[turns] == "-") {
-      //Sets the Passed:
-      passed = true;
-    }
-
-    turns++;
-  }
-
-  //Parses Values:
-  var parsedMonth = parseInt(month);
-  var parsedDay = parseInt(day);
-
-  //Returns the Array:
-  return [parsedMonth, parsedDay];
 }
 
 /* CACHE DATA FUNCTIONS */
