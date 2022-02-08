@@ -170,6 +170,13 @@ html, body {
   background-image: linear-gradient(to right, #67B26F, #4ca2cd);
 }
 
+.bar {
+  width: 50px;
+  height: 10px;
+  background-color: #FFFFFF;
+  margin: 10px;
+}
+
 /* UI ELEMENTS */
 
 button {
