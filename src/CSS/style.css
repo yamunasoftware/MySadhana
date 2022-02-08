@@ -116,6 +116,10 @@ html, body {
   padding-top: 40px;
 }
 
+.padding-double-top {
+  padding-top: 60px;
+}
+
 .no-padding-bottom {
   padding-bottom: 0px;
 }
