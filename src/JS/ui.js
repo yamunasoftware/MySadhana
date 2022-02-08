@@ -50,6 +50,12 @@ window.onload = function () {
       exitNote();
     }
   });
+
+  //Window Resize Event:
+  window.addEventListener('resize', function () {
+    //Reloads the Page:
+    window.location.reload();
+  });
 }
 
 /* UI FUNCTIONS */
