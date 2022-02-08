@@ -120,7 +120,7 @@ function showNotesBar() {
 
     //Adds the Alerts System:
     document.getElementById('notes-bar').innerHTML = notesBar;
-    document.getElementById('dates').innerHTML = showDates(checkDates(dates(data[saveIndex])), 0);
+    document.getElementById('dates').innerHTML = showDates(checkFuture(dates(data[saveIndex])), 0);
   }
 }
 
