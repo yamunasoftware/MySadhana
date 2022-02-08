@@ -231,37 +231,37 @@ input:hover, input:focus {
 /* MEDIA QUERIES */
 
 @media (min-width: 991px) {
-  .open-navigation, #open-navigation {
+  .open-navigation {
     display: none;
   }
 
-  .navigation, #navigation {
+  .navigation {
     display: block;
   }
 
-  .overlay, #overlay {
+  .overlay {
     display: none;
   }
 
-  .main-content, #main-content {
+  .main-content {
     padding-left: 100px;
   }
 }
 
 @media (max-width: 990px) {
-  .open-navigation, #open-navigation {
+  .open-navigation {
     display: block;
   }
   
-  .navigation, #navigation {
+  .navigation {
     display: none;
   }
 
-  .overlay, #overlay {
+  .overlay {
     display: none;
   }
 
-  .main-content, #main-content {
+  .main-content {
     padding-left: 0px;
   }
 }
