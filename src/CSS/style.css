@@ -240,7 +240,8 @@ input:hover, input:focus {
 /* ANIMATIONS */
 
 .slide {
-  animation: slide 1s forwards;
+  position: absolute;
+  animation: slide 0.5s forwards;
 }
 
 @keyframes slide {
