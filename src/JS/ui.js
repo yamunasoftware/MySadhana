@@ -77,9 +77,15 @@ function showDashboard() {
 //Show Navigation Function:
 function showNavigation() {
   //Displays the Elements:
-  document.getElementById('open-navigation').style.display = "none";
   document.getElementById('navigation').style.display = "block";
   document.getElementById('overlay').style.display = "block";
+}
+
+//Close Navigation Function:
+function closeNavigation() {
+  //Displays the Elements:
+  document.getElementById('navigation').style.display = "none";
+  document.getElementById('overlay').style.display = "none";
 }
 
 //Show Notes Function:
@@ -144,12 +150,4 @@ function showLogIn() {
 function showError(error) {
   //Sets the Error:
   document.getElementById('error').innerHTML = error;
-}
-
-//Close Navigation Function:
-function closeNavigation() {
-  //Displays the Elements:
-  document.getElementById('open-navigation').style.display = "block";
-  document.getElementById('navigation').style.display = "none";
-  document.getElementById('overlay').style.display = "none";
 }
