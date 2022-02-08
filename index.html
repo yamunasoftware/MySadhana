@@ -76,8 +76,7 @@
       <!-- Navigation -->
       <div id="navigation" class="navigation center deactivate">
         <!-- Logo -->
-        <image style="padding-bottom: 20px;" src="src/Images/page_icon.png" onclick="closeNavigation();">
-        </image>
+        <image style="padding-bottom: 20px;" src="src/Images/page_icon.png"></image>
 
         <!-- Add Controls -->
         <div class="nav-button center" onclick="addNote();"> New </div>
@@ -86,7 +85,7 @@
       </div>
 
       <!-- Main Content -->
-      <div id="main-content" class="padding no-padding-left">
+      <div id="main-content" class="padding no-padding-left" onclick="closeNavigation();">
         <!-- Search Controls -->
         <div class="padding subheader"> Search </div>
         <input id="search" class="margin" style="margin-left: 40px;" />
