@@ -179,6 +179,12 @@ html, body {
   background-color: #FFFFFF;
 }
 
+.animation {
+  transform: translate3d(-100%, 0px, 0px);
+  visibility: visible;
+  transition: all 0.5s ease 0s;
+}
+
 /* UI ELEMENTS */
 
 button {
