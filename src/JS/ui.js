@@ -96,6 +96,7 @@ function showNotes(index) {
     //Shows the Notes Bar:
     showNotesBar();
     document.getElementById('text-area').innerHTML = data[index];
+    closeNavigation();
   }
 }
 
