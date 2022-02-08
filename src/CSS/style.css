@@ -120,6 +120,10 @@ html, body {
   padding-bottom: 0px;
 }
 
+.no-padding-left {
+  padding-left: 0px;
+}
+
 .header {
   font-size: 50px;
 }
