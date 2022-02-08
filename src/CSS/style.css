@@ -171,10 +171,12 @@ html, body {
 }
 
 .bar {
-  width: 50px;
-  height: 10px;
-  background-color: #FFFFFF;
   margin: 10px;
+  margin-left: 0px;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
 }
 
 /* UI ELEMENTS */
