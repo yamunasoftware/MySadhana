@@ -180,6 +180,7 @@ html, body {
 }
 
 .transition {
+  visibility: hidden;
   transition: width 1s ease-in-out, visibility 1s linear;
 }
 
