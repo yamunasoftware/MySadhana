@@ -146,14 +146,6 @@ function showError(error) {
 
 //Show Navigation Function:
 function toggleNavigation() {
-  //Checks the Case:
-  if (document.getElementById('navigation').style.display == "none") {
-    //Displays the Element:
-    document.getElementById('navigation').style.display = "block";
-  }
-
-  else if (document.getElementById('navigation').style.display == "block") {
-    //Displays the Element:
-    document.getElementById('navigation').style.display = "none";
-  }
+  //Displays the Element:
+  document.getElementById('navigation').style.display = "block";
 }
