@@ -74,6 +74,14 @@ function showDashboard() {
   document.getElementById('search').value = "";
 }
 
+//Show Navigation Function:
+function showNavigation() {
+  //Displays the Elements:
+  document.getElementsByClassName('open-navigation').style.display = "none";
+  document.getElementsByClassName('navigation').style.display = "block";
+  document.getElementsByClassName('overlay').style.display = "block";
+}
+
 //Show Notes Function:
 function showNotes(index) {
   //Checks the Case:
@@ -136,4 +144,12 @@ function showLogIn() {
 function showError(error) {
   //Sets the Error:
   document.getElementById('error').innerHTML = error;
+}
+
+//Close Navigation Function:
+function closeNavigation() {
+  //Displays the Elements:
+  document.getElementsByClassName('open-navigation').style.display = "block";
+  document.getElementsByClassName('navigation').style.display = "none";
+  document.getElementsByClassName('overlay').style.display = "none";
 }

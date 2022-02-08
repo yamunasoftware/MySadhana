@@ -51,6 +51,7 @@ html, body {
   top: 0;
   position: fixed;
   background-color: #202020;
+  z-index: 2;
 }
 
 .nav-button {
@@ -64,6 +65,21 @@ html, body {
 
 .nav-button:hover {
   background-color: #39FF13;
+}
+
+.open-navigation {
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.5;
+  background-color: #000000;
 }
 
 .main-content {
@@ -211,6 +227,34 @@ input:hover, input:focus {
 }
 
 /* MEDIA QUERIES */
+
+@media (min-width: 991px) {
+  .open-navigation {
+    display: none;
+  }
+
+  .navigation {
+    display: block;
+  }
+
+  .overlay {
+    display: none;
+  }
+}
+
+@media (max-width: 990px) {
+  .open-navigation {
+    display: block;
+  }
+  
+  .navigation {
+    display: none;
+  }
+
+  .overlay {
+    display: none;
+  }
+}
 
 @media (max-width: 500px) {
   .text-area {
