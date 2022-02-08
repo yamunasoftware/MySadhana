@@ -145,7 +145,13 @@ function showError(error) {
 }
 
 //Show Navigation Function:
-function toggleNavigation() {
+function showNavigation() {
   //Displays the Element:
   document.getElementById('navigation').style.display = "block";
+}
+
+//Close Navigation Function:
+function closeNavigation() {
+  //Closes the Element:
+  document.getElementById('navigation').style.display = "none";
 }

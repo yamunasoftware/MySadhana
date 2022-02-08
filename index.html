@@ -66,7 +66,7 @@
     <!-- Dashboard -->
     <div id="dashboard" class="screen deactivate">
       <!-- Open Nav Button -->
-      <div id="open-navigation" class="open-navigation padding deactivate" onclick="toggleNavigation();"> 
+      <div id="open-navigation" class="open-navigation padding" onclick="showNavigation();"> 
         <!-- Menu Icon -->
         <div class="bar"></div>
         <div class="bar"></div>
@@ -74,9 +74,10 @@
       </div>
       
       <!-- Navigation -->
-      <div id="navigation" class="navigation center">
+      <div id="navigation" class="navigation center deactivate">
         <!-- Logo -->
-        <image style="padding-bottom: 20px;" src="src/Images/page_icon.png"></image>
+        <image style="padding-bottom: 20px;" src="src/Images/page_icon.png" onclick="closeNavigation();">
+        </image>
 
         <!-- Add Controls -->
         <div class="nav-button center" onclick="addNote();"> New </div>
@@ -85,7 +86,7 @@
       </div>
 
       <!-- Main Content -->
-      <div id="main-content" class="main-content">
+      <div id="main-content" class="padding">
         <!-- Search Controls -->
         <div class="padding subheader"> Search </div>
         <input id="search" class="margin" style="margin-left: 40px;" />
