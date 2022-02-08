@@ -85,6 +85,7 @@ function showNavigation() {
   //Displays the Elements:
   document.getElementById('navigation').style.display = "block";
   document.getElementById('overlay').style.display = "block";
+  document.getElementById('main-content').style.overflow = "hidden";
 }
 
 //Close Navigation Function:
@@ -92,6 +93,7 @@ function closeNavigation() {
   //Displays the Elements:
   document.getElementById('navigation').style.display = "none";
   document.getElementById('overlay').style.display = "none";
+  document.getElementById('main-content').style.overflow = "auto";
 }
 
 //Show Notes Function:

@@ -179,11 +179,6 @@ html, body {
   background-color: #FFFFFF;
 }
 
-.transition {
-  position: absolute;
-  transition: all 0.5s;
-}
-
 /* UI ELEMENTS */
 
 button {
