@@ -436,6 +436,32 @@ function extractDate(string) {
   return [parsedMonth, parsedDay];
 }
 
+//Stringify Dates Function:
+function stringifyDates(dates) {
+  //Loop Variables:
+  var string = "";
+  var turns = 0;
+
+  //Loops through Array:
+  mainLoop: while (turns < dates.length) {
+    //Checks the Case:
+    if (turns < dates.length - 1) {
+      //Adds to the String:
+      string += dates[turns] + ", ";
+    }
+
+    else {
+      //Adds to the String:
+      string += dates[turns];
+    }
+
+    turns++;
+  }
+
+  //Sets the String:
+  return string;
+}
+
 /* CHECK DATES FUNCTIONS */
 
 //Check Past Function:

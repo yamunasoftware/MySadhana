@@ -113,51 +113,17 @@ function showNotesBar() {
 
     //Adds the Alerts System:
     var alerts = checkDates(dates(data[saveIndex]));
-    notesBar += 
+    notesBar +=
       "<div class='margin note-alert disappear'>" + alerts[1] + "</div>"
       + "<div style='background-color: #147efb;' class='margin note-alert disappear'>" + alerts[0] + "</div>"
       + "<div style='background-color: #53d769;' class='margin note-alert disappear'>" + alerts[2] + "</div>";
 
     //Adds the Alerts System:
     document.getElementById('notes-bar').innerHTML = notesBar;
-    document.getElementById('past-dates').innerHTML = showDates(checkPast(dates(data[saveIndex])), 0);
-    document.getElementById('current-dates').innerHTML = showDates(checkNow(dates(data[saveIndex])), 1);
-    document.getElementById('future-dates').innerHTML = showDates(checkFuture(dates(data[saveIndex])), 2);
+    document.getElementById('past-dates').innerHTML = stringifyDates(checkPast(dates(data[saveIndex])));
+    document.getElementById('current-dates').innerHTML = stringifyDates(checkNow(dates(data[saveIndex])));
+    document.getElementById('future-dates').innerHTML = stringifyDates(checkFuture(dates(data[saveIndex])));
   }
-}
-
-//Show Dates Function:
-function showDates(dates, mode) {
-  //Loop Variables:
-  var string = "";
-  var turns = 0;
-
-  //Loops through Array:
-  mainLoop: while (turns < dates.length) {
-    //Adds to the String:
-    string += dates[turns] + ", ";
-    
-    turns++;
-  }
-
-  //Checks the Case:
-  if (mode == 0) {
-    //Sets Past Colors:
-    document.getElementById('dates').style.color = "#FF0F0F";
-  }
-
-  else if (mode == 1) {
-    //Sets Current Colors:
-    document.getElementById('dates').style.color = "#147efb";
-  }
-
-  else {
-    //Sets Future Colors:
-    document.getElementById('dates').style.color = "#53d769";
-  }
-
-  //Sets the String:
-  document.getElementById('dates').innerHTML = string;
 }
 
 //Show Login Function:
