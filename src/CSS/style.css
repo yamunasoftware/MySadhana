@@ -237,19 +237,6 @@ input:hover, input:focus {
   background: #39FF13; 
 }
 
-/* ANIMATIONS */
-
-.slide {
-  position: absolute;
-  animation: slide 0.5s forwards;
-}
-
-@keyframes slide {
-  100% { 
-    transform: translateX(0%); 
-  }
-}
-
 /* MEDIA QUERIES */
 
 @media (min-width: 991px) {
