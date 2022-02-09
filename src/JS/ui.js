@@ -149,7 +149,6 @@ function showError(error) {
 function showNavigation() {
   //Displays the Element:
   document.getElementById('navigation').style.visibility = "visible";
-  document.getElementById('navigation').classList.add('ease-in');
 }
 
 //Close Navigation Function:
