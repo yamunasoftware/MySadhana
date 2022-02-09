@@ -232,7 +232,7 @@ input:hover, input:focus {
 
 .transition {
   animation-name: slide;
-  animation-duration: 0.25s;
+  animation-duration: 0.5s;
   animation-iteration-count: 1;
   animation-direction: normal;
   animation-delay: 0;
