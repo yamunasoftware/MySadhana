@@ -260,6 +260,10 @@ input:hover, input:focus {
   .navigation {
     display: block;
   }
+
+  .main-content {
+    padding-left: 100px;
+  }
 }
 
 @media (max-width: 990px) {
@@ -269,6 +273,10 @@ input:hover, input:focus {
 
   .navigation {
     display: none;
+  }
+
+  .main-content {
+    padding-left: 0px;
   }
 }
 
