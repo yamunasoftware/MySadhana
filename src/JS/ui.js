@@ -148,11 +148,11 @@ function showError(error) {
 //Show Navigation Function:
 function showNavigation() {
   //Displays the Element:
-  document.getElementById('navigation').style.display = "block";
+  document.getElementById('navigation').style.visibility = "visible";
 }
 
 //Close Navigation Function:
 function closeNavigation() {
   //Closes the Element:
-  document.getElementById('navigation').style.display = "none";
+  document.getElementById('navigation').style.visibility = "hidden";
 }
