@@ -149,7 +149,6 @@ function showError(error) {
 function showNavigation() {
   //Displays the Element:
   document.getElementById('navigation').style.visibility = "visible";
-  document.getElementById('navigation').classList.remove('ease-out');
   document.getElementById('navigation').classList.add('ease-in');
 }
 
@@ -157,6 +156,4 @@ function showNavigation() {
 function closeNavigation() {
   //Closes the Element:
   document.getElementById('navigation').style.visibility = "hidden";
-  document.getElementById('navigation').classList.remove('ease-in');
-  document.getElementById('navigation').classList.add('ease-out');
 }
