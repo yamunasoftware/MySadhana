@@ -157,7 +157,8 @@ function showNavigation() {
 //Close Navigation Function:
 function closeNavigation() {
   //Checks the Case:
-  if (screen.width <= 990) {
+  if (screen.width <= 990 && 
+    document.getElementById('open-navigation') != document.activeElement) {
     //Closes the Element:
     document.getElementById('navigation').style.display = "none";
   }
