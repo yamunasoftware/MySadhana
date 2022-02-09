@@ -230,7 +230,7 @@ input:hover, input:focus {
 
 /* ANIMATIONS */
 
-.ease-in {
+.in {
   animation-name: in;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
@@ -240,7 +240,7 @@ input:hover, input:focus {
   animation-fill-mode: forwards;
 }
 
-.ease-out {
+.out {
   animation-name: out;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
