@@ -254,7 +254,7 @@ input:hover, input:focus {
 
 @media (min-width: 991px) {
   .open-navigation {
-    display: block;
+    display: none;
   }
 
   .navigation {
