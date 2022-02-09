@@ -147,12 +147,18 @@ function showError(error) {
 
 //Show Navigation Function:
 function showNavigation() {
-  //Displays the Element:
-  document.getElementById('navigation').style.display = "block";
+  //Checks the Case:
+  if (screen.width <= 990) {
+    //Displays the Element:
+    document.getElementById('navigation').style.display = "block";
+  }
 }
 
 //Close Navigation Function:
 function closeNavigation() {
-  //Closes the Element:
-  document.getElementById('navigation').style.display = "none";
+  //Checks the Case:
+  if (screen.width <= 990) {
+    //Closes the Element:
+    document.getElementById('navigation').style.display = "none";
+  }
 }

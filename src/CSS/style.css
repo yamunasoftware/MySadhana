@@ -252,6 +252,26 @@ input:hover, input:focus {
 
 /* MEDIA QUERIES */
 
+@media (min-width: 991px) {
+  .open-navigation {
+    display: block;
+  }
+
+  .navigation {
+    display: block;
+  }
+}
+
+@media (max-width: 990px) {
+  .open-navigation {
+    display: block;
+  }
+
+  .navigation {
+    display: none;
+  }
+}
+
 @media (max-width: 500px) {
   .text-area {
     font-size: 20px;
