@@ -150,6 +150,7 @@ function showNavigation() {
   //Displays the Element:
   document.getElementById('navigation').style.visibility = "visible";
   document.getElementById('navigation').classList.remove('ease-out');
+  void document.getElementById('navigation').offsetWidth;
   document.getElementById('navigation').classList.add('ease-in');
 }
 
