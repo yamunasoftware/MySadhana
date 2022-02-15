@@ -111,6 +111,10 @@ html, body {
   padding-top: 40px;
 }
 
+.padding-extra-bottom {
+  padding-bottom: 40px;
+}
+
 .padding-double-top {
   padding-top: 50px;
 }
