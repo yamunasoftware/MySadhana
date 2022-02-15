@@ -175,11 +175,11 @@ html, body {
   font-size: 20px;
   font-weight: bold;
   font-family: "rubik-medium", Helvetica, Arial;
-  background-color: #000000;
+  background-color: #202020;
   color: #FFFFFF;
   cursor: pointer;
   border: none;
-  border-radius: 0px;
+  border-radius: 20px;
   margin-right: 10px;
   padding: 0px;
   text-align: center;
