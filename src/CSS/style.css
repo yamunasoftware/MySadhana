@@ -107,12 +107,8 @@ html, body {
   margin: 20px;
 }
 
-.margin-top {
-  margin-top: 20px;
-}
-
-.margin-extra-bottom {
-  margin-bottom: 40px;
+.margin-extra-top {
+  margin-top: 40px;
 }
 
 .padding-extra-top {
