@@ -86,19 +86,25 @@ html, body {
 }
 
 .note-alert {
-  padding: 10px;
+  width: 50px;
+  height: 50px;
   color: #FFFFFF;
   background-color: #FF0F0F;
   border: none;
   border-radius: 50%;
   display: inline;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .dash-alert {
   padding: 10px;
   color: #FFFFFF;
   background-color: #FF0F0F;
+  border: none;
   border-radius: 20px;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .disappear:empty {
@@ -172,6 +178,8 @@ html, body {
 }
 
 .mobile-button {
+  width: 50px;
+  height: 50px;
   display: inline;
   font-size: 20px;
   font-weight: bold;
@@ -184,6 +192,7 @@ html, body {
   margin-right: 10px;
   padding: 5px;
   text-align: center;
+  vertical-align: middle;
   text-decoration: none;
 }
 
