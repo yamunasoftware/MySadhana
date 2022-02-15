@@ -171,9 +171,8 @@ html, body {
 }
 
 .mobile-button {
+  width: fit-content;
   display: inline;
-  margin: 10px;
-  margin-left: 0px;
   font-size: 30px;
   font-weight: bold;
   font-family: "rubik-medium", Helvetica, Arial;
