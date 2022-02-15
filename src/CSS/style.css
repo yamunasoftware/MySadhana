@@ -170,6 +170,23 @@ html, body {
   background-color: #FFFFFF;
 }
 
+.mobile-button {
+  display: inline;
+  margin: 10px;
+  margin-left: 0px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "rubik-medium", Helvetica, Arial;
+  background-color: #000000;
+  color: #FFFFFF;
+  cursor: pointer;
+  border: none;
+  border-radius: 0px;
+  padding: 0px;
+  text-align: center;
+  text-decoration: none;
+}
+
 /* UI ELEMENTS */
 
 button {
@@ -177,6 +194,7 @@ button {
   margin: 10px;
   font-size: 20px;
   font-weight: bold;
+  font-family: "rubik-medium", Helvetica, Arial;
   color: #000000;
   cursor: pointer;
   background-color: #a4da99;
@@ -185,8 +203,6 @@ button {
   padding: 5px;
   text-align: center;
   text-decoration: none;
-  font-family: "rubik-medium", Helvetica, Arial;
-  font-weight: bold;
 }
 
 button:hover {
