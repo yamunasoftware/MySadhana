@@ -115,9 +115,9 @@ function showNotesBar() {
     //Adds the Alerts System:
     var alerts = checkDates(dates(data[saveIndex]));
     notesBar +=
-      "<div class='margin note-alert disappear'>" + alerts[1] + "</div>"
-      + "<div style='background-color: #147efb;' class='margin note-alert disappear'>" + alerts[0] + "</div>"
-      + "<div style='background-color: #53d769;' class='margin note-alert disappear'>" + alerts[2] + "</div>";
+      "<div style='color: #FF0F0F;' class='margin disappear'>" + alerts[1] + "</div>"
+      + "<div style='color: #147efb;' class='margin disappear'>" + alerts[0] + "</div>"
+      + "<div style='color: #53d769;' class='margin disappear'>" + alerts[2] + "</div>";
 
     //Adds the Alerts System:
     document.getElementById('notes-bar').innerHTML = notesBar;

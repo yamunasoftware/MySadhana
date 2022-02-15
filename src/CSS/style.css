@@ -85,17 +85,6 @@ html, body {
   background-color: #39FF13;
 }
 
-.note-alert {
-  color: #FFFFFF;
-  background-color: #FF0F0F;
-  border: none;
-  border-radius: 50%;
-  display: inline;
-  text-align: center;
-  vertical-align: middle;
-  padding: 10px 15px 10px 15px;
-}
-
 .dash-alert {
   padding: 10px;
   color: #FFFFFF;
