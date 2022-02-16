@@ -166,6 +166,10 @@ html, body {
   text-decoration: none;
 }
 
+.cursor {
+  cursor: pointer;
+}
+
 .gradient {
   background-image: linear-gradient(to right, #67B26F, #4ca2cd);
 }
