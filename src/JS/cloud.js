@@ -225,6 +225,7 @@ function pinNote() {
 function exitNote() {
   //Shows the Dashboard:
   saveIndex = null;
+  closeConfirm();
   showDashboard();
   displayNotes();
 }
