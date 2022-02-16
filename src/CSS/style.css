@@ -288,7 +288,7 @@ input:hover, input:focus {
 
   .slide {
     animation-name: slide;
-    animation-duration: 0.25s;
+    animation-duration: 0.125s;
     animation-iteration-count: 1;
     animation-direction: normal;
     animation-delay: 0;
