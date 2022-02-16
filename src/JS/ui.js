@@ -100,7 +100,6 @@ function showNotesBar() {
   if (getCacheData(dataID, false) != null && saveIndex != null) {
     //Gets the Data:
     data = getCacheData(dataID, true);
-    var alerts = checkDates(dates(data[saveIndex]));
 
     //Sets the Notes Bar:
     var notesBar =
@@ -115,24 +114,9 @@ function showNotesBar() {
 
     //Adds the Notes Bar:
     document.getElementById('notes-bar').innerHTML = notesBar;
-
-    //Checks the Case:
-    if (alerts[1] != "") {
-      //Adds the Alert System:
-      document.getElementById('past-dates').innerHTML = alerts[1] + " - " + stringifyDates(checkPast(dates(data[saveIndex])));
-    }
-    
-    //Checks the Case:
-    if (alerts[0] != "") {
-      //Adds the Alert System:
-      document.getElementById('current-dates').innerHTML = alerts[0] + " - " + stringifyDates(checkNow(dates(data[saveIndex])));
-    }
-    
-    //Checks the Case:
-    if (alerts[2] != "") {
-      //Adds the Alert System:
-      document.getElementById('future-dates').innerHTML = alerts[2] + " - " + stringifyDates(checkFuture(dates(data[saveIndex])));
-    }
+    document.getElementById('past-dates').innerHTML = stringifyDates(checkPast(dates(data[saveIndex])));
+    document.getElementById('current-dates').innerHTML = stringifyDates(checkNow(dates(data[saveIndex])));
+    document.getElementById('future-dates').innerHTML = stringifyDates(checkFuture(dates(data[saveIndex])));
   }
 }
 
