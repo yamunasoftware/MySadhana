@@ -117,6 +117,10 @@ html, body {
   margin-top: 40px;
 }
 
+.margin-extra-bottom {
+  margin-bottom: 40px;
+}
+
 .padding-extra-top {
   padding-top: 40px;
 }
