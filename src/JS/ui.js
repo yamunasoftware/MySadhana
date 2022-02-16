@@ -105,7 +105,7 @@ function showNotesBar() {
     //Sets the Notes Bar:
     var notesBar =
       "<div class='mobile-button' onclick='exitNote();'> <</div>" +
-      "<button onclick='deleteNote();'> Delete </button>";
+      "<button onclick='showConfirm();'> Delete </button>";
 
     //Checks the Case:
     if (saveIndex != 0) {
@@ -119,21 +119,33 @@ function showNotesBar() {
     //Checks the Case:
     if (alerts[1] != "") {
       //Adds the Alert System:
-      document.getElementById('past-dates').innerHTML = alerts[1] + ": " + stringifyDates(checkPast(dates(data[saveIndex])));
+      document.getElementById('past-dates').innerHTML = alerts[1] + " - " + stringifyDates(checkPast(dates(data[saveIndex])));
     }
     
     //Checks the Case:
     if (alerts[0] != "") {
       //Adds the Alert System:
-      document.getElementById('current-dates').innerHTML = alerts[0] + ": " + stringifyDates(checkNow(dates(data[saveIndex])));
+      document.getElementById('current-dates').innerHTML = alerts[0] + " - " + stringifyDates(checkNow(dates(data[saveIndex])));
     }
     
     //Checks the Case:
     if (alerts[2] != "") {
       //Adds the Alert System:
-      document.getElementById('future-dates').innerHTML = alerts[2] + ": " + stringifyDates(checkFuture(dates(data[saveIndex])));
+      document.getElementById('future-dates').innerHTML = alerts[2] + " - " + stringifyDates(checkFuture(dates(data[saveIndex])));
     }
   }
+}
+
+//Show Confirm Function:
+function showConfirm() {
+  //Opens the Confirmation:
+  document.getElementById('confirmation').style.display = "block";
+}
+
+//Close Confirm Function:
+function closeConfirm() {
+  //Closes the Confirmation:
+  document.getElementById('confirmation').style.display = "none";
 }
 
 //Show Login Function:

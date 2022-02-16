@@ -106,6 +106,14 @@
     <div id="notes" class="screen deactivate">
       <!-- Notes Bar -->
       <div id="notes-bar" class="padding"></div>
+      <div id="confirmation" class="margin dark-card deactivate">
+        <!-- Confirmation Message -->
+        <div class="padding"> Are You Sure? </div>
+        <button onclick="deleteNote();"> Yes </button>
+        <button onclick="closeConfirm();"> No </button>
+      </div>
+
+      <!-- Dates Alerts -->
       <div id="past-dates" style="color: #FF0F0F;" class="disappear inline fit-content padding"></div>
       <div id="current-dates" style="color: #147efb;" class="disappear inline fit-content padding"></div>
       <div id="future-dates" style="color: #53d769;" class="disappear inline fit-content padding"></div>

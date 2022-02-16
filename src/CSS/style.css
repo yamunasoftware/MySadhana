@@ -81,6 +81,13 @@ html, body {
   color: #000000;
 }
 
+.dark-card {
+  width: 130px;
+  border-radius: 20px;
+  background-color: #202020;
+  color: #FFFFFF;
+}
+
 .card:hover {
   background-color: #39FF13;
 }
