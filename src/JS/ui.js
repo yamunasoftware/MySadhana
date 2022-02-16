@@ -100,6 +100,7 @@ function showNotesBar() {
   if (getCacheData(dataID, false) != null && saveIndex != null) {
     //Gets the Data:
     data = getCacheData(dataID, true);
+    var alerts = checkDates(dates(data[saveIndex]));
 
     //Sets the Notes Bar:
     var notesBar =
@@ -113,17 +114,10 @@ function showNotesBar() {
     }
 
     //Adds the Alerts System:
-    var alerts = checkDates(dates(data[saveIndex]));
-    notesBar +=
-      "<div style='color: #FF0F0F;' class='margin inline disappear'>" + alerts[1] + "</div>"
-      + "<div style='color: #147efb;' class='margin inline disappear'>" + alerts[0] + "</div>"
-      + "<div style='color: #53d769;' class='margin inline disappear'>" + alerts[2] + "</div>";
-
-    //Adds the Alerts System:
     document.getElementById('notes-bar').innerHTML = notesBar;
-    document.getElementById('past-dates').innerHTML = stringifyDates(checkPast(dates(data[saveIndex])));
-    document.getElementById('current-dates').innerHTML = stringifyDates(checkNow(dates(data[saveIndex])));
-    document.getElementById('future-dates').innerHTML = stringifyDates(checkFuture(dates(data[saveIndex])));
+    document.getElementById('past-dates').innerHTML = alerts[1] + ": " + stringifyDates(checkPast(dates(data[saveIndex])));
+    document.getElementById('current-dates').innerHTML = alerts[0] + ": " + stringifyDates(checkNow(dates(data[saveIndex])));
+    document.getElementById('future-dates').innerHTML = alerts[2] + ": " + stringifyDates(checkFuture(dates(data[saveIndex])));
   }
 }
 
