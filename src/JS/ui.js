@@ -113,11 +113,26 @@ function showNotesBar() {
       notesBar += "<button onclick='pinNote();'> Pin </button>";
     }
 
-    //Adds the Alerts System:
+    //Adds the Notes Bar:
     document.getElementById('notes-bar').innerHTML = notesBar;
-    document.getElementById('past-dates').innerHTML = alerts[1] + ": " + stringifyDates(checkPast(dates(data[saveIndex])));
-    document.getElementById('current-dates').innerHTML = alerts[0] + ": " + stringifyDates(checkNow(dates(data[saveIndex])));
-    document.getElementById('future-dates').innerHTML = alerts[2] + ": " + stringifyDates(checkFuture(dates(data[saveIndex])));
+
+    //Checks the Case:
+    if (alerts[1] != "") {
+      //Adds the Alert System:
+      document.getElementById('past-dates').innerHTML = alerts[1] + ": " + stringifyDates(checkPast(dates(data[saveIndex])));
+    }
+    
+    //Checks the Case:
+    if (alerts[0] != "") {
+      //Adds the Alert System:
+      document.getElementById('current-dates').innerHTML = alerts[0] + ": " + stringifyDates(checkNow(dates(data[saveIndex])));
+    }
+    
+    //Checks the Case:
+    if (alerts[2] != "") {
+      //Adds the Alert System:
+      document.getElementById('future-dates').innerHTML = alerts[2] + ": " + stringifyDates(checkFuture(dates(data[saveIndex])));
+    }
   }
 }
 
