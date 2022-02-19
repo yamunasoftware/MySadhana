@@ -78,9 +78,7 @@ function showDashboard() {
 function showNotes(index) {
   //Checks the Case:
   if (getCacheData(dataID, false) != null && saveIndex == null) {
-    //Gets the Data:
-    getData();
-    waitData(index);
+    queueNote(index);
   }
 }
 
