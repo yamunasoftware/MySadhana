@@ -18,11 +18,13 @@ var collectionName = "users";
 //ID Variables:
 var codeID = "code";
 var dataID = "data";
+var waitID = "wait";
 
 //Data Variables:
 var code = "";
 var data = [];
 var saveIndex = null;
+var wait = "wait";
 
 /* CLOUD AUTH FUNCTIONS */
 
@@ -137,6 +139,7 @@ function getData() {
         //Sets the Data:
         data = JSON.parse(formatData(JSON.stringify(doc.data().data)));
         setCacheData(dataID, data, true);
+        setCacheData(waitID, wait, false);
 
         //Shows the Dashboard:
         showDashboard();
@@ -152,6 +155,24 @@ function getData() {
         //Displays Error:
         showError("Invalid ID");
       });
+  }
+}
+
+//Wait Data Function:
+function waitData(index) {
+  //Checks the Case:
+  if (getCacheData(waitID, false) == null) {
+    //Sets the Timeout:
+    setTimeout(function () {
+      //Recurses:
+      waitData();
+    }, 100);
+  }
+
+  else {
+    //Delete Cache Item:
+    deleteCacheData(waitID);
+    queueNote(index);
   }
 }
 
@@ -647,6 +668,12 @@ function setCacheData(id, value, string) {
 function clearCacheData() {
   //Clears Cache:
   localStorage.clear();
+}
+
+//Delete Cache Data:
+function deleteCacheData(id) {
+  //Deletes the Cache Item:
+  localStorage.removeItem(id);
 }
 
 //Firebase Server Formatting Function:

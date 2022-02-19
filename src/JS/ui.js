@@ -79,19 +79,26 @@ function showNotes(index) {
   //Checks the Case:
   if (getCacheData(dataID, false) != null && saveIndex == null) {
     //Gets the Data:
-    data = getCacheData(dataID, true);
-    saveIndex = index;
-
-    //Shows the Note:
-    document.getElementById('splash-screen').style.display = "none";
-    document.getElementById('dashboard').style.display = "none";
-    document.getElementById('notes').style.display = "block";
-
-    //Shows the Notes Bar:
-    showNotesBar();
-    document.getElementById('text-area').innerHTML = data[index];
-    closeNavigation();
+    getData();
+    waitData(index);
   }
+}
+
+//Queue Note Function:
+function queueNote(index) {
+  //Gets the Data:
+  data = getCacheData(dataID, true);
+  saveIndex = index;
+
+  //Shows the Note:
+  document.getElementById('splash-screen').style.display = "none";
+  document.getElementById('dashboard').style.display = "none";
+  document.getElementById('notes').style.display = "block";
+
+  //Shows the Notes Bar:
+  showNotesBar();
+  document.getElementById('text-area').innerHTML = data[index];
+  closeNavigation();
 }
 
 //Show Notes Bar Function:
