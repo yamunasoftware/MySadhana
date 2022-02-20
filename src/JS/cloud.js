@@ -159,20 +159,19 @@ function getData() {
 }
 
 //Wait Data Function:
-function waitData(index) {
+function waitData() {
   //Checks the Case:
-  if (getCacheData(waitID, false) == null) {
+  if (getCacheData(waitID, false) != null) {
+    //Shows the Notes:
+    deleteCacheData(waitID);
+  }
+
+  else {
     //Sets the Timeout:
     setTimeout(function () {
       //Recurses:
       waitData();
     }, 100);
-  }
-
-  else {
-    //Delete Cache Item:
-    deleteCacheData(waitID);
-    queueNote(index);
   }
 }
 
