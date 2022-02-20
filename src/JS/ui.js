@@ -39,12 +39,6 @@ window.onload = function () {
       //Saves the Note:
       saveNote();
       showNotesBar();
-
-      //Sets the Interval:
-      setTimeout(function () {
-        //Exits the Note:
-        exitNote();
-      }, timeout);
     }
   });
 
@@ -114,6 +108,15 @@ function showNotes(index) {
       showNotesBar();
       document.getElementById('text-area').innerHTML = data[index];
       closeNavigation();
+
+      //Idle Interval:
+      setInterval(function () {
+        //Checks the Case:
+        if (document.getElementById('notes') != document.activeElement) {
+          //Exits the Note:
+          exitNote();
+        }
+      }, timeout);
     }
 
     else {
