@@ -110,11 +110,11 @@ function showNotes(index) {
       closeNavigation();
 
       //Idle Interval:
-      var mainInterval = setInterval(function () {
+      mainInterval = setInterval(function () {
         //Checks the Case:
-        if (document.getElementById('text-area') != document.activeElement) {
+        if (document.getElementById('text-area') != document.activeElement
+          && saveIndex != null) {
           //Exits the Note:
-          clearInterval(mainInterval);
           exitNote();
         }
       }, timeout);

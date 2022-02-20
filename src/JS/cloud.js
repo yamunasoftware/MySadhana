@@ -26,6 +26,7 @@ var data = [];
 //Load Variables:
 var loaded = false;
 var timeout = 120000;
+var mainInterval = null;
 
 //Response Variables:
 var wait = false;
@@ -248,6 +249,12 @@ function exitNote() {
   closeConfirm();
   showDashboard();
   displayNotes();
+
+  //Checks the Case:
+  if (mainInterval != null) {
+    //Cancels the Interval:
+    clearInterval(mainInterval);
+  }
 }
 
 //Display Notes Function:
