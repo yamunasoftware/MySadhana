@@ -164,6 +164,7 @@ function waitData() {
   if (getCacheData(waitID, false) != null) {
     //Shows the Notes:
     deleteCacheData(waitID);
+    return true;
   }
 
   else {
