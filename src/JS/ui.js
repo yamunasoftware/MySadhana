@@ -80,7 +80,7 @@ function showDashboard() {
 function showLoading() {
   //Shows the Loading Page:
   document.getElementById('splash-screen').style.display = "none";
-  document.getElementById('dashboard').style.display = "block";
+  document.getElementById('dashboard').style.display = "none";
   document.getElementById('notes').style.display = "none";
   document.getElementById('loading').style.display = "block";
 }
