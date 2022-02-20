@@ -95,6 +95,7 @@ function showNotes(index) {
     //Checks the Case:
     if (getCacheData(waitID, false) != null) {
       //Gets the Data:
+      deleteCacheData(waitID);
       data = getCacheData(dataID, true);
       saveIndex = index;
 
