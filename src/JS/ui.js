@@ -78,9 +78,13 @@ function showDashboard() {
 function showNotes(index) {
   //Checks the Case:
   if (getCacheData(dataID, false) != null && saveIndex == null) {
+    //Gets the Data:
+    getData();
+    
     //Checks the Case:
-    if (waitData()) {
+    if (getCacheData(waitID, false) != null) {
       //Gets the Data:
+      deleteCacheData(waitID);
       data = getCacheData(dataID, true);
       saveIndex = index;
 
@@ -93,6 +97,14 @@ function showNotes(index) {
       showNotesBar();
       document.getElementById('text-area').innerHTML = data[index];
       closeNavigation();
+    }
+
+    else {
+      //Sets the Timeout:
+      setTimeout(function () {
+        //Recurses:
+        showNotes(index);
+      }, 100);
     }
   }
 }

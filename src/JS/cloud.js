@@ -158,24 +158,6 @@ function getData() {
   }
 }
 
-//Wait Data Function:
-function waitData() {
-  //Checks the Case:
-  if (getCacheData(waitID, false) != null) {
-    //Shows the Notes:
-    deleteCacheData(waitID);
-    return true;
-  }
-
-  else {
-    //Sets the Timeout:
-    setTimeout(function () {
-      //Recurses:
-      waitData();
-    }, 100);
-  }
-}
-
 /* DATA FUNCTIONS */
 
 //Copy Code Function:
