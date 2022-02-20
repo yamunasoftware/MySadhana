@@ -112,7 +112,7 @@ function showNotes(index) {
       //Idle Interval:
       var mainInterval = setInterval(function () {
         //Checks the Case:
-        if (document.getElementById('notes') != document.activeElement) {
+        if (document.getElementById('text-area') != document.activeElement) {
           //Exits the Note:
           clearInterval(mainInterval);
           exitNote();

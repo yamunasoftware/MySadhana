@@ -25,7 +25,7 @@ var data = [];
 
 //Load Variables:
 var loaded = false;
-var timeout = 10000;
+var timeout = 120000;
 
 //Response Variables:
 var wait = false;
