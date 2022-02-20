@@ -142,7 +142,6 @@ function getData() {
         //Sets the Data:
         data = JSON.parse(formatData(JSON.stringify(doc.data().data)));
         setCacheData(dataID, data, true);
-        setCacheData(waitID, wait, false);
       }
 
       else {
@@ -157,6 +156,11 @@ function getData() {
           showDashboard();
           displayNotes();
           loaded = true;
+        }
+
+        else {
+          //Sets the Wait:
+          setCacheData(waitID, wait, false);
         }
       })
       .catch(() => {
