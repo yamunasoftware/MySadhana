@@ -62,6 +62,7 @@ function showSplash() {
     document.getElementById('splash-screen').style.display = "block";
     document.getElementById('dashboard').style.display = "none";
     document.getElementById('notes').style.display = "none";
+    document.getElementById('loading').style.display = "none";
   }
 }
 
@@ -71,7 +72,17 @@ function showDashboard() {
   document.getElementById('splash-screen').style.display = "none";
   document.getElementById('dashboard').style.display = "block";
   document.getElementById('notes').style.display = "none";
+  document.getElementById('loading').style.display = "none";
   document.getElementById('search').value = "";
+}
+
+//Show Loading Function:
+function showLoading() {
+  //Shows the Loading Page:
+  document.getElementById('splash-screen').style.display = "none";
+  document.getElementById('dashboard').style.display = "block";
+  document.getElementById('notes').style.display = "none";
+  document.getElementById('loading').style.display = "block";
 }
 
 //Show Notes Function:
@@ -84,7 +95,6 @@ function showNotes(index) {
     //Checks the Case:
     if (getCacheData(waitID, false) != null) {
       //Gets the Data:
-      deleteCacheData(waitID);
       data = getCacheData(dataID, true);
       saveIndex = index;
 
@@ -92,6 +102,7 @@ function showNotes(index) {
       document.getElementById('splash-screen').style.display = "none";
       document.getElementById('dashboard').style.display = "none";
       document.getElementById('notes').style.display = "block";
+      document.getElementById('loading').style.display = "none";
 
       //Shows the Notes Bar:
       showNotesBar();
@@ -101,6 +112,7 @@ function showNotes(index) {
 
     else {
       //Sets the Timeout:
+      showLoading();
       setTimeout(function () {
         //Recurses:
         showNotes(index);
@@ -133,11 +145,6 @@ function showNotesBar() {
     document.getElementById('current-dates').innerHTML = stringifyDates(checkNow(dates(data[saveIndex])));
     document.getElementById('future-dates').innerHTML = stringifyDates(checkFuture(dates(data[saveIndex])));
   }
-}
-
-//Show Loading Function:
-function showLoading() {
-
 }
 
 //Show Confirm Function:
