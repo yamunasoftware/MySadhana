@@ -24,6 +24,9 @@ var waitID = "wait";
 var code = "";
 var data = [];
 var saveIndex = null;
+
+//Response Variables:
+var loaded = false;
 var wait = "wait";
 
 /* CLOUD AUTH FUNCTIONS */
@@ -139,11 +142,10 @@ function getData() {
         //Sets the Data:
         data = JSON.parse(formatData(JSON.stringify(doc.data().data)));
         setCacheData(dataID, data, true);
-        setCacheData(waitID, wait, false);
 
-        //Shows the Dashboard:
-        showDashboard();
-        displayNotes();
+        //Sets the Response:
+        setCacheData(waitID, wait, false);
+        loaded = true;
       }
 
       else {
@@ -151,6 +153,14 @@ function getData() {
         showError("Invalid ID");
       }
     })
+      .then(() => {
+        //Checks the Case:
+        if (loaded) {
+          //Shows the Dashboard:
+          showDashboard();
+          displayNotes();
+        }
+      })
       .catch(() => {
         //Displays Error:
         showError("Invalid ID");
@@ -483,7 +493,7 @@ function checkPast(dates) {
   mainLoop: while (turns < dates.length) {
     //Extracts the Dates:
     var localDates = extractDate(dates[turns]);
-    
+
     //Checks the Case:
     if (localDates[0] < currentMonth) {
       //Pushes to the Dates:
@@ -494,7 +504,7 @@ function checkPast(dates) {
       //Pushes to the Dates:
       returnDates.push(dates[turns].replace("-", "/"));
     }
-    
+
     turns++;
   }
 
@@ -517,13 +527,13 @@ function checkNow(dates) {
   mainLoop: while (turns < dates.length) {
     //Extracts the Dates:
     var localDates = extractDate(dates[turns]);
-    
+
     //Checks the Case:
     if (localDates[0] == currentMonth && localDates[1] == currentDay) {
       //Pushes to the Dates:
       returnDates.push(dates[turns].replace("-", "/"));
     }
-    
+
     turns++;
   }
 
@@ -546,7 +556,7 @@ function checkFuture(dates) {
   mainLoop: while (turns < dates.length) {
     //Extracts the Dates:
     var localDates = extractDate(dates[turns]);
-    
+
     if (localDates[0] == currentMonth && localDates[1] > currentDay) {
       //Checks the Case:
       if (localDates[1] - currentDay <= 2) {
@@ -554,7 +564,7 @@ function checkFuture(dates) {
         returnDates.push(dates[turns].replace("-", "/"));
       }
     }
-    
+
     turns++;
   }
 
@@ -568,7 +578,7 @@ function checkDates(dates) {
   var done = checkPast(dates);
   var current = checkNow(dates);
   var future = checkFuture(dates);
-  
+
   //Alert Variables:
   var now = current.length;
   var past = done.length;

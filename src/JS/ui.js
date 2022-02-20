@@ -135,6 +135,11 @@ function showNotesBar() {
   }
 }
 
+//Show Loading Function:
+function showLoading() {
+
+}
+
 //Show Confirm Function:
 function showConfirm() {
   //Opens the Confirmation:
