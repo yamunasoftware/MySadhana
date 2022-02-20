@@ -238,8 +238,11 @@ function pinNote() {
 
 //Exit Notes Function:
 function exitNote() {
-  //Shows the Dashboard:
+  //Resets Data:
+  deleteCacheData(waitID);
   saveIndex = null;
+
+  //Shows the Dashboard:
   closeConfirm();
   showDashboard();
   displayNotes();
