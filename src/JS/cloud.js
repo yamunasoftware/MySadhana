@@ -18,16 +18,15 @@ var collectionName = "users";
 //ID Variables:
 var codeID = "code";
 var dataID = "data";
-var waitID = "wait";
 
 //Data Variables:
 var code = "";
 var data = [];
-var saveIndex = null;
 
 //Response Variables:
 var loaded = false;
-var wait = "wait";
+var wait = false;
+var saveIndex = null;
 
 /* CLOUD AUTH FUNCTIONS */
 
@@ -160,7 +159,7 @@ function getData() {
 
         else {
           //Sets the Wait:
-          setCacheData(waitID, wait, false);
+          wait = true;
         }
       })
       .catch(() => {
@@ -239,7 +238,7 @@ function pinNote() {
 //Exit Notes Function:
 function exitNote() {
   //Resets Data:
-  deleteCacheData(waitID);
+  wait = false;
   saveIndex = null;
 
   //Shows the Dashboard:

@@ -93,7 +93,7 @@ function showNotes(index) {
     getData();
     
     //Checks the Case:
-    if (getCacheData(waitID, false) != null) {
+    if (wait) {
       //Gets the Data:
       data = getCacheData(dataID, true);
       saveIndex = index;
