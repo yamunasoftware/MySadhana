@@ -23,8 +23,11 @@ var dataID = "data";
 var code = "";
 var data = [];
 
-//Response Variables:
+//Load Variables:
 var loaded = false;
+var timeout = 10000;
+
+//Response Variables:
 var wait = false;
 var saveIndex = null;
 

@@ -39,6 +39,12 @@ window.onload = function () {
       //Saves the Note:
       saveNote();
       showNotesBar();
+
+      //Sets the Interval:
+      setTimeout(function () {
+        //Exits the Note:
+        exitNote();
+      }, timeout);
     }
   });
 
