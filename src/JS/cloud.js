@@ -142,10 +142,7 @@ function getData() {
         //Sets the Data:
         data = JSON.parse(formatData(JSON.stringify(doc.data().data)));
         setCacheData(dataID, data, true);
-
-        //Sets the Response:
         setCacheData(waitID, wait, false);
-        loaded = true;
       }
 
       else {
@@ -155,10 +152,11 @@ function getData() {
     })
       .then(() => {
         //Checks the Case:
-        if (loaded) {
+        if (!loaded) {
           //Shows the Dashboard:
           showDashboard();
           displayNotes();
+          loaded = true;
         }
       })
       .catch(() => {
