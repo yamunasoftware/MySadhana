@@ -20,7 +20,14 @@ window.onload = function () {
   //Search Event Listener:
   document.getElementById('search').addEventListener("input", function (e) {
     //Searches:
+    document.getElementById('search') = document.getElementById('search').value.replace(/["]+/g, '');
     search(e);
+  });
+
+  //Log In Input Event:
+  document.getElementById('log-in-input').addEventListener("keydown", function (e) {
+    //Resets the Value:
+    document.getElementById('log-in-input') = document.getElementById('log-in-input').value.replace(/["]+/g, '');
   });
 
   //Log In Enter Event Listener:
@@ -34,6 +41,9 @@ window.onload = function () {
 
   //Text Area Input Event Listener:
   document.getElementById('text-area').addEventListener("input", function () {
+    //Resets the Value:
+    document.getElementById('text-area').innerHTML = document.getElementById('text-area').innerHTML.replace(/["]+/g, '');
+    
     //Checks the Case:
     if (saveIndex != null) {
       //Saves the Note:
