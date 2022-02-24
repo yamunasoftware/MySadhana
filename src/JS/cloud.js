@@ -189,6 +189,7 @@ function saveNote() {
     //Sets the Data:
     data = getCacheData(dataID, true);
     data[saveIndex] = document.getElementById('text-area').innerHTML;
+    data[saveIndex] = data[saveIndex].replace(/(\r\n|\n|\r)/gm, "<br>");
 
     //Saves the Data:
     setCacheData(dataID, data, true);
