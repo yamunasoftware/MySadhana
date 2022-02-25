@@ -231,7 +231,6 @@ function pinNote() {
 function exitNote() {
   //Resets Data:
   saveNote();
-  wait = false;
   saveIndex = null;
 
   //Shows the Startup:

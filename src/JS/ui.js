@@ -126,7 +126,8 @@ function showLoading() {
 //Show Notes Function:
 function showNotes(index) {
   //Checks the Case:
-  if (getCacheData(dataID, false) != null && saveIndex == null) {
+  if (getCacheData(codeID, false) != null && getCacheData(dataID, false) != null 
+    && saveIndex == null) {
     //Gets the Data:
     getData();
     
@@ -135,6 +136,7 @@ function showNotes(index) {
       //Gets the Data:
       data = getCacheData(dataID, true);
       saveIndex = index;
+      wait = false;
 
       //Shows the Note:
       document.getElementById('splash-screen').style.display = "none";
