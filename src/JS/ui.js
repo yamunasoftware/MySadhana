@@ -11,9 +11,9 @@ navigator.serviceWorker.register('/service-worker.js', {
 window.onload = function () {
   /* Function Calls */
 
-  //Init Functions:
+  //Startup:
   showSplash();
-  getData();
+  showStartup();
 
   /* Event Listeners */
 
@@ -75,6 +75,32 @@ function showSplash() {
     document.getElementById('dashboard').style.display = "none";
     document.getElementById('notes').style.display = "none";
     document.getElementById('loading').style.display = "none";
+  }
+}
+
+//Show Startup Function:
+function showStartup() {
+  //Checks the Case:
+  if (getCacheData(codeID, false) != null) {
+    //Gets the Data:
+    getData();
+
+    //Checks the Case:
+    if (wait) {
+      //Shows the Dashboard:
+      wait = false;
+      showDashboard();
+      displayNotes();
+    }
+
+    else {
+      //Sets the Timeout:
+      showLoading();
+      setTimeout(function () {
+        //Recurses:
+        showStartup();
+      }, 100);
+    }
   }
 }
 

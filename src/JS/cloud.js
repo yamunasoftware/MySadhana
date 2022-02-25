@@ -23,8 +23,7 @@ var dataID = "data";
 var code = "";
 var data = [];
 
-//Load Variables:
-var loaded = false;
+//Timeout Variables:
 var timeout = 120000;
 var mainInterval = null;
 
@@ -153,18 +152,8 @@ function getData() {
       }
     })
       .then(() => {
-        //Checks the Case:
-        if (!loaded) {
-          //Shows the Dashboard:
-          showDashboard();
-          displayNotes();
-          loaded = true;
-        }
-
-        else {
-          //Sets the Wait:
-          wait = true;
-        }
+        //Sets the Wait:
+        wait = true;
       })
       .catch(() => {
         //Displays Error:
