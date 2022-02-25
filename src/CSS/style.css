@@ -32,6 +32,11 @@ html, body {
   margin: 0px;
 }
 
+.dark {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
 .text-area {
   margin: 0px;
   background-color: #000000;
