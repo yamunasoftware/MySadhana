@@ -134,9 +134,9 @@ function showNotes(index) {
     //Checks the Case:
     if (wait) {
       //Gets the Data:
+      wait = false;
       data = getCacheData(dataID, true);
       saveIndex = index;
-      wait = false;
 
       //Shows the Note:
       document.getElementById('splash-screen').style.display = "none";
