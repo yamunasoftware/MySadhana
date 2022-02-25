@@ -247,6 +247,7 @@ function exitNote() {
   saveIndex = null;
 
   //Shows the Dashboard:
+  saveNote();
   closeConfirm();
   showDashboard();
   displayNotes();

@@ -40,15 +40,17 @@ window.onload = function () {
   });
 
   //Text Area Input Event Listener:
-  document.getElementById('text-area').addEventListener("input", function () {
-    //Resets the Value:
-    document.getElementById('text-area').innerHTML = document.getElementById('text-area').innerHTML.replace(/["]+/g, '');
-    
+  document.getElementById('text-area').addEventListener("input", function (e) {
     //Checks the Case:
     if (saveIndex != null) {
-      //Saves the Note:
-      saveNote();
+      //Shows Bar:
       showNotesBar();
+
+      //Checks the Case:
+      if (document.getElementById('text-area').innerHTML.includes("\"")) {
+        //Resets the Value:
+        document.getElementById('text-area').innerHTML = document.getElementById('text-area').innerHTML.replace(/["]+/g, '');
+      }
     }
   });
 
