@@ -142,6 +142,7 @@ function getData() {
         //Sets the Data:
         data = JSON.parse(formatData(JSON.stringify(doc.data().data)));
         setCacheData(dataID, data, true);
+        wait = true;
       }
 
       else {
@@ -149,10 +150,6 @@ function getData() {
         showDashError("An Error Ocurred");
       }
     })
-      .then(() => {
-        //Sets the Wait:
-        wait = true;
-      })
       .catch(() => {
         //Displays Error:
         showDashError("An Error Ocurred");
