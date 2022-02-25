@@ -45,9 +45,8 @@ function signUp() {
       setCacheData(codeID, code, false);
       setCacheData(dataID, data, true);
 
-      //Shows the Dashboard:
-      showDashboard();
-      displayNotes();
+      //Shows the Startup:
+      showStartup();
     })
     .catch(() => {
       //Displays Error:
@@ -73,9 +72,8 @@ function logIn() {
         setCacheData(codeID, code, false);
         setCacheData(dataID, data, true);
 
-        //Shows the Dashboard:
-        showDashboard();
-        displayNotes();
+        //Shows the Startup:
+        showStartup();
       }
 
       else {
@@ -236,10 +234,9 @@ function exitNote() {
   wait = false;
   saveIndex = null;
 
-  //Shows the Dashboard:
+  //Shows the Startup:
   closeConfirm();
-  showDashboard();
-  displayNotes();
+  showStartup();
 
   //Checks the Case:
   if (mainInterval != null) {
