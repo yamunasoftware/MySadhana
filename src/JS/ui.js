@@ -82,9 +82,6 @@ function showSplash() {
 function showStartup() {
   //Checks the Case:
   if (getCacheData(codeID, false) != null) {
-    //Gets the Data:
-    getData();
-
     //Checks the Case:
     if (wait) {
       //Shows the Dashboard:
@@ -94,8 +91,11 @@ function showStartup() {
     }
 
     else {
-      //Sets the Timeout:
+      //Gets the Data:
+      getData();
       showLoading();
+
+      //Sets the Timeout:
       setTimeout(function () {
         //Recurses:
         showStartup();
@@ -128,9 +128,6 @@ function showNotes(index) {
   //Checks the Case:
   if (getCacheData(codeID, false) != null && getCacheData(dataID, false) != null 
     && saveIndex == null) {
-    //Gets the Data:
-    getData();
-    
     //Checks the Case:
     if (wait) {
       //Gets the Data:
@@ -161,8 +158,11 @@ function showNotes(index) {
     }
 
     else {
-      //Sets the Timeout:
+      //Gets the Data:
+      getData();
       showLoading();
+
+      //Sets the Timeout:
       setTimeout(function () {
         //Recurses:
         showNotes(index);
