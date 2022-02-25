@@ -193,6 +193,12 @@ function showError(error) {
   document.getElementById('error').innerHTML = error;
 }
 
+//Show Dash Error Function:
+function showDashError(error) {
+  //Sets the Error:
+  document.getElementById('dash-error').innerHTML = error;
+}
+
 //Show Navigation Function:
 function showNavigation() {
   //Checks the Case:

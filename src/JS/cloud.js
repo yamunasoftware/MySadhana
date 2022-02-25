@@ -52,7 +52,7 @@ function signUp() {
     })
     .catch(() => {
       //Displays Error:
-      showError("Error");
+      showError("An Error Ocurred");
     });
 }
 
@@ -126,7 +126,7 @@ function sendData() {
     })
       .catch(() => {
         //Displays Error:
-        showError("Error");
+        showDashError("An Error Ocurred");
       });
   }
 }
@@ -149,7 +149,7 @@ function getData() {
 
       else {
         //Displays Error:
-        showError("Invalid ID");
+        showDashError("An Error Ocurred");
       }
     })
       .then(() => {
@@ -168,7 +168,7 @@ function getData() {
       })
       .catch(() => {
         //Displays Error:
-        showError("Invalid ID");
+        showDashError("An Error Ocurred");
       });
   }
 }
@@ -185,7 +185,7 @@ function copyCode() {
 //Save Note Function:
 function saveNote() {
   //Checks the Case:
-  if (getCacheData(dataID, false) != null) {
+  if (getCacheData(dataID, false) != null && saveIndex != null) {
     //Sets the Data:
     data = getCacheData(dataID, true);
     data[saveIndex] = document.getElementById('text-area').innerHTML;
@@ -243,11 +243,11 @@ function pinNote() {
 //Exit Notes Function:
 function exitNote() {
   //Resets Data:
+  saveNote();
   wait = false;
   saveIndex = null;
 
   //Shows the Dashboard:
-  saveNote();
   closeConfirm();
   showDashboard();
   displayNotes();
