@@ -325,10 +325,9 @@ function deleteNote() {
     saveIndex != null) {
     //Gets the Data:
     data = getCacheData(dataID, true);
-    data = deleteElement(data, data[saveIndex]);
+    setCacheData(dataID, deleteElement(data, data[saveIndex]), true);
 
     //Sends the Data:
-    setCacheData(dataID, data, true);
     sendData();
     exitNote();
   }
