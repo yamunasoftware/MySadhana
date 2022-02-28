@@ -220,7 +220,7 @@ function pinNote() {
 
     //Sends the Data:
     sendData();
-    exitNote();
+    exitSafely();
   }
 }
 
@@ -233,6 +233,21 @@ function exitNote() {
   //Shows the Startup:
   closeConfirm();
   showStartup();
+
+  //Checks the Case:
+  if (mainInterval != null) {
+    //Cancels the Interval:
+    clearInterval(mainInterval);
+  }
+}
+
+//Exit Safely Function:
+function exitSafely() {
+  //Exits Safely:
+  sendData();
+  saveIndex = null;
+  showDashboard();
+  displayNotes();
 
   //Checks the Case:
   if (mainInterval != null) {
@@ -326,19 +341,10 @@ function deleteNote() {
     //Gets the Data:
     data = getCacheData(dataID, true);
     setCacheData(dataID, deleteElement(data, data[saveIndex]), true);
-    sendData();
-
-    //Exits Safely:
-    saveIndex = null;
-    showDashboard();
-    displayNotes();
+    
+    //Exits:
+    exitSafely();
     closeConfirm();
-
-    //Checks the Case:
-    if (mainInterval != null) {
-      //Cancels the Interval:
-      clearInterval(mainInterval);
-    }
   }
 }
 
