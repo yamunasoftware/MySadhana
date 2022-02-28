@@ -325,7 +325,7 @@ function deleteNote() {
     saveIndex != null) {
     //Gets the Data:
     data = getCacheData(dataID, true);
-    data.splice(saveIndex, 1);
+    data = data.filter(element => element != data[saveIndex]);
 
     //Sends the Data:
     setCacheData(dataID, data, true);
