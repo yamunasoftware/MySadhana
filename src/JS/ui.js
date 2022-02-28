@@ -25,7 +25,7 @@ window.onload = function () {
   });
 
   //Log In Input Event:
-  document.getElementById('log-in-input').addEventListener("keydown", function (e) {
+  document.getElementById('log-in-input').addEventListener("input", function (e) {
     //Resets the Value:
     document.getElementById('log-in-input') = document.getElementById('log-in-input').value.replace(/["]+/g, '');
   });
