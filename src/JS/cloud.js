@@ -326,10 +326,19 @@ function deleteNote() {
     //Gets the Data:
     data = getCacheData(dataID, true);
     setCacheData(dataID, deleteElement(data, data[saveIndex]), true);
-
-    //Sends the Data:
     sendData();
-    exitNote();
+
+    //Exits Safely:
+    saveIndex = null;
+    showDashboard();
+    displayNotes();
+    closeConfirm();
+
+    //Checks the Case:
+    if (mainInterval != null) {
+      //Cancels the Interval:
+      clearInterval(mainInterval);
+    }
   }
 }
 
@@ -346,7 +355,7 @@ function deleteElement(array, element) {
       //Pushes to Array:
       localArray.push(array[turns]);
     }
-    
+
     turns++;
   }
 
