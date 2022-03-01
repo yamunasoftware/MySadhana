@@ -439,7 +439,7 @@ function checkDates(dates) {
   //Sets the Value:
   if (now == 0) {
     //Sets the Value:
-    now == 0;
+    now == "";
   }
 
   //Returns the Counts:
