@@ -204,7 +204,7 @@ function deleteNote() {
     saveIndex != null) {
     //Deletes the Note:
     data = getCacheData(dataID, true);
-    setCacheData(dataID, deleteElement(data, data[saveIndex]), true);
+    setCacheData(dataID, data.splice(saveIndex, 1), true);
     exitSafely();
   }
 }
@@ -304,27 +304,6 @@ function search(e) {
 
   //Sets the HTML:
   document.getElementById('notes-list').innerHTML = notesList;
-}
-
-//Delete Element Function:
-function deleteElement(array, element) {
-  //Loop Variables:
-  var localArray = [];
-  var turns = 0;
-
-  //Loops through Array:
-  mainLoop: while (turns < array.length) {
-    //Checks the Case:
-    if (array[turns] != element) {
-      //Pushes to Array:
-      localArray.push(array[turns]);
-    }
-
-    turns++;
-  }
-
-  //Returns the Array:
-  return localArray;
 }
 
 //Title Function:
