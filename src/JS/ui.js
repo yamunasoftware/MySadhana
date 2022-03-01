@@ -137,7 +137,6 @@ function showNotes(index) {
       //Shows the Data:
       showDates();
       document.getElementById('text-area').innerHTML = data[index];
-      closeNavigation();
 
       //Idle Interval:
       mainInterval = setInterval(function () {

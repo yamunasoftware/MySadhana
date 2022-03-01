@@ -307,7 +307,7 @@ function displayNotes() {
       //Adds Buttons:
       notesList +=
         "<button onclick='pinNote(" + turns + ");'> Pin </button>"
-        "<button onclick='showConfirm(" + turns + ");'> Delete </button> </div>";
+        + "<button onclick='showConfirm(" + turns + ");'> Delete </button> </div>";
 
       turns++;
     }
@@ -344,7 +344,7 @@ function search(e) {
       //Adds Buttons:
       notesList +=
         "<button onclick='pinNote(" + turns + ");'> Pin </button>"
-        "<button onclick='showConfirm(" + turns + ");'> Delete </button> </div>";
+        + "<button onclick='showConfirm(" + turns + ");'> Delete </button> </div>";
     }
 
     turns++;
