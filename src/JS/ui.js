@@ -135,8 +135,8 @@ function showNotes(index) {
       document.getElementById('loading').style.display = "none";
 
       //Shows the Data:
-      showDates();
       document.getElementById('text-area').innerHTML = data[index];
+      showDates();
 
       //Idle Interval:
       mainInterval = setInterval(function () {
@@ -165,15 +165,10 @@ function showNotes(index) {
 
 //Show Dates Function:
 function showDates() {
-  //Checks the Case:
-  if (getCacheData(dataID, false) != null && saveIndex != null) {
-    //Sets the Dates:
-    console.log("here")
-    data = getCacheData(dataID, true);
-    document.getElementById('past-dates').innerHTML = stringifyDates(checkPast(dates(data[saveIndex])));
-    document.getElementById('current-dates').innerHTML = stringifyDates(checkNow(dates(data[saveIndex])));
-    document.getElementById('future-dates').innerHTML = stringifyDates(checkFuture(dates(data[saveIndex])));
-  }
+  //Sets the Dates:
+  document.getElementById('past-dates').innerHTML = stringifyDates(checkPast(dates(document.getElementById('text-area').innerHTML)));
+  document.getElementById('current-dates').innerHTML = stringifyDates(checkNow(dates(document.getElementById('text-area').innerHTML)));
+  document.getElementById('future-dates').innerHTML = stringifyDates(checkFuture(dates(document.getElementById('text-area').innerHTML)));
 }
 
 //Show Confirm Function:
