@@ -167,6 +167,37 @@ function copyCode() {
   navigator.clipboard.writeText(code);
 }
 
+//Pin Note Function:
+function pinNote(index) {
+  //Array Variables:
+  data = getCacheData(dataID, true);
+  var localData = [];
+
+  //Loop Variables:
+  var turns = 0;
+
+  //Loops through Array:
+  mainLoop: while (turns < data.length) {
+    //Checks the Case:
+    if (turns == 0) {
+      //Pushes to the Data:
+      localData.push(data[index]);
+    }
+
+    else if (turns != index) {
+      //Pushes to the Data:
+      localData.push(data[turns]);
+    }
+    
+    turns++;
+  }
+
+  //Sets the Data:
+  data = localData;
+  setCacheData(dataID, data, true);
+  exitSafely();
+}
+
 //Save Note Function:
 function saveNote() {
   //Checks the Case:

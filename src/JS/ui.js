@@ -118,6 +118,23 @@ function showLoading() {
 
 //Show Notes Function:
 function showNotes(index) {
+  //Adds Event Listener:
+  window.addEventListener("keydown", function (e) {
+    //Checks the Case:
+    if (e.key != "Shift") {
+      //Shows Notes Display:
+      showNotesDisplay(index);
+    }
+
+    else {
+      //Pins the Note:
+      pinNote(index);
+    }
+  });
+}
+
+//Show Notes Display Function:
+function showNotesDisplay(index) {
   //Checks the Case:
   if (getCacheData(codeID, false) != null && getCacheData(dataID, false) != null 
     && saveIndex == null) {
