@@ -112,8 +112,17 @@
 
     <!-- Notes -->
     <div id="notes" class="screen deactivate">
-      <!-- Text Area and Exit Button -->
-      <div class="padding"> <div class='mobile-button' onclick='exitNote();'> <</div> </div>
+      <!-- Notification Bar -->
+      <div class="padding">
+        <!-- Exit Button --> 
+        <div class='mobile-button' onclick='exitNote();'> <</div>
+        
+        <!-- Alerts -->
+        <div id="past" class="margin dash-alert fit-content inline disappear"></div>
+        <div id="now" style="background-color: #147efb;" class="margin dash-alert fit-content inline disappear"></div>
+      </div>
+
+      <!-- Text Area -->
       <div id="text-area" class="padding margin-extra-top text-area" contenteditable></div>
     </div>
 

@@ -41,6 +41,9 @@ window.onload = function () {
         //Resets the Value:
         document.getElementById('text-area').innerHTML = document.getElementById('text-area').innerHTML.replace(/["]+/g, '');
       }
+
+      //Show Dates:
+      showDates(document.getElementById('text-area').innerHTML);
     }
   });
 
@@ -131,6 +134,7 @@ function showNotes(index) {
       document.getElementById('notes').style.display = "block";
       document.getElementById('loading').style.display = "none";
       document.getElementById('text-area').innerHTML = data[index];
+      showDates(document.getElementById('text-area').innerHTML);
 
       //Idle Interval:
       mainInterval = setInterval(function () {
@@ -155,6 +159,14 @@ function showNotes(index) {
       }, 100);
     }
   }
+}
+
+//Show Dates Function:
+function showDates(string) {
+  //Sets the Dates:
+  var alerts = checkDates(dates(string));
+  document.getElementById('past').innerHTML = alerts[0];
+  document.getElementById('now').innerHTML = alerts[1];
 }
 
 //Show Confirm Function:
