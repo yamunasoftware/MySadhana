@@ -181,7 +181,7 @@ function showConfirm(index) {
   document.getElementById('confirmation').innerHTML =
     "<div class='padding'> Are You Sure? </div>"
     + "<button onclick='deleteNote(" + index + ");'> Yes </button>"
-    + "<button onclick='closeConfirm();'> No </button>;"
+    + "<button onclick='closeConfirm();'> No </button>";
 }
 
 //Close Confirm Function:

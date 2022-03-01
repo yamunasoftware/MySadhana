@@ -184,6 +184,7 @@ function pinNote(index) {
       if (turns == 0) {
         //Pushes to the Data:
         localData.push(data[index]);
+        localData.push(data[turns]);
       }
 
       else if (turns != index) {
@@ -293,7 +294,7 @@ function displayNotes() {
     mainLoop: while (turns < data.length) {
       //Sets the Notes List:
       notesList +=
-        "<div class='margin'>"
+        "<div class='margin-extra-bottom center'>"
         + "<div class='margin padding card center' style='cursor: pointer;' onclick='showNotes(" + turns + ");'>"
         + title(data[turns]);
 
@@ -330,7 +331,7 @@ function search(e) {
     if (data[turns].toLowerCase().includes(e.target.value.toLowerCase())) {
       //Sets the Notes List:
       notesList +=
-        "<div class='margin'>"
+        "<div class='margin-extra-bottom center'>"
         + "<div class='margin padding card center' style='cursor: pointer;' onclick='showNotes(" + turns + ");'>"
         + title(data[turns]);
 
