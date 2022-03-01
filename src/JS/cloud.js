@@ -245,6 +245,9 @@ function pinNote() {
     //Sets the Data:
     data = newArray;
     setCacheData(dataID, data, true);
+
+    //Exits:
+    saveIndex = 0;
     exitNote();
   }
 }
