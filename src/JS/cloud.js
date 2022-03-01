@@ -430,6 +430,18 @@ function checkDates(dates) {
     turns++;
   }
 
+  //Sets the Value:
+  if (past == 0) {
+    //Sets the Value:
+    past = "";
+  }
+
+  //Sets the Value:
+  if (now == 0) {
+    //Sets the Value:
+    now == 0;
+  }
+
   //Returns the Counts:
   return [past, now];
 }
