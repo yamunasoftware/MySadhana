@@ -197,6 +197,18 @@ function showNotesBar() {
   }
 }
 
+//Show Pinned Function:
+function showPinned() {
+  //Shows the Pinned;
+  document.getElementById('pinned').innerHTML = "Pinned";
+
+  //Close Timeout:
+  setTimeout(function () {
+    //Closes the Pinned:
+    document.getElementById('pinned').innerHTML = "";
+  }, 2000);
+}
+
 //Show Confirm Function:
 function showConfirm() {
   //Opens the Confirmation:

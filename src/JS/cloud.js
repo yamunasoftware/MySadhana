@@ -248,7 +248,8 @@ function pinNote() {
 
     //Exits:
     saveIndex = 0;
-    exitNote();
+    saveNote();
+    showPinned();
   }
 }
 
