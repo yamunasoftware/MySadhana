@@ -185,30 +185,12 @@ function showNotesBar() {
       "<div class='mobile-button' onclick='exitNote();'> <</div>" +
       "<button onclick='showConfirm();'> Delete </button>";
 
-    //Checks the Case:
-    if (saveIndex != 0) {
-      //Sets Notes Bar:
-      notesBar += "<button onclick='pinNote();'> Pin </button>";
-    }
-
     //Adds the Notes Bar:
     document.getElementById('notes-bar').innerHTML = notesBar;
     document.getElementById('past-dates').innerHTML = stringifyDates(checkPast(dates(data[saveIndex])));
     document.getElementById('current-dates').innerHTML = stringifyDates(checkNow(dates(data[saveIndex])));
     document.getElementById('future-dates').innerHTML = stringifyDates(checkFuture(dates(data[saveIndex])));
   }
-}
-
-//Show Pinned Function:
-function showPinned() {
-  //Shows the Pinned;
-  document.getElementById('pinned').innerHTML = "Pinned";
-
-  //Close Timeout:
-  setTimeout(function () {
-    //Closes the Pinned:
-    document.getElementById('pinned').innerHTML = "";
-  }, 2000);
 }
 
 //Show Confirm Function:

@@ -209,50 +209,6 @@ function deleteNote() {
   }
 }
 
-//Pin Note Function:
-function pinNote() {
-  //Checks the Case:
-  if (getCacheData(dataID, false) != null &&
-    saveIndex != null) {
-    //Gets the Data:
-    data = getCacheData(dataID, true);
-    var localData = data;
-
-    //Gets the Note:
-    var note = localData[saveIndex];
-    var newArray = [];
-
-    //Loop Variable:
-    var turns = 0;
-
-    //Loops through Array:
-    mainLoop: while (turns < localData.length) {
-      //Checks the Case:
-      if (turns == 0) {
-        //Pushes to the Array:
-        newArray.push(note);
-        newArray.push(localData[turns]);
-      }
-
-      else if (localData[turns] != note) {
-        //Pushes tot he Array:
-        newArray.push(localData[turns]);
-      }
-
-      turns++;
-    }
-
-    //Sets the Data:
-    data = newArray;
-    setCacheData(dataID, data, true);
-
-    //Exits:
-    saveIndex = 0;
-    saveNote();
-    showPinned();
-  }
-}
-
 //Exit Notes Function:
 function exitNote() {
   //Resets Data:
