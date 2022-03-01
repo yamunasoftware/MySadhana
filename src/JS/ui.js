@@ -222,23 +222,3 @@ function showDashError(error) {
   //Sets the Error:
   document.getElementById('dash-error').innerHTML = error;
 }
-
-//Show Navigation Function:
-function showNavigation() {
-  //Checks the Case:
-  if (screen.width <= 990) {
-    //Displays the Element:
-    document.getElementById('navigation').style.display = "block";
-    document.getElementById('open-navigation').style.display = "none";
-  }
-}
-
-//Close Navigation Function:
-function closeNavigation() {
-  //Checks the Case:
-  if (screen.width <= 990) {
-    //Closes the Element:
-    document.getElementById('navigation').style.display = "none";
-    document.getElementById('open-navigation').style.display = "block";
-  }
-}
