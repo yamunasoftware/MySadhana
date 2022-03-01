@@ -306,10 +306,20 @@ function displayNotes() {
         + "<div style='background-color: #147efb;' class='margin dash-alert disappear'>" + alerts[0] + "</div>"
         + "<div style='background-color: #53d769;' class='margin dash-alert disappear'>" + alerts[2] + "</div> </div>";
 
-      //Adds Buttons:
+      //Adds Button:
       notesList +=
-        "<button onclick='pinNote(" + turns + ");'> Pin </button>"
-        + "<button onclick='showConfirm(" + turns + ");'> Delete </button> </div>";
+        "<button onclick='showConfirm(" + turns + ");'> Delete </button>";
+
+      //Checks the Case:
+      if (turns != 0) {
+        //Adds the Button:
+        notesList += "<button onclick='pinNote(" + turns + ");'> Pin </button> </div";
+      }
+
+      else {
+        //Adds the Close Tag:
+        notesList += "</div";
+      }
 
       turns++;
     }
