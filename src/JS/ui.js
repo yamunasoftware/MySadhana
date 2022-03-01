@@ -36,14 +36,14 @@ window.onload = function () {
   document.getElementById('text-area').addEventListener("input", function (e) {
     //Checks the Case:
     if (saveIndex != null) {
-      //Shows Bar:
-      showDates();
-
       //Checks the Case:
       if (document.getElementById('text-area').innerHTML.includes("\"")) {
         //Resets the Value:
         document.getElementById('text-area').innerHTML = document.getElementById('text-area').innerHTML.replace(/["]+/g, '');
       }
+
+      //Shows Dates:
+      showDates();
     }
   });
 
@@ -168,6 +168,7 @@ function showDates() {
   //Checks the Case:
   if (getCacheData(dataID, false) != null && saveIndex != null) {
     //Sets the Dates:
+    console.log("here")
     data = getCacheData(dataID, true);
     document.getElementById('past-dates').innerHTML = stringifyDates(checkPast(dates(data[saveIndex])));
     document.getElementById('current-dates').innerHTML = stringifyDates(checkNow(dates(data[saveIndex])));
