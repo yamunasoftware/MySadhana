@@ -245,10 +245,7 @@ function pinNote() {
     //Sets the Data:
     data = newArray;
     setCacheData(dataID, data, true);
-
-    //Sends the Data:
-    sendData();
-    exitSafely();
+    exitNote();
   }
 }
 
