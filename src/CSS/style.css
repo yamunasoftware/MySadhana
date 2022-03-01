@@ -224,6 +224,11 @@ button {
   text-decoration: none;
 }
 
+button.dash-button {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
 button:hover {
   background-color: #39FF13;
 }

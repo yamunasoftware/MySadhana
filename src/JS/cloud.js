@@ -295,8 +295,7 @@ function displayNotes() {
     mainLoop: while (turns < data.length) {
       //Sets the Notes List:
       notesList +=
-        "<div class='margin-extra-bottom center fit-content'>"
-        + "<div class='margin padding card center' style='cursor: pointer;' onclick='showNotes(" + turns + ");'>"
+        "<div class='margin padding card center' style='cursor: pointer;'>"
         + title(data[turns]);
 
       //Sets the Notes List:
@@ -304,22 +303,21 @@ function displayNotes() {
       notesList +=
         "<div class='margin dash-alert disappear'>" + alerts[1] + "</div>"
         + "<div style='background-color: #147efb;' class='margin dash-alert disappear'>" + alerts[0] + "</div>"
-        + "<div style='background-color: #53d769;' class='margin dash-alert disappear'>" + alerts[2] + "</div> </div>";
+        + "<div style='background-color: #53d769;' class='margin dash-alert disappear'>" + alerts[2] + "</div>";
 
       //Adds Button:
       notesList +=
-        "<button onclick='showConfirm(" + turns + ");'> Delete </button>";
+        "<button class='dash-button' onclick='showConfirm(" + turns + ");'> Delete </button>";
 
       //Checks the Case:
       if (turns != 0) {
         //Adds the Button:
-        notesList += "<button onclick='pinNote(" + turns + ");'> Pin </button> </div";
+        notesList += "<button class='dash-button' onclick='pinNote(" + turns + ");'> Pin </button>";
       }
 
-      else {
-        //Adds the Close Tag:
-        notesList += "</div";
-      }
+      //Adds Button:
+      notesList +=
+        "<button class='dash-button' onclick='showNotes(" + turns + ");'> Open </button> </div>";
 
       turns++;
     }
