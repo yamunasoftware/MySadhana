@@ -169,33 +169,36 @@ function copyCode() {
 
 //Pin Note Function:
 function pinNote(index) {
-  //Array Variables:
-  data = getCacheData(dataID, true);
-  var localData = [];
+  //Checks the Case:
+  if (getCacheData(dataID, false) != null) {
+    //Array Variables:
+    data = getCacheData(dataID, true);
+    var localData = [];
 
-  //Loop Variables:
-  var turns = 0;
+    //Loop Variables:
+    var turns = 0;
 
-  //Loops through Array:
-  mainLoop: while (turns < data.length) {
-    //Checks the Case:
-    if (turns == 0) {
-      //Pushes to the Data:
-      localData.push(data[index]);
+    //Loops through Array:
+    mainLoop: while (turns < data.length) {
+      //Checks the Case:
+      if (turns == 0) {
+        //Pushes to the Data:
+        localData.push(data[index]);
+      }
+
+      else if (turns != index) {
+        //Pushes to the Data:
+        localData.push(data[turns]);
+      }
+
+      turns++;
     }
 
-    else if (turns != index) {
-      //Pushes to the Data:
-      localData.push(data[turns]);
-    }
-    
-    turns++;
+    //Sets the Data:
+    data = localData;
+    setCacheData(dataID, data, true);
+    exitSafely();
   }
-
-  //Sets the Data:
-  data = localData;
-  setCacheData(dataID, data, true);
-  exitSafely();
 }
 
 //Save Note Function:
@@ -229,13 +232,12 @@ function addNote() {
 }
 
 //Delete Note Function:
-function deleteNote() {
+function deleteNote(index) {
   //Checks the Case:
-  if (getCacheData(dataID, false) != null &&
-    saveIndex != null) {
+  if (getCacheData(dataID, false) != null) {
     //Deletes the Note:
     data = getCacheData(dataID, true);
-    data = deleteElement(data, saveIndex);
+    data = deleteElement(data, index);
 
     //Saves Data:
     setCacheData(dataID, data, true);
@@ -291,7 +293,8 @@ function displayNotes() {
     mainLoop: while (turns < data.length) {
       //Sets the Notes List:
       notesList +=
-        "<div class='margin padding card center' style='cursor: pointer;' onclick='showNotes(" + turns + ");'>"
+        "<div class='margin'>"
+        + "<div class='margin padding card center' style='cursor: pointer;' onclick='showNotes(" + turns + ");'>"
         + title(data[turns]);
 
       //Sets the Notes List:
@@ -300,6 +303,11 @@ function displayNotes() {
         "<div class='margin dash-alert disappear'>" + alerts[1] + "</div>"
         + "<div style='background-color: #147efb;' class='margin dash-alert disappear'>" + alerts[0] + "</div>"
         + "<div style='background-color: #53d769;' class='margin dash-alert disappear'>" + alerts[2] + "</div> </div>";
+
+      //Adds Buttons:
+      notesList +=
+        "<button onclick='pinNote(" + turns + ");'> Pin </button>"
+        "<button onclick='showConfirm(" + turns + ");'> Delete </button> </div>";
 
       turns++;
     }
@@ -322,7 +330,8 @@ function search(e) {
     if (data[turns].toLowerCase().includes(e.target.value.toLowerCase())) {
       //Sets the Notes List:
       notesList +=
-        "<div class='margin padding card center' style='cursor: pointer;' onclick='showNotes(" + turns + ");'>"
+        "<div class='margin'>"
+        + "<div class='margin padding card center' style='cursor: pointer;' onclick='showNotes(" + turns + ");'>"
         + title(data[turns]);
 
       //Sets the Notes List:
@@ -331,6 +340,11 @@ function search(e) {
         "<div class='margin dash-alert disappear'>" + alerts[1] + "</div>"
         + "<div style='background-color: #147efb;' class='margin dash-alert disappear'>" + alerts[0] + "</div>"
         + "<div style='background-color: #53d769;' class='margin dash-alert disappear'>" + alerts[2] + "</div> </div>";
+
+      //Adds Buttons:
+      notesList +=
+        "<button onclick='pinNote(" + turns + ");'> Pin </button>"
+        "<button onclick='showConfirm(" + turns + ");'> Delete </button> </div>";
     }
 
     turns++;
@@ -696,7 +710,7 @@ function deleteElement(array, index) {
       //Pushes to the Array:
       localArray.push(array[turns]);
     }
-    
+
     turns++;
   }
 

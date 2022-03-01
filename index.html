@@ -100,6 +100,9 @@
 
         <!-- Notes Padding -->
         <div class="padding-extra-top">
+          <!-- Conformation Element -->
+          <div id="confirmation" class="margin margin-extra-bottom padding fit-content center dark-card disappear"></div>
+
           <!-- Notes List -->
           <div class="padding subheader no-padding-bottom"> Notes </div>
           <div id="notes-list" class="padding"></div>
@@ -110,12 +113,9 @@
     <!-- Notes -->
     <div id="notes" class="screen deactivate">
       <!-- Notes Bar -->
-      <div id="notes-bar" class="padding"></div>
-      <div id="confirmation" class="margin margin-extra-bottom padding fit-content center dark-card deactivate">
-        <!-- Confirmation Message -->
-        <div class="padding"> Are You Sure? </div>
-        <button onclick="deleteNote();"> Yes </button>
-        <button onclick="closeConfirm();"> No </button>
+      <div id="notes-bar" class="padding">
+        <!-- Exit Note -->
+        <div class='mobile-button' onclick='exitNote();'> <</div>
       </div>
 
       <!-- Dates Alerts -->

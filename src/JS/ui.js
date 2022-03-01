@@ -118,23 +118,6 @@ function showLoading() {
 
 //Show Notes Function:
 function showNotes(index) {
-  //Adds Event Listener:
-  window.addEventListener("keydown", function (e) {
-    //Checks the Case:
-    if (e.key != "Shift") {
-      //Shows Notes Display:
-      showNotesDisplay(index);
-    }
-
-    else {
-      //Pins the Note:
-      pinNote(index);
-    }
-  });
-}
-
-//Show Notes Display Function:
-function showNotesDisplay(index) {
   //Checks the Case:
   if (getCacheData(codeID, false) != null && getCacheData(dataID, false) != null 
     && saveIndex == null) {
@@ -151,8 +134,8 @@ function showNotesDisplay(index) {
       document.getElementById('notes').style.display = "block";
       document.getElementById('loading').style.display = "none";
 
-      //Shows the Notes Bar:
-      showNotesBar();
+      //Shows the Data:
+      showDates();
       document.getElementById('text-area').innerHTML = data[index];
       closeNavigation();
 
@@ -181,20 +164,12 @@ function showNotesDisplay(index) {
   }
 }
 
-//Show Notes Bar Function:
-function showNotesBar() {
+//Show Dates Function:
+function showDates() {
   //Checks the Case:
   if (getCacheData(dataID, false) != null && saveIndex != null) {
-    //Gets the Data:
+    //Sets the Dates:
     data = getCacheData(dataID, true);
-
-    //Sets the Notes Bar:
-    var notesBar =
-      "<div class='mobile-button' onclick='exitNote();'> <</div>" +
-      "<button onclick='showConfirm();'> Delete </button>";
-
-    //Adds the Notes Bar:
-    document.getElementById('notes-bar').innerHTML = notesBar;
     document.getElementById('past-dates').innerHTML = stringifyDates(checkPast(dates(data[saveIndex])));
     document.getElementById('current-dates').innerHTML = stringifyDates(checkNow(dates(data[saveIndex])));
     document.getElementById('future-dates').innerHTML = stringifyDates(checkFuture(dates(data[saveIndex])));
@@ -202,15 +177,18 @@ function showNotesBar() {
 }
 
 //Show Confirm Function:
-function showConfirm() {
+function showConfirm(index) {
   //Opens the Confirmation:
-  document.getElementById('confirmation').style.display = "block";
+  document.getElementById('confirmation').innerHTML =
+    "<div class='padding'> Are You Sure? </div>"
+    + "<button onclick='deleteNote(" + index + ");'> Yes </button>"
+    + "<button onclick='closeConfirm();'> No </button>;"
 }
 
 //Close Confirm Function:
 function closeConfirm() {
   //Closes the Confirmation:
-  document.getElementById('confirmation').style.display = "none";
+  document.getElementById('confirmation').innerHTML = "";
 }
 
 //Show Login Function:
