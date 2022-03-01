@@ -19,17 +19,8 @@ window.onload = function () {
 
   //Search Event Listener:
   document.getElementById('search').addEventListener("input", function (e) {
-    //Searches:
-    document.getElementById('search') = document.getElementById('search').value.replace(/["]+/g, '');
+    //Search:
     search(e);
-  });
-
-  //Log In Input Event:
-  document.getElementById('log-in-input').addEventListener("input", function (e) {
-    //Resets the Value:
-    var replaced = document.getElementById('log-in-input').value;
-    replaced = replaced.replace(/["]+/g, '');
-    document.getElementById('log-in-input') = replaced;
   });
 
   //Log In Enter Event Listener:
