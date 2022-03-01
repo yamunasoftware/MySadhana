@@ -41,9 +41,6 @@ window.onload = function () {
         //Resets the Value:
         document.getElementById('text-area').innerHTML = document.getElementById('text-area').innerHTML.replace(/["]+/g, '');
       }
-
-      //Shows Dates:
-      showDates();
     }
   });
 
@@ -133,10 +130,7 @@ function showNotes(index) {
       document.getElementById('dashboard').style.display = "none";
       document.getElementById('notes').style.display = "block";
       document.getElementById('loading').style.display = "none";
-
-      //Shows the Data:
       document.getElementById('text-area').innerHTML = data[index];
-      showDates();
 
       //Idle Interval:
       mainInterval = setInterval(function () {
@@ -161,14 +155,6 @@ function showNotes(index) {
       }, 100);
     }
   }
-}
-
-//Show Dates Function:
-function showDates() {
-  //Sets the Dates:
-  document.getElementById('past-dates').innerHTML = stringifyDates(checkPast(dates(document.getElementById('text-area').innerHTML)));
-  document.getElementById('current-dates').innerHTML = stringifyDates(checkNow(dates(document.getElementById('text-area').innerHTML)));
-  document.getElementById('future-dates').innerHTML = stringifyDates(checkFuture(dates(document.getElementById('text-area').innerHTML)));
 }
 
 //Show Confirm Function:
