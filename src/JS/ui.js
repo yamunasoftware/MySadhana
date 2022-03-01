@@ -27,7 +27,9 @@ window.onload = function () {
   //Log In Input Event:
   document.getElementById('log-in-input').addEventListener("input", function (e) {
     //Resets the Value:
-    document.getElementById('log-in-input') = document.getElementById('log-in-input').value.replace(/["]+/g, '');
+    var replaced = document.getElementById('log-in-input').value;
+    replaced = replaced.replace(/["]+/g, '');
+    document.getElementById('log-in-input') = replaced;
   });
 
   //Log In Enter Event Listener:
