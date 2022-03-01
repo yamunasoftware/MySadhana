@@ -72,11 +72,8 @@ html, body {
   background-color: #39FF13;
 }
 
-.open-navigation {
-  top: 0;
-  left: 0;
-  background-color: #000000;
-  color: #FFFFFF;
+.main-content {
+  padding-left: 100px;
 }
 
 .card {
