@@ -181,6 +181,33 @@ function saveNote() {
   }
 }
 
+//Add Note Function:
+function addNote() {
+  //Checks the Case:
+  if (getCacheData(dataID, false) != null) {
+    //Gets the Data:
+    data = getCacheData(dataID, true);
+    data.push("");
+
+    //Sends the Data
+    setCacheData(dataID, data, true);
+    sendData();
+    displayNotes();
+  }
+}
+
+//Delete Note Function:
+function deleteNote() {
+  //Checks the Case:
+  if (getCacheData(dataID, false) != null &&
+    saveIndex != null) {
+    //Deletes the Note:
+    data = getCacheData(dataID, true);
+    setCacheData(dataID, deleteElement(data, data[saveIndex]), true);
+    exitSafely();
+  }
+}
+
 //Pin Note Function:
 function pinNote() {
   //Checks the Case:
@@ -246,6 +273,9 @@ function exitSafely() {
   //Exits Safely:
   sendData();
   saveIndex = null;
+
+  //Shows Dashboard:
+  closeConfirm();
   showDashboard();
   displayNotes();
 
@@ -316,36 +346,6 @@ function search(e) {
 
   //Sets the HTML:
   document.getElementById('notes-list').innerHTML = notesList;
-}
-
-//Add Note Function:
-function addNote() {
-  //Checks the Case:
-  if (getCacheData(dataID, false) != null) {
-    //Gets the Data:
-    data = getCacheData(dataID, true);
-    data.push("");
-
-    //Sends the Data
-    setCacheData(dataID, data, true);
-    sendData();
-    displayNotes();
-  }
-}
-
-//Delete Note Function:
-function deleteNote() {
-  //Checks the Case:
-  if (getCacheData(dataID, false) != null &&
-    saveIndex != null) {
-    //Gets the Data:
-    data = getCacheData(dataID, true);
-    setCacheData(dataID, deleteElement(data, data[saveIndex]), true);
-    
-    //Exits:
-    exitSafely();
-    closeConfirm();
-  }
 }
 
 //Delete Element Function:
