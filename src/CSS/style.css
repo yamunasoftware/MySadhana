@@ -89,10 +89,6 @@ html, body {
   color: #FFFFFF;
 }
 
-.card:hover {
-  background-color: #39FF13;
-}
-
 .dash-alert {
   padding: 10px;
   color: #FFFFFF;
@@ -225,7 +221,7 @@ button {
 }
 
 button.dash-button {
-  background-color: #000000;
+  background-color: #202020;
   color: #FFFFFF;
 }
 
