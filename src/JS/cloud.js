@@ -204,7 +204,10 @@ function deleteNote() {
     saveIndex != null) {
     //Deletes the Note:
     data = getCacheData(dataID, true);
-    setCacheData(dataID, data.splice(saveIndex, 1), true);
+    data = deleteElement(data, saveIndex);
+
+    //Saves Data:
+    setCacheData(dataID, data, true);
     exitSafely();
   }
 }
@@ -647,4 +650,25 @@ function formatData(rawData) {
 
   //Returns the String:
   return main;
+}
+
+//Delete Element Function:
+function deleteElement(array, index) {
+  //Loop Variables:
+  var turns = 0;
+  var localArray = [];
+
+  //Loops through Array:
+  mainLoop: while (turns < array.length) {
+    //Checks the Case:
+    if (turns != index) {
+      //Pushes to the Array:
+      localArray.push(array[turns]);
+    }
+    
+    turns++;
+  }
+
+  //Return the Array:
+  return localArray;
 }
