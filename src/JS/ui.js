@@ -37,7 +37,7 @@ window.onload = function () {
     //Checks the Case:
     if (saveIndex != null) {
       //Shows Bar:
-      showNotesBar();
+      showDates();
 
       //Checks the Case:
       if (document.getElementById('text-area').innerHTML.includes("\"")) {
