@@ -116,6 +116,7 @@ function sendData() {
   if (getCacheData(codeID, false) != null) {
     //Gets the Code:
     code = getCacheData(codeID, false);
+    data = getCacheData(dataID, true);
 
     //Sets the Cloud Data:
     database.collection(collectionName).doc(code).update({
