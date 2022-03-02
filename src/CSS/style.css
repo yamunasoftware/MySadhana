@@ -205,10 +205,12 @@ html, body {
 /* UI ELEMENTS */
 
 u {
+  text-decoration: underline;
   text-decoration-color: #FF0F0F;
 }
 
-u.now {
+p {
+  text-decoration: underline;
   text-decoration-color: #147efb;
 }
 
