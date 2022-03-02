@@ -32,7 +32,7 @@ window.onload = function () {
     if (saveIndex != null) {
       //Show Dates:
       showDates(document.getElementById('text-area').innerHTML);
-      highlightDates(dates(document.getElementById('text-area')));
+      highlightDates(dates(document.getElementById('text-area').innerHTML));
     }
 
     else if (getCacheData(codeID, false) != null) {
@@ -61,7 +61,7 @@ window.onload = function () {
 
       //Show Dates:
       showDates(document.getElementById('text-area').innerHTML);
-      highlightDates(dates(document.getElementById('text-area')));
+      highlightDates(dates(document.getElementById('text-area').innerHTML));
     }
   });
 }
@@ -229,7 +229,7 @@ function showNotes(index) {
 
       //Show Dates:
       showDates(document.getElementById('text-area').innerHTML);
-      highlightDates(dates(document.getElementById('text-area')));
+      highlightDates(dates(document.getElementById('text-area').innerHTML));
 
       //Idle Interval:
       mainInterval = setInterval(function () {
