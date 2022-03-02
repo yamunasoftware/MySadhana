@@ -219,8 +219,8 @@ function saveNote() {
     data[saveIndex] = data[saveIndex].replace(new RegExp("<div>", "g"), "<br>");
 
     //Replaces the Tags:
-    data[saveIndex] = data[saveIndex].replace(new RegExp("<mark>", "g"), "");
-    data[saveIndex] = data[saveIndex].replace(new RegExp("</mark>", "g"), "");
+    data[saveIndex] = data[saveIndex].replace(new RegExp("<u>", "g"), "");
+    data[saveIndex] = data[saveIndex].replace(new RegExp("</u>", "g"), "");
     data[saveIndex] = data[saveIndex].replace(new RegExp("</div>", "g"), "");
 
     //Saves the Data:
@@ -412,8 +412,8 @@ function title(string) {
   var localString =
     string.replace(new RegExp("<div>", "g"), "")
       .replace(new RegExp("</div>", "g"), "")
-      .replace(new RegExp("<mark>", "g"), "")
-      .replace(new RegExp("</mark>", "g"), "")
+      .replace(new RegExp("<u>", "g"), "")
+      .replace(new RegExp("</u>", "g"), "")
       .replace(new RegExp("<br>", "g"), "")
       .replace(new RegExp("<", "g"), "")
       .replace(new RegExp(">", "g"), "")
@@ -456,7 +456,7 @@ function highlightDates(dates) {
 
       //Sets the Content:
       var area = document.getElementById('text-area').innerHTML;
-      area = area.replace(new RegExp(currentDate, "g"), "<mark>" + currentDate + "</mark>");
+      area = area.replace(new RegExp(currentDate, "g"), "<u>" + currentDate + "</u>");
       document.getElementById('text-area').innerHTML = area;
 
       turns++;
