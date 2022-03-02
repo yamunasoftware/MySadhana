@@ -306,7 +306,7 @@ function displayNotes() {
 
       //Adds Button:
       notesList +=
-        "<button class='dash-button' onclick='showNotes(" + turns + ");'> Open </button> </div>";
+        "<button class='dash-button' onclick='showNotes(" + turns + ");'> Open </button>";
         + "<button class='dash-button' onclick='showConfirm(" + turns + ");'> Delete </button>";
 
       //Checks the Case:
@@ -314,6 +314,9 @@ function displayNotes() {
         //Adds the Button:
         notesList += "<button class='dash-button' onclick='pinNote(" + turns + ");'> Pin </button>";
       }
+
+      //Adds the Close Tag:
+      notesList += "</div>";
 
       turns++;
     }
@@ -346,7 +349,7 @@ function search(e) {
 
       //Adds Button:
       notesList +=
-        "<button class='dash-button' onclick='showNotes(" + turns + ");'> Open </button> </div>";
+        "<button class='dash-button' onclick='showNotes(" + turns + ");'> Open </button>";
         + "<button class='dash-button' onclick='showConfirm(" + turns + ");'> Delete </button>";
 
       //Checks the Case:
@@ -354,6 +357,9 @@ function search(e) {
         //Adds the Button:
         notesList += "<button class='dash-button' onclick='pinNote(" + turns + ");'> Pin </button>";
       }
+
+      //Adds the Close Tag:
+      notesList += "</div>";
     }
 
     turns++;
