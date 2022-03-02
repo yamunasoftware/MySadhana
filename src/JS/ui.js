@@ -15,6 +15,14 @@ window.onload = function () {
   showSplash();
   showStartup();
 
+  /* Intervals */
+
+  //Sets the Notification Interval:
+  setInterval(function () {
+    //Shows Notification:
+    showNotification(); 
+  }, notificationTimeout);
+
   /* Event Listeners */
 
   //Search Event Listener:
@@ -114,6 +122,62 @@ function showLoading() {
   document.getElementById('dashboard').style.display = "none";
   document.getElementById('notes').style.display = "none";
   document.getElementById('loading').style.display = "block";
+}
+
+//Show Notification Function:
+function showNotification() {
+  //Gets the Data:
+  data = getCacheData(dataID, true);
+  
+  //Loop Variables:
+  var past = 0;
+  var now = 0;
+  var turns = 0;
+
+  //Loops through Array:
+  mainLoop: while (turns < data.length) {
+    //Gets the Alerts:
+    var alerts = checkDates(dates(data[turns]));
+
+    //Checks the Case:
+    if (alerts[0] != "") {
+      //Sets the Past:
+      past += alerts[0]
+    }
+
+    //Checks the Case:
+    if (alerts[1] != "") {
+      //Sets the Now:
+      now += alerts[1];
+    }
+    
+    turns++;
+  }
+
+  //Checks the Case:
+  if (past != 0 && now != 0) {
+    //Runs the Notification:
+    if ("Notification" in window 
+      && Notification.permission === "granted") {
+      new Notification(past + " Past Dates and " + now + " Current Dates");
+    }
+  }
+
+  else if (past != 0 && now == 0) {
+    //Runs the Notification:
+    if ("Notification" in window 
+      && Notification.permission === "granted") {
+      new Notification(past + " Past Dates");
+    }
+  }
+
+  else if (past == 0 && now != 0) {
+    //Runs the Notification:
+    if ("Notification" in window 
+      && Notification.permission === "granted") {
+      new Notification(now + " Current Dates");
+    }
+  }
 }
 
 //Show Notes Function:
