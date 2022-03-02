@@ -177,8 +177,8 @@ function showNotification() {
       }
 
       else {
-        //Posts the Message:
-        window.postMessage(past + " Past Dates and " + now + " Current Dates", "https://mysadhana.netlify.app");
+        //Alerts:
+        alert(past + " Past Dates and " + now + " Current Dates");
       }
     }
 
@@ -190,8 +190,8 @@ function showNotification() {
       }
 
       else {
-        //Posts the Message:
-        window.postMessage(past + " Past Dates and", "https://mysadhana.netlify.app");
+        //Alerts:
+        alert(past + " Past Dates and");
       }
     }
 
@@ -203,8 +203,8 @@ function showNotification() {
       }
 
       else {
-        //Posts the Message:
-        window.postMessage(now + " Current Dates", "https://mysadhana.netlify.app");
+        //Alerts:
+        alert(now + " Current Dates");
       }
     }
   }
