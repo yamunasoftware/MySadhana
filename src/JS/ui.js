@@ -29,13 +29,7 @@ window.onload = function () {
   //Sets the Notes Interval:
   setInterval(function () {
     //Checks the Case:
-    if (saveIndex != null) {
-      //Show Dates:
-      showDates(document.getElementById('text-area').innerHTML);
-      highlightDates(dates(document.getElementById('text-area').innerHTML));
-    }
-
-    else if (getCacheData(codeID, false) != null) {
+    if (getCacheData(codeID, false) != null) {
       //Displays the Dash Dates:
       displayDashDates();
     }
@@ -58,10 +52,6 @@ window.onload = function () {
         //Resets the Value:
         document.getElementById('text-area').innerHTML = document.getElementById('text-area').innerHTML.replace(/["]+/g, '');
       }
-
-      //Show Dates:
-      showDates(document.getElementById('text-area').innerHTML);
-      highlightDates(dates(document.getElementById('text-area').innerHTML));
     }
   });
 }
@@ -226,9 +216,6 @@ function showNotes(index) {
       document.getElementById('notes').style.display = "block";
       document.getElementById('loading').style.display = "none";
       document.getElementById('text-area').innerHTML = data[index];
-
-      //Show Dates:
-      showDates(document.getElementById('text-area').innerHTML);
       highlightDates(dates(document.getElementById('text-area').innerHTML));
 
       //Idle Interval:
@@ -254,14 +241,6 @@ function showNotes(index) {
       }, notesTimeout);
     }
   }
-}
-
-//Show Dates Function:
-function showDates(string) {
-  //Sets the Dates:
-  var alerts = checkDates(dates(string));
-  document.getElementById('past').innerHTML = alerts[0];
-  document.getElementById('now').innerHTML = alerts[1];
 }
 
 //Show Confirm Function:

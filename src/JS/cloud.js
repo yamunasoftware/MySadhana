@@ -449,14 +449,32 @@ function highlightDates(dates) {
     //Loop Variable:
     var turns = 0;
 
+    //Date Variables:
+    var date = new Date();
+    var currentMonth = date.getMonth() + 1;
+    var currentDay = date.getDate();
+
     //Loops through Array:
     mainLoop: while (turns < dates.length) {
-      //Gets the Date:
+      //Gets the Dates:
       var currentDate = dates[turns].replace("-", "/");
+      var localDates = extractDate(dates[turns]);
 
-      //Sets the Content:
-      var area = document.getElementById('text-area').innerHTML;
-      area = area.replace(new RegExp(currentDate, "g"), "<u>" + currentDate + "</u>");
+      //Checks the Case:
+      if (localDates[0] < currentMonth ||
+        (localDates[0] == currentMonth && localDates[1] < currentDay)) {
+        //Sets the Content:
+        var area = document.getElementById('text-area').innerHTML;
+        area = area.replace(new RegExp(currentDate, "g"), "<u>" + currentDate + "</u>");
+        document.getElementById('text-area').innerHTML = area;
+      }
+
+      else if (localDates[0] == currentMonth && localDates[1] == currentDay) {
+        //Sets the Content:
+        var area = document.getElementById('text-area').innerHTML;
+        area = area.replace(new RegExp(currentDate, "g"), "<u class='now'>" + currentDate + "</u>");
+        document.getElementById('text-area').innerHTML = area;
+      }
 
       turns++;
     }
