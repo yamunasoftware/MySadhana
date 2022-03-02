@@ -298,7 +298,8 @@ function displayNotes() {
     mainLoop: while (turns < data.length) {
       //Sets the Notes List:
       notesList +=
-        "<div class='margin padding card center'>" + title(data[turns]);
+        "<div class='margin padding card center'>" 
+        + "<div class='padding'>" + title(data[turns]) + "</div>";
 
       //Sets the Notes List:
       var alerts = checkDates(dates(data[turns]));
@@ -338,7 +339,8 @@ function search(e) {
     if (data[turns].toLowerCase().includes(e.target.value.toLowerCase())) {
       //Sets the Notes List:
       notesList +=
-        "<div class='margin padding card center'>" + title(data[turns]);
+        "<div class='margin padding card center'>" 
+        + "<div class='padding'>" + title(data[turns]) + "</div>";
 
       //Sets the Notes List:
       var alerts = checkDates(dates(data[turns]));
