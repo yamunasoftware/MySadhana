@@ -23,7 +23,7 @@ window.onload = function () {
   //Sets the Notification Interval:
   setInterval(function () {
     //Shows Notification:
-    showNotification(); 
+    showNotification();
   }, notificationTimeout);
 
   /* Event Listeners */
@@ -66,6 +66,15 @@ window.onload = function () {
       exitNote();
     }
   });
+}
+
+//Notification Request Function:
+function requestNotify() {
+  //Checks the Case:
+  if ("Notification" in window) {
+    //Requests the Notification:
+    Notification.requestPermission();
+  }
 }
 
 /* UI FUNCTIONS */
@@ -129,56 +138,59 @@ function showLoading() {
 
 //Show Notification Function:
 function showNotification() {
-  //Gets the Data:
-  data = getCacheData(dataID, true);
-  
-  //Loop Variables:
-  var past = 0;
-  var now = 0;
-  var turns = 0;
-
-  //Loops through Array:
-  mainLoop: while (turns < data.length) {
-    //Gets the Alerts:
-    var alerts = checkDates(dates(data[turns]));
-
-    //Checks the Case:
-    if (alerts[0] != "") {
-      //Sets the Past:
-      past += alerts[0];
-    }
-
-    //Checks the Case:
-    if (alerts[1] != "") {
-      //Sets the Now:
-      now += alerts[1];
-    }
-    
-    turns++;
-  }
-
   //Checks the Case:
-  if (past != 0 && now != 0) {
-    //Runs the Notification:
-    if ("Notification" in window 
-      && Notification.permission === "granted") {
-      new Notification(past + " Past Dates and " + now + " Current Dates");
-    }
-  }
+  if (getCacheData(codeID, false) != null) {
+    //Gets the Data:
+    data = getCacheData(dataID, true);
 
-  else if (past != 0 && now == 0) {
-    //Runs the Notification:
-    if ("Notification" in window 
-      && Notification.permission === "granted") {
-      new Notification(past + " Past Dates");
-    }
-  }
+    //Loop Variables:
+    var past = 0;
+    var now = 0;
+    var turns = 0;
 
-  else if (past == 0 && now != 0) {
-    //Runs the Notification:
-    if ("Notification" in window 
-      && Notification.permission === "granted") {
-      new Notification(now + " Current Dates");
+    //Loops through Array:
+    mainLoop: while (turns < data.length) {
+      //Gets the Alerts:
+      var alerts = checkDates(dates(data[turns]));
+
+      //Checks the Case:
+      if (alerts[0] != "") {
+        //Sets the Past:
+        past += alerts[0];
+      }
+
+      //Checks the Case:
+      if (alerts[1] != "") {
+        //Sets the Now:
+        now += alerts[1];
+      }
+
+      turns++;
+    }
+
+    //Checks the Case:
+    if (past != 0 && now != 0) {
+      //Runs the Notification:
+      if ("Notification" in window
+        && Notification.permission === "granted") {
+        new Notification(past + " Past Dates and " + now + " Current Dates");
+      }
+    }
+
+    else if (past != 0 && now == 0) {
+      //Runs the Notification:
+      if ("Notification" in window
+        && Notification.permission === "granted") {
+        new Notification(past + " Past Dates");
+      }
+    }
+
+    else if (past == 0 && now != 0) {
+      //Runs the Notification:
+      if ("Notification" in window
+        && Notification.permission === "granted") {
+        new Notification(now + " Current Dates");
+      }
     }
   }
 }
@@ -186,7 +198,7 @@ function showNotification() {
 //Show Notes Function:
 function showNotes(index) {
   //Checks the Case:
-  if (getCacheData(codeID, false) != null && getCacheData(dataID, false) != null 
+  if (getCacheData(codeID, false) != null && getCacheData(dataID, false) != null
     && saveIndex == null) {
     //Checks the Case:
     if (wait) {
