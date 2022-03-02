@@ -34,7 +34,7 @@ window.onload = function () {
       showDates(document.getElementById('text-area').innerHTML);
     }
 
-    else {
+    else if (getCacheData(codeID, false) != null) {
       //Displays the Dash Dates:
       displayDashDates();
     }
