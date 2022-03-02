@@ -126,7 +126,7 @@ function showStartup() {
       setTimeout(function () {
         //Recurses:
         showStartup();
-      }, 100);
+      }, notesTimeout);
     }
   }
 }
@@ -264,7 +264,7 @@ function showNotes(index) {
       setTimeout(function () {
         //Recurses:
         showNotes(index);
-      }, 100);
+      }, notesTimeout);
     }
   }
 }
