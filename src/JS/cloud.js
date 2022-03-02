@@ -27,11 +27,12 @@ var data = [];
 var timeout = (1000 * 60 * 2);
 var notificationTimeout = (1000 * 60 * 60 * 2);
 var notesTimeout = 100;
-var mainInterval = null;
+var datesTimeout = 1000;
 
 //Response Variables:
 var wait = false;
 var saveIndex = null;
+var mainInterval = null;
 
 /* CLOUD AUTH FUNCTIONS */
 

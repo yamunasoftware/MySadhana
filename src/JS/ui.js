@@ -38,7 +38,7 @@ window.onload = function () {
       //Displays the Dash Dates:
       displayDashDates();
     }
-  }, notesTimeout);
+  }, datesTimeout);
 
   /* Event Listeners */
 
