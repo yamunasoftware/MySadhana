@@ -15,6 +15,9 @@ window.onload = function () {
   showSplash();
   showStartup();
 
+  //Shows Notification:
+  showNotification();
+
   /* Intervals */
 
   //Sets the Notification Interval:
@@ -142,7 +145,7 @@ function showNotification() {
     //Checks the Case:
     if (alerts[0] != "") {
       //Sets the Past:
-      past += alerts[0]
+      past += alerts[0];
     }
 
     //Checks the Case:
