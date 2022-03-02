@@ -302,8 +302,8 @@ function displayNotes() {
       //Sets the Notes List:
       var alerts = checkDates(dates(data[turns]));
       notesList +=
-        "<div class='margin dash-alert disappear'>" + alerts[0] + "</div>"
-        + "<div style='background-color: #147efb;' class='margin dash-alert disappear'>" + alerts[1] + "</div>"
+        "<div id='past" + turns + "' class='margin dash-alert disappear'>" + alerts[0] + "</div>"
+        + "<div id='now" + turns + "' style='background-color: #147efb;' class='margin dash-alert disappear'>" + alerts[1] + "</div>"
         + "<button class='dash-button' onclick='showNotes(" + turns + ");'> Open </button>";
 
       //Checks the Case:
@@ -342,8 +342,8 @@ function search(e) {
       //Sets the Notes List:
       var alerts = checkDates(dates(data[turns]));
       notesList +=
-        "<div class='margin dash-alert disappear'>" + alerts[0] + "</div>"
-        + "<div style='background-color: #147efb;' class='margin dash-alert disappear'>" + alerts[1] + "</div>"
+        "<div id='past" + turns + "' class='margin dash-alert disappear'>" + alerts[0] + "</div>"
+        + "<div id='now" + turns + "' style='background-color: #147efb;' class='margin dash-alert disappear'>" + alerts[1] + "</div>"
         + "<button class='dash-button' onclick='showNotes(" + turns + ");'> Open </button>";
 
       //Checks the Case:
@@ -366,7 +366,23 @@ function search(e) {
 
 //Display Dash Dates Function:
 function displayDashDates() {
-  
+  //Loop Variables:
+  data = getCacheData(dataID, true);
+  var turns = 0;
+
+  //Loops through Array:
+  mainLoop: while (turns < data.length) {
+    //Gets the Alerts:
+    var alerts = checkDates(dates(data[turns]));
+    var pastElement = 'past' + turns;
+    var nowElement = 'now' + turns;
+    
+    //Sets the Elements:
+    document.getElementById(pastElement).innerHTML = alerts[0];
+    document.getElementById(nowElement).innerHTML = alerts[1];
+    
+    turns++;
+  }
 }
 
 //Title Function:

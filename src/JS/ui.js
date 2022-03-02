@@ -33,6 +33,11 @@ window.onload = function () {
       //Show Dates:
       showDates(document.getElementById('text-area').innerHTML);
     }
+
+    else {
+      //Displays the Dash Dates:
+      displayDashDates();
+    }
   }, notesTimeout);
 
   /* Event Listeners */
