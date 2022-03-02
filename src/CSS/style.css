@@ -204,6 +204,11 @@ html, body {
 
 /* UI ELEMENTS */
 
+u {
+  text-decoration: underline;
+  text-decoration-color: #FF0F0F;
+}
+
 button {
   display: inline;
   margin: 10px;
