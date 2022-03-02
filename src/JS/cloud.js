@@ -364,6 +364,11 @@ function search(e) {
   document.getElementById('notes-list').innerHTML = notesList;
 }
 
+//Display Dash Dates Function:
+function displayDashDates() {
+  
+}
+
 //Title Function:
 function title(string) {
   //Loops Variables:

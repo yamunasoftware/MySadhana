@@ -29,12 +29,7 @@ window.onload = function () {
   //Sets the Notes Interval:
   setInterval(function () {
     //Checks the Case:
-    if (saveIndex == null) {
-      //Displays the Notes:
-      displayNotes();
-    }
-
-    else {
+    if (saveIndex != null) {
       //Show Dates:
       showDates(document.getElementById('text-area').innerHTML);
     }
