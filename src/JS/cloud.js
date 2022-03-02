@@ -213,8 +213,14 @@ function saveNote() {
     //Sets the Data:
     data = getCacheData(dataID, true);
     data[saveIndex] = document.getElementById('text-area').innerHTML;
+
+    //Replaces the Break Tags:
     data[saveIndex] = data[saveIndex].replace(/(\r\n|\n|\r)/gm, "<br>");
     data[saveIndex] = data[saveIndex].replace(new RegExp("<div>", "g"), "<br>");
+
+    //Replaces the Tags:
+    data[saveIndex] = data[saveIndex].replace(new RegExp("<mark>", "g"), "");
+    data[saveIndex] = data[saveIndex].replace(new RegExp("</mark>", "g"), "");
     data[saveIndex] = data[saveIndex].replace(new RegExp("</div>", "g"), "");
 
     //Saves the Data:
@@ -300,7 +306,7 @@ function displayNotes() {
     mainLoop: while (turns < data.length) {
       //Sets the Notes List:
       notesList +=
-        "<div class='margin padding card center'>" 
+        "<div class='margin padding card center'>"
         + "<div class='padding'>" + title(data[turns]) + "</div>";
 
       //Sets the Notes List:
@@ -341,7 +347,7 @@ function search(e) {
     if (data[turns].toLowerCase().includes(e.target.value.toLowerCase())) {
       //Sets the Notes List:
       notesList +=
-        "<div class='margin padding card center'>" 
+        "<div class='margin padding card center'>"
         + "<div class='padding'>" + title(data[turns]) + "</div>";
 
       //Sets the Notes List:
@@ -403,13 +409,15 @@ function title(string) {
   var turns = 0;
 
   //String Variables:
-  var localString = 
+  var localString =
     string.replace(new RegExp("<div>", "g"), "")
-    .replace(new RegExp("</div>", "g"), "")
-    .replace(new RegExp("<br>", "g"), "")
-    .replace(new RegExp("<", "g"), "")
-    .replace(new RegExp(">", "g"), "")
-    .replace(new RegExp("/", "g"), "");
+      .replace(new RegExp("</div>", "g"), "")
+      .replace(new RegExp("<mark>", "g"), "")
+      .replace(new RegExp("</mark>", "g"), "")
+      .replace(new RegExp("<br>", "g"), "")
+      .replace(new RegExp("<", "g"), "")
+      .replace(new RegExp(">", "g"), "")
+      .replace(new RegExp("/", "g"), "");
   var titleLength = 5;
 
   //Loops through Array:
@@ -433,6 +441,28 @@ function title(string) {
 }
 
 /* DATES FUNCTIONS */
+
+//Highlight Dates:
+function highlightDates(dates) {
+  //Checks the Case:
+  if (saveIndex != null) {
+    //Loop Variable:
+    var turns = 0;
+
+    //Loops through Array:
+    mainLoop: while (turns < dates.length) {
+      //Gets the Date:
+      var currentDate = dates[turns].replace("-", "/");
+
+      //Sets the Content:
+      var area = document.getElementById('text-area').innerHTML;
+      area = area.replace(new RegExp(currentDate, "g"), "<mark>" + currentDate + "</mark>");
+      document.getElementById('text-area').innerHTML = area;
+
+      turns++;
+    }
+  }
+}
 
 //Check Dates Function:
 function checkDates(dates) {

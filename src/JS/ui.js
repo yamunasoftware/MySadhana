@@ -32,6 +32,7 @@ window.onload = function () {
     if (saveIndex != null) {
       //Show Dates:
       showDates(document.getElementById('text-area').innerHTML);
+      highlightDates(dates(document.getElementById('text-area')));
     }
 
     else if (getCacheData(codeID, false) != null) {
@@ -224,7 +225,10 @@ function showNotes(index) {
       document.getElementById('notes').style.display = "block";
       document.getElementById('loading').style.display = "none";
       document.getElementById('text-area').innerHTML = data[index];
+
+      //Show Dates:
       showDates(document.getElementById('text-area').innerHTML);
+      highlightDates(dates(document.getElementById('text-area')));
 
       //Idle Interval:
       mainInterval = setInterval(function () {
