@@ -214,8 +214,8 @@ function saveNote() {
     data = getCacheData(dataID, true);
     data[saveIndex] = document.getElementById('text-area').innerHTML;
     data[saveIndex] = data[saveIndex].replace(/(\r\n|\n|\r)/gm, "<br>");
-    data[saveIndex] = data[saveIndex].replace("<div>", "");
-    data[saveIndex] = data[saveIndex].replace("</div>", "");
+    data[saveIndex] = data[saveIndex].replace(new RegExp("<div>", "g"), "");
+    data[saveIndex] = data[saveIndex].replace(new RegExp("</div>", "g"), "");
 
     //Saves the Data:
     setCacheData(dataID, data, true);
@@ -420,8 +420,9 @@ function title(string) {
   }
 
   //Replaces the Titles:
-  noteTitle = noteTitle.replace("<", "");
-  noteTitle = noteTitle.replace(">", "");
+  noteTitle = noteTitle.replace(new RegExp("<", "g"), "");
+  noteTitle = noteTitle.replace(new RegExp(">", "g"), "");
+  noteTitle = noteTitle.replace(new RegExp("/", "g"), "");
 
   //Returns the Title:
   return noteTitle;
