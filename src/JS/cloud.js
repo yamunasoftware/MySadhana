@@ -221,8 +221,8 @@ function saveNote() {
     //Replaces the Tags:
     data[saveIndex] = data[saveIndex].replace(new RegExp("<u>", "g"), "");
     data[saveIndex] = data[saveIndex].replace(new RegExp("</u>", "g"), "");
-    data[saveIndex] = data[saveIndex].replace(new RegExp("<p>", "g"), "");
-    data[saveIndex] = data[saveIndex].replace(new RegExp("</p>", "g"), "");
+    data[saveIndex] = data[saveIndex].replace(new RegExp("<span>", "g"), "");
+    data[saveIndex] = data[saveIndex].replace(new RegExp("</span>", "g"), "");
     data[saveIndex] = data[saveIndex].replace(new RegExp("</div>", "g"), "");
 
     //Saves the Data:
@@ -416,8 +416,8 @@ function title(string) {
       .replace(new RegExp("</div>", "g"), "")
       .replace(new RegExp("<u>", "g"), "")
       .replace(new RegExp("</u>", "g"), "")
-      .replace(new RegExp("<p>", "g"), "")
-      .replace(new RegExp("</p>", "g"), "")
+      .replace(new RegExp("<span>", "g"), "")
+      .replace(new RegExp("</span>", "g"), "")
       .replace(new RegExp("<br>", "g"), "")
       .replace(new RegExp("<", "g"), "")
       .replace(new RegExp(">", "g"), "")
@@ -476,7 +476,7 @@ function highlightDates(dates) {
       else if (localDates[0] == currentMonth && localDates[1] == currentDay) {
         //Sets the Content:
         var area = document.getElementById('text-area').innerHTML;
-        area = area.replace(new RegExp(currentDate, "g"), "<p>" + currentDate + "</p>");
+        area = area.replace(new RegExp(currentDate, "g"), "<span>" + currentDate + "</span>");
         document.getElementById('text-area').innerHTML = area;
       }
 
