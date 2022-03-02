@@ -373,14 +373,10 @@ function displayDashDates() {
 
   //Loops through Array:
   mainLoop: while (turns < data.length) {
-    //Gets the Alerts:
+    //Sets the Alerts:
     var alerts = checkDates(dates(data[turns]));
-    var pastElement = 'past' + turns;
-    var nowElement = 'now' + turns;
-    
-    //Sets the Elements:
-    document.getElementById(pastElement).innerHTML = alerts[0];
-    document.getElementById(nowElement).innerHTML = alerts[1];
+    document.getElementById('past' + turns).innerHTML = alerts[0];
+    document.getElementById('now' + turns).innerHTML = alerts[1];
     
     turns++;
   }
