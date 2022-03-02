@@ -457,7 +457,6 @@ function highlightDates(dates) {
       //Sets the Content:
       var area = document.getElementById('text-area').innerHTML;
       area = area.replace(new RegExp(currentDate, "g"), "<u>" + currentDate + "</u>");
-      document.getElementById('text-area').innerHTML = area;
 
       turns++;
     }
