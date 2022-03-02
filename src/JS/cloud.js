@@ -418,8 +418,8 @@ function title(string) {
   }
 
   //Replaces the Titles:
-  noteTitle = notesList.replace("<", "");
-  noteTitle = notesList.replace(">", "");
+  noteTitle = noteTitle.replace("<", "");
+  noteTitle = noteTitle.replace(">", "");
 
   //Returns the Title:
   return noteTitle;
