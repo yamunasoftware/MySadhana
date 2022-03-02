@@ -314,7 +314,7 @@ function displayNotes() {
       }
 
       //Adds the Close Button:
-      notesList += 
+      notesList +=
         "<button class='dash-button' onclick='showConfirm(" + turns + ");'> Delete </button> </div>";
 
       turns++;
@@ -354,7 +354,7 @@ function search(e) {
       }
 
       //Adds the Close Button:
-      notesList += 
+      notesList +=
         "<button class='dash-button' onclick='showConfirm(" + turns + ");'> Delete </button> </div>";
     }
 
@@ -373,11 +373,21 @@ function displayDashDates() {
 
   //Loops through Array:
   mainLoop: while (turns < data.length) {
-    //Sets the Alerts:
+    //Gets the Alerts:
     var alerts = checkDates(dates(data[turns]));
-    document.getElementById('past' + turns).innerHTML = alerts[0];
-    document.getElementById('now' + turns).innerHTML = alerts[1];
-    
+
+    //Checks the Case:
+    if (document.getElementById('past' + turns) != null) {
+      //Sets the Alert:
+      document.getElementById('past' + turns).innerHTML = alerts[0];
+    }
+
+    //Checks the Case:
+    if (document.getElementById('now' + turns) != null) {
+      //Sets the Alert:
+      document.getElementById('now' + turns).innerHTML = alerts[1];
+    }
+
     turns++;
   }
 }
@@ -430,7 +440,7 @@ function checkDates(dates) {
     var localDates = extractDate(dates[turns]);
 
     //Checks the Case:
-    if (localDates[0] < currentMonth || 
+    if (localDates[0] < currentMonth ||
       (localDates[0] == currentMonth && localDates[1] < currentDay)) {
       //Adds to the Count:
       past++;
