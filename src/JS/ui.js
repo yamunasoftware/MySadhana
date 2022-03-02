@@ -176,7 +176,7 @@ function showNotification() {
         new Notification(past + " Past Dates and " + now + " Current Dates");
       }
 
-      else if (Notification.permission === "granted") {
+      else {
         //Posts the Message:
         window.postMessage(past + " Past Dates and " + now + " Current Dates", "https://mysadhana.netlify.app");
       }
@@ -189,7 +189,7 @@ function showNotification() {
         new Notification(past + " Past Dates");
       }
 
-      else if (Notification.permission === "granted") {
+      else {
         //Posts the Message:
         window.postMessage(past + " Past Dates and", "https://mysadhana.netlify.app");
       }
@@ -202,7 +202,7 @@ function showNotification() {
         new Notification(now + " Current Dates");
       }
 
-      else if (Notification.permission === "granted") {
+      else {
         //Posts the Message:
         window.postMessage(now + " Current Dates", "https://mysadhana.netlify.app");
       }
