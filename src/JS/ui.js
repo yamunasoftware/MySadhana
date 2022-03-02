@@ -40,21 +40,12 @@ window.onload = function () {
     }
   }, datesTimeout);
 
-  /* Event Listeners */
+  /* Input Event Listeners */
 
   //Search Event Listener:
   document.getElementById('search').addEventListener("input", function (e) {
     //Search:
     search(e);
-  });
-
-  //Log In Enter Event Listener:
-  document.getElementById('log-in-input').addEventListener("keydown", function (e) {
-    //Checks the Case:
-    if (e.key == "Enter") {
-      //Logs In:
-      logIn();
-    }
   });
 
   //Text Area Input Event Listener:
@@ -69,15 +60,6 @@ window.onload = function () {
 
       //Show Dates:
       showDates(document.getElementById('text-area').innerHTML);
-    }
-  });
-
-  //Exit Notes Event Listener:
-  window.addEventListener("keydown", function (e) {
-    //Checks the Case:
-    if (e.key == "Escape" && saveIndex != null) {
-      //Exits the Note:
-      exitNote();
     }
   });
 }
