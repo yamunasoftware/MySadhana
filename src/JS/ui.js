@@ -175,6 +175,11 @@ function showNotification() {
         && Notification.permission === "granted") {
         new Notification(past + " Past Dates and " + now + " Current Dates");
       }
+
+      else if (Notification.permission === "granted") {
+        //Posts the Message:
+        window.postMessage(past + " Past Dates and " + now + " Current Dates", "https://mysadhana.netlify.app");
+      }
     }
 
     else if (past != 0 && now == 0) {
@@ -183,6 +188,11 @@ function showNotification() {
         && Notification.permission === "granted") {
         new Notification(past + " Past Dates");
       }
+
+      else if (Notification.permission === "granted") {
+        //Posts the Message:
+        window.postMessage(past + " Past Dates and", "https://mysadhana.netlify.app");
+      }
     }
 
     else if (past == 0 && now != 0) {
@@ -190,6 +200,11 @@ function showNotification() {
       if ("Notification" in window
         && Notification.permission === "granted") {
         new Notification(now + " Current Dates");
+      }
+
+      else if (Notification.permission === "granted") {
+        //Posts the Message:
+        window.postMessage(now + " Current Dates", "https://mysadhana.netlify.app");
       }
     }
   }
