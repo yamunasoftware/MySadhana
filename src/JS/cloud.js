@@ -417,6 +417,10 @@ function title(string) {
     turns++;
   }
 
+  //Replaces the Titles:
+  notesList = notesList.replace("<", "");
+  notesList = notesList.replace(">", "");
+
   //Returns the Title:
   return noteTitle;
 }
