@@ -214,7 +214,7 @@ function saveNote() {
     data = getCacheData(dataID, true);
     data[saveIndex] = document.getElementById('text-area').innerHTML;
     data[saveIndex] = data[saveIndex].replace(/(\r\n|\n|\r)/gm, "<br>");
-    data[saveIndex] = data[saveIndex].replace(new RegExp("<div>", "g"), "");
+    data[saveIndex] = data[saveIndex].replace(new RegExp("<div>", "g"), "<br>");
     data[saveIndex] = data[saveIndex].replace(new RegExp("</div>", "g"), "");
 
     //Saves the Data:
@@ -401,14 +401,23 @@ function title(string) {
   //Loops Variables:
   var noteTitle = "";
   var turns = 0;
+
+  //String Variables:
+  var localString = 
+    string.replace(new RegExp("<div>", "g"), "")
+    .replace(new RegExp("</div>", "g"), "")
+    .replace(new RegExp("<br>", "g"), "")
+    .replace(new RegExp("<", "g"), "")
+    .replace(new RegExp(">", "g"), "")
+    .replace(new RegExp("/", "g"), "");
   var titleLength = 5;
 
   //Loops through Array:
-  mainLoop: while (turns < string.length) {
+  mainLoop: while (turns < localString.length) {
     //Checks the Case:
     if (turns < titleLength) {
       //Sets the Title:
-      noteTitle += string[turns];
+      noteTitle += localString[turns];
     }
 
     else {
@@ -418,11 +427,6 @@ function title(string) {
 
     turns++;
   }
-
-  //Replaces the Titles:
-  noteTitle = noteTitle.replace(new RegExp("<", "g"), "");
-  noteTitle = noteTitle.replace(new RegExp(">", "g"), "");
-  noteTitle = noteTitle.replace(new RegExp("/", "g"), "");
 
   //Returns the Title:
   return noteTitle;
