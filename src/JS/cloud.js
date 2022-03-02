@@ -304,7 +304,6 @@ function displayNotes() {
         "<div class='margin dash-alert disappear'>" + alerts[0] + "</div>"
         + "<div style='background-color: #147efb;' class='margin dash-alert disappear'>" + alerts[1] + "</div>"
         + "<button class='dash-button' onclick='showNotes(" + turns + ");'> Open </button>";
-        + "<button class='dash-button' onclick='showConfirm(" + turns + ");'> Delete </button>";
 
       //Checks the Case:
       if (turns != 0) {
@@ -312,8 +311,9 @@ function displayNotes() {
         notesList += "<button class='dash-button' onclick='pinNote(" + turns + ");'> Pin </button>";
       }
 
-      //Adds the Close Tag:
-      notesList += "</div>";
+      //Adds the Close Button:
+      notesList += 
+        "<button class='dash-button' onclick='showConfirm(" + turns + ");'> Delete </button> </div>";
 
       turns++;
     }
@@ -344,7 +344,6 @@ function search(e) {
         "<div class='margin dash-alert disappear'>" + alerts[0] + "</div>"
         + "<div style='background-color: #147efb;' class='margin dash-alert disappear'>" + alerts[1] + "</div>"
         + "<button class='dash-button' onclick='showNotes(" + turns + ");'> Open </button>";
-        + "<button class='dash-button' onclick='showConfirm(" + turns + ");'> Delete </button>";
 
       //Checks the Case:
       if (turns != 0) {
@@ -352,8 +351,9 @@ function search(e) {
         notesList += "<button class='dash-button' onclick='pinNote(" + turns + ");'> Pin </button>";
       }
 
-      //Adds the Close Tag:
-      notesList += "</div>";
+      //Adds the Close Button:
+      notesList += 
+        "<button class='dash-button' onclick='showConfirm(" + turns + ");'> Delete </button> </div>";
     }
 
     turns++;
