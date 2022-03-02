@@ -303,10 +303,7 @@ function displayNotes() {
       notesList +=
         "<div class='margin dash-alert disappear'>" + alerts[0] + "</div>"
         + "<div style='background-color: #147efb;' class='margin dash-alert disappear'>" + alerts[1] + "</div>"
-
-      //Adds Button:
-      notesList +=
-        "<button class='dash-button' onclick='showNotes(" + turns + ");'> Open </button>";
+        + "<button class='dash-button' onclick='showNotes(" + turns + ");'> Open </button>";
         + "<button class='dash-button' onclick='showConfirm(" + turns + ");'> Delete </button>";
 
       //Checks the Case:
@@ -346,10 +343,7 @@ function search(e) {
       notesList +=
         "<div class='margin dash-alert disappear'>" + alerts[0] + "</div>"
         + "<div style='background-color: #147efb;' class='margin dash-alert disappear'>" + alerts[1] + "</div>"
-
-      //Adds Button:
-      notesList +=
-        "<button class='dash-button' onclick='showNotes(" + turns + ");'> Open </button>";
+        + "<button class='dash-button' onclick='showNotes(" + turns + ");'> Open </button>";
         + "<button class='dash-button' onclick='showConfirm(" + turns + ");'> Delete </button>";
 
       //Checks the Case:
