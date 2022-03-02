@@ -306,17 +306,14 @@ function displayNotes() {
 
       //Adds Button:
       notesList +=
-        "<button class='dash-button' onclick='showConfirm(" + turns + ");'> Delete </button>";
+        "<button class='dash-button' onclick='showNotes(" + turns + ");'> Open </button> </div>";
+        + "<button class='dash-button' onclick='showConfirm(" + turns + ");'> Delete </button>";
 
       //Checks the Case:
       if (turns != 0) {
         //Adds the Button:
         notesList += "<button class='dash-button' onclick='pinNote(" + turns + ");'> Pin </button>";
       }
-
-      //Adds Button:
-      notesList +=
-        "<button class='dash-button' onclick='showNotes(" + turns + ");'> Open </button> </div>";
 
       turns++;
     }
@@ -349,17 +346,14 @@ function search(e) {
 
       //Adds Button:
       notesList +=
-        "<button class='dash-button' onclick='showConfirm(" + turns + ");'> Delete </button>";
+        "<button class='dash-button' onclick='showNotes(" + turns + ");'> Open </button> </div>";
+        + "<button class='dash-button' onclick='showConfirm(" + turns + ");'> Delete </button>";
 
       //Checks the Case:
       if (turns != 0) {
         //Adds the Button:
         notesList += "<button class='dash-button' onclick='pinNote(" + turns + ");'> Pin </button>";
       }
-
-      //Adds Button:
-      notesList +=
-        "<button class='dash-button' onclick='showNotes(" + turns + ");'> Open </button> </div>";
     }
 
     turns++;
