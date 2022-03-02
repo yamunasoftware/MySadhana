@@ -26,6 +26,20 @@ window.onload = function () {
     showNotification();
   }, notificationTimeout);
 
+  //Sets the Notes Interval:
+  setInterval(function () {
+    //Checks the Case:
+    if (saveIndex == null) {
+      //Displays the Notes:
+      displayNotes();
+    }
+
+    else {
+      //Show Dates:
+      showDates(document.getElementById('text-area').innerHTML);
+    }
+  }, notesTimeout);
+
   /* Event Listeners */
 
   //Search Event Listener:

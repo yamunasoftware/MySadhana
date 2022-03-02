@@ -26,6 +26,7 @@ var data = [];
 //Timeout Variables:
 var timeout = (1000 * 60 * 2);
 var notificationTimeout = (1000 * 60 * 60 * 2);
+var notesTimeout = (1000 * 2);
 var mainInterval = null;
 
 //Response Variables:
