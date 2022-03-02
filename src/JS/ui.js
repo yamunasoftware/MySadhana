@@ -29,7 +29,8 @@ window.onload = function () {
   //Sets the Notes Interval:
   setInterval(function () {
     //Checks the Case:
-    if (getCacheData(codeID, false) != null) {
+    if (getCacheData(codeID, false) != null && 
+      saveIndex == null) {
       //Displays the Dash Dates:
       displayDashDates();
     }
@@ -50,6 +51,7 @@ window.onload = function () {
       //Checks the Case:
       if (document.getElementById('text-area').innerHTML.includes("\"")) {
         //Resets the Value:
+        console.log("here")
         document.getElementById('text-area').innerHTML = document.getElementById('text-area').innerHTML.replace(/["]+/g, '');
       }
     }
