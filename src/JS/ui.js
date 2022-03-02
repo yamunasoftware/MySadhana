@@ -61,6 +61,7 @@ window.onload = function () {
 
       //Show Dates:
       showDates(document.getElementById('text-area').innerHTML);
+      highlightDates(dates(document.getElementById('text-area')));
     }
   });
 }
