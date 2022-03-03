@@ -222,7 +222,8 @@ function showNotes(index) {
       //Idle Interval:
       mainInterval = setInterval(function () {
         //Checks the Case:
-        if (saveIndex != null) {
+        if (saveIndex != null
+          && document.activeElement != document.getElementById('text-area')) {
           //Exits the Note:
           exitNote();
         }
