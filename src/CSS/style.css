@@ -214,6 +214,11 @@ span {
   text-decoration-color: #147efb;
 }
 
+a {
+  text-decoration: underline;
+  text-decoration-color: #23C552;
+}
+
 button {
   display: inline;
   margin: 10px;

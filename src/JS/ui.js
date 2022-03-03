@@ -29,7 +29,7 @@ window.onload = function () {
   //Sets the Notes Interval:
   setInterval(function () {
     //Checks the Case:
-    if (getCacheData(codeID, false) != null && 
+    if (getCacheData(codeID, false) != null &&
       saveIndex == null) {
       //Displays the Dash Dates:
       displayDashDates();
@@ -135,6 +135,7 @@ function showNotification() {
     //Loop Variables:
     var past = 0;
     var now = 0;
+    var future = 0;
     var turns = 0;
 
     //Loops through Array:
@@ -154,47 +155,21 @@ function showNotification() {
         now += alerts[1];
       }
 
+      //Checks the Case:
+      if (alerts[2] != "") {
+        //Sets the Future:
+        future += alerts[2];
+      }
+
       turns++;
     }
 
-    //Checks the Case:
-    if (past != 0 && now != 0) {
-      //Runs the Notification:
-      if ("Notification" in window
-        && Notification.permission === "granted") {
-        new Notification(past + " Past Dates and " + now + " Current Dates");
-      }
-
-      else {
-        //Alerts:
-        alert(past + " Past Dates and " + now + " Current Dates");
-      }
-    }
-
-    else if (past != 0 && now == 0) {
-      //Runs the Notification:
-      if ("Notification" in window
-        && Notification.permission === "granted") {
-        new Notification(past + " Past Dates");
-      }
-
-      else {
-        //Alerts:
-        alert(past + " Past Dates and");
-      }
-    }
-
-    else if (past == 0 && now != 0) {
-      //Runs the Notification:
-      if ("Notification" in window
-        && Notification.permission === "granted") {
-        new Notification(now + " Current Dates");
-      }
-
-      else {
-        //Alerts:
-        alert(now + " Current Dates");
-      }
+    //Runs the Notification:
+    if ("Notification" in window
+      && Notification.permission === "granted") {
+      //Creates Notification:
+      new Notification(past + " Past Dates and " + now + " Current Dates and " + 
+        future + " Future Dates");
     }
   }
 }

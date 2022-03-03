@@ -223,6 +223,10 @@ function saveNote() {
     data[saveIndex] = data[saveIndex].replace(new RegExp("</u>", "g"), "");
     data[saveIndex] = data[saveIndex].replace(new RegExp("<span>", "g"), "");
     data[saveIndex] = data[saveIndex].replace(new RegExp("</span>", "g"), "");
+
+    //Replaces the Tags:
+    data[saveIndex] = data[saveIndex].replace(new RegExp("<a>", "g"), "");
+    data[saveIndex] = data[saveIndex].replace(new RegExp("</a>", "g"), "");
     data[saveIndex] = data[saveIndex].replace(new RegExp("</div>", "g"), "");
 
     //Saves the Data:
@@ -316,6 +320,7 @@ function displayNotes() {
       notesList +=
         "<div id='past" + turns + "' class='margin dash-alert disappear'>" + alerts[0] + "</div>"
         + "<div id='now" + turns + "' style='background-color: #147efb;' class='margin dash-alert disappear'>" + alerts[1] + "</div>"
+        + "<div id='future" + turns + "' style='background-color: #23C552;' class='margin dash-alert disappear'>" + alerts[2] + "</div>"
         + "<button class='dash-button' onclick='showNotes(" + turns + ");'> Open </button>";
 
       //Checks the Case:
@@ -357,6 +362,7 @@ function search(e) {
       notesList +=
         "<div id='past" + turns + "' class='margin dash-alert disappear'>" + alerts[0] + "</div>"
         + "<div id='now" + turns + "' style='background-color: #147efb;' class='margin dash-alert disappear'>" + alerts[1] + "</div>"
+        + "<div id='future" + turns + "' style='background-color: #23C552;' class='margin dash-alert disappear'>" + alerts[2] + "</div>"
         + "<button class='dash-button' onclick='showNotes(" + turns + ");'> Open </button>";
 
       //Checks the Case:
@@ -400,6 +406,12 @@ function displayDashDates() {
       document.getElementById('now' + turns).innerHTML = alerts[1];
     }
 
+    //Checks the Case:
+    if (document.getElementById('future' + turns) != null) {
+      //Sets the Alert:
+      document.getElementById('future' + turns).innerHTML = alerts[2];
+    }
+
     turns++;
   }
 }
@@ -418,6 +430,8 @@ function title(string) {
       .replace(new RegExp("</u>", "g"), "")
       .replace(new RegExp("<span>", "g"), "")
       .replace(new RegExp("</span>", "g"), "")
+      .replace(new RegExp("<a>", "g"), "")
+      .replace(new RegExp("</a>", "g"), "")
       .replace(new RegExp("<br>", "g"), "")
       .replace(new RegExp("<", "g"), "")
       .replace(new RegExp(">", "g"), "")
@@ -480,6 +494,13 @@ function highlightDates(dates) {
         document.getElementById('text-area').innerHTML = area;
       }
 
+      else if (localDates[0] == currentMonth && localDates[1] > currentDay) {
+        //Sets the Content:
+        var area = document.getElementById('text-area').innerHTML;
+        area = area.replace(new RegExp(currentDate, "g"), "<a>" + currentDate + "</a>");
+        document.getElementById('text-area').innerHTML = area;
+      }
+
       turns++;
     }
   }
@@ -498,6 +519,7 @@ function checkDates(dates) {
   //Count Variables:
   var past = 0;
   var now = 0;
+  var future = 0;
 
   //Loops through Array:
   mainLoop: while (turns < dates.length) {
@@ -516,6 +538,11 @@ function checkDates(dates) {
       now++;
     }
 
+    else if (localDates[0] == currentMonth && localDates[1] > currentDay) {
+      //Adds to the Count:
+      future++;
+    }
+
     turns++;
   }
 
@@ -531,8 +558,14 @@ function checkDates(dates) {
     now = "";
   }
 
+  //Sets the Value:
+  if (future == 0) {
+    //Sets the Value:
+    future = "";
+  }
+
   //Returns the Counts:
-  return [past, now];
+  return [past, now, future];
 }
 
 //Extract Date Function:
