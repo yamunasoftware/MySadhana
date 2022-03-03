@@ -51,7 +51,6 @@ window.onload = function () {
       //Checks the Case:
       if (document.getElementById('text-area').innerHTML.includes("\"")) {
         //Resets the Value:
-        console.log("here")
         document.getElementById('text-area').innerHTML = document.getElementById('text-area').innerHTML.replace(/["]+/g, '');
       }
     }
@@ -223,8 +222,7 @@ function showNotes(index) {
       //Idle Interval:
       mainInterval = setInterval(function () {
         //Checks the Case:
-        if (document.getElementById('text-area') != document.activeElement
-          && saveIndex != null) {
+        if (saveIndex != null) {
           //Exits the Note:
           exitNote();
         }
