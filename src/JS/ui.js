@@ -41,7 +41,7 @@ window.onload = function () {
   //Search Event Listener:
   document.getElementById('search').addEventListener("input", function (e) {
     //Search:
-    search(e);
+    search();
   });
 
   //Text Area Input Event Listener:

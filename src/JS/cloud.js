@@ -342,7 +342,7 @@ function displayNotes() {
 }
 
 //Search Function:
-function search(e) {
+function search() {
   //Loop Variables:
   data = getCacheData(dataID, true);
   var turns = 0;
@@ -351,7 +351,7 @@ function search(e) {
   //Loops through Array:
   mainLoop: while (turns < data.length) {
     //Checks the Case:
-    if (data[turns].toLowerCase().includes(e.target.value.toLowerCase())) {
+    if (data[turns].toLowerCase().includes(document.getElementById('search').value.toLowerCase())) {
       //Sets the Notes List:
       notesList +=
         "<div class='margin padding card center'>"
