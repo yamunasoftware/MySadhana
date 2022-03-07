@@ -99,19 +99,22 @@
           <input id="search" class="margin" style="margin-left: 40px;" />
 
           <!-- Search Buttons -->
-          <button class="margin block" style="margin-left: 40px; margin-top: 0px;" onclick="search();"> 
-            Search 
-          </button>
-          <button class="margin inline" style="margin-top: 0px;" onclick="displayNotes();"> 
-            Reset
-          </button>
+          <div>
+            <button class="margin" style="margin-left: 40px; margin-top: 0px;" onclick="search();">
+              Search
+            </button>
+            <button class="margin" style="margin-top: 0px;" onclick="displayNotes();">
+              Reset
+            </button>
+          </div>
         </div>
 
         <!-- Notes Padding -->
         <div class="padding-extra-top">
           <!-- Conformation Element -->
-          <div id="confirmation" class="margin margin-extra-bottom padding fit-content center dark-card disappear"></div>
-          
+          <div id="confirmation" class="margin margin-extra-bottom padding fit-content center dark-card disappear">
+          </div>
+
           <!-- Notes List -->
           <div class="padding subheader no-padding-bottom"> Notes </div>
           <div id="notes-list" class="padding"></div>
@@ -122,11 +125,14 @@
     <!-- Notes -->
     <div id="notes" class="screen deactivate">
       <!-- Exit Button Container -->
-      <div class="padding"> <div class='mobile-button' onclick='exitNote();'> <</div> </div>
+      <div class="padding">
+        <div class='mobile-button' onclick='exitNote();'>
+          << /div>
+        </div>
 
-      <!-- Text Area -->
-      <div id="text-area" class="padding margin-extra-top text-area" contenteditable></div>
-    </div>
+        <!-- Text Area -->
+        <div id="text-area" class="padding margin-extra-top text-area" contenteditable></div>
+      </div>
 
   </body>
 </div>
