@@ -156,6 +156,10 @@ html, body {
   display: inline;
 }
 
+.block {
+  display: block;
+}
+
 .fit-content {
   width: fit-content;
 }
