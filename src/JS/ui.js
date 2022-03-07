@@ -40,8 +40,8 @@ window.onload = function () {
 
   //Search Event Listener:
   document.getElementById('search').addEventListener("input", function (e) {
-    //Search:
-    search();
+    //Replaces the Value:
+    document.getElementById('search').value = document.getElementById('search').value.replace(/["]+/g, '');
   });
 
   //Text Area Input Event Listener:
