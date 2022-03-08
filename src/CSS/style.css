@@ -33,13 +33,13 @@ html, body {
 }
 
 .content-screen {
-  width: 70%;
-  height: 70%;
+  width: 80%;
+  height: 80%;
   margin: 0px;
 }
 
 .content-width {
-  width: 70%;
+  width: 80%;
 }
 
 .dark {
