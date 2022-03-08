@@ -669,7 +669,7 @@ function deleteCacheData(id) {
 //Firebase Server Formatting Function:
 function formatData(rawData) {
   //Replaces Info:
-  var newData = rawData.replace(new RegExp("\n", "g"), "$n");
+  var newData = rawData.replace(new RegExp("\\n", "g"), "$n");
   console.log(newData);
   var string = newData.replace(/\\/g, "");
   var side = string.replace(/^./, "");
