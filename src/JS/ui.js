@@ -225,8 +225,8 @@ function showNotes(index) {
 //Show Areas Function:
 function showAreas() {
   //Sets the Text Area:
-  document.getElementById('text-area').innerHTML = document.getElementById('content-area').value
-    .replace(new RegExp("\n", "g"), "<br>");
+  document.getElementById('text-area').innerHTML = 
+    document.getElementById('content-area').value.replace(new RegExp("\n", "g"), "<br>");
   highlightDates(dates(document.getElementById('text-area').innerHTML));
 }
 
