@@ -195,7 +195,7 @@ function showNotes(index) {
       document.getElementById('notes').style.display = "block";
       document.getElementById('loading').style.display = "none";
       document.getElementById('content-area').value = data[index];
-
+      showAreas();
 
       //Idle Interval:
       mainInterval = setInterval(function () {
