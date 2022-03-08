@@ -253,6 +253,7 @@ function deleteNote(index) {
 function exitNote() {
   //Resets Data:
   saveNote();
+  console.log(data);
   saveIndex = null;
 
   //Shows the Startup:
