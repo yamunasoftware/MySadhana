@@ -47,6 +47,10 @@ html, body {
   color: #FFFFFF;
 }
 
+.editable {
+  color: #a4da99;
+}
+
 .text-area {
   margin: 0px;
   background-color: #000000;
