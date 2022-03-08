@@ -673,7 +673,7 @@ function formatData(rawData) {
   var string = newData.replace(/\\/g, "");
   var side = string.replace(/^./, "");
   var main = side.slice(0, -1);
-  var finalData = main.replace(new RegExp("$n", "g"), "\n");
+  var finalData = main.replace(/$n/g, "\n");
   console.log(finalData);
 
   //Returns the String:
