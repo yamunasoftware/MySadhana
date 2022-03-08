@@ -212,22 +212,7 @@ function saveNote() {
   if (getCacheData(dataID, false) != null && saveIndex != null) {
     //Sets the Data:
     data = getCacheData(dataID, true);
-    data[saveIndex] = document.getElementById('text-area').innerHTML;
-
-    //Replaces the Break Tags:
-    data[saveIndex] = data[saveIndex].replace(/(\r\n|\n|\r)/gm, "<br>");
-    data[saveIndex] = data[saveIndex].replace(new RegExp("<div>", "g"), "<br>");
-
-    //Replaces the Tags:
-    data[saveIndex] = data[saveIndex].replace(new RegExp("<u>", "g"), "");
-    data[saveIndex] = data[saveIndex].replace(new RegExp("</u>", "g"), "");
-    data[saveIndex] = data[saveIndex].replace(new RegExp("<span>", "g"), "");
-    data[saveIndex] = data[saveIndex].replace(new RegExp("</span>", "g"), "");
-
-    //Replaces the Tags:
-    data[saveIndex] = data[saveIndex].replace(new RegExp("<a>", "g"), "");
-    data[saveIndex] = data[saveIndex].replace(new RegExp("</a>", "g"), "");
-    data[saveIndex] = data[saveIndex].replace(new RegExp("</div>", "g"), "");
+    data[saveIndex] = document.getElementById('content-area').value;
 
     //Saves the Data:
     setCacheData(dataID, data, true);
@@ -421,29 +406,14 @@ function title(string) {
   //Loops Variables:
   var noteTitle = "";
   var turns = 0;
-
-  //String Variables:
-  var localString =
-    string.replace(new RegExp("<div>", "g"), "")
-      .replace(new RegExp("</div>", "g"), "")
-      .replace(new RegExp("<u>", "g"), "")
-      .replace(new RegExp("</u>", "g"), "")
-      .replace(new RegExp("<span>", "g"), "")
-      .replace(new RegExp("</span>", "g"), "")
-      .replace(new RegExp("<a>", "g"), "")
-      .replace(new RegExp("</a>", "g"), "")
-      .replace(new RegExp("<br>", "g"), "")
-      .replace(new RegExp("<", "g"), "")
-      .replace(new RegExp(">", "g"), "")
-      .replace(new RegExp("/", "g"), "");
   var titleLength = 5;
 
   //Loops through Array:
-  mainLoop: while (turns < localString.length) {
+  mainLoop: while (turns < string.length) {
     //Checks the Case:
     if (turns < titleLength) {
       //Sets the Title:
-      noteTitle += localString[turns];
+      noteTitle += string[turns];
     }
 
     else {
@@ -699,12 +669,14 @@ function deleteCacheData(id) {
 //Firebase Server Formatting Function:
 function formatData(rawData) {
   //Replaces Info:
-  var string = rawData.replace(/\\/g, "");
+  var newData = rawData.replace(new RegExp("\n", "g"), "$n");
+  var string = newData.replace(/\\/g, "");
   var side = string.replace(/^./, "");
   var main = side.slice(0, -1);
+  var finalData = main.replace(new RegExp("$n", "g"), "\n");
 
   //Returns the String:
-  return main;
+  return finalData;
 }
 
 //Delete Element Function:

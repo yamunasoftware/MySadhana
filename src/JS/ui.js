@@ -45,14 +45,17 @@ window.onload = function () {
   });
 
   //Text Area Input Event Listener:
-  document.getElementById('text-area').addEventListener("input", function (e) {
+  document.getElementById('content-area').addEventListener("input", function (e) {
     //Checks the Case:
     if (saveIndex != null) {
       //Checks the Case:
-      if (document.getElementById('text-area').innerHTML.includes("\"")) {
+      if (document.getElementById('content-area').innerHTML.includes("\"")) {
         //Resets the Value:
-        document.getElementById('text-area').innerHTML = document.getElementById('text-area').innerHTML.replace(/["]+/g, '');
+        document.getElementById('content-area').value = document.getElementById('content-area').value.replace(/["]+/g, '');
       }
+
+      //Shows the Areas:
+      showAreas();
     }
   });
 }
@@ -191,8 +194,8 @@ function showNotes(index) {
       document.getElementById('dashboard').style.display = "none";
       document.getElementById('notes').style.display = "block";
       document.getElementById('loading').style.display = "none";
-      document.getElementById('text-area').innerHTML = data[index];
-      highlightDates(dates(document.getElementById('text-area').innerHTML));
+      document.getElementById('content-area').value = data[index];
+
 
       //Idle Interval:
       mainInterval = setInterval(function () {
@@ -217,6 +220,14 @@ function showNotes(index) {
       }, notesTimeout);
     }
   }
+}
+
+//Show Areas Function:
+function showAreas() {
+  //Sets the Text Area:
+  document.getElementById('text-area').innerHTML = document.getElementById('content-area').value
+    .replace(new RegExp("\n", "g"), "<br>");
+  highlightDates(dates(document.getElementById('text-area').innerHTML));
 }
 
 //Show Confirm Function:

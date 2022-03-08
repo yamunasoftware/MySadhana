@@ -111,6 +111,10 @@ html, body {
   margin: 20px;
 }
 
+.margin-bottom {
+  margin-bottom: 20px;
+}
+
 .margin-extra-top {
   margin-top: 40px;
 }
