@@ -32,6 +32,12 @@ html, body {
   margin: 0px;
 }
 
+.content-screen {
+  width: 70%;
+  height: 70%;
+  margin: 0px;
+}
+
 .dark {
   background-color: #000000;
   color: #FFFFFF;
