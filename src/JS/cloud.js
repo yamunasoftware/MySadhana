@@ -674,7 +674,6 @@ function formatData(rawData) {
   var side = string.replace(/^./, "");
   var main = side.slice(0, -1);
   var finalData = main.split("$n").join("\\n");
-  console.log(finalData);
 
   //Returns the String:
   return finalData;
