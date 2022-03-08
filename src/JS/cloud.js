@@ -670,11 +670,11 @@ function deleteCacheData(id) {
 function formatData(rawData) {
   //Replaces Info:
   var newData = rawData.replace(/\\n/g, "$n");
-  console.log(newData);
   var string = newData.replace(/\\/g, "");
   var side = string.replace(/^./, "");
   var main = side.slice(0, -1);
   var finalData = main.replace(new RegExp("$n", "g"), "\n");
+  console.log(finalData);
 
   //Returns the String:
   return finalData;
