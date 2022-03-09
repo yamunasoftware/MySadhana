@@ -229,7 +229,7 @@ function showAreas() {
 function showConfirm(index) {
   //Opens the Confirmation:
   document.getElementById('confirmation').innerHTML =
-    "<div class='padding'> Are You Sure? </div>"
+    "<div class='padding'> Delete Note? </div>"
     + "<button onclick='deleteNote(" + index + ");'> Yes </button>"
     + "<button onclick='closeConfirm();'> No </button>";
   closeRemoveConfirm();
@@ -245,7 +245,7 @@ function closeConfirm() {
 function showRemoveConfirm() {
   //Opens the Confirmation:
   document.getElementById('remove').innerHTML =
-    "<div class='padding'> Are You Sure? </div>"
+    "<div class='padding'> Close Account? </div>"
     + "<button onclick='removeUser();'> Yes </button>"
     + "<button onclick='closeRemoveConfirm();'> No </button>";
   closeConfirm();
