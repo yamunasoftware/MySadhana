@@ -48,14 +48,8 @@ window.onload = function () {
   document.getElementById('content-area').addEventListener("input", function (e) {
     //Checks the Case:
     if (saveIndex != null) {
-      //Checks the Case:
-      if (document.getElementById('content-area').innerHTML.includes("\"")) {
-        //Resets the Value:
-        console.log("yes")
-        document.getElementById('content-area').value = document.getElementById('content-area').value.replace(/["]+/g, '');
-      }
-
       //Shows the Areas:
+      document.getElementById('content-area').value = document.getElementById('content-area').value.replace(/["]+/g, '');
       showAreas();
     }
   });
