@@ -36,7 +36,7 @@ window.onload = function () {
     }
   }, datesTimeout);
 
-  /* Input Event Listeners */
+  /* Event Listeners */
 
   //Search Event Listener:
   document.getElementById('search').addEventListener("input", function (e) {
@@ -44,7 +44,7 @@ window.onload = function () {
     document.getElementById('search').value = document.getElementById('search').value.replace(/["]+/g, '');
   });
 
-  //Text Area Input Event Listener:
+  //Content Area Input Event Listener:
   document.getElementById('content-area').addEventListener("input", function (e) {
     //Checks the Case:
     if (saveIndex != null) {
@@ -52,6 +52,12 @@ window.onload = function () {
       document.getElementById('content-area').value = document.getElementById('content-area').value.replace(/["]+/g, '');
       showAreas();
     }
+  });
+
+  //Text Area Click Disable:
+  document.getElementById('text-area').addEventListener('click', function (e) {
+    //Prevents:
+    e.preventDefault();
   });
 }
 
