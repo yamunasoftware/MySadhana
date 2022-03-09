@@ -32,6 +32,10 @@ html, body {
   margin: 0px;
 }
 
+.full-width {
+  width: calc(100% - 40px);
+}
+
 .dark {
   background-color: #000000;
   color: #FFFFFF;
@@ -47,6 +51,7 @@ html, body {
   outline: none;
   border: none;
   white-space: pre-wrap;
+  resize: none;
 }
 
 .navigation {
