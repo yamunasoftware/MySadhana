@@ -32,16 +32,6 @@ html, body {
   margin: 0px;
 }
 
-.content-screen {
-  width: 80%;
-  height: 80%;
-  margin: 0px;
-}
-
-.content-width {
-  width: 80%;
-}
-
 .dark {
   background-color: #000000;
   color: #FFFFFF;
@@ -176,6 +166,11 @@ html, body {
 
 .fit-content {
   width: fit-content;
+}
+
+.fit-all-content {
+  width: fit-content;
+  height: fit-content;
 }
 
 .no-decoration {
