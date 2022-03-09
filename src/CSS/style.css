@@ -39,8 +39,8 @@ html, body {
 }
 
 .content-screen {
-  width: calc(100% - 20px);
-  height: 100%;
+  width: 80%;
+  height: 80%;
   margin: 0px;
 }
 
