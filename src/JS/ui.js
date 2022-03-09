@@ -51,6 +51,7 @@ window.onload = function () {
       //Checks the Case:
       if (document.getElementById('content-area').innerHTML.includes("\"")) {
         //Resets the Value:
+        console.log("yes")
         document.getElementById('content-area').value = document.getElementById('content-area').value.replace(/["]+/g, '');
       }
 
