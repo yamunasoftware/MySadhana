@@ -34,8 +34,7 @@ html, body {
 
 .content-screen {
   width: 80%;
-  height: 80%;
-  margin: 0px;
+  height: fit-content;
 }
 
 .dark {
@@ -172,11 +171,6 @@ html, body {
 
 .fit-content {
   width: fit-content;
-}
-
-.fit-all-content {
-  width: fit-content;
-  height: fit-content;
 }
 
 .no-decoration {
