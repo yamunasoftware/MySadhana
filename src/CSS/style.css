@@ -32,12 +32,6 @@ html, body {
   margin: 0px;
 }
 
-.flex-screen {
-  min-width: 100%;
-  min-height: 100%;
-  margin: 0px;
-}
-
 .content-screen {
   width: 80%;
   height: 80%;
