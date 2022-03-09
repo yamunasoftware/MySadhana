@@ -32,9 +32,8 @@ html, body {
   margin: 0px;
 }
 
-.content-screen {
-  width: 80%;
-  height: fit-content;
+.full-width {
+  width: 100%;
 }
 
 .dark {
