@@ -32,10 +32,6 @@ html, body {
   margin: 0px;
 }
 
-.full-width {
-  width: calc(100% - 50px);
-}
-
 .dark {
   background-color: #000000;
   color: #FFFFFF;
