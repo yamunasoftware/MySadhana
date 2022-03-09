@@ -93,6 +93,31 @@ function logIn() {
   }
 }
 
+//Log Out Function:
+function logOut() {
+  //Logs Out:
+  clearCacheData(); 
+  window.location.reload();
+}
+
+//Remove User Function:
+function removeUser() {
+  //Checks the Case:
+  if (getCacheData(codeID, false) != null) {
+    //Gets the Code:
+    code = getCacheData(codeID, false);
+
+    //Removes the User:
+    database.collection(collectionName).doc(code).delete().then(() => {
+      //Removed!
+    })
+      .then(() => {
+        //Logs Out:
+        logOut();
+      });
+  }
+}
+
 //Generate Code Function:
 function generateCode() {
   //Loop Variables:
@@ -116,6 +141,7 @@ function generateCode() {
 
 //Send Data Function:
 function sendData() {
+  //Checks the Case:
   if (getCacheData(codeID, false) != null) {
     //Gets the Code:
     code = getCacheData(codeID, false);

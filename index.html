@@ -86,7 +86,8 @@
         <div class="nav-button center" onclick="addNote();"> New </div>
         <div class="nav-button center" onclick="requestNotify();"> Enable </div>
         <div class="nav-button center" onclick="copyCode();"> Copy </div>
-        <div class="nav-button center" onclick="clearCacheData(); window.location.reload();"> Exit </div>
+        <div class="nav-button center" onclick="logOut();"> Exit </div>
+        <div class="nav-button center" onclick="showRemoveConfirm();"> Close </div>
       </div>
 
       <!-- Main Content -->
@@ -111,8 +112,9 @@
 
         <!-- Notes Padding -->
         <div class="padding-extra-top">
-          <!-- Conformation Element -->
+          <!-- Conformation Elements -->
           <div id="confirmation" class="margin margin-extra-bottom padding fit-content center dark-card disappear"></div>
+          <div id="remove" class="margin margin-extra-bottom padding fit-content center dark-card disappear"></div>
 
           <!-- Notes List -->
           <div class="padding subheader no-padding-bottom"> Notes </div>

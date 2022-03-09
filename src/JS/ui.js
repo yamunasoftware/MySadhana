@@ -232,12 +232,29 @@ function showConfirm(index) {
     "<div class='padding'> Are You Sure? </div>"
     + "<button onclick='deleteNote(" + index + ");'> Yes </button>"
     + "<button onclick='closeConfirm();'> No </button>";
+  closeRemoveConfirm();
 }
 
 //Close Confirm Function:
 function closeConfirm() {
   //Closes the Confirmation:
   document.getElementById('confirmation').innerHTML = "";
+}
+
+//Show Remove Confirm Function:
+function showRemoveConfirm() {
+  //Opens the Confirmation:
+  document.getElementById('remove').innerHTML =
+    "<div class='padding'> Are You Sure? </div>"
+    + "<button onclick='removeUser();'> Yes </button>"
+    + "<button onclick='closeRemoveConfirm();'> No </button>";
+  closeConfirm();
+}
+
+//Close Remove Confirm Function:
+function closeRemoveConfirm() {
+  //Closes the Remove Confirmation:
+  document.getElementById('remove').innerHTML = "";
 }
 
 //Show Login Function:
