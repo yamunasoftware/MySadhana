@@ -32,13 +32,6 @@ html, body {
   margin: 0px;
 }
 
-.content-screen {
-  width: calc(100% - 20px);
-  height: 100%;
-  padding: 0px;
-  margin: 0px;
-}
-
 .dark {
   background-color: #000000;
   color: #FFFFFF;
