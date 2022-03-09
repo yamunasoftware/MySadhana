@@ -157,6 +157,10 @@ html, body {
   display: none;
 }
 
+.no-pointers {
+  pointer-events: none;
+}
+
 .center {
   text-align: center;
   align-content: center;

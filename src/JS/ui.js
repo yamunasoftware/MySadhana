@@ -36,9 +36,9 @@ window.onload = function () {
     }
   }, datesTimeout);
 
-  /* Event Listeners */
+  /* Input Event Listeners */
 
-  //Search Event Listener:
+  //Search Input Event Listener:
   document.getElementById('search').addEventListener("input", function (e) {
     //Replaces the Value:
     document.getElementById('search').value = document.getElementById('search').value.replace(/["]+/g, '');
@@ -52,12 +52,6 @@ window.onload = function () {
       document.getElementById('content-area').value = document.getElementById('content-area').value.replace(/["]+/g, '');
       showAreas();
     }
-  });
-
-  //Text Area Click Disable:
-  document.getElementById('text-area').addEventListener('click', function (e) {
-    //Prevents:
-    e.preventDefault();
   });
 }
 
