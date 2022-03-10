@@ -84,6 +84,7 @@
 
         <!-- Navigation Controls -->
         <div class="nav-button center" onclick="addNote();"> New </div>
+        <div class="nav-button center" onclick="window.location.reload();"> Reset </div>
         <div class="nav-button center" 
           onclick="window.open('https://github.com/yamunasoftware/MySadhana/blob/main/README.md');"> 
           Docs 
@@ -104,16 +105,7 @@
           <!-- Search Controls -->
           <div class="padding subheader"> Search </div>
           <input id="search" class="margin" style="margin-left: 40px;" />
-
-          <!-- Search Buttons -->
-          <div>
-            <button style="margin-left: 40px; margin-top: 0px;" onclick="search();">
-              Search
-            </button>
-            <button style="margin-top: 0px;" onclick="showStartup();">
-              Reset
-            </button>
-          </div>
+          <button style="margin-left: 85px; margin-top: 0px;" onclick="search();"> Search </button>
         </div>
 
         <!-- Notes Padding -->

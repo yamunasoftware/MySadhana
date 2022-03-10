@@ -14,13 +14,12 @@ and keeps your headers productive. Short and descriptive headers are proven to b
 more effective to decipher.
 
 The navigation bar on the left of the screen is the main point of operation with the app.
-The "New" button creates a new note, the "Copy" button copies your login code, the "Exit" 
-button logs you out of your current device, and the "Close" button opens a dialogue for 
-you to fully close your MySadhana account.
+The "New" button creates a new note, the "Reset" button allows you to reset the dashboard, 
+the "Copy" button copies your login code, the "Exit" button logs you out of your current device, 
+and the "Close" button opens a dialogue for you to fully close your MySadhana account.
 
 In the dashboard, you can see a search bar that allows you to search for the things that you want
-to find in your notes. Just type into the search field and press the "Search" button. Furthermore, 
-You can reset the dashboard, by pressing the "Reset" button next to the "Search" button. Also, you can
+to find in your notes. Just type into the search field and press the "Search" button. Also, you can
 see your notes displayed below the search area, which allows you to open, pin, and delete different notes.
 When deleting a note, a dialogue will pop up underneath the search area, which asks you to confirm the 
 deletion. You can also change the order of the notes using the pin button, to rearrange your notes.
