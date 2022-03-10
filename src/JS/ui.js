@@ -14,8 +14,6 @@ window.onload = function () {
   //Startup:
   showSplash();
   showStartup();
-
-  //Shows Notification:
   showNotification();
 
   /* Intervals */
@@ -51,6 +49,7 @@ window.onload = function () {
       //Shows the Areas:
       document.getElementById('content-area').value = document.getElementById('content-area').value.replace(/["]+/g, '');
       showAreas();
+      showTabNotification();
     }
   });
 }
@@ -75,6 +74,7 @@ function showSplash() {
     document.getElementById('dashboard').style.display = "none";
     document.getElementById('notes').style.display = "none";
     document.getElementById('loading').style.display = "none";
+    showTabNotification();
   }
 }
 
@@ -112,6 +112,7 @@ function showDashboard() {
   document.getElementById('notes').style.display = "none";
   document.getElementById('loading').style.display = "none";
   document.getElementById('search').value = "";
+  showTabNotification();
 }
 
 //Show Loading Function:
@@ -121,53 +122,41 @@ function showLoading() {
   document.getElementById('dashboard').style.display = "none";
   document.getElementById('notes').style.display = "none";
   document.getElementById('loading').style.display = "block";
+  document.title = "Loading...";
+}
+
+//Show Tab Notification:
+function showTabNotification() {
+  //Sets the Tab Value:
+  document.title = "MySadhana";
+  
+  //Checks the Case:
+  if (getCacheData(codeID, false) != null) {
+    //Gets the Date Values:
+    var dateValues = checkAllDates();
+    var total = dateValues[0] + dateValues[1] + dateValues[2];
+
+    //Checks the Case:
+    if (total > 0) {
+      //Sets the Tab Value:
+      document.title = "(" + total + ") MySadhana";
+    }
+  }
 }
 
 //Show Notification Function:
 function showNotification() {
   //Checks the Case:
   if (getCacheData(codeID, false) != null) {
-    //Gets the Data:
-    data = getCacheData(dataID, true);
-
-    //Loop Variables:
-    var past = 0;
-    var now = 0;
-    var future = 0;
-    var turns = 0;
-
-    //Loops through Array:
-    mainLoop: while (turns < data.length) {
-      //Gets the Alerts:
-      var alerts = checkDates(dates(data[turns]));
-
-      //Checks the Case:
-      if (alerts[0] != "") {
-        //Sets the Past:
-        past += alerts[0];
-      }
-
-      //Checks the Case:
-      if (alerts[1] != "") {
-        //Sets the Now:
-        now += alerts[1];
-      }
-
-      //Checks the Case:
-      if (alerts[2] != "") {
-        //Sets the Future:
-        future += alerts[2];
-      }
-
-      turns++;
-    }
+    //Gets the Date Values:
+    var dateValues = checkAllDates();
 
     //Runs the Notification:
     if ("Notification" in window
       && Notification.permission === "granted") {
       //Creates Notification:
-      new Notification(past + " Past Dates and " + now + " Current Dates and " + 
-        future + " Future Dates");
+      new Notification(dateValues[0] + " Past Dates and " + dateValues[1] + " Current Dates and " +
+        dateValues[2] + " Future Dates");
     }
   }
 }
@@ -220,7 +209,7 @@ function showNotes(index) {
 //Show Areas Function:
 function showAreas() {
   //Sets the Text Area:
-  document.getElementById('text-area').innerHTML = 
+  document.getElementById('text-area').innerHTML =
     document.getElementById('content-area').value.replace(new RegExp("\n", "g"), "<br>");
   highlightDates(dates(document.getElementById('text-area').innerHTML));
 }

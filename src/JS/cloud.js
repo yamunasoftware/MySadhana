@@ -509,6 +509,47 @@ function highlightDates(dates) {
   }
 }
 
+//Check All Dates:
+function checkAllDates() {
+  //Gets the Data:
+  data = getCacheData(dataID, true);
+
+  //Loop Variables:
+  var past = 0;
+  var now = 0;
+  var future = 0;
+  var turns = 0;
+
+  //Loops through Array:
+  mainLoop: while (turns < data.length) {
+    //Gets the Alerts:
+    var alerts = checkDates(dates(data[turns]));
+
+    //Checks the Case:
+    if (alerts[0] != "") {
+      //Sets the Past:
+      past += alerts[0];
+    }
+
+    //Checks the Case:
+    if (alerts[1] != "") {
+      //Sets the Now:
+      now += alerts[1];
+    }
+
+    //Checks the Case:
+    if (alerts[2] != "") {
+      //Sets the Future:
+      future += alerts[2];
+    }
+
+    turns++;
+  }
+
+  //Returns the Values:
+  return [past, now, future];
+}
+
 //Check Dates Function:
 function checkDates(dates) {
   //Loop Variable:
