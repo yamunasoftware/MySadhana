@@ -111,12 +111,9 @@ function removeUser() {
 
     //Removes the User:
     database.collection(collectionName).doc(code).delete().then(() => {
-      //Removed!
+      //Logs Out:
+      logOut();
     })
-      .then(() => {
-        //Logs Out:
-        logOut();
-      })
       .catch(() => {
         //Displays Error:
         showError("An Error Ocurred");

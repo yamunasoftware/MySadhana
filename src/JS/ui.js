@@ -123,7 +123,7 @@ function showNotification() {
       //Sets the Values:
       document.title = "(" + total + ") MySadhana";
       navigator.setAppBadge(total).catch(() => {
-        console.log("error");
+        //Nothing!
       });
     }
   }
