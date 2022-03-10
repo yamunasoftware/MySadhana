@@ -6,6 +6,8 @@ Personal Productivity App
 
 MySadhana is very simple app to use, to allow for maximum productivity!
 Just create and account or log in with your code and begin working!
+This app is also cross-platform and can run on any operating system
+and any browser!
 
 ## Usage
 
@@ -15,7 +17,8 @@ more effective to decipher.
 
 The navigation bar on the left of the screen is the main point of operation with the app.
 The "New" button creates a new note, the "Reset" button allows you to reset the dashboard, 
-the "Copy" button copies your login code, the "Exit" button logs you out of your current device, 
+the "Copy" button copies your login code, the "Enable" button allows you to enable push
+notification for your device, the "Exit" button logs you out of your current device, 
 and the "Close" button opens a dialogue for you to fully close your MySadhana account.
 
 In the dashboard, you can see a search bar that allows you to search for the things that you want
@@ -25,9 +28,9 @@ When deleting a note, a dialogue will pop up underneath the search area, which a
 deletion. To rearrange your notes in your dashboard, simple use the pin button in the order of which
 you want the notes to appear.
 
-When inside of the notes editor, there will be a HTML markdown display and a smaller editor area underneath.
-The display area allows for a more presentable format of the note. The editor is for you to customize 
-your note and make it look the way you want to using the power of HTML syntax. All click events are disabled for the display portion of the note. To save the note, you must exit out from the note, using the exit button at the
+When inside of the notes editor, there will be a HTML markdown display and a editor area underneath.
+The editor area will have green text, which indicates that editing is on in that region.The display area 
+allows for a more presentable format of the note. The editor is for you to customize your note and make it look the way you want to using the power of HTML syntax. All click events are disabled for the display portion of the note. To save the note, you must exit out from the note, using the exit button at the
 top left of the screen.
 
 After changing the order or deleting notes in your dashboard, on one device, you should reload the app if the app

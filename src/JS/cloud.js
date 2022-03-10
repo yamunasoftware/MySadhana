@@ -24,9 +24,10 @@ var code = "";
 var data = [];
 
 //Timeout Variables:
+var notificationTimeout = 10000000;
 var timeout = 100000;
-var notesTimeout = 100;
 var datesTimeout = 1000;
+var notesTimeout = 100;
 
 //Response Variables:
 var wait = false;
@@ -98,7 +99,7 @@ function logIn() {
 //Log Out Function:
 function logOut() {
   //Logs Out:
-  clearCacheData(); 
+  clearCacheData();
   window.location.reload();
 }
 
@@ -400,34 +401,38 @@ function search() {
 
 //Display Dash Dates Function:
 function displayDashDates() {
-  //Loop Variables:
-  data = getCacheData(dataID, true);
-  var turns = 0;
+  //Checks the Case:
+  if (getCacheData(codeID, false) != null &&
+    saveIndex == null) {
+    //Loop Variables:
+    data = getCacheData(dataID, true);
+    var turns = 0;
 
-  //Loops through Array:
-  mainLoop: while (turns < data.length) {
-    //Gets the Alerts:
-    var alerts = checkDates(dates(data[turns]));
+    //Loops through Array:
+    mainLoop: while (turns < data.length) {
+      //Gets the Alerts:
+      var alerts = checkDates(dates(data[turns]));
 
-    //Checks the Case:
-    if (document.getElementById('past' + turns) != null) {
-      //Sets the Alert:
-      document.getElementById('past' + turns).innerHTML = alerts[0];
+      //Checks the Case:
+      if (document.getElementById('past' + turns) != null) {
+        //Sets the Alert:
+        document.getElementById('past' + turns).innerHTML = alerts[0];
+      }
+
+      //Checks the Case:
+      if (document.getElementById('now' + turns) != null) {
+        //Sets the Alert:
+        document.getElementById('now' + turns).innerHTML = alerts[1];
+      }
+
+      //Checks the Case:
+      if (document.getElementById('future' + turns) != null) {
+        //Sets the Alert:
+        document.getElementById('future' + turns).innerHTML = alerts[2];
+      }
+
+      turns++;
     }
-
-    //Checks the Case:
-    if (document.getElementById('now' + turns) != null) {
-      //Sets the Alert:
-      document.getElementById('now' + turns).innerHTML = alerts[1];
-    }
-
-    //Checks the Case:
-    if (document.getElementById('future' + turns) != null) {
-      //Sets the Alert:
-      document.getElementById('future' + turns).innerHTML = alerts[2];
-    }
-
-    turns++;
   }
 }
 

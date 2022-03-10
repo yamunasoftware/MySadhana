@@ -9,20 +9,25 @@ navigator.serviceWorker.register('/service-worker.js', {
 
 //Onload Function:
 window.onload = function () {
-  /* Specific Function Calls */
+  /* Function Calls */
 
   //Startup:
   showSplash();
   showStartup();
+  showPush();
+
+  /* Intervals */
+
+  //Sets the Notification Interval:
+  setInterval(function () {
+    //Shows the Push:
+    showPush();
+  }, notificationTimeout);
 
   //Sets the Notes Interval:
   setInterval(function () {
-    //Checks the Case:
-    if (getCacheData(codeID, false) != null &&
-      saveIndex == null) {
-      //Displays the Dash Dates:
-      displayDashDates();
-    }
+    //Displays the Dash Dates:
+    displayDashDates();
   }, datesTimeout);
 
   /* Input Event Listeners */
@@ -46,6 +51,15 @@ window.onload = function () {
 }
 
 /* UI FUNCTIONS */
+
+//Notification Request Function:
+function requestNotify() {
+  //Checks the Case:
+  if ("Notification" in window) {
+    //Requests the Notification:
+    Notification.requestPermission();
+  }
+}
 
 //Show Splash Function:
 function showSplash() {
@@ -129,6 +143,43 @@ function showNotification() {
   }
 }
 
+//Show Push Function:
+function showPush() {
+  //Checks the Case:
+  if (getCacheData(codeID, false) != null) {
+    //Gets the Date Values:
+    var dateValues = checkAllDates();
+    var total = dateValues[0] + dateValues[1] + dateValues[2];
+    var notificationString = "";
+
+    //Checks the Case:
+    if (dateValues[0] > 0) {
+      //Adds to the String:
+      notificationString += dateValues[0] + " Past\n";
+    }
+    
+    //Checks the Case:
+    if (dateValues[1] > 0) {
+      //Adds to the String:
+      notificationString += dateValues[1] + " Current\n";
+    }
+
+    //Checks the Case:
+    if (dateValues[2] > 0) {
+      //Adds to the String:
+      notificationString += dateValues[2] + " Future\n";
+    }
+
+    //Checks the Case:
+    if (total > 0) {
+      //Creates Notification:
+      new Notification(notificationString).catch(() => {
+        //Nothing!
+      });
+    }
+  }
+}
+
 //Show Notes Function:
 function showNotes(index) {
   //Checks the Case:
@@ -181,6 +232,8 @@ function showAreas() {
   document.getElementById('text-area').innerHTML =
     document.getElementById('content-area').value.replace(new RegExp("\n", "g"), "<br>");
   highlightDates(dates(document.getElementById('text-area').innerHTML));
+  document.getElementById('content-area').style.height = 
+    document.getElementById('text-area').style.height;
 }
 
 //Show Confirm Function:
