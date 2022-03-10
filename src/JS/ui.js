@@ -176,7 +176,7 @@ function showPush() {
       if ("Notification" in window
         && Notification.permission === "granted") {
         //Creates Notification:
-        new Notification(notificationString)
+        new Notification(notificationString);
       }
     }
   }
@@ -234,8 +234,6 @@ function showAreas() {
   document.getElementById('text-area').innerHTML =
     document.getElementById('content-area').value.replace(new RegExp("\n", "g"), "<br>");
   highlightDates(dates(document.getElementById('text-area').innerHTML));
-  document.getElementById('content-area').style.height =
-    document.getElementById('text-area').style.height;
 }
 
 //Show Confirm Function:
