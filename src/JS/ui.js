@@ -157,7 +157,7 @@ function showPush() {
       //Adds to the String:
       notificationString += dateValues[0] + " Past\n";
     }
-    
+
     //Checks the Case:
     if (dateValues[1] > 0) {
       //Adds to the String:
@@ -172,10 +172,14 @@ function showPush() {
 
     //Checks the Case:
     if (total > 0) {
-      //Creates Notification:
-      new Notification(notificationString).catch(() => {
-        //Nothing!
-      });
+      //Runs the Notification:
+      if ("Notification" in window
+        && Notification.permission === "granted") {
+        //Creates Notification:
+        new Notification(notificationString).catch(() => {
+          //Nothing!
+        });
+      }
     }
   }
 }
@@ -232,7 +236,7 @@ function showAreas() {
   document.getElementById('text-area').innerHTML =
     document.getElementById('content-area').value.replace(new RegExp("\n", "g"), "<br>");
   highlightDates(dates(document.getElementById('text-area').innerHTML));
-  document.getElementById('content-area').style.height = 
+  document.getElementById('content-area').style.height =
     document.getElementById('text-area').style.height;
 }
 
