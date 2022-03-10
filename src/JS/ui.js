@@ -177,6 +177,7 @@ function showPush() {
         && Notification.permission === "granted") {
         //Creates Notification:
         new Notification(notificationString);
+        console.log("hello")
       }
     }
   }
