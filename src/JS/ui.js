@@ -172,15 +172,11 @@ function showPush() {
 
     //Checks the Case:
     if (total > 0) {
-      //Creates Notification:
-      new Notification(notificationString).catch(() => {
-        //Nothing!
-      });
-      
       //Runs the Notification:
       if ("Notification" in window
         && Notification.permission === "granted") {
-        
+        //Creates Notification:
+        new Notification(notificationString)
       }
     }
   }
