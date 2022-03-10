@@ -234,6 +234,8 @@ function showAreas() {
   document.getElementById('text-area').innerHTML =
     document.getElementById('content-area').value.replace(new RegExp("\n", "g"), "<br>");
   highlightDates(dates(document.getElementById('text-area').innerHTML));
+  document.getElementById('content-area').clientHeight =
+    document.getElementById('text-area').clientHeight;
 }
 
 //Show Confirm Function:

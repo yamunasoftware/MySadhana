@@ -50,10 +50,9 @@ html, body {
   resize: none;
 }
 
-.content-style {
-  padding: 0px;
+.content-width {
+  margin: 0px;
   width: calc(100% - 50px);
-  height: 600px;
 }
 
 .navigation {
