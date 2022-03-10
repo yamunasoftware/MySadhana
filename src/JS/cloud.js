@@ -24,8 +24,7 @@ var code = "";
 var data = [];
 
 //Timeout Variables:
-var timeout = (1000 * 60);
-var notificationTimeout = (1000 * 60 * 60);
+var timeout = 100000;
 var notesTimeout = 100;
 var datesTimeout = 1000;
 

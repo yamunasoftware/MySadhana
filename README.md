@@ -14,10 +14,9 @@ and keeps your headers productive. Short and descriptive headers are proven to b
 more effective to decipher.
 
 The navigation bar on the left of the screen is the main point of operation with the app.
-The "New" button creates a new note, the "Enable" button allows you to enable notifications
-on the app, the "Copy" button copies your login code, the "Exit" button logs you out of your 
-current device, and the "Close" button opens a dialogue for you to fully close your MySadhana 
-account.
+The "New" button creates a new note, the "Copy" button copies your login code, the "Exit" 
+button logs you out of your current device, and the "Close" button opens a dialogue for 
+you to fully close your MySadhana account.
 
 In the dashboard, you can see a search bar that allows you to search for the things that you want
 to find in your notes. Just type into the search field and press the "Search" button. Furthermore, 

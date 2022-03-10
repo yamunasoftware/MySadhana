@@ -9,20 +9,11 @@ navigator.serviceWorker.register('/service-worker.js', {
 
 //Onload Function:
 window.onload = function () {
-  /* Function Calls */
+  /* Specific Function Calls */
 
   //Startup:
   showSplash();
   showStartup();
-  showNotification();
-
-  /* Intervals */
-
-  //Sets the Notification Interval:
-  setInterval(function () {
-    //Shows Notification:
-    showNotification();
-  }, notificationTimeout);
 
   //Sets the Notes Interval:
   setInterval(function () {
@@ -37,30 +28,21 @@ window.onload = function () {
   /* Input Event Listeners */
 
   //Search Input Event Listener:
-  document.getElementById('search').addEventListener("input", function (e) {
+  document.getElementById('search').addEventListener("input", function () {
     //Replaces the Value:
     document.getElementById('search').value = document.getElementById('search').value.replace(/["]+/g, '');
   });
 
   //Content Area Input Event Listener:
-  document.getElementById('content-area').addEventListener("input", function (e) {
+  document.getElementById('content-area').addEventListener("input", function () {
     //Checks the Case:
     if (saveIndex != null) {
       //Shows the Areas:
       document.getElementById('content-area').value = document.getElementById('content-area').value.replace(/["]+/g, '');
       showAreas();
-      showTabNotification();
+      showNotification();
     }
   });
-}
-
-//Notification Request Function:
-function requestNotify() {
-  //Checks the Case:
-  if ("Notification" in window) {
-    //Requests the Notification:
-    Notification.requestPermission();
-  }
 }
 
 /* UI FUNCTIONS */
@@ -74,7 +56,7 @@ function showSplash() {
     document.getElementById('dashboard').style.display = "none";
     document.getElementById('notes').style.display = "none";
     document.getElementById('loading').style.display = "none";
-    showTabNotification();
+    showNotification();
   }
 }
 
@@ -112,7 +94,7 @@ function showDashboard() {
   document.getElementById('notes').style.display = "none";
   document.getElementById('loading').style.display = "none";
   document.getElementById('search').value = "";
-  showTabNotification();
+  showNotification();
 }
 
 //Show Loading Function:
@@ -125,11 +107,11 @@ function showLoading() {
   document.title = "Loading...";
 }
 
-//Show Tab Notification:
-function showTabNotification() {
+//Show Notification:
+function showNotification() {
   //Sets the Tab Value:
   document.title = "MySadhana";
-  
+
   //Checks the Case:
   if (getCacheData(codeID, false) != null) {
     //Gets the Date Values:
@@ -138,25 +120,11 @@ function showTabNotification() {
 
     //Checks the Case:
     if (total > 0) {
-      //Sets the Tab Value:
+      //Sets the Values:
       document.title = "(" + total + ") MySadhana";
-    }
-  }
-}
-
-//Show Notification Function:
-function showNotification() {
-  //Checks the Case:
-  if (getCacheData(codeID, false) != null) {
-    //Gets the Date Values:
-    var dateValues = checkAllDates();
-
-    //Runs the Notification:
-    if ("Notification" in window
-      && Notification.permission === "granted") {
-      //Creates Notification:
-      new Notification(dateValues[0] + " Past Dates and " + dateValues[1] + " Current Dates and " +
-        dateValues[2] + " Future Dates");
+      navigator.setAppBadge(total).catch(() => {
+        console.log("error");
+      });
     }
   }
 }
@@ -180,7 +148,7 @@ function showNotes(index) {
       document.getElementById('loading').style.display = "none";
       document.getElementById('content-area').value = data[index];
       showAreas();
-      showTabNotification();
+      showNotification();
 
       //Idle Interval:
       mainInterval = setInterval(function () {
