@@ -197,6 +197,7 @@ function copyCode() {
   //Sends the Code to Clipboard:
   code = getCacheData(codeID, false);
   navigator.clipboard.writeText(code);
+  showCopyMessage();
 }
 
 //Pin Note Function:

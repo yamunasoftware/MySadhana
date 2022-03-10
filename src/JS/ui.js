@@ -232,3 +232,9 @@ function showDashError(error) {
   //Sets the Error:
   document.getElementById('dash-error').innerHTML = error;
 }
+
+//Show Copy Message:
+function showCopyMessage() {
+  //Sets the Copy Message:
+  document.getElementById('copy-message').innerHTML = "Copied";
+}
