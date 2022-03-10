@@ -180,6 +180,7 @@ function showNotes(index) {
       document.getElementById('loading').style.display = "none";
       document.getElementById('content-area').value = data[index];
       showAreas();
+      showTabNotification();
 
       //Idle Interval:
       mainInterval = setInterval(function () {
