@@ -176,9 +176,7 @@ function showPush() {
       if ("Notification" in window
         && Notification.permission === "granted") {
         //Creates Notification:
-        new Notification(notificationString).catch(() => {
-          //Nothing!
-        });
+        new Notification(notificationString);
       }
     }
   }
