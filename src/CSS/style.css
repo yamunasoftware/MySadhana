@@ -48,13 +48,12 @@ html, body {
   border: none;
   white-space: pre-wrap;
   resize: none;
-  height: 600px;
-  overflow-y: scroll;
 }
 
 .content-style {
   padding: 0px;
   width: calc(100% - 50px);
+  height: 600px;
 }
 
 .navigation {
