@@ -84,7 +84,10 @@ function logIn() {
         showError("Invalid ID");
       }
     })
-
+      .catch(() => {
+        //Displays Error:
+        showError("An Error Ocurred");
+      });
   }
 
   else {
@@ -114,6 +117,10 @@ function removeUser() {
       .then(() => {
         //Logs Out:
         logOut();
+      })
+      .catch(() => {
+        //Displays Error:
+        showError("An Error Ocurred");
       });
   }
 }
@@ -176,8 +183,8 @@ function getData() {
       }
 
       else {
-        //Displays Error:
-        showDashError("An Error Ocurred");
+        //Logs Out:
+        logOut();
       }
     })
       .catch(() => {
