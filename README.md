@@ -22,7 +22,8 @@ In the dashboard, you can see a search bar that allows you to search for the thi
 to find in your notes. Just type into the search field and press the "Search" button. Also, you can
 see your notes displayed below the search area, which allows you to open, pin, and delete different notes.
 When deleting a note, a dialogue will pop up underneath the search area, which asks you to confirm the 
-deletion. You can also change the order of the notes using the pin button, to rearrange your notes.
+deletion. To rearrange your notes in your dashboard, simple use the pin button in the order of which
+you want the notes to appear.
 
 When inside of the notes editor, there will be a HTML markdown display and a smaller editor area underneath.
 The display area allows for a more presentable format of the note. The editor is for you to customize 
