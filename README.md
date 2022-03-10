@@ -29,3 +29,7 @@ When inside of the notes editor, there will be a HTML markdown display and a sma
 The display area allows for a more presentable format of the note. The editor is for you to customize 
 your note and make it look the way you want to using the power of HTML syntax. All click events are disabled for the display portion of the note. To save the note, you must exit out from the note, using the exit button at the
 top left of the screen.
+
+After changing the order or deleting notes in your dashboard, on one device, you should reload the app if the app
+is open on another device. This will ensure that no data is incorrectly synced, stored, or displayed on your app
+at all times.
