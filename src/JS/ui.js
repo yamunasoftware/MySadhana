@@ -233,8 +233,12 @@ function showAreas() {
   document.getElementById('text-area').innerHTML =
     document.getElementById('content-area').value.replace(new RegExp("\n", "g"), "<br>");
   highlightDates(dates(document.getElementById('text-area').innerHTML));
-  document.getElementById('content-area').style.height =
-    document.getElementById('text-area').clientHeight + 'px';
+  
+  //Checks the Case:
+  if (document.getElementById('text-area').clientHeight == 0) {
+    //Sets the Area Height:
+    document.getElementById('content-area').style.height = "250px";
+  }
 }
 
 //Show Confirm Function:

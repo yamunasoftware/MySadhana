@@ -54,6 +54,7 @@ function signUp() {
     .catch(() => {
       //Displays Error:
       showError("An Error Ocurred");
+      showSplash();
     });
 }
 
@@ -82,17 +83,20 @@ function logIn() {
       else {
         //Displays Error:
         showError("Invalid ID");
+        showSplash();
       }
     })
       .catch(() => {
         //Displays Error:
         showError("An Error Ocurred");
+        showSplash();
       });
   }
 
   else {
     //Displays Error:
     showError("Invalid ID");
+    showSplash();
   }
 }
 
@@ -118,6 +122,7 @@ function removeUser() {
       .catch(() => {
         //Displays Error:
         showError("An Error Ocurred");
+        showSplash();
       });
   }
 }
@@ -158,6 +163,7 @@ function sendData() {
       .catch(() => {
         //Displays Error:
         showDashError("An Error Ocurred");
+        showDashboard();
       });
   }
 }
@@ -187,6 +193,7 @@ function getData() {
       .catch(() => {
         //Displays Error:
         showDashError("An Error Ocurred");
+        showDashboard();
       });
   }
 }
