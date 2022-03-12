@@ -366,44 +366,48 @@ function displayNotes() {
 
 //Search Function:
 function search() {
-  //Loop Variables:
-  data = getCacheData(dataID, true);
-  var turns = 0;
-  var notesList = "";
+  //Checks the Case:
+  if (getCacheData(codeID, false) != null &&
+    saveIndex == null) {
+    //Loop Variables:
+    data = getCacheData(dataID, true);
+    var turns = 0;
+    var notesList = "";
 
-  //Loops through Array:
-  mainLoop: while (turns < data.length) {
-    //Checks the Case:
-    if (data[turns].toLowerCase().includes(document.getElementById('search').value.toLowerCase())) {
-      //Sets the Notes List:
-      notesList +=
-        "<div class='margin padding card center'>"
-        + "<div class='padding'>" + title(data[turns]) + "</div>";
-
-      //Sets the Notes List:
-      var alerts = checkDates(dates(data[turns]));
-      notesList +=
-        "<div id='past" + turns + "' class='margin dash-alert disappear'>" + alerts[0] + "</div>"
-        + "<div id='now" + turns + "' style='background-color: #147efb;' class='margin dash-alert disappear'>" + alerts[1] + "</div>"
-        + "<div id='future" + turns + "' style='background-color: #23C552;' class='margin dash-alert disappear'>" + alerts[2] + "</div>"
-        + "<button class='dash-button' onclick='showNotes(" + turns + ");'> Open </button>";
-
+    //Loops through Array:
+    mainLoop: while (turns < data.length) {
       //Checks the Case:
-      if (turns != 0) {
-        //Adds the Button:
-        notesList += "<button class='dash-button' onclick='pinNote(" + turns + ");'> Pin </button>";
+      if (data[turns].toLowerCase().includes(document.getElementById('search').value.toLowerCase())) {
+        //Sets the Notes List:
+        notesList +=
+          "<div class='margin padding card center'>"
+          + "<div class='padding'>" + title(data[turns]) + "</div>";
+
+        //Sets the Notes List:
+        var alerts = checkDates(dates(data[turns]));
+        notesList +=
+          "<div id='past" + turns + "' class='margin dash-alert disappear'>" + alerts[0] + "</div>"
+          + "<div id='now" + turns + "' style='background-color: #147efb;' class='margin dash-alert disappear'>" + alerts[1] + "</div>"
+          + "<div id='future" + turns + "' style='background-color: #23C552;' class='margin dash-alert disappear'>" + alerts[2] + "</div>"
+          + "<button class='dash-button' onclick='showNotes(" + turns + ");'> Open </button>";
+
+        //Checks the Case:
+        if (turns != 0) {
+          //Adds the Button:
+          notesList += "<button class='dash-button' onclick='pinNote(" + turns + ");'> Pin </button>";
+        }
+
+        //Adds the Close Button:
+        notesList +=
+          "<button class='dash-button' onclick='showConfirm(" + turns + ");'> Delete </button> </div>";
       }
 
-      //Adds the Close Button:
-      notesList +=
-        "<button class='dash-button' onclick='showConfirm(" + turns + ");'> Delete </button> </div>";
+      turns++;
     }
 
-    turns++;
+    //Sets the HTML:
+    document.getElementById('notes-list').innerHTML = notesList;
   }
-
-  //Sets the HTML:
-  document.getElementById('notes-list').innerHTML = notesList;
 }
 
 //Display Dash Dates Function:
@@ -448,7 +452,7 @@ function title(string) {
   //Loops Variables:
   var noteTitle = "";
   var turns = 0;
-  var localString = 
+  var localString =
     string.replace(new RegExp("\n", "g"), "$n");
 
   //Loops through Array:

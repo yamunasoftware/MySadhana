@@ -33,7 +33,8 @@ window.onload = function () {
 
   //Search Input Event Listener:
   document.getElementById('search').addEventListener("input", function () {
-    //Replaces the Value:
+    //Searches:
+    search();
     document.getElementById('search').value = document.getElementById('search').value.replace(/["]+/g, '');
   });
 
