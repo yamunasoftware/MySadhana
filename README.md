@@ -11,15 +11,16 @@ and any browser!
 
 ## Usage
 
-Note titles should be five characters long, which provides an innovative challenge 
-and keeps your headers productive. Short and descriptive headers are proven to be 
-more effective to decipher.
-
 The navigation bar on the left of the screen is the main point of operation with the app.
 The "New" button creates a new note, the "Reset" button allows you to reset the dashboard, 
 the "Copy" button copies your login code, the "Enable" button allows you to enable push
 notification for your device, the "Exit" button logs you out of your current device, 
 and the "Close" button opens a dialogue for you to fully close your MySadhana account.
+
+Note titles are set as the text in the first line of the note. So, when you finish titling your
+note, you should enter into a different line, so that your note title is more readable in the
+dashboard. Furthermore, you should abstain from using long titles as it will make the reading
+experience worse and it will not help you decipher the contents of the note itself any better.
 
 In the dashboard, you can see a search bar that allows you to search for the things that you want
 to find in your notes. Just type into the search field and press the "Search" button. Also, you can

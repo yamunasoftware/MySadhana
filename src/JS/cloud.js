@@ -448,18 +448,20 @@ function title(string) {
   //Loops Variables:
   var noteTitle = "";
   var turns = 0;
+  var localString = 
+    string.replace(new RegExp("\n", "g"), "$n");
 
   //Loops through Array:
-  mainLoop: while (turns < string.length) {
+  mainLoop: while (turns < localString.length) {
     //Checks the Case:
-    if (string[turns] == "$") {
+    if (localString[turns] == "$") {
       //Breaks Loop:
       break mainLoop;
     }
 
     else {
       //Adds to the Title:
-      noteTitle += string[turns];
+      noteTitle += localString[turns];
     }
 
     turns++;
