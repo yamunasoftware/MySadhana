@@ -239,6 +239,12 @@ function showAreas() {
     //Sets the Area Height:
     document.getElementById('content-area').style.height = "250px";
   }
+
+  else {
+    //Sets the Area Height:
+    document.getElementById('content-area').style.height = 
+      document.getElementById('text-area').clientHeight + "px";
+  }
 }
 
 //Show Confirm Function:
