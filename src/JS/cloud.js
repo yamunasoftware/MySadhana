@@ -452,14 +452,14 @@ function title(string) {
   //Loops through Array:
   mainLoop: while (turns < string.length) {
     //Checks the Case:
-    if (string[turns] != "\\") {
-      //Adds to the Title:
-      noteTitle += string[turns];
+    if (string[turns] == "$") {
+      //Breaks Loop:
+      break mainLoop;
     }
 
     else {
-      //Breaks Loop:
-      break mainLoop;
+      //Adds to the Title:
+      noteTitle += string[turns];
     }
 
     turns++;
