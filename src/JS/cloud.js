@@ -448,18 +448,17 @@ function title(string) {
   //Loops Variables:
   var noteTitle = "";
   var turns = 0;
-  var titleLength = 5;
 
   //Loops through Array:
   mainLoop: while (turns < string.length) {
     //Checks the Case:
-    if (turns < titleLength) {
-      //Sets the Title:
+    if (string[turns] != "\\") {
+      //Adds to the Title:
       noteTitle += string[turns];
     }
 
     else {
-      //Breaks the Loop:
+      //Breaks Loop:
       break mainLoop;
     }
 
