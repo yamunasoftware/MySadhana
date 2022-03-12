@@ -33,9 +33,12 @@ window.onload = function () {
 
   //Search Input Event Listener:
   document.getElementById('search').addEventListener("input", function () {
-    //Searches:
-    search();
-    document.getElementById('search').value = document.getElementById('search').value.replace(/["]+/g, '');
+    //Checks the Case:
+    if (saveIndex == null) {
+      //Searches:
+      search();
+      document.getElementById('search').value = document.getElementById('search').value.replace(/["]+/g, '');
+    }
   });
 
   //Content Area Input Event Listener:
@@ -234,7 +237,7 @@ function showAreas() {
   document.getElementById('text-area').innerHTML =
     document.getElementById('content-area').value.replace(new RegExp("\n", "g"), "<br>");
   highlightDates(dates(document.getElementById('text-area').innerHTML));
-  
+
   //Checks the Case:
   if (document.getElementById('text-area').clientHeight == 0) {
     //Sets the Area Height:
@@ -243,7 +246,7 @@ function showAreas() {
 
   else {
     //Sets the Area Height:
-    document.getElementById('content-area').style.height = 
+    document.getElementById('content-area').style.height =
       document.getElementById('text-area').clientHeight + "px";
   }
 }
