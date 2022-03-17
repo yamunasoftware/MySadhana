@@ -260,13 +260,13 @@ function showAreas() {
 //Close Confirm Function:
 function closeConfirm() {
   //Closes the Confirmation:
-  document.getElementById('confirmation').innerHTML = "";
+  document.getElementById('conformation').innerHTML = "";
 }
 
 //Show Confirm Function:
 function showConfirm(index) {
   //Opens the Confirmation:
-  document.getElementById('confirmation').innerHTML =
+  document.getElementById('conformation').innerHTML =
     "<div class='padding'> Delete Note? </div>"
     + "<button onclick='deleteNote(" + index + ");'> Yes </button>"
     + "<button onclick='closeConfirm();'> No </button>";
@@ -275,7 +275,7 @@ function showConfirm(index) {
 //Show Remove Confirm Function:
 function showRemoveConfirm() {
   //Opens the Confirmation:
-  document.getElementById('confirmation').innerHTML =
+  document.getElementById('conformation').innerHTML =
     "<div class='padding'> Close Account? </div>"
     + "<button onclick='removeUser();'> Yes </button>"
     + "<button onclick='closeConfirm();'> No </button>";
@@ -284,7 +284,7 @@ function showRemoveConfirm() {
 //Show Exit Confirm Function:
 function showExitConfirm() {
   //Opens the Confirmation:
-  document.getElementById('confirmation').innerHTML =
+  document.getElementById('conformation').innerHTML =
     "<div class='padding'> Exit Out? </div>"
     + "<button onclick='logOut();'> Yes </button>"
     + "<button onclick='closeConfirm();'> No </button>";
