@@ -63,7 +63,7 @@ html, body {
   position: fixed;
   background-color: #202020;
   z-index: 1;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .nav-button {
