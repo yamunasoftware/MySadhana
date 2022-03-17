@@ -86,12 +86,12 @@
         <div class="nav-button center" onclick="addNote();"> New </div>
         <div class="nav-button center" onclick="window.location.reload();"> Update </div>
         <div class="nav-button center" onclick="requestNotify();"> Enable </div>
+        <div class="nav-button center" onclick="copyCode();"> Copy </div>
         <div class="nav-button center" 
           onclick="window.open('https://github.com/yamunasoftware/MySadhana/blob/main/README.md');"> 
-          Docs 
+          Help 
         </div>
-        <div class="nav-button center" onclick="copyCode();"> Copy </div>
-        <div class="nav-button center" onclick="logOut();"> Exit </div>
+        <div class="nav-button center" style="color: #FF0F0F;" onclick="showExitConfirm();"> Exit </div>
         <div class="nav-button center" style="color: #FF0F0F;" onclick="showRemoveConfirm();"> Close </div>
       </div>
 
@@ -110,9 +110,8 @@
 
         <!-- Notes Padding -->
         <div class="padding-extra-top">
-          <!-- Conformation Elements -->
+          <!-- Conformation Element -->
           <div id="confirmation" class="margin margin-extra-bottom padding fit-content center dark-card disappear"></div>
-          <div id="remove" class="margin margin-extra-bottom padding fit-content center dark-card disappear"></div>
 
           <!-- Notes List -->
           <div class="padding subheader no-padding-bottom"> Notes </div>

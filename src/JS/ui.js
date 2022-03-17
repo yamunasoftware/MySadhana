@@ -124,6 +124,8 @@ function showLoading() {
   document.title = "Loading...";
 }
 
+/* NOTIFICATION FUNCTIONS */
+
 //Show Notification:
 function showNotification() {
   //Sets the Tab Value:
@@ -184,6 +186,8 @@ function showPush() {
     }
   }
 }
+
+/* NOTES FUNCTIONS */
 
 //Show Notes Function:
 function showNotes(index) {
@@ -251,15 +255,7 @@ function showAreas() {
   }
 }
 
-//Show Confirm Function:
-function showConfirm(index) {
-  //Opens the Confirmation:
-  document.getElementById('confirmation').innerHTML =
-    "<div class='padding'> Delete Note? </div>"
-    + "<button onclick='deleteNote(" + index + ");'> Yes </button>"
-    + "<button onclick='closeConfirm();'> No </button>";
-  closeRemoveConfirm();
-}
+/* CONFIRMATION FUNCTIONS */
 
 //Close Confirm Function:
 function closeConfirm() {
@@ -267,21 +263,34 @@ function closeConfirm() {
   document.getElementById('confirmation').innerHTML = "";
 }
 
+//Show Confirm Function:
+function showConfirm(index) {
+  //Opens the Confirmation:
+  document.getElementById('confirmation').innerHTML =
+    "<div class='padding'> Delete Note? </div>"
+    + "<button onclick='deleteNote(" + index + ");'> Yes </button>"
+    + "<button onclick='closeConfirm();'> No </button>";
+}
+
 //Show Remove Confirm Function:
 function showRemoveConfirm() {
   //Opens the Confirmation:
-  document.getElementById('remove').innerHTML =
+  document.getElementById('confirmation').innerHTML =
     "<div class='padding'> Close Account? </div>"
     + "<button onclick='removeUser();'> Yes </button>"
-    + "<button onclick='closeRemoveConfirm();'> No </button>";
-  closeConfirm();
+    + "<button onclick='closeConfirm();'> No </button>";
 }
 
-//Close Remove Confirm Function:
-function closeRemoveConfirm() {
-  //Closes the Remove Confirmation:
-  document.getElementById('remove').innerHTML = "";
+//Show Exit Confirm Function:
+function showExitConfirm() {
+  //Opens the Confirmation:
+  document.getElementById('confirmation').innerHTML =
+    "<div class='padding'> Exit Out? </div>"
+    + "<button onclick='logOut();'> Yes </button>"
+    + "<button onclick='closeConfirm();'> No </button>";
 }
+
+/* MESSAGE FUNCTIONS */
 
 //Show Login Function:
 function showLogIn() {
