@@ -130,6 +130,8 @@ function showLoading() {
 function showNotification() {
   //Sets the Tab Value:
   document.title = "MySadhana";
+  document.getElementById('favicon').innerHTML = 
+    "<link rel='shortcut icon' type='image/png' href='/src/Images/small_icon.png' />";
 
   //Checks the Case:
   if (getCacheData(codeID, false) != null) {
@@ -141,6 +143,8 @@ function showNotification() {
     if (total > 0) {
       //Sets the Values:
       document.title = "(" + total + ") MySadhana";
+      document.getElementById('favicon').innerHTML = 
+        "<link rel='shortcut icon' type='image/png' href='/src/Images/small_icon_notify.png' />";
       navigator.setAppBadge(total).catch(() => {
         //Nothing!
       });
