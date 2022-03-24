@@ -130,8 +130,7 @@ function showLoading() {
 function showNotification() {
   //Sets the Tab Value:
   document.title = "MySadhana";
-  document.getElementById('favicon').innerHTML = 
-    "<link rel='shortcut icon' type='image/png' href='/src/Images/small_icon.png' />";
+  setTabIcon("/src/Images/small_icon.png");
 
   //Checks the Case:
   if (getCacheData(codeID, false) != null) {
@@ -143,8 +142,7 @@ function showNotification() {
     if (total > 0) {
       //Sets the Values:
       document.title = "(" + total + ") MySadhana";
-      document.getElementById('favicon').innerHTML = 
-        "<link rel='shortcut icon' type='image/png' href='/src/Images/small_icon_notify.png' />";
+      setTabIcon("/src/Images/small_icon_notify.png");
       navigator.setAppBadge(total).catch(() => {
         //Nothing!
       });
@@ -189,6 +187,16 @@ function showPush() {
       }
     }
   }
+}
+
+//Set Tab Icon Function:
+function setTabIcon(src) {
+  //Sets the Tab Icon:
+  var headTitle = document.querySelector('head');
+  var setFavicon = document.createElement('link');
+  setFavicon.setAttribute('rel', 'shortcut icon');
+  setFavicon.setAttribute('href', src);
+  headTitle.appendChild(setFavicon);
 }
 
 /* NOTES FUNCTIONS */
