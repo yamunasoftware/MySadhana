@@ -14,6 +14,7 @@ window.onload = function () {
   //Startup:
   showSplash();
   showStartup();
+  showNotification();
 
   /* Intervals */
 
