@@ -412,6 +412,9 @@ function search() {
 
 //Display Dash Dates Function:
 function displayDashDates() {
+  //Shows the Tab Notification:
+  showNotification();
+  
   //Checks the Case:
   if (getCacheData(codeID, false) != null &&
     saveIndex == null) {
