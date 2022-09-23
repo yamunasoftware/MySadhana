@@ -514,7 +514,8 @@ function highlightDates(dates) {
         document.getElementById('text-area').innerHTML = area;
       }
 
-      else if (localDates[0] == currentMonth && localDates[1] > currentDay) {
+      else if (localDates[0] > currentMonth ||
+        (localDates[0] == currentMonth && localDates[1] > currentDay)) {
         //Sets the Content:
         var area = document.getElementById('text-area').innerHTML;
         area = area.replace(new RegExp(currentDate, "g"), "<a>" + currentDate + "</a>");
