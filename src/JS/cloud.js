@@ -599,7 +599,8 @@ function checkDates(dates) {
       now++;
     }
 
-    else if (localDates[0] == currentMonth && localDates[1] > currentDay) {
+    else if (localDates[0] > currentMonth ||
+      (localDates[0] == currentMonth && localDates[1] > currentDay)) {
       //Adds to the Count:
       future++;
     }
