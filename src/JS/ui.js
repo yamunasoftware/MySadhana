@@ -142,7 +142,22 @@ function showSort() {
 }
 
 //Sort Notes Function:
-function sortNotes() {
+function sortNotes(type) {
+  //Checks the Case:
+  if (type == "a") {
+
+  }
+
+  else if (type == "d") {
+
+  }
+
+  else {
+    //Displays Notes:
+    displayNotes();
+  }
+
+  //Closes Dropdown:
   showSort();
 }
 
