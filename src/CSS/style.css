@@ -138,6 +138,10 @@ html, body {
   padding-top: 40px;
 }
 
+.paddin-top {
+  padding-top: 20px;
+}
+
 .padding-double-top {
   padding-top: 50px;
 }

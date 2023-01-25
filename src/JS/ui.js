@@ -141,8 +141,8 @@ function showSort() {
   }
 }
 
-//Sort Notes Function:
-function sortNotes(type) {
+//Sort Notes Type Function:
+function sortNotesType(type) {
   //Checks the Case:
   if (type == "a") {
 
@@ -153,8 +153,7 @@ function sortNotes(type) {
   }
 
   else {
-    //Displays Notes:
-    displayNotes();
+    
   }
 
   //Closes Dropdown:
