@@ -122,8 +122,8 @@ html, body {
   margin-bottom: 20px;
 }
 
-.margin-left {
-  margin-left: 20px;
+.margin-extra-left {
+  margin-left: 40px;
 }
 
 .margin-extra-top {
@@ -300,6 +300,10 @@ input:hover, input:focus {
   border: none;
   font-size: 12px;
   padding: 10px;
+}
+
+.dropgroup:hover, .dropgroup:focus {
+  background-color: #39FF13;
 }
 
 /* SCROLLING */
