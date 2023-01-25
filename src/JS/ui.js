@@ -125,6 +125,8 @@ function showLoading() {
   document.title = "Loading...";
 }
 
+/* SORTING UI FUNCTIONS */
+
 //Show Sort Function:
 function showSort() {
   //Checks the Case:
@@ -137,6 +139,11 @@ function showSort() {
     //Sets the Display:
     document.getElementById('dropitems').style.display = "block";
   }
+}
+
+//Sort Notes Function:
+function sortNotes() {
+  showSort();
 }
 
 /* NOTIFICATION FUNCTIONS */
