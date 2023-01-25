@@ -282,6 +282,8 @@ input:hover, input:focus {
 select {
   background-color: #202020;
   color: #FFFFFF;
+  border: none;
+  border-radius: 20px;
 }
 
 /* SCROLLING */
