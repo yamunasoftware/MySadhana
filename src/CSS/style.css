@@ -122,8 +122,8 @@ html, body {
   margin-bottom: 20px;
 }
 
-.margin-extra-left {
-  margin-left: 40px;
+.margin-left {
+  margin-left: 20px;
 }
 
 .margin-extra-top {
@@ -290,15 +290,15 @@ input:hover, input:focus {
   color: #FFFFFF;
   border: none;
   border-radius: 20px;
-  font-size: 15px;
-  padding: 15px;
+  font-size: 20px;
+  padding: 10px;
 }
 
 .dropgroup {
   background-color: #202020;
   color: #FFFFFF;
   border: none;
-  font-size: 12px;
+  font-size: 15px;
   padding: 10px;
 }
 
