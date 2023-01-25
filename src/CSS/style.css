@@ -297,6 +297,7 @@ input:hover, input:focus {
 
 .dropgroup {
   font-size: 15px;
+  padding: 10px;
   text-align: center;
 }
 
