@@ -292,6 +292,7 @@ input:hover, input:focus {
   border-radius: 20px;
   font-size: 20px;
   padding: 10px;
+  text-align: center;
 }
 
 .dropgroup {
@@ -300,6 +301,7 @@ input:hover, input:focus {
   border: none;
   font-size: 15px;
   padding: 10px;
+  text-align: center;
 }
 
 .dropgroup:hover, .dropgroup:focus {
