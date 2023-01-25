@@ -61,14 +61,14 @@ html, body {
   left: 0;
   top: 0;
   position: fixed;
-  background-color: #898989;
+  background-color: #202020;
   z-index: 1;
   overflow-y: scroll;
 }
 
 .nav-button {
   width: 100%;
-  background-color: #898989;
+  background-color: #202020;
   color: #FFFFFF;
   cursor: pointer;
   padding-top: 10px;
@@ -92,7 +92,7 @@ html, body {
 
 .dark-card {
   border-radius: 20px;
-  background-color: #898989;
+  background-color: #202020;
   color: #FFFFFF;
 }
 
@@ -192,7 +192,7 @@ html, body {
 }
 
 .second-background {
-  background-color: #898989;
+  background-color: #202020;
 }
 
 .bar {
@@ -209,7 +209,7 @@ html, body {
   font-size: 20px;
   font-weight: bold;
   font-family: "rubik-medium", Helvetica, Arial;
-  background-color: #898989;
+  background-color: #202020;
   color: #FFFFFF;
   cursor: pointer;
   border: none;
@@ -255,7 +255,7 @@ button {
 }
 
 button.dash-button {
-  background-color: #898989;
+  background-color: #202020;
   color: #FFFFFF;
 }
 
@@ -280,7 +280,7 @@ input:hover, input:focus {
 }
 
 select {
-  background-color: #898989;
+  background-color: #202020;
   color: #FFFFFF;
 }
 
