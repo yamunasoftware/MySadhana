@@ -143,6 +143,9 @@ function showSort() {
 
 //Sort Notes Type Function:
 function sortNotesType(type) {
+  //Closes Dropdown:
+  showSort();
+  
   //Checks the Case:
   if (type == "a") {
 
@@ -155,9 +158,6 @@ function sortNotesType(type) {
   else {
     
   }
-
-  //Closes Dropdown:
-  showSort();
 }
 
 /* NOTIFICATION FUNCTIONS */
