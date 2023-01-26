@@ -134,6 +134,10 @@ html, body {
   margin-bottom: 40px;
 }
 
+.small-padding {
+  padding: 10px;
+}
+
 .padding-extra-top {
   padding-top: 40px;
 }
@@ -291,13 +295,13 @@ input:hover, input:focus {
   border: none;
   border-radius: 20px;
   font-size: 20px;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
 }
 
 .dropgroup {
   font-size: 15px;
-  padding: 15px;
+  padding: 10px;
   text-align: center;
 }
 
