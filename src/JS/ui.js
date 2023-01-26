@@ -156,7 +156,8 @@ function sortNotesType(type) {
   }
 
   else {
-    
+    //Displays Notes:
+    displayNotes();
   }
 }
 
