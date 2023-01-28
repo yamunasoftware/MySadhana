@@ -142,23 +142,10 @@ function showSort() {
 }
 
 //Sort Notes Type Function:
-function sortNotesType(type) {
+function sortNotes() {
   //Closes Dropdown:
   showSort();
-  
-  //Checks the Case:
-  if (type == "a") {
-
-  }
-
-  else if (type == "d") {
-
-  }
-
-  else {
-    //Displays Notes:
-    displayNotes();
-  }
+  displayNotes();
 }
 
 /* NOTIFICATION FUNCTIONS */
