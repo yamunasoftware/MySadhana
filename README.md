@@ -12,9 +12,9 @@ and any browser!
 ## Usage
 
 The navigation bar on the left of the screen is the main point of operation with the app.
-The "New" button creates a new note, the "Update" button allows you to reset the dashboard, 
+The "New" button creates a new note, the "Update" button allows you to reset the dashboard,
 the "Copy" button copies your login code, the "Enable" button allows you to enable push
-notification for your device, the "Exit" button logs you out of your current device, 
+notification for your device, the "Exit" button logs you out of your current device,
 and the "Close" button opens a dialogue for you to fully close your MySadhana account.
 
 Note titles are set as the text in the first line of the note. So, when you finish titling your
