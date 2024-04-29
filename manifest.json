@@ -2,7 +2,7 @@
   "name": "MySadhana",
   "short_name": "MySadhana",
   "start_url": "https://mysadhana.netlify.app",
-  "display": "minimal-ui",
+  "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#202020",
   "theme_color": "#000000",
