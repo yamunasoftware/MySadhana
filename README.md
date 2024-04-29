@@ -30,3 +30,9 @@ The editor area will have green text, which indicates that editing is on in that
 top left of the screen.
 
 After changing the order or deleting notes in your dashboard, on one device, you should reload the app if the app is open on another device. This will ensure that no data is incorrectly synced, stored, or displayed on your app at all times.
+
+## iOS/iPadOS
+
+A note about iOS and iPadOS, to make this work on these operating systems, due to the JavaScript engine on these operating systems, you have to install the app on the home screen.
+
+To do this, simply select the "Share" button located near the browser bar. Then, scroll down to the "Add to Home Screen" option. Next, follow the instructions and add the app to home screen.
