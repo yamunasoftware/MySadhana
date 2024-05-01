@@ -78,20 +78,21 @@
     <div id="dashboard" class="screen deactivate">
       <!-- Navigation -->
       <div id="navigation" class="navigation">
-        <!-- Logo -->
-        <image src="src/Images/page_icon.png" class="nav-image center"></image>
-
-        <!-- Navigation Controls -->
-        <div class="nav-button cursor center" onclick="addNote();"> New </div>
-        <div class="nav-button cursor center" onclick="window.location.reload();"> Update </div>
-        <div class="nav-button cursor center" onclick="requestNotify();"> Enable </div>
-        <div class="nav-button cursor center" onclick="copyCode();"> Copy </div>
-        <div class="nav-button cursor center" 
-          onclick="window.open('https://github.com/yamunasoftware/MySadhana/blob/main/README.md');"> 
-          Help 
+        <!-- Upper Padding -->
+        <div class="margin-extra-top padding">
+        
+          <!-- Navigation Controls -->
+          <div class="nav-button cursor center" onclick="addNote();"> New </div>
+          <div class="nav-button cursor center" onclick="window.location.reload();"> Update </div>
+          <div class="nav-button cursor center" onclick="requestNotify();"> Enable </div>
+          <div class="nav-button cursor center" onclick="copyCode();"> Copy </div>
+          <div class="nav-button cursor center" 
+            onclick="window.open('https://github.com/yamunasoftware/MySadhana/blob/main/README.md');"> 
+            Help 
+          </div>
+          <div class="nav-button cursor center" style="color: #FF0F0F;" onclick="showExitConfirm();"> Exit </div>
+          <div class="nav-button cursor center" style="color: #FF0F0F;" onclick="showRemoveConfirm();"> Close </div>
         </div>
-        <div class="nav-button cursor center" style="color: #FF0F0F;" onclick="showExitConfirm();"> Exit </div>
-        <div class="nav-button cursor center" style="color: #FF0F0F;" onclick="showRemoveConfirm();"> Close </div>
       </div>
 
       <!-- Main Content -->
