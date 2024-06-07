@@ -125,29 +125,6 @@ function showLoading() {
   document.title = "Loading...";
 }
 
-/* SORTING UI FUNCTIONS */
-
-//Show Sort Function:
-function showSort() {
-  //Checks the Case:
-  if (document.getElementById('dropitems').style.display == "block") {
-    //Sets the Display:
-    document.getElementById('dropitems').style.display = "none";
-  }
-
-  else {
-    //Sets the Display:
-    document.getElementById('dropitems').style.display = "block";
-  }
-}
-
-//Sort Notes Type Function:
-function sortNotes() {
-  //Closes Dropdown:
-  showSort();
-  displayNotes();
-}
-
 /* NOTIFICATION FUNCTIONS */
 
 //Show Notification:
