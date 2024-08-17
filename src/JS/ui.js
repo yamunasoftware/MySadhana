@@ -169,13 +169,13 @@ function showPush() {
     //Checks the Case:
     if (dateValues[1] > 0) {
       //Adds to the String:
-      notificationString += dateValues[1] + " Current\n";
+      notificationString += dateValues[1] + " Today\n";
     }
 
     //Checks the Case:
     if (dateValues[2] > 0) {
       //Adds to the String:
-      notificationString += dateValues[2] + " Future\n";
+      notificationString += dateValues[2] + " Upcoming\n";
     }
 
     //Checks the Case:
