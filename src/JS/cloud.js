@@ -302,6 +302,9 @@ function exitNote() {
     //Cancels the Interval:
     clearInterval(mainInterval);
   }
+
+  //Reloads the Page:
+  window.location.reload()
 }
 
 //Exit Safely Function:
@@ -320,6 +323,9 @@ function exitSafely() {
     //Cancels the Interval:
     clearInterval(mainInterval);
   }
+
+  //Reloads the Page:
+  window.location.reload()
 }
 
 //Display Notes Function:
