@@ -28,6 +28,7 @@ var notificationTimeout = 10000000;
 var timeout = 100000;
 var datesTimeout = 1000;
 var notesTimeout = 100;
+var saveTimeout = 1000;
 
 //Response Variables:
 var wait = false;
@@ -293,9 +294,13 @@ function exitNote() {
   saveNote();
   saveIndex = null;
 
-  //Shows the Startup:
-  closeConfirm();
-  showStartup();
+  //Save Delay:
+  showLoading();
+  setTimeout(function () {
+    //Shows the Startup:
+    closeConfirm();
+    showStartup();
+  }, saveTimeout);
 
   //Checks the Case:
   if (mainInterval != null) {
@@ -310,10 +315,14 @@ function exitSafely() {
   sendData();
   saveIndex = null;
 
-  //Shows Dashboard:
-  closeConfirm();
-  showDashboard();
-  displayNotes();
+  //Save Delay:
+  showLoading();
+  setTimeout(function () {
+    //Shows Dashboard:
+    closeConfirm();
+    showDashboard();
+    displayNotes();
+  }, saveTimeout);
 
   //Checks the Case:
   if (mainInterval != null) {
