@@ -511,24 +511,24 @@ function highlightDates(dates) {
       if (localDates[0] < currentMonth ||
         (localDates[0] == currentMonth && localDates[1] < currentDay)) {
         //Sets the Content:
-        var area = document.getElementById('text-area').innerHTML;
+        var area = document.getElementById('content-area').innerHTML;
         area = area.replace(new RegExp(currentDate, "g"), "<u>" + currentDate + "</u>");
-        document.getElementById('text-area').innerHTML = area;
+        document.getElementById('content-area').innerHTML = area;
       }
 
       else if (localDates[0] == currentMonth && localDates[1] == currentDay) {
         //Sets the Content:
-        var area = document.getElementById('text-area').innerHTML;
+        var area = document.getElementById('content-area').innerHTML;
         area = area.replace(new RegExp(currentDate, "g"), "<span>" + currentDate + "</span>");
-        document.getElementById('text-area').innerHTML = area;
+        document.getElementById('content-area').innerHTML = area;
       }
 
       else if (localDates[0] > currentMonth ||
         (localDates[0] == currentMonth && localDates[1] > currentDay)) {
         //Sets the Content:
-        var area = document.getElementById('text-area').innerHTML;
+        var area = document.getElementById('content-area').innerHTML;
         area = area.replace(new RegExp(currentDate, "g"), "<a>" + currentDate + "</a>");
-        document.getElementById('text-area').innerHTML = area;
+        document.getElementById('content-area').innerHTML = area;
       }
 
       turns++;

@@ -250,22 +250,8 @@ function showNotes(index) {
 
 //Show Areas Function:
 function showAreas() {
-  //Sets the Text Areas:
-  document.getElementById('text-area').innerHTML =
-    document.getElementById('content-area').value.replace(new RegExp("\n", "g"), "<br>");
-  highlightDates(dates(document.getElementById('text-area').innerHTML));
-
-  //Checks the Case:
-  if (document.getElementById('text-area').clientHeight == 0) {
-    //Sets the Area Height:
-    document.getElementById('content-area').style.height = "250px";
-  }
-
-  else {
-    //Sets the Area Height:
-    document.getElementById('content-area').style.height =
-      document.getElementById('text-area').clientHeight + "px";
-  }
+  highlightDates(dates(document.getElementById('content-area').innerHTML));
+  document.getElementById('content-area').style.height = "250px";
 }
 
 /* CONFIRMATION FUNCTIONS */
