@@ -219,7 +219,7 @@ function showNotes(index) {
       document.getElementById('dashboard').style.display = "none";
       document.getElementById('notes').style.display = "block";
       document.getElementById('loading').style.display = "none";
-      document.getElementById('content-area').innerHTML = data[index];
+      document.getElementById('content-area').value = data[index];
       showAreas();
       showNotification();
 
