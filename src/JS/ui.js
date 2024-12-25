@@ -47,7 +47,7 @@ window.onload = function () {
     //Checks the Case:
     if (saveIndex != null) {
       //Shows the Areas:
-      document.getElementById('content-area').innerHTML = document.getElementById('content-area').innerHTML.replace(/["]+/g, '');
+      document.getElementById('content-area').value = document.getElementById('content-area').value.replace(/["]+/g, '');
       showAreas();
       showNotification();
     }
@@ -250,7 +250,7 @@ function showNotes(index) {
 
 //Show Areas Function:
 function showAreas() {
-  highlightDates(dates(document.getElementById('content-area').innerHTML));
+  //highlightDates(dates(document.getElementById('content-area').innerHTML));
   document.getElementById('content-area').style.height = "250px";
 }
 
