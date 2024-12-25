@@ -251,7 +251,7 @@ function saveNote() {
   if (getCacheData(dataID, false) != null && saveIndex != null) {
     //Sets the Data:
     data = getCacheData(dataID, true);
-    data[saveIndex] = document.getElementById('content-area').value.replace(/["]+/g, '');
+    data[saveIndex] = document.getElementById('content-area').innerHTML.replace(/["]+/g, '');
 
     //Saves the Data:
     setCacheData(dataID, data, true);
