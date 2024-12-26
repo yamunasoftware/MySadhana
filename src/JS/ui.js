@@ -48,7 +48,6 @@ window.onload = function () {
     if (saveIndex != null) {
       //Shows the Areas:
       document.getElementById('content-area').value = document.getElementById('content-area').value.replace(/["]+/g, '');
-      showAreas();
       showNotification();
     }
   });
@@ -220,7 +219,6 @@ function showNotes(index) {
       document.getElementById('notes').style.display = "block";
       document.getElementById('loading').style.display = "none";
       document.getElementById('content-area').value = data[index];
-      showAreas();
       showNotification();
 
       //Idle Interval:
@@ -246,13 +244,6 @@ function showNotes(index) {
       }, notesTimeout);
     }
   }
-}
-
-//Show Areas Function:
-function showAreas() {
-  document.getElementById('highlight').innerHTML =
-    document.getElementById('content-area').value.replace(new RegExp("\n", "g"), "<br>");
-  highlightDates(dates(document.getElementById('content-area').value), 'highlight');
 }
 
 /* CONFIRMATION FUNCTIONS */

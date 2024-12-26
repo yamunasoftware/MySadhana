@@ -43,7 +43,7 @@ html, body {
   color: #ffffff;
   font-family: "rubik-medium", Helvetica, Arial;
   font-weight: bold;
-  font-size: 35px;
+  font-size: 20px;
   outline: none;
   border: none;
   white-space: pre-wrap;
@@ -234,21 +234,6 @@ html, body {
 }
 
 /* UI ELEMENTS */
-
-.red {
-  text-decoration: underline;
-  text-decoration-color: #FF0F0F;
-}
-
-.blue {
-  text-decoration: underline;
-  text-decoration-color: #147efb;
-}
-
-.green {
-  text-decoration: underline;
-  text-decoration-color: #23C552;
-}
 
 button {
   display: inline;

@@ -489,53 +489,6 @@ function title(string) {
 
 /* DATES FUNCTIONS */
 
-//Highlight Dates:
-function highlightDates(dates, elementName) {
-  //Checks the Case:
-  if (saveIndex != null) {
-    //Loop Variable:
-    var turns = 0;
-
-    //Date Variables:
-    var date = new Date();
-    var currentMonth = date.getMonth() + 1;
-    var currentDay = date.getDate();
-
-    //Loops through Array:
-    mainLoop: while (turns < dates.length) {
-      //Gets the Dates:
-      var currentDate = dates[turns].replace("-", "/");
-      var localDates = extractDate(dates[turns]);
-
-      //Checks the Case:
-      if (localDates[0] < currentMonth ||
-        (localDates[0] == currentMonth && localDates[1] < currentDay)) {
-        //Sets the Content:
-        var area = document.getElementById(elementName).innerHTML;
-        area = area.replace(new RegExp(currentDate, "g"), "<div class='red'>" + currentDate + "</div>");
-        document.getElementById(elementName).innerHTML = area;
-      }
-
-      else if (localDates[0] == currentMonth && localDates[1] == currentDay) {
-        //Sets the Content:
-        var area = document.getElementById(elementName).innerHTML;
-        area = area.replace(new RegExp(currentDate, "g"), "<div class='blue'>" + currentDate + "</div>");
-        document.getElementById(elementName).innerHTML = area;
-      }
-
-      else if (localDates[0] > currentMonth ||
-        (localDates[0] == currentMonth && localDates[1] > currentDay)) {
-        //Sets the Content:
-        var area = document.getElementById(elementName).innerHTML;
-        area = area.replace(new RegExp(currentDate, "g"), "<div class='green'>" + currentDate + "</div>");
-        document.getElementById(elementName).innerHTML = area;
-      }
-
-      turns++;
-    }
-  }
-}
-
 //Check All Dates:
 function checkAllDates() {
   //Gets the Data:
