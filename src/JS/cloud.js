@@ -490,7 +490,7 @@ function title(string) {
 /* DATES FUNCTIONS */
 
 //Highlight Dates:
-function highlightDates(dates) {
+function highlightDates(dates, elementName) {
   //Checks the Case:
   if (saveIndex != null) {
     //Loop Variable:
@@ -511,24 +511,24 @@ function highlightDates(dates) {
       if (localDates[0] < currentMonth ||
         (localDates[0] == currentMonth && localDates[1] < currentDay)) {
         //Sets the Content:
-        var area = document.getElementById('content-area').innerHTML;
+        var area = document.getElementById(elementName).innerHTML;
         area = area.replace(new RegExp(currentDate, "g"), "<u>" + currentDate + "</u>");
-        document.getElementById('content-area').innerHTML = area;
+        document.getElementById(elementName).innerHTML = area;
       }
 
       else if (localDates[0] == currentMonth && localDates[1] == currentDay) {
         //Sets the Content:
-        var area = document.getElementById('content-area').innerHTML;
+        var area = document.getElementById(elementName).innerHTML;
         area = area.replace(new RegExp(currentDate, "g"), "<span>" + currentDate + "</span>");
-        document.getElementById('content-area').innerHTML = area;
+        document.getElementById(elementName).innerHTML = area;
       }
 
       else if (localDates[0] > currentMonth ||
         (localDates[0] == currentMonth && localDates[1] > currentDay)) {
         //Sets the Content:
-        var area = document.getElementById('content-area').innerHTML;
+        var area = document.getElementById(elementName).innerHTML;
         area = area.replace(new RegExp(currentDate, "g"), "<a>" + currentDate + "</a>");
-        document.getElementById('content-area').innerHTML = area;
+        document.getElementById(elementName).innerHTML = area;
       }
 
       turns++;
