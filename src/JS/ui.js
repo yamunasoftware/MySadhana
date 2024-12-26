@@ -253,7 +253,6 @@ function showAreas() {
   document.getElementById('highlight').innerHTML =
     document.getElementById('content-area').value.replace(new RegExp("\n", "g"), "<br>");
   highlightDates(dates(document.getElementById('content-area').value), 'highlight');
-  document.getElementById('content-area').style.height = "250px";
 }
 
 /* CONFIRMATION FUNCTIONS */

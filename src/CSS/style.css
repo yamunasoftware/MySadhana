@@ -235,17 +235,17 @@ html, body {
 
 /* UI ELEMENTS */
 
-u {
+.red {
   text-decoration: underline;
   text-decoration-color: #FF0F0F;
 }
 
-span {
+.blue {
   text-decoration: underline;
   text-decoration-color: #147efb;
 }
 
-a {
+.green {
   text-decoration: underline;
   text-decoration-color: #23C552;
 }

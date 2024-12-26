@@ -512,14 +512,14 @@ function highlightDates(dates, elementName) {
         (localDates[0] == currentMonth && localDates[1] < currentDay)) {
         //Sets the Content:
         var area = document.getElementById(elementName).innerHTML;
-        area = area.replace(new RegExp(currentDate, "g"), "<u>" + currentDate + "</u>");
+        area = area.replace(new RegExp(currentDate, "g"), "<div class='red'>" + currentDate + "</div>");
         document.getElementById(elementName).innerHTML = area;
       }
 
       else if (localDates[0] == currentMonth && localDates[1] == currentDay) {
         //Sets the Content:
         var area = document.getElementById(elementName).innerHTML;
-        area = area.replace(new RegExp(currentDate, "g"), "<span>" + currentDate + "</span>");
+        area = area.replace(new RegExp(currentDate, "g"), "<div class='blue'>" + currentDate + "</div>");
         document.getElementById(elementName).innerHTML = area;
       }
 
@@ -527,7 +527,7 @@ function highlightDates(dates, elementName) {
         (localDates[0] == currentMonth && localDates[1] > currentDay)) {
         //Sets the Content:
         var area = document.getElementById(elementName).innerHTML;
-        area = area.replace(new RegExp(currentDate, "g"), "<a>" + currentDate + "</a>");
+        area = area.replace(new RegExp(currentDate, "g"), "<div class='green'>" + currentDate + "</div>");
         document.getElementById(elementName).innerHTML = area;
       }
 
