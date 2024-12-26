@@ -250,7 +250,9 @@ function showNotes(index) {
 
 //Show Areas Function:
 function showAreas() {
-  highlightDates(dates(document.getElementById('content-area').value));
+  document.getElementById('highlight').innerHTML =
+    document.getElementById('content-area').value.replace(new RegExp("\n", "g"), "<br>");
+  highlightDates(dates(document.getElementById('content-area').value), 'highlight');
   document.getElementById('content-area').style.height = "250px";
 }
 
