@@ -49,7 +49,6 @@ html, body {
   white-space: pre-wrap;
   resize: none;
   height: 80vh;
-  overflow: hidden;
 }
 
 .content-width {
