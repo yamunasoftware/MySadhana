@@ -43,9 +43,8 @@ window.onload = function () {
   });
 
   //Content Area Input Event Listener:
-  document.getElementById('content-area').style.height = 'auto';
-  document.getElementById('content-area').style.height = document.getElementById('content-area').scrollHeight + 'px';
   document.getElementById('content-area').addEventListener("input", function () {
+    //Dynamic Content Area:
     this.style.height = 'auto';
     this.style.height = this.scrollHeight + 'px';
     
@@ -225,6 +224,10 @@ function showNotes(index) {
       document.getElementById('loading').style.display = "none";
       document.getElementById('content-area').value = data[index];
       showNotification();
+
+      //Dynamic Content Area:
+      document.getElementById('content-area').style.height = 'auto';
+      document.getElementById('content-area').style.height = document.getElementById('content-area').scrollHeight + 'px';
 
       //Idle Interval:
       mainInterval = setInterval(function () {
