@@ -44,6 +44,9 @@ window.onload = function () {
 
   //Content Area Input Event Listener:
   document.getElementById('content-area').addEventListener("input", function () {
+    this.style.height = 'auto';
+    this.style.height = this.scrollHeight + 'px';
+    
     //Checks the Case:
     if (saveIndex != null) {
       //Shows the Areas:
