@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<meta charset="utf-8" />
+<meta name="description" content="Personal Productivity App" />
+<meta name="viewport" content="initial-scale=1, width=device-width, height=device-height, viewport-fit=cover" />
+<meta name="theme-color" content="#000000" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<!-- Tab -->
+<head>
+  <title> MySadhana </title>
+
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/src/Images/medium_icon.png" />
+  <link rel="apple-touch-startup-image" href="/src/Images/medium_icon.png" />
+</head>
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="/src/CSS/fonts.css" />
+<link rel="stylesheet" href="/src/CSS/style.css" />
+
+<!-- Cloud Scripts -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+<!-- Scripts -->
+<script src="/src/JS/ui.js"></script>
+<script src="/src/JS/cloud.js"></script>
+
+<!-- Container -->
+<div id="container">
+
+  <body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="screen gradient deactivate center">
+      <!-- Header -->
+      <div class="header padding">
+        <!-- Header -->
+        <div class="padding"> MySadhana </div>
+
+        <!-- Motto -->
+        <div> Productivity. </div>
+        <div> Simplified. </div>
+      </div>
+
+      <!-- Sign Up -->
+      <div id="sign-in" class="padding">
+        <!-- Sign Up Buttons -->
+        <button onclick="signUp();"> Sign Up </button>
+        <button onclick="showLogIn();"> Log In </button>
+      </div>
+
+      <!-- Log In -->
+      <div id="log-in" class="padding deactivate">
+        <!-- Log In Elements -->
+        <input id="log-in-input" />
+        <button onclick="logIn();"> Submit </button>
+
+        <!-- Error Message -->
+        <div id="error" class="padding" style="display: inline;"></div>
+      </div>
+    </div>
+
+    <!-- Loading -->
+    <div id="loading" class="screen deactivate second-background center">
+      <!-- Image Container -->
+      <div class="padding">
+        <!-- Image Header -->
+        <image src="/src/Images/medium_icon.png"></image>
+      </div>
+
+      <!-- Animation -->
+      <div class="padding lds-dual-ring"></div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="screen deactivate">
+      <!-- Navigation -->
+      <div id="navigation" class="navigation">
+        <!-- Upper Padding -->
+        <div class="margin-extra-top padding"></div>
+        
+        <!-- Navigation Controls -->
+        <div class="nav-button cursor center" onclick="addNote();"> New </div>
+        <div class="nav-button cursor center" onclick="window.location.reload();"> Update </div>
+        <div class="nav-button cursor center" onclick="requestNotify();"> Enable </div>
+        <div class="nav-button cursor center" onclick="copyCode();"> Copy </div>
+        <div class="nav-button cursor center" 
+          onclick="window.open('https://github.com/yamunasoftware/MySadhana/blob/main/README.md');"> 
+          Help 
+        </div>
+        <div class="nav-button cursor center" style="color: #FF0F0F;" onclick="showExitConfirm();"> Exit </div>
+        <div class="nav-button cursor center" style="color: #FF0F0F;" onclick="showRemoveConfirm();"> Close </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content dark padding">
+        <!-- Search Container -->
+        <div class="padding-double-top">
+          <!-- Messages -->
+          <div id="copy-message" class="padding disappear"></div>
+          <div id="dash-error" class="padding disappear"></div>
+          
+          <!-- Search Controls -->
+          <div class="padding subheader"> Search </div>
+          <input id="search" class="margin" style="margin-left: 40px;" />
+        </div>
+
+        <!-- Notes Padding -->
+        <div class="padding-extra-top">
+          <!-- Conformation Element -->
+          <div id="conformation" class="margin margin-extra-bottom padding fit-content center dark-card disappear"></div>
+
+          <!-- Notes List Header -->
+          <div class="padding subheader"> Notes </div>
+          
+          <!-- Notes List -->
+          <div id="notes-list" class="padding"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notes -->
+    <div id="notes" class="screen deactivate">
+      <!-- Exit Button Container -->
+      <div class="margin-extra-top padding">
+        <!-- Exit Button -->
+        <div class='mobile-button' onclick='exitNote();'><</div>
+      </div>
+
+      <!-- Dark Container -->
+      <div class="padding dark">
+        <!-- Text Area -->
+        <textarea id="content-area" class="margin content-width text-area"></textarea>
+      </div>
+    </div>
+      
+  </body>
+</div>
+
+</html>

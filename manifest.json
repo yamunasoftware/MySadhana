@@ -1,0 +1,66 @@
+{
+  "name": "MySadhana",
+  "short_name": "MySadhana",
+  "start_url": "https://mysadhana.netlify.app",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#202020",
+  "theme_color": "#000000",
+  "description": "Personal Productivity App",
+  "categories": ["productivity", "lifestyle"],
+  "icons": [
+    {
+      "src": "/src/Images/large_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/src/Images/medium_icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/src/Images/small_icon.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/src/Images/large_icon_masked.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/src/Images/medium_icon_masked.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/src/Images/small_icon_masked.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/src/Images/screenshot.png",
+      "sizes": "431x770",
+      "type": "image/png"
+    }
+  ],
+  "url": "https://mysadhana.netlify.app",
+  "manifestUrl": "https://mysadhana.netlify.app/manifest.json",
+  "lang": "en-US",
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.technicalround.iskconsadhanareport"
+    }
+  ]
+}

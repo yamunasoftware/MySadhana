@@ -1,0 +1,348 @@
+/* HTML SETUP */
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  color: #FFFFFF;
+  background-color: #000000;
+  font-family: "rubik-medium", Helvetica, Arial;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#container {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  color: #FFFFFF;
+  background-color: #000000;
+  font-family: "rubik-medium", Helvetica, Arial;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* STYLES */
+
+.screen {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+}
+
+.dark {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.text-area {
+  margin: 0px;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: "rubik-medium", Helvetica, Arial;
+  font-weight: bold;
+  font-size: 20px;
+  outline: none;
+  border: none;
+  white-space: pre-wrap;
+  resize: none;
+  height: 80vh;
+}
+
+.content-width {
+  margin: 0px;
+  width: calc(100% - 50px);
+}
+
+.navigation {
+  width: 100px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: fixed;
+  background-color: #202020;
+  overflow-y: scroll;
+}
+
+.nav-image {
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.nav-button {
+  width: 100%;
+  background-color: #202020;
+  color: #FFFFFF;
+  cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.nav-button:hover {
+  background-color: #39FF13;
+}
+
+.main-content {
+  margin-left: 100px;
+}
+
+.card {
+  width: 130px;
+  border-radius: 20px;
+  background-color: #a4da99;
+  color: #000000;
+}
+
+.dark-card {
+  border-radius: 20px;
+  background-color: #202020;
+  color: #FFFFFF;
+}
+
+.dash-alert {
+  padding: 10px;
+  color: #FFFFFF;
+  background-color: #FF0F0F;
+  border: none;
+  border-radius: 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.disappear:empty {
+  display: none;
+}
+
+.padding {
+  padding: 20px;
+}
+
+.margin {
+  margin: 20px;
+}
+
+.margin-bottom {
+  margin-bottom: 20px;
+}
+
+.margin-left {
+  margin-left: 20px;
+}
+
+.margin-extra-top {
+  margin-top: 40px;
+}
+
+.margin-extra-bottom {
+  margin-bottom: 40px;
+}
+
+.small-padding {
+  padding: 10px;
+}
+
+.padding-extra-top {
+  padding-top: 40px;
+}
+
+.padding-double-top {
+  padding-top: 50px;
+}
+
+.no-padding-bottom {
+  padding-bottom: 0px;
+}
+
+.no-padding-left {
+  padding-left: 0px;
+}
+
+.header {
+  font-size: 50px;
+}
+
+.subheader {
+  font-size: 35px;
+}
+
+.deactivate {
+  display: none;
+}
+
+.no-pointers {
+  pointer-events: none;
+}
+
+.center {
+  text-align: center;
+  align-content: center;
+}
+
+.inline {
+  display: inline;
+}
+
+.block {
+  display: block;
+}
+
+.fit-content {
+  width: fit-content;
+}
+
+.no-decoration {
+  text-decoration: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.gradient {
+  background-image: linear-gradient(to right, #67B26F, #4ca2cd);
+}
+
+.second-background {
+  background-color: #202020;
+}
+
+.bar {
+  margin: 5px;
+  margin-left: 0px;
+  width: 40px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+}
+
+.mobile-button {
+  display: inline;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "rubik-medium", Helvetica, Arial;
+  background-color: #202020;
+  color: #FFFFFF;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  margin-right: 10px;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  padding: 5px 12px 5px 12px;
+}
+
+/* UI ELEMENTS */
+
+button {
+  display: inline;
+  margin: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "rubik-medium", Helvetica, Arial;
+  color: #000000;
+  cursor: pointer;
+  background-color: #a4da99;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+}
+
+button.dash-button {
+  background-color: #202020;
+  color: #FFFFFF;
+}
+
+button:hover {
+  background-color: #39FF13;
+}
+
+input {
+  width: 150px;
+  padding: 10px;
+  font-size: 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: text;
+  font-family: "rubik-medium", Helvetica, Arial;
+  font-weight: bold;
+}
+
+input:hover, input:focus {
+  border: 5px solid #39FF13;
+  outline: none;
+}
+
+/* DROPDOWNS */
+
+.dropdown {
+  background-color: #202020;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 20px;
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.dropgroup {
+  font-size: 15px;
+  padding: 10px;
+  text-align: center;
+}
+
+.dropgroup:hover, .dropgroup:focus {
+  background-color: #39FF13;
+}
+
+/* SCROLLING */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a4da99; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #39FF13; 
+}
+
+/* ANIMATIONS */
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #a4da99;
+  border-color: #a4da99 transparent #a4da99 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
