@@ -236,6 +236,35 @@ html, body {
 
 /* UI ELEMENTS */
 
+.date-past { color: #FF0F0F; }
+.date-today { color: #147efb; }
+.date-future { color: #23C552; }
+
+.content-area-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+#content-area {
+  position: relative;
+  background: transparent;
+  color: transparent;
+  caret-color: #FFFFFF;
+  z-index: 2;
+  resize: none;
+}
+
+#content-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  color: #FFFFFF;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
 button {
   display: inline;
   margin: 10px;

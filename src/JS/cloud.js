@@ -535,11 +535,6 @@ function checkDates(dates) {
   //Loop Variable:
   var turns = 0;
 
-  //Date Variables:
-  var date = new Date();
-  var currentMonth = date.getMonth() + 1;
-  var currentDay = date.getDate();
-
   //Count Variables:
   var past = 0;
   var now = 0;
@@ -549,22 +544,21 @@ function checkDates(dates) {
   mainLoop: while (turns < dates.length) {
     //Extracts the Dates:
     var localDates = extractDate(dates[turns]);
-
+    var check = checkDate(localDates);
+    
     //Checks the Case:
-    if (localDates[0] < currentMonth ||
-      (localDates[0] == currentMonth && localDates[1] < currentDay)) {
-      //Adds to the Count:
+    if (check == -1) {
+      //Increases the Past:
       past++;
     }
 
-    else if (localDates[0] == currentMonth && localDates[1] == currentDay) {
-      //Adds to the Count:
+    else if (check == 0) {
+      //Increases the Now:
       now++;
     }
 
-    else if (localDates[0] > currentMonth ||
-      (localDates[0] == currentMonth && localDates[1] > currentDay)) {
-      //Adds to the Count:
+    else if (check == 1) {
+      //Increases the Future:
       future++;
     }
 
@@ -591,6 +585,28 @@ function checkDates(dates) {
 
   //Returns the Counts:
   return [past, now, future];
+}
+
+function checkDate(date) {
+  //Date Variables:
+  var date = new Date();
+  var currentMonth = date.getMonth() + 1;
+  var currentDay = date.getDate();
+  
+  //Checks the Case:
+  if (date[0] < currentMonth ||
+    (date[0] == currentMonth && date[1] < currentDay)) {
+    return -1;
+  }
+
+  else if (date[0] == currentMonth && date[1] == currentDay) {
+    return 0;
+  }
+
+  else if (date[0] > currentMonth ||
+    (date[0] == currentMonth && date[1] > currentDay)) {
+    return 1;
+  }
 }
 
 //Extract Date Function:

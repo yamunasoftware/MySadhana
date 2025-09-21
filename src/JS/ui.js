@@ -52,6 +52,7 @@ window.onload = function () {
     if (saveIndex != null) {
       //Shows the Areas:
       document.getElementById('content-area').value = document.getElementById('content-area').value.replace(/["]+/g, '');
+      colorDates();
       showNotification();
     }
   });
@@ -249,9 +250,37 @@ function showNotes(index) {
       setTimeout(function () {
         //Recurses:
         showNotes(index);
+        colorDates();
       }, notesTimeout);
     }
   }
+}
+
+//Color Dates Function:
+function colorDates() {
+  const contentArea = document.getElementById('content-area');
+  const contentOverlay = document.getElementById('content-overlay');
+  const text = contentArea.value;
+
+  const dates = dates(text);
+  for (let i = 0; i < dates.length; i++) {
+    const check = checkDate(dates[i]);
+    if (check == -1) {
+      const dateFormat = `<span class="date-past">${dates[i]}</span>`;
+      text.replace(dates[i], dateFormat);
+    }
+
+    else if (check == 0) {
+      const dateFormat = `<span class="date-today">${dates[i]}</span>`;
+      text.replace(dates[i], dateFormat);
+    }
+
+    else if (check == 1) {
+      const dateFormat = `<span class="date-future">${dates[i]}</span>`;
+      text.replace(dates[i], dateFormat);
+    }
+  }
+  contentOverlay.innerHTML = text;
 }
 
 /* CONFIRMATION FUNCTIONS */
