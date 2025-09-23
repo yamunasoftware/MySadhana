@@ -634,6 +634,74 @@ function extractDate(string) {
   return [parsedMonth, parsedDay];
 }
 
+function checkDate(date) {
+  //Date Variables:
+  var date = new Date();
+  var currentMonth = date.getMonth() + 1;
+  var currentDay = date.getDate();
+  
+  //Checks the Case:
+  if (date[0] < currentMonth ||
+    (date[0] == currentMonth && date[1] < currentDay)) {
+    return -1;
+  }
+
+  else if (date[0] == currentMonth && date[1] == currentDay) {
+    return 0;
+  }
+
+  else if (date[0] > currentMonth ||
+    (date[0] == currentMonth && date[1] > currentDay)) {
+    return 1;
+  }
+}
+
+//Dates Function:
+function dates(string) {
+  //Loop Variables:
+  var dates = [];
+  var turns = 0;
+
+  //Loops through Array:
+  mainLoop: while (turns < string.length) {
+    //Checks the Case:
+    if (string[turns] == "/" && turns != 0
+      && turns < string.length - 1) {
+      //Checks the Case:
+      if (!isNaN(string[turns - 1]) && !isNaN(string[turns + 1])) {
+        //Sets the Dates:
+        var date = string[turns - 1] + "-" + string[turns + 1];
+
+        //Checks the Case:
+        if (turns - 2 >= 0) {
+          //Checks the Case:
+          if (!isNaN(string[turns - 2])) {
+            //Sets the Date:
+            date = string[turns - 2] + "" + string[turns - 1] + "-" + string[turns + 1];
+          }
+        }
+
+        //Checks the Case:
+        if (turns + 2 < string.length) {
+          //Checks the Case:
+          if (!isNaN(string[turns + 2])) {
+            //Adds to the Date:
+            date += string[turns + 2];
+          }
+        }
+
+        //Pushes to Dates Array:
+        dates.push(date);
+      }
+    }
+
+    turns++;
+  }
+
+  //Returns the Dates:
+  return dates;
+}
+
 /* CACHE DATA FUNCTIONS */
 
 //Cache Data Get Function:
