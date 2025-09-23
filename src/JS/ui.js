@@ -51,7 +51,7 @@ window.onload = function () {
     //Checks the Case:
     if (saveIndex != null) {
       //Shows the Areas:
-      document.getElementById('content-area').value = document.getElementById('content-area').value.replace(/["]+/g, '');
+      document.getElementById('content-area').innerHTML = document.getElementById('content-area').innerHTML.replace(/["]+/g, '');
       colorDates();
       showNotification();
     }
@@ -223,7 +223,7 @@ function showNotes(index) {
       document.getElementById('dashboard').style.display = "none";
       document.getElementById('notes').style.display = "block";
       document.getElementById('loading').style.display = "none";
-      document.getElementById('content-area').value = data[index];
+      document.getElementById('content-area').innerHTML = data[index];
       showNotification();
 
       //Dynamic Content Area:
@@ -259,8 +259,7 @@ function showNotes(index) {
 //Color Dates Function:
 function colorDates() {
   const contentArea = document.getElementById('content-area');
-  const contentOverlay = document.getElementById('content-overlay');
-  const text = contentArea.value;
+  const text = contentArea.innerHTML;
 
   const dates = dates(text);
   for (let i = 0; i < dates.length; i++) {
@@ -280,7 +279,7 @@ function colorDates() {
       text.replace(dates[i], dateFormat);
     }
   }
-  contentOverlay.innerHTML = text;
+  contentArea.innerHTML = text;
 }
 
 /* CONFIRMATION FUNCTIONS */

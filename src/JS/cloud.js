@@ -251,7 +251,14 @@ function saveNote() {
   if (getCacheData(dataID, false) != null && saveIndex != null) {
     //Sets the Data:
     data = getCacheData(dataID, true);
-    data[saveIndex] = document.getElementById('content-area').value.replace(/["]+/g, '');
+    var rawText = document.getElementById('content-area').innerHTML.replace(/["]+/g, '');
+    rawText = rawText.replace("</span>", "");
+
+    //Replaces Date Spans:
+    rawText = rawText.replace("<span class=\"date-past\">", "");
+    rawText = rawText.replace("<span class=\"date-today\">", "");
+    rawText = rawText.replace("<span class=\"date-future\">", "");
+    data[saveIndex] = rawText;
 
     //Saves the Data:
     setCacheData(dataID, data, true);
