@@ -253,22 +253,22 @@ function colorDates() {
   const contentArea = document.getElementById('content-area');
   const text = contentArea.innerHTML;
 
-  var dates = dates(text);
-  for (let i = 0; i < dates.length; i++) {
-    const check = checkDate(dates[i]);
+  var dateList = dates(text);
+  for (let i = 0; i < dateList.length; i++) {
+    const check = checkDate(dateList[i]);
     if (check == -1) {
-      const dateFormat = `<span class="date-past">${dates[i]}</span>`;
-      text.replace(dates[i], dateFormat);
+      const dateFormat = `<span class="date-past">${dateList[i]}</span>`;
+      text.replace(dateList[i], dateFormat);
     }
 
     else if (check == 0) {
-      const dateFormat = `<span class="date-today">${dates[i]}</span>`;
-      text.replace(dates[i], dateFormat);
+      const dateFormat = `<span class="date-today">${dateList[i]}</span>`;
+      text.replace(dateList[i], dateFormat);
     }
 
     else if (check == 1) {
-      const dateFormat = `<span class="date-future">${dates[i]}</span>`;
-      text.replace(dates[i], dateFormat);
+      const dateFormat = `<span class="date-future">${dateList[i]}</span>`;
+      text.replace(dateList[i], dateFormat);
     }
   }
   contentArea.innerHTML = text;
