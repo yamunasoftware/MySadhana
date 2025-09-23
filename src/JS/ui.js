@@ -47,14 +47,6 @@ window.onload = function () {
     //Dynamic Content Area:
     this.style.height = 'auto';
     this.style.height = this.scrollHeight + 'px';
-    
-    //Checks the Case:
-    if (saveIndex != null) {
-      //Shows the Areas:
-      document.getElementById('content-area').innerHTML = document.getElementById('content-area').innerHTML.replace(/["]+/g, '');
-      colorDates();
-      showNotification();
-    }
   });
 }
 
