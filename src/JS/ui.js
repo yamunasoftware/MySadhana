@@ -272,6 +272,7 @@ function colorDates() {
     }
   }
   contentArea.innerHTML = text;
+  console.log(dateList);
 }
 
 /* CONFIRMATION FUNCTIONS */
