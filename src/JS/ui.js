@@ -253,7 +253,7 @@ function colorDates() {
   const contentArea = document.getElementById('content-area');
   const text = contentArea.innerHTML;
 
-  const dates = dates(text);
+  var dates = dates(text);
   for (let i = 0; i < dates.length; i++) {
     const check = checkDate(dates[i]);
     if (check == -1) {
