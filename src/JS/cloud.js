@@ -491,6 +491,7 @@ function title(string) {
   }
 
   //Returns the Title:
+  noteTitle = noteTitle.slice(0, 10);
   return noteTitle;
 }
 
