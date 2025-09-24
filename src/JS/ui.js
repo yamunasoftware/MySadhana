@@ -254,12 +254,12 @@ function colorDates() {
   const text = contentArea.innerHTML;
   
   var dateList = dates(text);
-  var localDates = extractDate(dateList);
-
   for (let i = 0; i < dateList.length; i++) {
-    const check = checkDate(localDates[i]);
+    var localDates = extractDate(dateList[i]);
+    const check = checkDate(localDates);
     const replaceDate = dateList[i].replace("-", "/");
-    console.log(localDates[i]);
+    
+    console.log(localDates, check, replaceDate);
 
     if (check == -1) {
       const dateFormat = `<span class="date-past">${replaceDate}</span>`;
