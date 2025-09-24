@@ -252,8 +252,9 @@ function showNotes(index) {
 function colorDates() {
   const contentArea = document.getElementById('content-area');
   const text = contentArea.innerHTML;
+  
   var dateList = dates(text);
-  var localDates = extractDate(dateList[i]);
+  var localDates = extractDate(dateList);
 
   for (let i = 0; i < dateList.length; i++) {
     const check = checkDate(localDates[i]);
