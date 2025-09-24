@@ -539,6 +539,11 @@ function checkAllDates() {
 
 //Check Dates Function:
 function checkDates(dates) {
+  //Date Variables:
+  var date = new Date();
+  var currentMonth = date.getMonth() + 1;
+  var currentDay = date.getDate();
+  
   //Loop Variable:
   var turns = 0;
 
