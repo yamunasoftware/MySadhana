@@ -258,12 +258,11 @@ function colorDates() {
     var localDates = extractDate(dateList[i]);
     const check = checkDate(localDates);
     const replaceDate = dateList[i].replace("-", "/");
-    
-    console.log(localDates, check, replaceDate);
 
     if (check == -1) {
       const dateFormat = `<span class="date-past">${replaceDate}</span>`;
       text.replace(replaceDate, dateFormat);
+      console.log("Past");
     }
 
     else if (check == 0) {
