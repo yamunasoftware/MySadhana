@@ -262,7 +262,6 @@ function colorDates() {
     if (check == -1) {
       const dateFormat = `<span class="date-past">${replaceDate}</span>`;
       text.replace(replaceDate, dateFormat);
-      console.log("Past");
     }
 
     else if (check == 0) {
@@ -275,6 +274,8 @@ function colorDates() {
       text.replace(replaceDate, dateFormat);
     }
   }
+
+  console.log(text);
   contentArea.innerHTML = text;
 }
 
