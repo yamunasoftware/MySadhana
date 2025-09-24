@@ -252,27 +252,29 @@ function showNotes(index) {
 function colorDates() {
   const contentArea = document.getElementById('content-area');
   const text = contentArea.innerHTML;
-
   var dateList = dates(text);
+  var localDates = extractDate(dateList[i]);
+
   for (let i = 0; i < dateList.length; i++) {
-    const check = checkDate(dateList[i]);
+    const check = checkDate(localDates[i]);
+    const replaceDate = dateList[i].replace("-", "/");
+
     if (check == -1) {
-      const dateFormat = `<span class="date-past">${dateList[i]}</span>`;
-      text.replace(dateList[i], dateFormat);
+      const dateFormat = `<span class="date-past">${replaceDate}</span>`;
+      text.replace(replaceDate, dateFormat);
     }
 
     else if (check == 0) {
-      const dateFormat = `<span class="date-today">${dateList[i]}</span>`;
-      text.replace(dateList[i], dateFormat);
+      const dateFormat = `<span class="date-today">${replaceDate}</span>`;
+      text.replace(replaceDate, dateFormat);
     }
 
     else if (check == 1) {
-      const dateFormat = `<span class="date-future">${dateList[i]}</span>`;
-      text.replace(dateList[i], dateFormat);
+      const dateFormat = `<span class="date-future">${replaceDate}</span>`;
+      text.replace(replaceDate, dateFormat);
     }
   }
   contentArea.innerHTML = text;
-  console.log(dateList);
 }
 
 /* CONFIRMATION FUNCTIONS */
