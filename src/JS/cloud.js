@@ -551,21 +551,22 @@ function checkDates(dates) {
   mainLoop: while (turns < dates.length) {
     //Extracts the Dates:
     var localDates = extractDate(dates[turns]);
-    var check = checkDate(localDates);
     
     //Checks the Case:
-    if (check == -1) {
-      //Increases the Past:
+    if (localDates[0] < currentMonth ||
+      (localDates[0] == currentMonth && localDates[1] < currentDay)) {
+      //Adds to the Count:
       past++;
     }
 
-    else if (check == 0) {
-      //Increases the Now:
+    else if (localDates[0] == currentMonth && localDates[1] == currentDay) {
+      //Adds to the Count:
       now++;
     }
 
-    else if (check == 1) {
-      //Increases the Future:
+    else if (localDates[0] > currentMonth ||
+      (localDates[0] == currentMonth && localDates[1] > currentDay)) {
+      //Adds to the Count:
       future++;
     }
 
