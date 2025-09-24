@@ -275,8 +275,6 @@ function colorDates() {
       newText = text.replace(replaceDate, dateFormat);
     }
   }
-
-  console.log(text);
   contentArea.innerHTML = newText;
 }
 
