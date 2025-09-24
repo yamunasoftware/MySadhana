@@ -259,23 +259,21 @@ function colorDates() {
   for (let i = 0; i < dateList.length; i++) {
     const check = checkDate(localDates[i]);
     const replaceDate = dateList[i].replace("-", "/");
+    console.log(localDates[i]);
 
     if (check == -1) {
       const dateFormat = `<span class="date-past">${replaceDate}</span>`;
       text.replace(replaceDate, dateFormat);
-      console.log(replaceDate);
     }
 
     else if (check == 0) {
       const dateFormat = `<span class="date-today">${replaceDate}</span>`;
       text.replace(replaceDate, dateFormat);
-      console.log(replaceDate);
     }
 
     else if (check == 1) {
       const dateFormat = `<span class="date-future">${replaceDate}</span>`;
       text.replace(replaceDate, dateFormat);
-      console.log(replaceDate);
     }
   }
   contentArea.innerHTML = text;
