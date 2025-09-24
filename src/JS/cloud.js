@@ -642,10 +642,10 @@ function extractDate(string) {
 
 function checkDate(date) {
   //Date Variables:
-  var date = new Date();
-  var currentMonth = date.getMonth() + 1;
-  var currentDay = date.getDate();
-  
+  var dateNow = new Date();
+  var currentMonth = dateNow.getMonth() + 1;
+  var currentDay = dateNow.getDate();
+
   //Checks the Case:
   if (date[0] < currentMonth ||
     (date[0] == currentMonth && date[1] < currentDay)) {
