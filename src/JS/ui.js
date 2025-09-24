@@ -251,7 +251,7 @@ function showNotes(index) {
 //Color Dates Function:
 function colorDates() {
   const contentArea = document.getElementById('content-area');
-  const text = contentArea.innerHTML;
+  const text = contentArea.innerText;
   
   var dateList = dates(text);
   for (let i = 0; i < dateList.length; i++) {
