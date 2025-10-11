@@ -3,11 +3,15 @@
 //Onload Function:
 window.onload = function () {
   /* Function Calls */
+  
+  console.log("Passed Point 1");
 
   //Startup:
   showSplash();
   showStartup();
   showNotification();
+
+  console.log("Passed Point 2");
 
   /* Intervals */
 
