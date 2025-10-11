@@ -4,20 +4,10 @@
 window.onload = function () {
   /* Function Calls */
   
-  console.log("Passed Point 1");
-
-  try {
-    //Startup:
-    showSplash();
-    showStartup();
-    showNotification();
-  }
-  
-  catch (error) {
-    console.error(error);
-  }
-
-  console.log("Passed Point 2");
+  //Startup:
+  showSplash();
+  showStartup();
+  showNotification();
 
   /* Intervals */
 
@@ -143,9 +133,6 @@ function showNotification() {
       //Sets the Values:
       document.title = "(" + total + ") MySadhana";
       setTabIcon("/src/Images/small_icon_notify.png");
-      navigator.setAppBadge(total).catch(() => {
-        //Nothing!
-      });
     }
   }
 }
