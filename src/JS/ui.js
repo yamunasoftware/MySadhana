@@ -6,10 +6,16 @@ window.onload = function () {
   
   console.log("Passed Point 1");
 
-  //Startup:
-  showSplash();
-  showStartup();
-  showNotification();
+  try {
+    //Startup:
+    showSplash();
+    showStartup();
+    showNotification();
+  }
+  
+  catch (error) {
+    console.error(error);
+  }
 
   console.log("Passed Point 2");
 
