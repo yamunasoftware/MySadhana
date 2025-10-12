@@ -240,7 +240,7 @@ html, body {
 .date-today { color: #147efb; }
 .date-future { color: #23C552; }
 
-image {
+img {
   box-shadow: none !important;
   border: none !important;
   border-style: none !important;
