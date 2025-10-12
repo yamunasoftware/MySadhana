@@ -468,31 +468,8 @@ function displayDashDates() {
 
 //Title Function:
 function title(string) {
-  //Loops Variables:
-  var noteTitle = "";
-  var turns = 0;
-  var localString =
-    string.replace(new RegExp("\n", "g"), "$n");
-
-  //Loops through Array:
-  mainLoop: while (turns < localString.length) {
-    //Checks the Case:
-    if (localString[turns] == "$") {
-      //Breaks Loop:
-      break mainLoop;
-    }
-
-    else {
-      //Adds to the Title:
-      noteTitle += localString[turns];
-    }
-
-    turns++;
-  }
-
-  //Returns the Title:
-  noteTitle = noteTitle.substring(0, 10);
-  return noteTitle;
+  var title = string.substring(0, 10);
+  return title.replace(/<[^>]*>/g, "").replace(/<[^>]*>|[\t\n]/g, "");
 }
 
 /* DATES FUNCTIONS */
