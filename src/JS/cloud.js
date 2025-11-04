@@ -468,8 +468,15 @@ function displayDashDates() {
 
 //Title Function:
 function title(string) {
-  var title = string.replace(/<[^>]*>/g, "").replace(/<[^>]*>|[\t\n]/g, "");
-  return title.substring(0, 10);
+  //Cleans the String:
+  var title = string.replace(/<[^>]*>|[\t]/g, "").substring(0, 10);
+  var newLineIndex = title.indexOf("\n");
+
+  //Sets the Title:
+  if (newLineIndex != -1) {
+    title = title.substring(0, newLineIndex);
+  }
+  return title;
 }
 
 /* DATES FUNCTIONS */
